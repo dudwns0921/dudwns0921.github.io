@@ -241,7 +241,7 @@
       <span class="post-meta-item-text">작성일</span>
       
 
-      <time title="Post created: 2022-10-14 08:30:26 / Updated at: 09:40:30" itemprop="dateCreated datePublished" datetime="2022-10-14T08:30:26+09:00">2022-10-14</time>
+      <time title="Post created: 2022-10-14 08:30:26 / Updated at: 10:00:15" itemprop="dateCreated datePublished" datetime="2022-10-14T08:30:26+09:00">2022-10-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -350,7 +350,7 @@
 </ol>
 <p><img src="/2022/10/14/Making-Hexo-Blog/image2.png"></p>
 <h2 id="Asset-Folder-활용"><a href="#Asset-Folder-활용" class="headerlink" title="Asset Folder 활용"></a>Asset Folder 활용</h2><h3 id="Global-Asset-Folder"><a href="#Global-Asset-Folder" class="headerlink" title="Global Asset Folder"></a>Global Asset Folder</h3><p><strong>Assets</strong>은 <strong>source</strong>폴더 안에 위치하는 <strong>post</strong>가 아닌 파일로 <strong>images, CSS, javascript 파일</strong>등이 이에 해당한다. <strong>Hexo</strong> 프로젝트에 많은 이미지 파일을 사용할 것이 아니라면 이미지 파일을 관리하기 가장 쉬운 방법은 이미지 파일들을 <code>source/images</code> 디렉토리에 위치시키는 것이다. </p>
-<h3 id="Post-Asset-Folder"><a href="#Post-Asset-Folder" class="headerlink" title="Post Asset Folder"></a>Post Asset Folder</h3><p><strong>Post Asset Folder</strong>는 <strong>Assets</strong>을 주기적으로 사용하며 <strong>post</strong>별로 <strong>Assets</strong>을 구분하고 싶은 사람들을 위해 <strong>Hexo</strong>가 제공하는 기능이다.<br>이 기능을 사용하기 위해서는 <strong>_config.yml</strong>에서 <strong>post_asset_folder</strong>의 값을 <strong>true</strong>로 변경해주면 된다. 그 다음부터는 <strong>Hexo</strong>가 <strong>post</strong>를 생성할 때마다 <strong>post</strong>와 동일한 이름을 가진 <strong>Asset Folder</strong>를 생성합니다. 그리고 <strong>post</strong>에서는 상대 경로를 사용해 <strong>Assets</strong>에 접근할 수 있습니다. </p>
+<h3 id="Post-Asset-Folder"><a href="#Post-Asset-Folder" class="headerlink" title="Post Asset Folder"></a>Post Asset Folder</h3><p><strong>Post Asset Folder</strong>는 <strong>Assets</strong>을 주기적으로 사용하며 <strong>post</strong>별로 <strong>Assets</strong>을 구분하고 싶은 사람들을 위해 <strong>Hexo</strong>가 제공하는 기능이다.<br>이 기능을 사용하기 위해서는 <strong>_config.yml</strong>에서 <strong>post_asset_folder</strong>의 값을 <strong>true</strong>로 변경해주면 된다. 그 다음부터는 <strong>Hexo</strong>가 <strong>post</strong>를 생성할 때마다 <strong>post</strong>와 동일한 이름을 가진 <strong>Asset Folder</strong>를 생성한다. 그리고 <strong>post</strong>에서는 상대 경로를 사용해 <strong>Assets</strong>에 접근할 수 있다. </p>
 <h3 id="이미지-넣기"><a href="#이미지-넣기" class="headerlink" title="이미지 넣기"></a>이미지 넣기</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">post_asset_folder: true</span><br><span class="line">marked:</span><br><span class="line">  prependRoot: true</span><br><span class="line">  postAsset: true</span><br></pre></td></tr></table></figure>
 
 <p>위와 같이 설정하면 <strong>Asset image</strong>는 자동으로 해당 포스트의 경로로 <strong>resolve</strong>된다.<br>예를 들어, <code>image.jpg</code>가 <code>/2020/01/02/foo/image.jpg</code>에 있다고 한다면, <code>/2020/01/02/foo</code> <strong>post</strong>의 <strong>Asset image</strong>라는 걸 의미한다. 그리고 아래와 같이 작성하면, </p>
