@@ -162,7 +162,7 @@ $ hexo new sports "About Sports"
 ### Post Asset Folder
 
 **Post Asset Folder**는 **Assets**을 주기적으로 사용하며 **post**별로 **Assets**을 구분하고 싶은 사람들을 위해 **Hexo**가 제공하는 기능이다.
-이 기능을 사용하기 위해서는 **_config.yml**에서 **post_asset_folder**의 값을 **true**로 변경해주면 된다. 그 다음부터는 **Hexo**가 **post**를 생성할 때마다 **post**와 동일한 이름을 가진 **Asset Folder**를 생성합니다. 그리고 **post**에서는 상대 경로를 사용해 **Assets**에 접근할 수 있습니다. 
+이 기능을 사용하기 위해서는 **_config.yml**에서 **post_asset_folder**의 값을 **true**로 변경해주면 된다. 그 다음부터는 **Hexo**가 **post**를 생성할 때마다 **post**와 동일한 이름을 가진 **Asset Folder**를 생성한다. 그리고 **post**에서는 상대 경로를 사용해 **Assets**에 접근할 수 있다. 
 
 ### 이미지 넣기
 
