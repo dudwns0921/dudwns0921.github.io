@@ -241,7 +241,7 @@
       <span class="post-meta-item-text">작성일</span>
       
 
-      <time title="Post created: 2022-10-26 11:47:52 / Updated at: 14:49:42" itemprop="dateCreated datePublished" datetime="2022-10-26T11:47:52+09:00">2022-10-26</time>
+      <time title="Post created: 2022-10-26 11:47:52 / Updated at: 15:00:57" itemprop="dateCreated datePublished" datetime="2022-10-26T11:47:52+09:00">2022-10-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,7 +281,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage 사용만으로는 구현이 어려워서 IndexedDB를 사용했다.</p>
+          <p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, <strong>localstroage</strong>사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
 <h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
 <p><em>공식문서</em></p>
 <p><em>IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.</em></p>
@@ -297,7 +297,7 @@
 <p>이제 위 패턴에 맞추어 데이터베이스를 만들고 데이터를 추가하는 작업까지 진행해보겠다.</p>
 <h1 id="👶튜토리얼"><a href="#👶튜토리얼" class="headerlink" title="👶튜토리얼"></a>👶튜토리얼</h1><blockquote>
 <p><em>공식문서</em></p>
-<p>*새로운 데이터베이스를 만들거나, 이미 존재하는 데이터베이스의 버전을 높일 경우 <strong>onupgradeneeded event</strong>가 트리거된다. 그리고 <strong>onupgradeneeded event</strong>에 대한 핸들러를 통해서만 데이터베이스의 구조를 변경할 수 있다.*</p>
+<p><em>새로운 데이터베이스를 만들거나, 이미 존재하는 데이터베이스의 버전을 높일 경우 onupgradeneeded event가 트리거된다. 그리고 onupgradeneeded event에 대한 핸들러를 통해서만 데이터베이스의 구조를 변경할 수 있다.</em></p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> testData = [</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;444-44-4444&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Bill&#x27;</span>, <span class="attr">age</span>: <span class="number">35</span>, <span class="attr">email</span>: <span class="string">&#x27;bill@company.com&#x27;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;555-55-5555&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Donna&#x27;</span>, <span class="attr">age</span>: <span class="number">32</span>, <span class="attr">email</span>: <span class="string">&#x27;donna@home.org&#x27;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDBRequest = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(<span class="string">&#x27;test&#x27;</span>);</span><br><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> db = event.<span class="property">target</span>.<span class="property">result</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> createTestStoreRequest = db.<span class="title function_">createObjectStore</span>(<span class="string">&#x27;test&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">keyPath</span>: <span class="string">&#x27;ssn&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
