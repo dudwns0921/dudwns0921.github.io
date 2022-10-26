@@ -154,18 +154,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -211,6 +211,136 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/26/Using-IndexedDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-Elio.jpg">
+      <meta itemprop="name" content="Elio">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Elio's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Elio's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/26/Using-IndexedDB/" class="post-title-link" itemprop="url">IndexedDB 기초</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2022-10-26 11:47:52 / Updated at: 14:49:42" itemprop="dateCreated datePublished" datetime="2022-10-26T11:47:52+09:00">2022-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Database/IndexedDB/" itemprop="url" rel="index"><span itemprop="name">IndexedDB</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/10/26/Using-IndexedDB/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/26/Using-IndexedDB/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage 사용만으로는 구현이 어려워서 IndexedDB를 사용했다.</p>
+<h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
+<p><em>공식문서</em></p>
+<p><em>IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.</em></p>
+</blockquote>
+<h1 id="🔧기본-패턴"><a href="#🔧기본-패턴" class="headerlink" title="🔧기본 패턴"></a>🔧기본 패턴</h1><ol>
+<li><p>데이터베이스를 연다.</p>
+</li>
+<li><p>데이터베이스에 <strong>object store</strong>을 생성한다.</p>
+</li>
+<li><p><strong>transaction</strong>을 시작한 후 <strong>request</strong>를 만들어 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
+</li>
+</ol>
+<p>이제 위 패턴에 맞추어 데이터베이스를 만들고 데이터를 추가하는 작업까지 진행해보겠다.</p>
+<h1 id="👶튜토리얼"><a href="#👶튜토리얼" class="headerlink" title="👶튜토리얼"></a>👶튜토리얼</h1><blockquote>
+<p><em>공식문서</em></p>
+<p>*새로운 데이터베이스를 만들거나, 이미 존재하는 데이터베이스의 버전을 높일 경우 <strong>onupgradeneeded event</strong>가 트리거된다. 그리고 <strong>onupgradeneeded event</strong>에 대한 핸들러를 통해서만 데이터베이스의 구조를 변경할 수 있다.*</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> testData = [</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;444-44-4444&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Bill&#x27;</span>, <span class="attr">age</span>: <span class="number">35</span>, <span class="attr">email</span>: <span class="string">&#x27;bill@company.com&#x27;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;555-55-5555&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Donna&#x27;</span>, <span class="attr">age</span>: <span class="number">32</span>, <span class="attr">email</span>: <span class="string">&#x27;donna@home.org&#x27;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDBRequest = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(<span class="string">&#x27;test&#x27;</span>);</span><br><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> db = event.<span class="property">target</span>.<span class="property">result</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> createTestStoreRequest = db.<span class="title function_">createObjectStore</span>(<span class="string">&#x27;test&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">keyPath</span>: <span class="string">&#x27;ssn&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>indexedDB api</strong>의 <strong>open</strong> 메서드를 통해 데이터베이스를 생성한다.</p>
+<p> 여기서 주의할 점은 <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행되며, <strong>open</strong> 메서드는 데이터베이스를 생성하도록 요청했을뿐 생성된 데이터베이스를 바로 반환받은 것이 아니다.</p>
+</li>
+<li><p>트리거된 <strong>onupgradeneeded event</strong>에서 <strong>object store</strong>을 생성한다.<br> <strong>createObjectStore</strong>의 첫 번째 인자로는 이름을, 두 번째 인자로는 각 데이터마다 고유한 값을 가지는 속성명을 작성해준다. 다시 말해 저장할 객체 데이터의 속성중 기본키로 사용할 속성의 이름을 작성해주면 된다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  createTestStoreRequest.<span class="property">transaction</span>.<span class="property">oncomplete</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> testObjStore = db.<span class="title function_">transaction</span>(<span class="string">&#x27;test&#x27;</span>, <span class="string">&#x27;readwrite&#x27;</span>).<span class="title function_">objectStore</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    testData.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      testObjStore.<span class="title function_">add</span>(item)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>새롭게 생성된 <strong>testObjstore</strong>에다가 데이터를 삽입한다.</p>
+<p> 여기서 <strong>transaction.oncomplete</strong> 이벤트 핸들러에서 데이터를 삽입한 것은 object store가 정상적으로 생성된 후에 데이터를 삽입하기 위해서이다.</p>
+</li>
+</ol>
+<p><img src="/2022/10/26/Using-IndexedDB/image1.PNG"></p>
+<h1 id="😎마무리"><a href="#😎마무리" class="headerlink" title="😎마무리"></a>😎마무리</h1><p>지금까지 <strong>indexedDB</strong>를 생성해 데이터를 삽입하는 법에 대해 간단하게 알아봤다. 데이터베이스에 대한 기초적인 지식만 있다면 어렵지 않게 사용할 수 있을 것이라 생각한다. </p>
+<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/14/Making-Hexo-Blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -239,9 +369,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
-      
 
-      <time title="Post created: 2022-10-14 08:30:26 / Updated at: 10:00:15" itemprop="dateCreated datePublished" datetime="2022-10-14T08:30:26+09:00">2022-10-14</time>
+      <time title="Post created: 2022-10-14 08:30:26" itemprop="dateCreated datePublished" datetime="2022-10-14T08:30:26+09:00">2022-10-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Updated at: 2022-10-26 11:49:33" itemprop="dateModified" datetime="2022-10-26T11:49:33+09:00">2022-10-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">

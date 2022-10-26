@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="black" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="black" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="black">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Korean:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage 사용만으로는 구현이 어려워서 IndexedDB를 사용했다. 🙋‍♂️개요 공식문서 IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.  🔧기본 패턴 데이터베이스를 연다.  데이터베이스에 object store을 생성한다">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IndexedDB 기초">
+<meta property="og:url" content="http://example.com/2022/10/26/Using-IndexedDB/index.html">
+<meta property="og:site_name" content="Elio&#39;s Blog">
+<meta property="og:description" content="최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage 사용만으로는 구현이 어려워서 IndexedDB를 사용했다. 🙋‍♂️개요 공식문서 IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.  🔧기본 패턴 데이터베이스를 연다.  데이터베이스에 object store을 생성한다">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="http://example.com/2022/10/26/Using-IndexedDB/image1.PNG">
+<meta property="article:published_time" content="2022-10-26T02:47:52.000Z">
+<meta property="article:modified_time" content="2022-10-26T05:49:42.302Z">
+<meta property="article:author" content="Elio">
+<meta property="article:tag" content="Tutorial">
+<meta property="article:tag" content="Basic">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/10/26/Using-IndexedDB/image1.PNG">
+
+
+<link rel="canonical" href="http://example.com/2022/10/26/Using-IndexedDB/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"http://example.com/2022/10/26/Using-IndexedDB/","path":"2022/10/26/Using-IndexedDB/","title":"IndexedDB 기초"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>IndexedDB 기초 | Elio's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Elio's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>정보</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%99%8B%E2%80%8D%E2%99%82%EF%B8%8F%EA%B0%9C%EC%9A%94"><span class="nav-number">1.</span> <span class="nav-text">🙋‍♂️개요</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%94%A7%EA%B8%B0%EB%B3%B8-%ED%8C%A8%ED%84%B4"><span class="nav-number">2.</span> <span class="nav-text">🔧기본 패턴</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%91%B6%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC"><span class="nav-number">3.</span> <span class="nav-text">👶튜토리얼</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%98%8E%EB%A7%88%EB%AC%B4%EB%A6%AC"><span class="nav-number">4.</span> <span class="nav-text">😎마무리</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%93%9A%EC%B0%B8%EA%B3%A0%EC%9E%90%EB%A3%8C"><span class="nav-number">5.</span> <span class="nav-text">📚참고자료</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Elio"
+      src="/images/avatar-Elio.jpg">
+  <p class="site-author-name" itemprop="name">Elio</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dudwns0921" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dudwns0921" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/%EC%98%81%EC%A4%80-%EC%A0%95-2416ab22a" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%EC%98%81%EC%A4%80-%EC%A0%95-2416ab22a" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/26/Using-IndexedDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-Elio.jpg">
+      <meta itemprop="name" content="Elio">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Elio's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="IndexedDB 기초 | Elio's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          IndexedDB 기초
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2022-10-26 11:47:52 / Updated at: 14:49:42" itemprop="dateCreated datePublished" datetime="2022-10-26T11:47:52+09:00">2022-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Database/IndexedDB/" itemprop="url" rel="index"><span itemprop="name">IndexedDB</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/10/26/Using-IndexedDB/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/10/26/Using-IndexedDB/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage 사용만으로는 구현이 어려워서 IndexedDB를 사용했다.</p>
+<h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
+<p><em>공식문서</em></p>
+<p><em>IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.</em></p>
+</blockquote>
+<h1 id="🔧기본-패턴"><a href="#🔧기본-패턴" class="headerlink" title="🔧기본 패턴"></a>🔧기본 패턴</h1><ol>
+<li><p>데이터베이스를 연다.</p>
+</li>
+<li><p>데이터베이스에 <strong>object store</strong>을 생성한다.</p>
+</li>
+<li><p><strong>transaction</strong>을 시작한 후 <strong>request</strong>를 만들어 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
+</li>
+</ol>
+<p>이제 위 패턴에 맞추어 데이터베이스를 만들고 데이터를 추가하는 작업까지 진행해보겠다.</p>
+<h1 id="👶튜토리얼"><a href="#👶튜토리얼" class="headerlink" title="👶튜토리얼"></a>👶튜토리얼</h1><blockquote>
+<p><em>공식문서</em></p>
+<p>*새로운 데이터베이스를 만들거나, 이미 존재하는 데이터베이스의 버전을 높일 경우 <strong>onupgradeneeded event</strong>가 트리거된다. 그리고 <strong>onupgradeneeded event</strong>에 대한 핸들러를 통해서만 데이터베이스의 구조를 변경할 수 있다.*</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> testData = [</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;444-44-4444&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Bill&#x27;</span>, <span class="attr">age</span>: <span class="number">35</span>, <span class="attr">email</span>: <span class="string">&#x27;bill@company.com&#x27;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;555-55-5555&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Donna&#x27;</span>, <span class="attr">age</span>: <span class="number">32</span>, <span class="attr">email</span>: <span class="string">&#x27;donna@home.org&#x27;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDBRequest = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(<span class="string">&#x27;test&#x27;</span>);</span><br><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> db = event.<span class="property">target</span>.<span class="property">result</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> createTestStoreRequest = db.<span class="title function_">createObjectStore</span>(<span class="string">&#x27;test&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">keyPath</span>: <span class="string">&#x27;ssn&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>indexedDB api</strong>의 <strong>open</strong> 메서드를 통해 데이터베이스를 생성한다.</p>
+<p> 여기서 주의할 점은 <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행되며, <strong>open</strong> 메서드는 데이터베이스를 생성하도록 요청했을뿐 생성된 데이터베이스를 바로 반환받은 것이 아니다.</p>
+</li>
+<li><p>트리거된 <strong>onupgradeneeded event</strong>에서 <strong>object store</strong>을 생성한다.<br> <strong>createObjectStore</strong>의 첫 번째 인자로는 이름을, 두 번째 인자로는 각 데이터마다 고유한 값을 가지는 속성명을 작성해준다. 다시 말해 저장할 객체 데이터의 속성중 기본키로 사용할 속성의 이름을 작성해주면 된다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  createTestStoreRequest.<span class="property">transaction</span>.<span class="property">oncomplete</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> testObjStore = db.<span class="title function_">transaction</span>(<span class="string">&#x27;test&#x27;</span>, <span class="string">&#x27;readwrite&#x27;</span>).<span class="title function_">objectStore</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    testData.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      testObjStore.<span class="title function_">add</span>(item)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>새롭게 생성된 <strong>testObjstore</strong>에다가 데이터를 삽입한다.</p>
+<p> 여기서 <strong>transaction.oncomplete</strong> 이벤트 핸들러에서 데이터를 삽입한 것은 object store가 정상적으로 생성된 후에 데이터를 삽입하기 위해서이다.</p>
+</li>
+</ol>
+<p><img src="/2022/10/26/Using-IndexedDB/image1.PNG"></p>
+<h1 id="😎마무리"><a href="#😎마무리" class="headerlink" title="😎마무리"></a>😎마무리</h1><p>지금까지 <strong>indexedDB</strong>를 생성해 데이터를 삽입하는 법에 대해 간단하게 알아봤다. 데이터베이스에 대한 기초적인 지식만 있다면 어렵지 않게 사용할 수 있을 것이라 생각한다. </p>
+<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tutorial/" rel="tag"># Tutorial</a>
+              <a href="/tags/Basic/" rel="tag"># Basic</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/10/14/Making-Hexo-Blog/" rel="prev" title="Hexo로 블로그 만들기">
+                  <i class="fa fa-chevron-left"></i> Hexo로 블로그 만들기
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Elio</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"dudwns0921","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
