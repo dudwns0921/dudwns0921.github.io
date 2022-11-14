@@ -272,14 +272,14 @@
 <p> Promise나 async await을 사용하는 것처럼 <strong>IndexedDB</strong>에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.</p>
 <p> 그러니까 위의 예시는 데이터베이스가 생성된 다음에 발생되는 onupgradeneeded event에 핸들러를 작성해서 db 라는 변수에 데이터베이스를 할당하고, 데이터를 저장하기 위한 object store을 만든 것이다. object store를 생성하기 위해서는 createObjectStore 메서드를 사용하면 되는데, 이 메서드는 두 가지 인자를 받는다.</p>
 <ul>
-<li><p>name : object store의 이름이다.</p>
+<li><p><strong>name</strong> : object store의 이름이다.</p>
 </li>
-<li><p>options [Optional] : 아래의 속성을 갖는 객체이다.</p>
+<li><p><strong>options</strong> [Optional] : 아래의 속성을 갖는 객체이다.</p>
 <ol>
-<li><p>Keypath [Optional]</p>
+<li><p><strong>Keypath</strong> [Optional]</p>
 <p> 새로운 object store에서 사용할 Keypath를 설정한다. 저장할 각 객체 데이터들이 고유한 값을 가지는 속성명을 작성하면 된다. 데이터베이스의 기본키를 설정한다고 생각하면 좀 더 이해가 쉬울 것이다.</p>
 </li>
-<li><p>autoIncrement [Optional]</p>
+<li><p><strong>autoIncrement</strong> [Optional]</p>
 <p> 데이터의 키를 생성해주는 매커니즘인 key-generator 사용 여부를 설정한다. 기본값은 false이다.</p>
 </li>
 </ol>
