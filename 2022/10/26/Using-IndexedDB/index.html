@@ -30,9 +30,11 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="http://example.com/2022/10/26/Using-IndexedDB/image1.PNG">
 <meta property="article:published_time" content="2022-10-26T02:47:52.000Z">
-<meta property="article:modified_time" content="2022-10-27T05:31:22.053Z">
+<meta property="article:modified_time" content="2022-11-14T02:42:04.920Z">
 <meta property="article:author" content="Elio">
 <meta property="article:tag" content="Tutorial">
+<meta property="article:tag" content="Database">
+<meta property="article:tag" content="indexedDB">
 <meta property="article:tag" content="Basic">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/10/26/Using-IndexedDB/image1.PNG">
@@ -174,7 +176,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -257,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2022-10-27 14:31:22" itemprop="dateModified" datetime="2022-10-27T14:31:22+09:00">2022-10-27</time>
+      <time title="Updated at: 2022-11-14 11:42:04" itemprop="dateModified" datetime="2022-11-14T11:42:04+09:00">2022-11-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -297,7 +299,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, <strong>localstroage</strong>사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
+        <p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
 <h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
 <p><em>MDN IndexedDB API 문서</em></p>
 <p><em>IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.</em></p>
@@ -305,9 +307,9 @@
 <h1 id="🔧기본-패턴"><a href="#🔧기본-패턴" class="headerlink" title="🔧기본 패턴"></a>🔧기본 패턴</h1><ol>
 <li><p>데이터베이스를 연다.</p>
 </li>
-<li><p>데이터베이스에 <strong>object store</strong>을 생성한다.</p>
+<li><p>데이터베이스에 object store을 생성한다.</p>
 </li>
-<li><p><strong>Transaction</strong>을 시작한 후 <strong>request</strong>를 생성해 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
+<li><p>Transaction을 시작한 후 request를 생성해 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
 </li>
 </ol>
 <blockquote>
@@ -321,40 +323,40 @@
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> testData = [</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;444-44-4444&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Bill&#x27;</span>, <span class="attr">age</span>: <span class="number">35</span>, <span class="attr">email</span>: <span class="string">&#x27;bill@company.com&#x27;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;555-55-5555&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Donna&#x27;</span>, <span class="attr">age</span>: <span class="number">32</span>, <span class="attr">email</span>: <span class="string">&#x27;donna@home.org&#x27;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDBRequest = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(<span class="string">&#x27;test&#x27;</span>);</span><br><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> db = event.<span class="property">target</span>.<span class="property">result</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> createTestStoreRequest = db.<span class="title function_">createObjectStore</span>(<span class="string">&#x27;test&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">keyPath</span>: <span class="string">&#x27;ssn&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
-<li><p><strong>indexedDB api</strong>의 <strong>open</strong> 메서드를 통해 데이터베이스 생성을 요청한다.</p>
-<p> <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행된다. 그러니까 <strong>open</strong> 메서드는 데이터베이스를 생성하도록 요청했을뿐 데이터베이스를 생성해 바로 반환하지 않는다는 것이다.</p>
+<li><p><strong>indexedDB</strong> api의 open 메서드를 통해 데이터베이스 생성을 요청한다.</p>
+<p> <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행된다. 그러니까 open 메서드는 데이터베이스를 생성하도록 요청했을뿐 데이터베이스를 생성해 바로 반환하지 않는다는 것이다.</p>
 </li>
-<li><p>트리거된 <strong>onupgradeneeded event</strong>에서 <strong>object store</strong> 생성을 요청한다.</p>
-<p> 앞에서 말했듯이 <strong>open</strong> 메서드로 인해 데이터베이스 생성 작업이 요청되었고, 그 작업이 완료됨에 따라 <strong>onupgradeneeded event</strong>가 트리거된다.</p>
-<p> <strong>Promise</strong>나 <strong>async await</strong>을 사용하는 것처럼 <strong>IndexedDB</strong>에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.</p>
-<p> 그러니까 위의 예시는 데이터베이스가 생성된 다음에 발생되는 <strong>onupgradeneeded event</strong>에 핸들러를 작성해서 <strong>db</strong> 라는 변수에 데이터베이스를 할당하고, 데이터를 저장하기 위한 <strong>object store</strong>을 만든 것이다. <strong>object store</strong>를 생성하기 위해서는 <strong>createObjectStore</strong> 메서드를 사용하면 되는데, 이 메서드는 두 가지 인자를 받는다.</p>
+<li><p>트리거된 onupgradeneeded event에서 object store 생성을 요청한다.</p>
+<p> 앞에서 말했듯이 open 메서드로 인해 데이터베이스 생성 작업이 요청되었고, 그 작업이 완료됨에 따라 onupgradeneeded event가 트리거된다.</p>
+<p> Promise나 async await을 사용하는 것처럼 <strong>IndexedDB</strong>에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.</p>
+<p> 그러니까 위의 예시는 데이터베이스가 생성된 다음에 발생되는 onupgradeneeded event에 핸들러를 작성해서 db 라는 변수에 데이터베이스를 할당하고, 데이터를 저장하기 위한 object store을 만든 것이다. object store를 생성하기 위해서는 createObjectStore 메서드를 사용하면 되는데, 이 메서드는 두 가지 인자를 받는다.</p>
 <ul>
-<li><p><strong>name</strong> : <strong>object store</strong>의 이름이다.</p>
+<li><p>name : object store의 이름이다.</p>
 </li>
-<li><p><strong>options</strong> [Optional] : 아래의 속성을 갖는 객체이다.</p>
+<li><p>options [Optional] : 아래의 속성을 갖는 객체이다.</p>
 <ol>
-<li><p><strong>Keypath</strong> [Optional]</p>
-<p> 새로운 <strong>object store</strong>에서 사용할 <strong>Keypath</strong>를 설정한다. 저장할 각 객체 데이터들이 고유한 값을 가지는 속성명을 작성하면 된다. 데이터베이스의 기본키를 설정한다고 생각하면 좀 더 이해가 쉬울 것이다.</p>
+<li><p>Keypath [Optional]</p>
+<p> 새로운 object store에서 사용할 Keypath를 설정한다. 저장할 각 객체 데이터들이 고유한 값을 가지는 속성명을 작성하면 된다. 데이터베이스의 기본키를 설정한다고 생각하면 좀 더 이해가 쉬울 것이다.</p>
 </li>
-<li><p><strong>autoIncrement</strong> [Optional]</p>
-<p> 데이터의 키를 생성해주는 매커니즘인 <strong>key-generator</strong> 사용 여부를 설정한다. 기본값은 false이다.</p>
+<li><p>autoIncrement [Optional]</p>
+<p> 데이터의 키를 생성해주는 매커니즘인 key-generator 사용 여부를 설정한다. 기본값은 false이다.</p>
 </li>
 </ol>
-<p>  여기서 주의할 점은 <strong>keypath</strong>를 작성하지 않고 <strong>autoIncrement</strong>도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 <strong>Keypath</strong>의 값을 작성해주는 게 가장 좋다.</p>
-<p>  물론 <strong>autoIncrement</strong>를 true로 바꿔 <strong>key-generator</strong>을 사용해서 데이터의 키를 자동으로 생성할 수도 있다. 하지만 실제로 사용해본 결과, 데이터가 삽입된 순서대로 1,2,3… 의 값을 키로 사용하기 때문에 기본키로서는 적합하지 않다고 생각한다.</p>
+<p>  여기서 주의할 점은 keypath를 작성하지 않고 autoIncrement도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 Keypath의 값을 작성해주는 게 가장 좋다.</p>
+<p>  물론 autoIncrement를 true로 바꿔 key-generator을 사용해서 데이터의 키를 자동으로 생성할 수도 있다. 하지만 실제로 사용해본 결과, 데이터가 삽입된 순서대로 1,2,3… 의 값을 키로 사용하기 때문에 기본키로서는 적합하지 않다고 생각한다.</p>
 </li>
 </ul>
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  createTestStoreRequest.<span class="property">transaction</span>.<span class="property">oncomplete</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> testObjStore = db.<span class="title function_">transaction</span>(<span class="string">&#x27;test&#x27;</span>, <span class="string">&#x27;readwrite&#x27;</span>).<span class="title function_">objectStore</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    testData.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      testObjStore.<span class="title function_">add</span>(item)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li><p>트리거된 <strong>oncomplete event</strong>에서 새롭게 생성된 <strong>object store</strong>에다가 데이터를 삽입한다.<br> 앞 단계에서와 마찬가지로 <strong>object store</strong>은 생성 요청만 이루어졌을 뿐이다. 따라서 데이터를 정상적으로 삽입하기 위해서는 <strong>object store</strong> 생성이 완료되는 시점에 트리거되는 <strong>oncomplete event</strong>에서 데이터를 삽입해주면 된다.</p>
-<p> 데이터베이스와 관련된 작업을 하기 위해서는 먼저 트랜잭션을 시작해야 한다. 이를 위해서는 <strong>transaction</strong> 메서드를 사용해야 하며, <strong>transaction</strong> 메서드는 3개의 인자를 받는다.</p>
+<li><p>트리거된 oncomplete event에서 새롭게 생성된 object store에다가 데이터를 삽입한다.<br> 앞 단계에서와 마찬가지로 object store은 생성 요청만 이루어졌을 뿐이다. 따라서 데이터를 정상적으로 삽입하기 위해서는 object store 생성이 완료되는 시점에 트리거되는 oncomplete event에서 데이터를 삽입해주면 된다.</p>
+<p> 데이터베이스와 관련된 작업을 하기 위해서는 먼저 트랜잭션을 시작해야 한다. 이를 위해서는 transaction 메서드를 사용해야 하며, transaction 메서드는 3개의 인자를 받는다.</p>
 <ul>
 <li><p><strong>storeNames</strong></p>
-<p>새로운 트랜잭션의 <strong>scope</strong>에 포함시킬 <strong>object store</strong>의 이름들을 값을 갖는 배열이다. 단 하나의 <strong>object store</strong>만 포함시킬 경우에는 <strong>object store</strong>의 이름을 문자열로 전달할 수도 있다. </p>
+<p>새로운 트랜잭션의 scope에 포함시킬 object store의 이름들을 값을 갖는 배열이다. 단 하나의 object store만 포함시킬 경우에는 object store의 이름을 문자열로 전달할 수도 있다. </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>([<span class="string">&#x27;my-store-name&#x27;</span>]);</span><br><span class="line">db.<span class="title function_">transaction</span>(<span class="string">&#x27;my-store-name&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<p>데이터베이스에 있는 모든 <strong>object store</strong>을 포함시키려면 <code>IDBDatabase.objectStoreNames</code> 속성을 사용할 수 있다.</p>
+<p>데이터베이스에 있는 모든 object store을 포함시키려면 <code>IDBDatabase.objectStoreNames</code> 속성을 사용할 수 있다.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>(db.<span class="property">objectStoreNames</span>);</span><br></pre></td></tr></table></figure>
 
 </li>
@@ -371,7 +373,7 @@
 <p>아래의 속성을 갖는 객체이다.</p>
 <ol>
 <li><p><strong>durability</strong></p>
-<p> <strong>default</strong>, <strong>strict</strong>, 그리고 <strong>relaxed</strong>의 3가지 값을 가진다. 기본값은 <strong>default</strong>이다. 각 값에 따라 성능이 달라지며, 사용자의 환경에 따라 다른 값을 설정해주면 된다.</p>
+<p> default, strict, 그리고 relaxed의 3가지 값을 가진다. 기본값은 default이다. 각 값에 따라 성능이 달라지며, 사용자의 환경에 따라 다른 값을 설정해주면 된다.</p>
 </li>
 </ol>
 </li>
@@ -393,6 +395,8 @@
     <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Tutorial/" rel="tag"># Tutorial</a>
+              <a href="/tags/Database/" rel="tag"># Database</a>
+              <a href="/tags/indexedDB/" rel="tag"># indexedDB</a>
               <a href="/tags/Basic/" rel="tag"># Basic</a>
           </div>
 

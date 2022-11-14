@@ -4,7 +4,7 @@
     <title>Debounce and Throttle</title>
     <url>/2022/10/06/Debounce-and-Throttle/</url>
     <content><![CDATA[<p>검색어 자동완성 기능을 만들면서 <strong>Debounce</strong>에 대해 알게 되었고, 자연스럽게 <strong>Throttle</strong>을 접하게 되었다. 먼저 두 기술이 왜 등장하게 되었는지부터 알아보자.</p>
-<h1 id="등장배경"><a href="#등장배경" class="headerlink" title="등장배경"></a>등장배경</h1><p>자, 우리가 영화 정보를 검색할 수 있는 사이트에서  <strong>Matrix</strong> 시리즈를 보고 싶어 검색창에 <strong>Matrix</strong> 를 입력했다고 가정해보자. 해당 사이트에는 자동완성 기능을 제공하고 있는데, 자동완성 기능의 흐름은 다음과 같다.</p>
+<h1 id="등장배경"><a href="#등장배경" class="headerlink" title="등장배경"></a>등장배경</h1><p>자, 우리가 영화 정보를 검색할 수 있는 사이트에서  Matrix시리즈를 보고 싶어 검색창에 Matrix를 입력했다고 가정해보자. 해당 사이트에는 자동완성 기능을 제공하고 있는데, 자동완성 기능의 흐름은 다음과 같다.</p>
 <ol>
 <li>사용자가 글자를 입력함</li>
 <li>입력할 때마다 서버에 새로운 요청을 보내 해당 검색어와 관련된 키워드들을 가져옴</li>
@@ -12,54 +12,54 @@
 <p>위 흐름대로 자동완성 기능이 수행될 때 결과를 콘솔에 출력해봤다.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search keyword : m / api request 1</span><br><span class="line">search keyword : ma / api request 2</span><br><span class="line">search keyword : mat / api request 3</span><br><span class="line">search keyword : matr / api request 4</span><br><span class="line">search keyword : matri / api request 5</span><br><span class="line">search keyword : matrix / api request 6</span><br></pre></td></tr></table></figure>
 
-<p>우리는 <strong>matrix</strong>라는 6글자를 입력했을 뿐인데, 6개의 <strong>request</strong>가 서버로 보내졌다 . 만약 더 긴 제목의 영화를 검색한다면 영화 제목을 입력하는 짧은 시간 동안 수십 개의 <strong>request</strong> 가 발생하는 것이다. 이처럼 너무 많은 이벤트 횟수의 실행으로 이벤트 핸들러가 과도한 연산을 수행하는 경우 성능 문제가 발생하고 이는 사용자 경험까지 떨어뜨리게 된다.</p>
+<p>우리는 matrix라는 6글자를 입력했을 뿐인데, 6개의 request가 서버로 보내졌다 . 만약 더 긴 제목의 영화를 검색한다면 영화 제목을 입력하는 짧은 시간 동안 수십 개의 request가 발생하는 것이다. 이처럼 너무 많은 이벤트 횟수의 실행으로 이벤트 핸들러가 과도한 연산을 수행하는 경우 성능 문제가 발생하고 이는 사용자 경험까지 떨어뜨리게 된다.</p>
 <p>여기서 필요한 것이 바로 <strong>Debounce</strong>와 <strong>Throttle</strong>이다. 두 기술 모두 자바스크립트의 이벤트를 제어(제한)해 성능을 향상시키는 방법이다.</p>
 <h1 id="Debounce"><a href="#Debounce" class="headerlink" title="Debounce"></a>Debounce</h1><p><strong>Debounce</strong>는 이벤트를 그룹화해서 특정시간이 지난 후 하나의 이벤트만 발생하도록 하는 기술이다. 예시로 살펴보자.</p>
 <ol>
 <li>특정시간(delay)을 1초로 설정</li>
-<li><strong>matrix</strong> 를 입력(각 글자를 입력하는데 설정한 시간 미만으로 걸린다고 가정)</li>
+<li>matrix를 입력(각 글자를 입력하는데 설정한 시간 미만으로 걸린다고 가정)</li>
 <li>설정한 시간 지남</li>
 </ol>
-<p>위 과정대로 진행되면 <strong>matrix</strong>라는 검색어와 함께 요청이 한 번만 발생한다. 원리는 다음과 같다.</p>
+<p>위 과정대로 진행되면 matrix라는 검색어와 함께 요청이 한 번만 발생한다. 원리는 다음과 같다.</p>
 <ol>
 <li>이벤트 발생 후 설정한 시간이 지나기 전에 이벤트가 다시 발생하면 지나간 시간을 초기화한다.</li>
 <li>설정한 시간이 지나게 되면 연산을 수행한다.</li>
 </ol>
-<p>그러니까 만약 <strong>ma</strong>를 입력하고 1초가 지났다면 다음과 같은 결과가 나올 것이다.</p>
+<p>그러니까 만약 ma를 입력하고 1초가 지났다면 다음과 같은 결과가 나올 것이다.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search keyword : ma / api request 1</span><br></pre></td></tr></table></figure>
 
 <p>어느 정도 개념에 대한 이해가 이루어졌다면 이제 <strong>Debounce</strong> 기술을 직접 구현해보자.</p>
 <h2 id="Debounce-구현하기"><a href="#Debounce-구현하기" class="headerlink" title="Debounce 구현하기"></a>Debounce 구현하기</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">b</span>&gt;</span>Default:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;default&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">b</span>&gt;</span>Debounce:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;debounce&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>Debounce</strong>가 적용됐을 때랑 적용되지 않았을 때의 차이를 좀 더 명확하게 확인하기 위해 위와 같이 <strong>HTML</strong> 구조를 짰다. </p>
+<p><strong>Debounce</strong>가 적용됐을 때랑 적용되지 않았을 때의 차이를 좀 더 명확하게 확인하기 위해 위와 같이 HTML구조를 짰다. </p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> defaultText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#default&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> debounceText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#debounce&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> debounceReqCnt = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> defaultReqCnt = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> updateDebounceText = <span class="title function_">debounce</span>(<span class="function">(<span class="params">text</span>) =&gt;</span> &#123;</span><br><span class="line">  debounceText.<span class="property">textContent</span> = text</span><br><span class="line">  debounceReqCnt++</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    <span class="string">`[Debounce] search keyword : <span class="subst">$&#123;text&#125;</span> / api request <span class="subst">$&#123;debounceReqCnt&#125;</span>`</span>,</span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">updateDefaultText</span> = (<span class="params">text</span>) =&gt; &#123;</span><br><span class="line">  defaultText.<span class="property">textContent</span> = text</span><br><span class="line">  defaultReqCnt++</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[Default] search keyword : <span class="subst">$&#123;text&#125;</span> / api request <span class="subst">$&#123;defaultReqCnt&#125;</span>`</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input.<span class="title function_">addEventListener</span>(<span class="string">&#x27;input&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">updateDefaultText</span>(e.<span class="property">target</span>.<span class="property">value</span>)</span><br><span class="line">  <span class="title function_">updateDebounceText</span>(e.<span class="property">target</span>.<span class="property">value</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> timeout</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">clearTimeout</span>(timeout)</span><br><span class="line">    timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">cb</span>(arg)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>전체 코드는 위와 같다.</p>
 <ol>
-<li><strong>input</strong>에 <strong>addEventListener</strong> 를 적용</li>
-<li><strong>input</strong> 이벤트가 발생할 때마다 <strong>DefaultText</strong>와 <strong>debounceText</strong>가 업데이트됨</li>
+<li>input에 addEventListener를 적용</li>
+<li>input이벤트가 발생할 때마다 DefaultText와 debounceText가 업데이트됨</li>
 </ol>
 <p>실행 흐름 자체는 그렇게 복잡하지 않다. 자세히 봐야할 부분은 맨 밑에 정의된 <strong>debounce</strong>함수이다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> timeout</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">clearTimeout</span>(timeout)</span><br><span class="line">    timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">cb</span>(arg)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>debounce</strong>함수가 실행되면 기존에 <strong>setTimeout</strong>으로 등록되었던 타이머를 없애고 새로운 타이머를 등록한다. 이는 아래 내용을 구현한 것이라고 이해하면 된다.</p>
+<p><strong>debounce</strong>함수가 실행되면 기존에 setTimeout으로 등록되었던 타이머를 없애고 새로운 타이머를 등록한다. 이는 아래 내용을 구현한 것이라고 이해하면 된다.</p>
 <blockquote>
 <p><strong>이벤트 발생 후 설정한 시간이 지나기 전에 이벤트가 다시 발생하면 지나간 시간을 초기화한다.</strong></p>
 </blockquote>
 <p>그러면 이제 실제 실행 화면을 확인해보자.</p>
 <img width="100%" src="/2022/10/06/Debounce-and-Throttle/debounceExample.gif">
 
-<p><strong>Debounce</strong>를 쓰지 않은 경우 아까와 동일하게 6번의 <strong>request</strong>가 발생했고, <strong>Debounce</strong>를 적용시킨 경우 단 한 번의 <strong>request</strong>만이 발생했다. 수치상으로 6배의 성능 향상을 확인할 수 있다. 그럼 이제 <strong>Throttle</strong>에 대해서 알아보자.</p>
-<h1 id="Throttle"><a href="#Throttle" class="headerlink" title="Throttle"></a>Throttle</h1><p><strong>Throttle</strong>은 이벤트를 일정한 주기마다 발생하도록 하는 기술이다. 예를 들어 <strong>Throttle</strong>의 설정시간으로 <strong>1ms</strong>를 주면 해당 이벤트는 <strong>1ms</strong> 동안 한 번만 발생하게 된다. <strong>Throttle</strong>을 사용하는 대표적인 예시로는 무한 스크롤 페이지가 있다. </p>
+<p><strong>Debounce</strong>를 쓰지 않은 경우 아까와 동일하게 6번의 request 가 발생했고, <strong>Debounce</strong>를 적용시킨 경우 단 한 번의 request만이 발생했다. 수치상으로 6배의 성능 향상을 확인할 수 있다. 그럼 이제 <strong>Throttle</strong>에 대해서 알아보자.</p>
+<h1 id="Throttle"><a href="#Throttle" class="headerlink" title="Throttle"></a>Throttle</h1><p><strong>Throttle</strong>은 이벤트를 일정한 주기마다 발생하도록 하는 기술이다. 예를 들어 <strong>Throttle</strong>의 설정시간으로 1ms를 주면 해당 이벤트는 1ms동안 한 번만 발생하게 된다. <strong>Throttle</strong>을 사용하는 대표적인 예시로는 무한 스크롤 페이지가 있다. </p>
 <blockquote>
 <p><a href="https://www.agoda.com/ko-kr/?cid=1844104">https://www.agoda.com/ko-kr/?cid=1844104</a></p>
 </blockquote>
-<p>최근 파리에서 묵을 숙소를 찾으면서 사용한 <strong>agoda</strong>이다. 원하는 도시를 검색하고 계속 스크롤을 내리면 <strong>footer</strong>에 도달하기 전에 추가로 숙소 정보들을 가져오고 있는 걸 확인할 수 있다. 정확하지는 않을 수도 있지만 아마도 다음과 같은 흐름으로 실행되고 있을 거라고 생각한다.</p>
+<p>최근 파리에서 묵을 숙소를 찾으면서 사용한 agoda이다. 원하는 도시를 검색하고 계속 스크롤을 내리면 footer에 도달하기 전에 추가로 숙소 정보들을 가져오고 있는 걸 확인할 수 있다. 정확하지는 않을 수도 있지만 아마도 다음과 같은 흐름으로 실행되고 있을 거라고 생각한다.</p>
 <ol>
-<li>스크롤 위치가 <strong>footer</strong>와 얼마나 떨어져 있는지 확인</li>
+<li>스크롤 위치가 footer와 얼마나 떨어져 있는지 확인</li>
 <li>일정 거리 이하라면 콘텐츠를 가져와 페이지를 업데이트함</li>
 </ol>
-<p>스크롤을 조작하면 스크롤 이벤트가 굉장히 많이 발생한다. 그래서 만약 스크롤 이벤트가 발생할 때마다 <strong>footer</strong>와의 거리를 계산한다면 성능상의 이슈가 생길 수도 있다. 그럴 때 *Throttle을 사용할 수 있다. 연산이 몇 초에 한 번, 또는 몇 밀리초에 한 번씩만 수행되도록 제한을 두는 것이다.</p>
+<p>스크롤을 조작하면 스크롤 이벤트가 굉장히 많이 발생한다. 그래서 만약 스크롤 이벤트가 발생할 때마다 footer와의 거리를 계산한다면 성능상의 이슈가 생길 수도 있다. 그럴 때 Throttle을 사용할 수 있다. 연산이 몇 초에 한 번, 또는 몇 밀리초에 한 번씩만 수행되도록 제한을 두는 것이다.</p>
 <h2 id="Throttle-구현하기"><a href="#Throttle-구현하기" class="headerlink" title="Throttle 구현하기"></a>Throttle 구현하기</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">b</span>&gt;</span>Default:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;default&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">b</span>&gt;</span>Throttle:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;throttle&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300vh</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -68,7 +68,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> defaultText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#default&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> throttleText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#throttle&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> defaultCnt = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> throttleCnt = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">countDetectingDefault</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  defaultCnt++</span><br><span class="line">  defaultText.<span class="property">textContent</span> = defaultCnt</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> countDetectingThrottle = <span class="title function_">throttle</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  throttleCnt++</span><br><span class="line">  throttleText.<span class="property">textContent</span> = throttleCnt</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="title function_">countDetectingDefault</span>()</span><br><span class="line">  <span class="title function_">countDetectingThrottle</span>()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> shouldWait = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (shouldWait) <span class="keyword">return</span></span><br><span class="line">    <span class="title function_">cb</span>(...args)</span><br><span class="line">    shouldWait = <span class="literal">true</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      shouldWait = <span class="literal">false</span></span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol>
-<li><strong>winodw</strong>객체에 <strong>addEventListener</strong> 를 적용</li>
+<li>winodw객체에 addEventListener 를 적용</li>
 <li>스크롤 이벤트가 발생할 때마다 카운트 증가</li>
 </ol>
 <p>따로 구현은 하지 않았지만 여기서 스크롤 이벤트가 발생한다는 건 아래의 작업이 이루어지는 거라고 가정하자.</p>
@@ -79,18 +79,18 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> shouldWait = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (shouldWait) <span class="keyword">return</span></span><br><span class="line">    <span class="title function_">cb</span>(arg)</span><br><span class="line">    shouldWait = <span class="literal">true</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      shouldWait = <span class="literal">false</span></span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol>
-<li><strong>shouldWait</strong> 의 초기값이 <strong>false</strong>이기 때문에 최초에는 콜백함수가 무조건 실행된다.</li>
-<li>콜백 함수가 실행됐다면 <strong>shouldWait</strong>의 값을 <strong>true</strong>로 바꾼다.</li>
-<li><strong>setTimeout</strong>을 통해 설정한 시간 뒤에 <strong>shouldWait</strong>의 값이 바뀌도록 한다.</li>
-<li>설정한 시간이 지나기 전까지는 <strong>shouldWait</strong>의 값이 <strong>true</strong>이기 때문에 연산이 수행되지 않는다.</li>
+<li>shouldWait 의 초기값이 false이기 때문에 최초에는 콜백함수가 무조건 실행된다.</li>
+<li>콜백 함수가 실행됐다면 shouldWait의 값을 true로 바꾼다.</li>
+<li>setTimeout을 통해 설정한 시간 뒤에 shouldWait의 값이 바뀌도록 한다.</li>
+<li>설정한 시간이 지나기 전까지는 shouldWait의 값이 true이기 때문에 연산이 수행되지 않는다.</li>
 </ol>
 <p>실행 화면을 확인해보자.</p>
 <img width="100%" src="/2022/10/06/Debounce-and-Throttle/ThrottleExample.gif">
 
-<p>페이지의 처음부터 끝까지 스크롤하는 동안 <strong>Throttle</strong>을 적용하지 않았을 때는 스크롤이 <strong>footer</strong>로부터 얼마나 떨어져 있는지 계산하는 연산이 총 67번 수행됐고, <strong>Throttle</strong>을 적용했을 경우에는 단 2번만 수행됐다. </p>
+<p>페이지의 처음부터 끝까지 스크롤하는 동안 <strong>Throttle</strong>을 적용하지 않았을 때는 스크롤이 footer로부터 얼마나 떨어져 있는지 계산하는 연산이 총 67번 수행됐고, <strong>Throttle</strong>을 적용했을 경우에는 단 2번만 수행됐다. </p>
 <h1 id="💡-Tip-Debounce과-Throttle의-차이"><a href="#💡-Tip-Debounce과-Throttle의-차이" class="headerlink" title="💡 Tip - Debounce과 Throttle의 차이"></a>💡 Tip - <strong>Debounce</strong>과 <strong>Throttle</strong>의 차이</h1><p><strong>Debounce</strong>과 <strong>Throttle</strong>의 가장 큰 차이점은 <strong>Throttle</strong>은 설정한 시간마다 연산이 수행됨을 보장한다는 것이다. 그래서 <strong>Throttle</strong>은 지속적인 업데이트가 필요한 경우에 사용하는 게 좋다.</p>
-<p>만약 무한 스크롤 페이지를 구현할 때 <strong>Debounce</strong>를 사용했다고 가정해보자. 스크롤 이벤트가 멈춰야만 <strong>footer</strong>와의 거리를 확인하고 콘텐츠를 추가로 가져올 것이기 때문에 <strong>footer</strong>에 도달하더라도 스크롤 이벤트가 설정한 시간 내에 다시 발생한다면 아무런 변화도 일어나지 않을 것이다.</p>
-<p>하지만 <strong>Throttle</strong>은 정기적으로 연산이 실행되기 때문에 위의 문제가 발생하지 않는다. 설정한 시간마다 연산을 수행하기 때문에 <strong>footer</strong>와의 거리를 지속적으로 업데이트할 수 있어 <strong>footer</strong>에 도달하기 전에 정상적으로 콘텐츠를 추가로 가져올 수 있을 것이다.</p>
+<p>만약 무한 스크롤 페이지를 구현할 때 <strong>Debounce</strong>를 사용했다고 가정해보자. 스크롤 이벤트가 멈춰야만 footer와의 거리를 확인하고 콘텐츠를 추가로 가져올 것이기 때문에 footer에 도달하더라도 스크롤 이벤트가 설정한 시간 내에 다시 발생한다면 아무런 변화도 일어나지 않을 것이다.</p>
+<p>하지만 <strong>Throttle</strong>은 정기적으로 연산이 실행되기 때문에 위의 문제가 발생하지 않는다. 설정한 시간마다 연산을 수행하기 때문에 footer와의 거리를 지속적으로 업데이트할 수 있어 footer에 도달하기 전에 정상적으로 콘텐츠를 추가로 가져올 수 있을 것이다.</p>
 <h1 id="📚-참고자료"><a href="#📚-참고자료" class="headerlink" title="📚 참고자료"></a>📚 참고자료</h1><p><a href="https://webclub.tistory.com/607">https://webclub.tistory.com/607</a></p>
 <p><a href="https://www.youtube.com/watch?v=cjIswDCKgu0">https://www.youtube.com/watch?v=cjIswDCKgu0</a></p>
 ]]></content>
@@ -105,7 +105,7 @@
   <entry>
     <title>Hexo로 블로그 만들기</title>
     <url>/2022/10/14/Making-Hexo-Blog/</url>
-    <content><![CDATA[<p>개인 블로그를 만들어야겠다는 생각만 계속 하다가 우연히 회사에서 일을 하다가 Hexo 프레임워크를 접하게 되었다. 보자마자 나한테 딱 적합한 프레임워크라는 생각이 들어서 Hexo를 통해 개인 블로그를 만들어야겠다고 결정했다.</p>
+    <content><![CDATA[<p>개인 블로그를 만들어야겠다는 생각만 계속 하다가 우연히 회사에서 일을 하다가 <strong>Hexo</strong> 프레임워크를 접하게 되었다. 보자마자 나한테 딱 적합한 프레임워크라는 생각이 들어서 <strong>Hexo</strong>를 통해 개인 블로그를 만들어야겠다고 결정했다.</p>
 <p>다른 무엇보다도 마크다운 파일을 활용할 수 있다는 점이 가장 매력적으로 다가왔다. 그동안 개인적으로 깃허브의 TIL 저장소에 개발 관련 지식들을 마크다운 파일로 계속 작성해왔었는데, 그 자료들을 그대로 사용할 수 있게 되었다.</p>
 <h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
 <p><em>공식문서</em></p>
@@ -116,7 +116,7 @@
 <li>Node.js (Should be at least Node.js 10.13, recommends 12.0 or higher)</li>
 <li>Git</li>
 </ul>
-<p>두 가지를 모두 설치했다면, <strong>npm</strong>을 이용해서 <strong>Hexo</strong>를 설치해주면 된다.</p>
+<p>두 가지를 모두 설치했다면, npm을 이용해서 <strong>Hexo</strong>를 설치해주면 된다.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <h1 id="👶초기화"><a href="#👶초기화" class="headerlink" title="👶초기화"></a>👶초기화</h1><p><strong>Hexo</strong>를 설치했다면, 타겟 <code>&lt;folder&gt;</code>의 <strong>Hexo</strong>를 초기화하기 위해 터미널에서 아래 명령어를 실행하자.</p>
@@ -129,72 +129,72 @@
 <li>환경설정 파일</li>
 </ul>
 <h2 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h2><ul>
-<li><strong>Hexo</strong>는 <strong>scaffold</strong> 폴더를 기준으로 포스트를 생성</li>
+<li><strong>Hexo</strong>는 scaffold 폴더를 기준으로 포스트를 생성</li>
 <li>다시 말하면 문서의 기본 틀이 위치하는 폴더이다.</li>
 </ul>
 <h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><ul>
 <li>웹 사이트 컨텐츠 폴더</li>
-<li><strong>Hexo</strong>는 숨겨진 파일과 _ (언더스코어)로 시작하는 파일 및 폴더들을 무시(<strong>_posts</strong> 폴더는 제외)</li>
+<li><strong>Hexo</strong>는 숨겨진 파일과 _ (언더스코어)로 시작하는 파일 및 폴더들을 무시(_posts 폴더는 제외)</li>
 <li>렌더링이 가능한 파일들(ex. Markdown, HTML)은 처리된 후 public 폴더로 들어감</li>
 <li>그 외 파일들은 단순히 복사</li>
 </ul>
 <h2 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h2><ul>
-<li><strong>Hexo</strong>는 <strong>theme</strong>와 <strong>source</strong> 폴더의 컨텐츠를 혼합해 정적인 웹 사이트를 생성</li>
+<li><strong>Hexo</strong>는 theme와 source 폴더의 컨텐츠를 혼합해 정적인 웹 사이트를 생성</li>
 </ul>
 <h1 id="🤔튜토리얼"><a href="#🤔튜토리얼" class="headerlink" title="🤔튜토리얼"></a>🤔튜토리얼</h1><blockquote>
 <p>아래 튜토리얼은 hexo 6.3.0을 기준으로 작성됨.</p>
 </blockquote>
-<h2 id="초기-화면-확인"><a href="#초기-화면-확인" class="headerlink" title="초기 화면 확인"></a>초기 화면 확인</h2><p><strong>npm</strong>을 통해 <strong>Hexo</strong>를 설치하면 기본적으로 <a href="https://github.com/hexojs/hexo-theme-landscape#readme">landscape</a> 테마가 설정되어있고, 1개의 포스트가 작성되어있다.</p>
+<h2 id="초기-화면-확인"><a href="#초기-화면-확인" class="headerlink" title="초기 화면 확인"></a>초기 화면 확인</h2><p>npm을 통해 <strong>Hexo</strong>를 설치하면 기본적으로 <a href="https://github.com/hexojs/hexo-theme-landscape#readme">landscape</a> 테마가 설정되어있고, 1개의 포스트가 작성되어있다.</p>
 <p>이를 로컬 서버(<a href="http://localhost:4000/)%EC%97%90%EC%84%9C">http://localhost:4000/)에서</a> 확인하기 위해서는 아래 명령어를 실행시키면 된다.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<h2 id="포스트-작성하기"><a href="#포스트-작성하기" class="headerlink" title="포스트 작성하기"></a>포스트 작성하기</h2><p>포스트를 작성하기 위해서는 <strong>new</strong>라는 명령어를 사용하면 된다.</p>
+<h2 id="포스트-작성하기"><a href="#포스트-작성하기" class="headerlink" title="포스트 작성하기"></a>포스트 작성하기</h2><p>포스트를 작성하기 위해서는 new라는 명령어를 사용하면 된다.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><strong>layout</strong>이 제공되지 않으면 <strong>default layout</strong> 사용</li>
-<li><strong>title</strong>에 공백 포함시 따옴표로 감싸주기</li>
+<li>layout이 제공되지 않으면 default layout 사용</li>
+<li>title에 공백 포함시 따옴표로 감싸주기</li>
 </ul>
-<p><strong>default layout</strong>은 환경설정 파일인 <strong>_config.yml</strong>에서 확인할 수 있다. 초기에는 <strong>post layout</strong>이 적용되어 있다.</p>
+<p>default layout은 환경설정 파일인 _config.yml에서 확인할 수 있다. 초기에는 post layout이 적용되어 있다.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new &quot;My First post&quot;</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2022/10/14/Making-Hexo-Blog/image1.png"></p>
 <p>포스트가 정상적으로 작성되었다.</p>
-<h2 id="Front-matter-활용"><a href="#Front-matter-활용" class="headerlink" title="Front-matter 활용"></a>Front-matter 활용</h2><h3 id="Front-matter란"><a href="#Front-matter란" class="headerlink" title="Front-matter란?"></a>Front-matter란?</h3><p><strong>Front-matter</strong>는 <strong>YAML</strong> 또는 <strong>JSON</strong>으로 구성된 문단이다. 파일의 처음 부분에 위치해 사용자 글 작성에 대한 설정을 하는데 사용된다.</p>
+<h2 id="Front-matter-활용"><a href="#Front-matter-활용" class="headerlink" title="Front-matter 활용"></a>Front-matter 활용</h2><h3 id="Front-matter란"><a href="#Front-matter란" class="headerlink" title="Front-matter란?"></a>Front-matter란?</h3><p>Front-matter는 YAML 또는 JSON으로 구성된 문단이다. 파일의 처음 부분에 위치해 사용자 글 작성에 대한 설정을 하는데 사용된다.</p>
 <ul>
 <li><strong>YAML</strong><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2013/7/13 20:46:25</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
 <li><strong>JSON</strong><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;title&quot;: &quot;Hello World&quot;,</span><br><span class="line">&quot;date&quot;: &quot;2013/7/13 20:46:25&quot;</span><br><span class="line">;;;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>자세한 설정은 <a href="https://hexo.io/docs/front-matter">링크</a>를 확인해보자.</p>
-<h3 id="Categories-amp-Tags"><a href="#Categories-amp-Tags" class="headerlink" title="Categories &amp; Tags"></a>Categories &amp; Tags</h3><p>위 두 가지는 <strong>Front-matter</strong>의 속성들로, <strong>post</strong>에만 적용이 가능하다. 카테고리는 게시물에 순서대로 적용되기 때문에 계층이 발생하지만 태그는 계층이 발생하지 않기 때문에 순서는 중요하지 않다.</p>
+<h3 id="Categories-amp-Tags"><a href="#Categories-amp-Tags" class="headerlink" title="Categories &amp; Tags"></a>Categories &amp; Tags</h3><p>위 두 가지는 Front-matter의 속성들로, post에만 적용이 가능하다. 카테고리는 게시물에 순서대로 적용되기 때문에 계층이 발생하지만 태그는 계층이 발생하지 않기 때문에 순서는 중요하지 않다.</p>
 <hr>
-<p>그러면 실제로 <strong>Front-matter</strong>를 사용해보자.</p>
+<p>그러면 실제로 Front-matter를 사용해보자.</p>
 <ol>
-<li><p><strong>scaffolds</strong>폴더에 layout을 작성해준다. </p>
+<li><p>scaffolds폴더에 layout을 작성해준다. </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root/scaffolds/sports</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line">- Sports</span><br><span class="line">tags:</span><br><span class="line">- Fun</span><br><span class="line">- Exciting</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>명령어를 통해 해당 <strong>layout</strong>을 적용한 <strong>post</strong>를 생성한다.</p>
+<li><p>명령어를 통해 해당 layout을 적용한 post를 생성한다.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new sports <span class="string">&quot;About Sports&quot;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <p><img src="/2022/10/14/Making-Hexo-Blog/image2.png"></p>
-<h2 id="Asset-Folder-활용"><a href="#Asset-Folder-활용" class="headerlink" title="Asset Folder 활용"></a>Asset Folder 활용</h2><h3 id="Global-Asset-Folder"><a href="#Global-Asset-Folder" class="headerlink" title="Global Asset Folder"></a>Global Asset Folder</h3><p><strong>Assets</strong>은 <strong>source</strong>폴더 안에 위치하는 <strong>post</strong>가 아닌 파일로 <strong>images, CSS, javascript 파일</strong>등이 이에 해당한다. <strong>Hexo</strong> 프로젝트에 많은 이미지 파일을 사용할 것이 아니라면 이미지 파일을 관리하기 가장 쉬운 방법은 이미지 파일들을 <code>source/images</code> 디렉토리에 위치시키는 것이다. </p>
-<h3 id="Post-Asset-Folder"><a href="#Post-Asset-Folder" class="headerlink" title="Post Asset Folder"></a>Post Asset Folder</h3><p><strong>Post Asset Folder</strong>는 <strong>Assets</strong>을 주기적으로 사용하며 <strong>post</strong>별로 <strong>Assets</strong>을 구분하고 싶은 사람들을 위해 <strong>Hexo</strong>가 제공하는 기능이다.<br>이 기능을 사용하기 위해서는 <strong>_config.yml</strong>에서 <strong>post_asset_folder</strong>의 값을 <strong>true</strong>로 변경해주면 된다. 그 다음부터는 <strong>Hexo</strong>가 <strong>post</strong>를 생성할 때마다 <strong>post</strong>와 동일한 이름을 가진 <strong>Asset Folder</strong>를 생성한다. 그리고 <strong>post</strong>에서는 상대 경로를 사용해 <strong>Assets</strong>에 접근할 수 있다. </p>
+<h2 id="Asset-Folder-활용"><a href="#Asset-Folder-활용" class="headerlink" title="Asset Folder 활용"></a>Asset Folder 활용</h2><h3 id="Global-Asset-Folder"><a href="#Global-Asset-Folder" class="headerlink" title="Global Asset Folder"></a>Global Asset Folder</h3><p>Assets은 source폴더 안에 위치하는 post가 아닌 파일로 images, CSS, javascript 파일등이 이에 해당한다. <strong>Hexo</strong> 프로젝트에 많은 이미지 파일을 사용할 것이 아니라면 이미지 파일을 관리하기 가장 쉬운 방법은 이미지 파일들을 <code>source/images</code> 디렉토리에 위치시키는 것이다. </p>
+<h3 id="Post-Asset-Folder"><a href="#Post-Asset-Folder" class="headerlink" title="Post Asset Folder"></a>Post Asset Folder</h3><p>Post Asset Folder는 Assets을 주기적으로 사용하며 post별로 Assets을 구분하고 싶은 사람들을 위해 <strong>Hexo</strong>가 제공하는 기능이다.<br>이 기능을 사용하기 위해서는 _config.yml에서 post_asset_folder의 값을 true로 변경해주면 된다. 그 다음부터는 <strong>Hexo</strong>가 post를 생성할 때마다 post와 동일한 이름을 가진 Asset Folder를 생성한다. 그리고 post에서는 상대 경로를 사용해 Assets에 접근할 수 있다. </p>
 <h3 id="이미지-넣기"><a href="#이미지-넣기" class="headerlink" title="이미지 넣기"></a>이미지 넣기</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">post_asset_folder: true</span><br><span class="line">marked:</span><br><span class="line">  prependRoot: true</span><br><span class="line">  postAsset: true</span><br></pre></td></tr></table></figure>
 
-<p>위와 같이 설정하면 <strong>Asset image</strong>는 자동으로 해당 포스트의 경로로 <strong>resolve</strong>된다.<br>예를 들어, <code>image.jpg</code>가 <code>/2020/01/02/foo/image.jpg</code>에 있다고 한다면, <code>/2020/01/02/foo</code> <strong>post</strong>의 <strong>Asset image</strong>라는 걸 의미한다. 그리고 아래와 같이 작성하면, </p>
+<p>위와 같이 설정하면 Asset image는 자동으로 해당 포스트의 경로로 resolve된다.<br>예를 들어, <code>image.jpg</code>가 <code>/2020/01/02/foo/image.jpg</code>에 있다고 한다면, <code>/2020/01/02/foo</code> post의 Asset image라는 걸 의미한다. 그리고 아래와 같이 작성하면, </p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![](image.jpg)</span><br></pre></td></tr></table></figure>
 
 <p><code>&lt;img src=&quot;/2020/01/02/foo/image.jpg&gt;</code>로 렌더링된다.</p>
-<h1 id="🚀배포하기"><a href="#🚀배포하기" class="headerlink" title="🚀배포하기"></a>🚀배포하기</h1><p><strong>Hexo</strong>를 사용하면 다양한 곳에 배포가 가능하지만, 일반적으로 <strong>Github Pages</strong>를 가장 많이 활용한다. 특히 <a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>패키지를 사용하면 정말 간단하게 <strong>Github Pages</strong>로 배포가 가능하다.</p>
+<h1 id="🚀배포하기"><a href="#🚀배포하기" class="headerlink" title="🚀배포하기"></a>🚀배포하기</h1><p><strong>Hexo</strong>를 사용하면 다양한 곳에 배포가 가능하지만, 일반적으로 Github Pages를 가장 많이 활용한다. 특히 <a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>패키지를 사용하면 정말 간단하게 Github Pages로 배포가 가능하다.</p>
 <ol>
-<li><p>깃허브에서 <strong>username.github.io</strong>의 이름으로 저장소를 만든다. 여기서 <strong>username</strong>은 사용자 본인의 <strong>username</strong>이다.</p>
+<li><p>깃허브에서 username.github.io의 이름으로 저장소를 만든다. 여기서 username은 사용자 본인의 username이다.</p>
 </li>
 <li><p>해당 저장소에서 블로그를 만든다.</p>
 </li>
 <li><p><a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>를 설치한다.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>_config.yml</strong> 파일에서 배포 관련 설정을 한다.</p>
+<li><p>_config.yml 파일에서 배포 관련 설정을 한다.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repository url&gt; # https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io</span><br><span class="line">  branch: [branch]</span><br><span class="line">  message: [message]</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -205,23 +205,23 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><strong>repo</strong></td>
+<td align="left">repo</td>
 <td align="left">저장소 URL</td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left"><strong>branch</strong></td>
+<td align="left">branch</td>
 <td align="left">브랜치 이름</td>
-<td align="left"><strong>gh-pages</strong> (GitHub) <strong>coding-pages</strong> (Coding.net) <strong>master</strong> (others)</td>
+<td align="left">gh-pages (GitHub) coding-pages (Coding.net) master (others)</td>
 </tr>
 <tr>
-<td align="left"><strong>message</strong></td>
+<td align="left">message</td>
 <td align="left">커밋 메시지</td>
 <td align="left"><code>Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;</code></td>
 </tr>
 </tbody></table>
 </li>
-<li><p><strong>hexo clean &amp;&amp; hexo deploy</strong> 명령어로 배포한다.</p>
+<li><p>hexo clean &amp;&amp; hexo deploy 명령어로 배포한다.</p>
 </li>
 </ol>
 <h1 id="😎마무리"><a href="#😎마무리" class="headerlink" title="😎마무리"></a>😎마무리</h1><p>지금까지 <strong>Hexo</strong>를 활용해 블로그를 만드는 법에 대해 간단하게 알아봤다. 물론 깊은 내용을 다루자면 끝도 없겠지만 위 내용으로도 블로그를 만들고 배포하는 데에는 전혀 문제가 없을 것이라고 생각한다.</p>
@@ -233,13 +233,14 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>Hexo</tag>
         <tag>Tutorial</tag>
       </tags>
   </entry>
   <entry>
     <title>IndexedDB 기초</title>
     <url>/2022/10/26/Using-IndexedDB/</url>
-    <content><![CDATA[<p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, <strong>localstroage</strong>사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
+    <content><![CDATA[<p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
 <h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
 <p><em>MDN IndexedDB API 문서</em></p>
 <p><em>IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.</em></p>
@@ -247,9 +248,9 @@
 <h1 id="🔧기본-패턴"><a href="#🔧기본-패턴" class="headerlink" title="🔧기본 패턴"></a>🔧기본 패턴</h1><ol>
 <li><p>데이터베이스를 연다.</p>
 </li>
-<li><p>데이터베이스에 <strong>object store</strong>을 생성한다.</p>
+<li><p>데이터베이스에 object store을 생성한다.</p>
 </li>
-<li><p><strong>Transaction</strong>을 시작한 후 <strong>request</strong>를 생성해 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
+<li><p>Transaction을 시작한 후 request를 생성해 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
 </li>
 </ol>
 <blockquote>
@@ -263,40 +264,40 @@
 </blockquote>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> testData = [</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;444-44-4444&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Bill&#x27;</span>, <span class="attr">age</span>: <span class="number">35</span>, <span class="attr">email</span>: <span class="string">&#x27;bill@company.com&#x27;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;555-55-5555&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Donna&#x27;</span>, <span class="attr">age</span>: <span class="number">32</span>, <span class="attr">email</span>: <span class="string">&#x27;donna@home.org&#x27;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDBRequest = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(<span class="string">&#x27;test&#x27;</span>);</span><br><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> db = event.<span class="property">target</span>.<span class="property">result</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> createTestStoreRequest = db.<span class="title function_">createObjectStore</span>(<span class="string">&#x27;test&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">keyPath</span>: <span class="string">&#x27;ssn&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
-<li><p><strong>indexedDB api</strong>의 <strong>open</strong> 메서드를 통해 데이터베이스 생성을 요청한다.</p>
-<p> <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행된다. 그러니까 <strong>open</strong> 메서드는 데이터베이스를 생성하도록 요청했을뿐 데이터베이스를 생성해 바로 반환하지 않는다는 것이다.</p>
+<li><p><strong>indexedDB</strong> api의 open 메서드를 통해 데이터베이스 생성을 요청한다.</p>
+<p> <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행된다. 그러니까 open 메서드는 데이터베이스를 생성하도록 요청했을뿐 데이터베이스를 생성해 바로 반환하지 않는다는 것이다.</p>
 </li>
-<li><p>트리거된 <strong>onupgradeneeded event</strong>에서 <strong>object store</strong> 생성을 요청한다.</p>
-<p> 앞에서 말했듯이 <strong>open</strong> 메서드로 인해 데이터베이스 생성 작업이 요청되었고, 그 작업이 완료됨에 따라 <strong>onupgradeneeded event</strong>가 트리거된다.</p>
-<p> <strong>Promise</strong>나 <strong>async await</strong>을 사용하는 것처럼 <strong>IndexedDB</strong>에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.</p>
-<p> 그러니까 위의 예시는 데이터베이스가 생성된 다음에 발생되는 <strong>onupgradeneeded event</strong>에 핸들러를 작성해서 <strong>db</strong> 라는 변수에 데이터베이스를 할당하고, 데이터를 저장하기 위한 <strong>object store</strong>을 만든 것이다. <strong>object store</strong>를 생성하기 위해서는 <strong>createObjectStore</strong> 메서드를 사용하면 되는데, 이 메서드는 두 가지 인자를 받는다.</p>
+<li><p>트리거된 onupgradeneeded event에서 object store 생성을 요청한다.</p>
+<p> 앞에서 말했듯이 open 메서드로 인해 데이터베이스 생성 작업이 요청되었고, 그 작업이 완료됨에 따라 onupgradeneeded event가 트리거된다.</p>
+<p> Promise나 async await을 사용하는 것처럼 <strong>IndexedDB</strong>에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.</p>
+<p> 그러니까 위의 예시는 데이터베이스가 생성된 다음에 발생되는 onupgradeneeded event에 핸들러를 작성해서 db 라는 변수에 데이터베이스를 할당하고, 데이터를 저장하기 위한 object store을 만든 것이다. object store를 생성하기 위해서는 createObjectStore 메서드를 사용하면 되는데, 이 메서드는 두 가지 인자를 받는다.</p>
 <ul>
-<li><p><strong>name</strong> : <strong>object store</strong>의 이름이다.</p>
+<li><p>name : object store의 이름이다.</p>
 </li>
-<li><p><strong>options</strong> [Optional] : 아래의 속성을 갖는 객체이다.</p>
+<li><p>options [Optional] : 아래의 속성을 갖는 객체이다.</p>
 <ol>
-<li><p><strong>Keypath</strong> [Optional]</p>
-<p> 새로운 <strong>object store</strong>에서 사용할 <strong>Keypath</strong>를 설정한다. 저장할 각 객체 데이터들이 고유한 값을 가지는 속성명을 작성하면 된다. 데이터베이스의 기본키를 설정한다고 생각하면 좀 더 이해가 쉬울 것이다.</p>
+<li><p>Keypath [Optional]</p>
+<p> 새로운 object store에서 사용할 Keypath를 설정한다. 저장할 각 객체 데이터들이 고유한 값을 가지는 속성명을 작성하면 된다. 데이터베이스의 기본키를 설정한다고 생각하면 좀 더 이해가 쉬울 것이다.</p>
 </li>
-<li><p><strong>autoIncrement</strong> [Optional]</p>
-<p> 데이터의 키를 생성해주는 매커니즘인 <strong>key-generator</strong> 사용 여부를 설정한다. 기본값은 false이다.</p>
+<li><p>autoIncrement [Optional]</p>
+<p> 데이터의 키를 생성해주는 매커니즘인 key-generator 사용 여부를 설정한다. 기본값은 false이다.</p>
 </li>
 </ol>
-<p>  여기서 주의할 점은 <strong>keypath</strong>를 작성하지 않고 <strong>autoIncrement</strong>도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 <strong>Keypath</strong>의 값을 작성해주는 게 가장 좋다.</p>
-<p>  물론 <strong>autoIncrement</strong>를 true로 바꿔 <strong>key-generator</strong>을 사용해서 데이터의 키를 자동으로 생성할 수도 있다. 하지만 실제로 사용해본 결과, 데이터가 삽입된 순서대로 1,2,3… 의 값을 키로 사용하기 때문에 기본키로서는 적합하지 않다고 생각한다.</p>
+<p>  여기서 주의할 점은 keypath를 작성하지 않고 autoIncrement도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 Keypath의 값을 작성해주는 게 가장 좋다.</p>
+<p>  물론 autoIncrement를 true로 바꿔 key-generator을 사용해서 데이터의 키를 자동으로 생성할 수도 있다. 하지만 실제로 사용해본 결과, 데이터가 삽입된 순서대로 1,2,3… 의 값을 키로 사용하기 때문에 기본키로서는 적합하지 않다고 생각한다.</p>
 </li>
 </ul>
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  createTestStoreRequest.<span class="property">transaction</span>.<span class="property">oncomplete</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> testObjStore = db.<span class="title function_">transaction</span>(<span class="string">&#x27;test&#x27;</span>, <span class="string">&#x27;readwrite&#x27;</span>).<span class="title function_">objectStore</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    testData.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      testObjStore.<span class="title function_">add</span>(item)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li><p>트리거된 <strong>oncomplete event</strong>에서 새롭게 생성된 <strong>object store</strong>에다가 데이터를 삽입한다.<br> 앞 단계에서와 마찬가지로 <strong>object store</strong>은 생성 요청만 이루어졌을 뿐이다. 따라서 데이터를 정상적으로 삽입하기 위해서는 <strong>object store</strong> 생성이 완료되는 시점에 트리거되는 <strong>oncomplete event</strong>에서 데이터를 삽입해주면 된다.</p>
-<p> 데이터베이스와 관련된 작업을 하기 위해서는 먼저 트랜잭션을 시작해야 한다. 이를 위해서는 <strong>transaction</strong> 메서드를 사용해야 하며, <strong>transaction</strong> 메서드는 3개의 인자를 받는다.</p>
+<li><p>트리거된 oncomplete event에서 새롭게 생성된 object store에다가 데이터를 삽입한다.<br> 앞 단계에서와 마찬가지로 object store은 생성 요청만 이루어졌을 뿐이다. 따라서 데이터를 정상적으로 삽입하기 위해서는 object store 생성이 완료되는 시점에 트리거되는 oncomplete event에서 데이터를 삽입해주면 된다.</p>
+<p> 데이터베이스와 관련된 작업을 하기 위해서는 먼저 트랜잭션을 시작해야 한다. 이를 위해서는 transaction 메서드를 사용해야 하며, transaction 메서드는 3개의 인자를 받는다.</p>
 <ul>
 <li><p><strong>storeNames</strong></p>
-<p>새로운 트랜잭션의 <strong>scope</strong>에 포함시킬 <strong>object store</strong>의 이름들을 값을 갖는 배열이다. 단 하나의 <strong>object store</strong>만 포함시킬 경우에는 <strong>object store</strong>의 이름을 문자열로 전달할 수도 있다. </p>
+<p>새로운 트랜잭션의 scope에 포함시킬 object store의 이름들을 값을 갖는 배열이다. 단 하나의 object store만 포함시킬 경우에는 object store의 이름을 문자열로 전달할 수도 있다. </p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>([<span class="string">&#x27;my-store-name&#x27;</span>]);</span><br><span class="line">db.<span class="title function_">transaction</span>(<span class="string">&#x27;my-store-name&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<p>데이터베이스에 있는 모든 <strong>object store</strong>을 포함시키려면 <code>IDBDatabase.objectStoreNames</code> 속성을 사용할 수 있다.</p>
+<p>데이터베이스에 있는 모든 object store을 포함시키려면 <code>IDBDatabase.objectStoreNames</code> 속성을 사용할 수 있다.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>(db.<span class="property">objectStoreNames</span>);</span><br></pre></td></tr></table></figure>
 
 </li>
@@ -313,7 +314,7 @@
 <p>아래의 속성을 갖는 객체이다.</p>
 <ol>
 <li><p><strong>durability</strong></p>
-<p> <strong>default</strong>, <strong>strict</strong>, 그리고 <strong>relaxed</strong>의 3가지 값을 가진다. 기본값은 <strong>default</strong>이다. 각 값에 따라 성능이 달라지며, 사용자의 환경에 따라 다른 값을 설정해주면 된다.</p>
+<p> default, strict, 그리고 relaxed의 3가지 값을 가진다. 기본값은 default이다. 각 값에 따라 성능이 달라지며, 사용자의 환경에 따라 다른 값을 설정해주면 된다.</p>
 </li>
 </ol>
 </li>
@@ -332,6 +333,8 @@
       </categories>
       <tags>
         <tag>Tutorial</tag>
+        <tag>Database</tag>
+        <tag>indexedDB</tag>
         <tag>Basic</tag>
       </tags>
   </entry>
