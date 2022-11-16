@@ -2,6 +2,7 @@
 title: "[Coding Test] 프로그래머스 -폰켓몬-"
 categories:
   - Coding-Test
+  - Programmers
 tags:
   - Coding-Test
   - Programmers
