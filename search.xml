@@ -11,6 +11,7 @@
 ]]></content>
       <categories>
         <category>Coding-Test</category>
+        <category>Programmers</category>
       </categories>
       <tags>
         <tag>Coding-Test</tag>
@@ -90,23 +91,6 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -문자열 내 마음대로 정렬하기-</title>
-    <url>/2022/11/16/Coding-Test-Programmers-7/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12915">https://school.programmers.co.kr/learn/courses/30/lessons/12915</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제만 잘 이해하면 풀 수 있다.</p>
-<p>sort 메서드를 사용하면 기본적으로 맨 앞의 문자를 비교해서 정렬이 이루어지는데, 조건을 추가해 두 번째 글자를 기준으로 정렬을 하라는 문제이다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">strings, n</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> strings.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (a[n] &lt; b[n]) <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> (a[n] &gt; b[n]) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> (a[n] === b[n]) <span class="keyword">return</span> a &lt; b ? -<span class="number">1</span> : <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Coding-Test</category>
-        <category>Programmers</category>
-      </categories>
-      <tags>
-        <tag>Coding-Test</tag>
-        <tag>Programmers</tag>
-        <tag>Lv.1</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[Coding Test] 프로그래머스 -두 정수 사이의 합-</title>
     <url>/2022/11/16/Coding-Test-Programmers-6/</url>
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12912">https://school.programmers.co.kr/learn/courses/30/lessons/12912</a></p>
@@ -124,11 +108,12 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -문자열 내 p와 y의 개수-</title>
-    <url>/2022/11/16/Coding-Test-Programmers-8/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12916">https://school.programmers.co.kr/learn/courses/30/lessons/12916</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> pCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> yCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> letter <span class="keyword">of</span> s) &#123;</span><br><span class="line">    <span class="keyword">if</span> (letter === <span class="string">&#x27;p&#x27;</span> || letter === <span class="string">&#x27;P&#x27;</span>) &#123;</span><br><span class="line">      pCnt++</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (letter === <span class="string">&#x27;y&#x27;</span> || letter === <span class="string">&#x27;Y&#x27;</span>) &#123;</span><br><span class="line">      yCnt++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (pCnt === yCnt) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>[Coding Test] 프로그래머스 -문자열 내 마음대로 정렬하기-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-7/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12915">https://school.programmers.co.kr/learn/courses/30/lessons/12915</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제만 잘 이해하면 풀 수 있다.</p>
+<p>sort 메서드를 사용하면 기본적으로 맨 앞의 문자를 비교해서 정렬이 이루어지는데, 조건을 추가해 두 번째 글자를 기준으로 정렬을 하라는 문제이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">strings, n</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> strings.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (a[n] &lt; b[n]) <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> (a[n] &gt; b[n]) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> (a[n] === b[n]) <span class="keyword">return</span> a &lt; b ? -<span class="number">1</span> : <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -240,6 +225,22 @@
         <tag>Javascript</tag>
         <tag>Debounce</tag>
         <tag>Throttle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -문자열 내 p와 y의 개수-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-8/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12916">https://school.programmers.co.kr/learn/courses/30/lessons/12916</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> pCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> yCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> letter <span class="keyword">of</span> s) &#123;</span><br><span class="line">    <span class="keyword">if</span> (letter === <span class="string">&#x27;p&#x27;</span> || letter === <span class="string">&#x27;P&#x27;</span>) &#123;</span><br><span class="line">      pCnt++</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (letter === <span class="string">&#x27;y&#x27;</span> || letter === <span class="string">&#x27;Y&#x27;</span>) &#123;</span><br><span class="line">      yCnt++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (pCnt === yCnt) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
       </tags>
   </entry>
   <entry>
