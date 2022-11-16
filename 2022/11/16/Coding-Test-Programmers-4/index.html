@@ -21,28 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Hello, Im Jun 🐷학습한 지식을 글로 정리하는 걸 좋아하는 프론트엔드 개발자입니다. 나뿐만 아니라 남들도 이해할 수 있는 글을 쓰려고 노력하고 있습니다. 수기공모전 입상작 보러가기 🏢 Career Obigo &#x2F; Moblilty Service Team 2 &#x2F; Engineer (22.03~재직중)  스마트카 SW 플랫폼 및 컨텐츠">
-<meta property="og:type" content="website">
-<meta property="og:title" content="소개">
-<meta property="og:url" content="http://example.com/about/index.html">
+    <meta name="description" content="📃문제 링크https:&#x2F;&#x2F;school.programmers.co.kr&#x2F;learn&#x2F;courses&#x2F;30&#x2F;lessons&#x2F;12906 🤨생각하기배열 안에서의 연속된 숫자들을 제거하는 문제이다. 간단한 문제이지만 기존 배열의 순서를 지켜야 하기 때문에 배열의 앞에서부터 순회하며 이전 인덱스의 값과 현재의 값이 같지 않은 경우에만 새로운 배열에다가 push 해주면">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Coding Test] 프로그래머스 -같은 숫자는 싫어-">
+<meta property="og:url" content="http://example.com/2022/11/16/Coding-Test-Programmers-4/index.html">
 <meta property="og:site_name" content="Elio&#39;s Blog">
-<meta property="og:description" content="Hello, Im Jun 🐷학습한 지식을 글로 정리하는 걸 좋아하는 프론트엔드 개발자입니다. 나뿐만 아니라 남들도 이해할 수 있는 글을 쓰려고 노력하고 있습니다. 수기공모전 입상작 보러가기 🏢 Career Obigo &#x2F; Moblilty Service Team 2 &#x2F; Engineer (22.03~재직중)  스마트카 SW 플랫폼 및 컨텐츠">
+<meta property="og:description" content="📃문제 링크https:&#x2F;&#x2F;school.programmers.co.kr&#x2F;learn&#x2F;courses&#x2F;30&#x2F;lessons&#x2F;12906 🤨생각하기배열 안에서의 연속된 숫자들을 제거하는 문제이다. 간단한 문제이지만 기존 배열의 순서를 지켜야 하기 때문에 배열의 앞에서부터 순회하며 이전 인덱스의 값과 현재의 값이 같지 않은 경우에만 새로운 배열에다가 push 해주면">
 <meta property="og:locale" content="ko_KR">
-<meta property="article:published_time" content="2022-10-06T08:15:39.000Z">
-<meta property="article:modified_time" content="2022-11-14T04:50:30.500Z">
+<meta property="article:published_time" content="2022-11-16T01:25:31.000Z">
+<meta property="article:modified_time" content="2022-11-16T04:56:41.764Z">
 <meta property="article:author" content="Elio">
+<meta property="article:tag" content="Coding-Test">
+<meta property="article:tag" content="Programmers">
+<meta property="article:tag" content="Lv.1">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/about/">
+<link rel="canonical" href="http://example.com/2022/11/16/Coding-Test-Programmers-4/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"ko","comments":"","permalink":"http://example.com/about/index.html","path":"about/index.html","title":"소개"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"http://example.com/2022/11/16/Coding-Test-Programmers-4/","path":"2022/11/16/Coding-Test-Programmers-4/","title":"[Coding Test] 프로그래머스 -같은 숫자는 싫어-"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>소개 | Elio's Blog
-</title>
+<title>[Coding Test] 프로그래머스 -같은 숫자는 싫어- | Elio's Blog</title>
   
 
 
@@ -145,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-Im-Jun-%F0%9F%90%B7"><span class="nav-number">1.</span> <span class="nav-text">Hello, Im Jun 🐷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%8F%A2-Career"><span class="nav-number">2.</span> <span class="nav-text">🏢 Career</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%93%9ATech-Stack"><span class="nav-number">3.</span> <span class="nav-text">📚Tech Stack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%8E%87Side-Project"><span class="nav-number">4.</span> <span class="nav-text">🎇Side-Project</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%9A%80More%E2%80%A6"><span class="nav-number">5.</span> <span class="nav-text">🚀More…</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%93%83%EB%AC%B8%EC%A0%9C-%EB%A7%81%ED%81%AC"><span class="nav-number">1.</span> <span class="nav-text">📃문제 링크</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%A4%A8%EC%83%9D%EA%B0%81%ED%95%98%EA%B8%B0"><span class="nav-number">2.</span> <span class="nav-text">🤨생각하기</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%98%8E%EB%82%B4-%ED%92%80%EC%9D%B4"><span class="nav-number">3.</span> <span class="nav-text">😎내 풀이</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -207,62 +209,132 @@
 </noscript>
 
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
 
 
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/16/Coding-Test-Programmers-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-Elio.jpg">
+      <meta itemprop="name" content="Elio">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Elio's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Coding Test] 프로그래머스 -같은 숫자는 싫어- | Elio's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Coding Test] 프로그래머스 -같은 숫자는 싫어-
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2022-11-16 10:25:31 / Updated at: 13:56:41" itemprop="dateCreated datePublished" datetime="2022-11-16T10:25:31+09:00">2022-11-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
     
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
     
-    
-    <div class="post-block" lang="ko"><header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">소개
-</h1>
-
-<div class="post-meta-container">
+    <a title="disqus" href="/2022/11/16/Coding-Test-Programmers-4/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/16/Coding-Test-Programmers-4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 </div>
 
-</header>
+        </div>
+      </header>
 
-      
-      
-      <div class="post-body">
-          <h1 id="Hello-Im-Jun-🐷"><a href="#Hello-Im-Jun-🐷" class="headerlink" title="Hello, Im Jun 🐷"></a>Hello, Im Jun 🐷</h1><p>학습한 지식을 글로 정리하는 걸 좋아하는 프론트엔드 개발자입니다.</p>
-<p>나뿐만 아니라 남들도 이해할 수 있는 글을 쓰려고 노력하고 있습니다.</p>
-<p><a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1FLpqFgVrHNa4Q1mDAxQE-IFRRr-SvIpP/edit?usp=sharing&ouid=106089248912006956347&rtpof=true&sd=true">수기공모전 입상작 보러가기</a></p>
-<h1 id="🏢-Career"><a href="#🏢-Career" class="headerlink" title="🏢 Career"></a>🏢 Career</h1><ul>
-<li><strong>Obigo &#x2F; Moblilty Service Team 2 &#x2F; Engineer (22.03~재직중)</strong></li>
-</ul>
-<p>스마트카 SW 플랫폼 및 컨텐츠 서비스 회사인 오비고에서 프론트엔드 개발자로 일하고 있습니다.</p>
-<h1 id="📚Tech-Stack"><a href="#📚Tech-Stack" class="headerlink" title="📚Tech Stack"></a>📚Tech Stack</h1><ul>
-<li><p><strong>Studying</strong> : <span style="color: #3178C6;">Typescript</span>, <span style="color: #61DAFB;">React</span></p>
-</li>
-<li><p><strong>Use well</strong> : <span style="color: #F7DF1E;">Javascript</span>, <span style="color: #4FC08D;">Vue</span></p>
-</li>
-</ul>
-<h1 id="🎇Side-Project"><a href="#🎇Side-Project" class="headerlink" title="🎇Side-Project"></a>🎇Side-Project</h1><ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://github.com/Seongtaek-H/yabojaFront">야보자! 이거어때?</a></strong></p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://github.com/dudwns0921/nomad-coders_kokoa-clone">코코아톡</a></strong></p>
-</li>
-</ul>
-<h1 id="🚀More…"><a href="#🚀More…" class="headerlink" title="🚀More…"></a>🚀More…</h1><p>저에 대해 좀 더 자세히 알고 싶으시면 아래 이력서와 포트폴리오를 참고해주세요!</p>
-<ul>
-<li><p><strong><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1hUEqHQgrrDG-se5cs5QdGnX8jft_nGWd/view?usp=sharing">공통 이력서 다운로드</a></strong></p>
-</li>
-<li><p><strong><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1m2ARcF43SsfCRS64U8R8378a6E_vXnXk/view?usp=sharing">공통 포트폴리오 다운로드</a></strong></p>
-</li>
-</ul>
-
-      </div>
-      
-      
-      
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12906">https://school.programmers.co.kr/learn/courses/30/lessons/12906</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>배열 안에서의 연속된 숫자들을 제거하는 문제이다.</p>
+<p>간단한 문제이지만 기존 배열의 순서를 지켜야 하기 때문에 배열의 앞에서부터 순회하며 이전 인덱스의 값과 현재의 값이 같지 않은 경우에만 새로운 배열에다가 push 해주면 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="keyword">if</span> (answer[answer.<span class="property">length</span> - <span class="number">1</span>] !== item) &#123;</span><br><span class="line">      answer.<span class="title function_">push</span>(item)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Coding-Test/" rel="tag"># Coding-Test</a>
+              <a href="/tags/Programmers/" rel="tag"># Programmers</a>
+              <a href="/tags/Lv-1/" rel="tag"># Lv.1</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/16/Coding-Test-Programmers-3/" rel="prev" title="[Coding Test] 프로그래머스 -가운데 글자 가져오기-">
+                  <i class="fa fa-chevron-left"></i> [Coding Test] 프로그래머스 -가운데 글자 가져오기-
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/11/16/Coding-Test-Programmers-5/" rel="next" title="[Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열-">
+                  [Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열- <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
 
 
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
 </div>
   </main>
 

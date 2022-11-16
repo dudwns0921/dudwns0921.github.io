@@ -23,14 +23,14 @@
 
     <meta name="description" content="최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage사용만으로는 구현이 어려워서 IndexedDB를 사용했다. 🙋‍♂️개요 MDN IndexedDB API 문서 IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.  🔧기본 패턴 데이터베이스를 연다.  데이터베이스에 obj">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IndexedDB 기초">
+<meta property="og:title" content="[Database] IndexedDB 기초">
 <meta property="og:url" content="http://example.com/2022/10/26/Using-IndexedDB/index.html">
 <meta property="og:site_name" content="Elio&#39;s Blog">
 <meta property="og:description" content="최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage사용만으로는 구현이 어려워서 IndexedDB를 사용했다. 🙋‍♂️개요 MDN IndexedDB API 문서 IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.  🔧기본 패턴 데이터베이스를 연다.  데이터베이스에 obj">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="http://example.com/2022/10/26/Using-IndexedDB/image1.PNG">
 <meta property="article:published_time" content="2022-10-26T02:47:52.000Z">
-<meta property="article:modified_time" content="2022-11-14T02:53:34.041Z">
+<meta property="article:modified_time" content="2022-11-15T03:59:23.740Z">
 <meta property="article:author" content="Elio">
 <meta property="article:tag" content="Tutorial">
 <meta property="article:tag" content="Database">
@@ -44,10 +44,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"http://example.com/2022/10/26/Using-IndexedDB/","path":"2022/10/26/Using-IndexedDB/","title":"IndexedDB 기초"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"http://example.com/2022/10/26/Using-IndexedDB/","path":"2022/10/26/Using-IndexedDB/","title":"[Database] IndexedDB 기초"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>IndexedDB 기초 | Elio's Blog</title>
+<title>[Database] IndexedDB 기초 | Elio's Blog</title>
   
 
 
@@ -165,18 +165,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -236,12 +236,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="IndexedDB 기초 | Elio's Blog">
+      <meta itemprop="name" content="[Database] IndexedDB 기초 | Elio's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          IndexedDB 기초
+          [Database] IndexedDB 기초
         </h1>
 
         <div class="post-meta-container">
@@ -259,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Updated at: 2022-11-14 11:53:34" itemprop="dateModified" datetime="2022-11-14T11:53:34+09:00">2022-11-14</time>
+      <time title="Updated at: 2022-11-15 12:59:23" itemprop="dateModified" datetime="2022-11-15T12:59:23+09:00">2022-11-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -268,10 +268,6 @@
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Database/IndexedDB/" itemprop="url" rel="index"><span itemprop="name">IndexedDB</span></a>
         </span>
     </span>
 
@@ -404,11 +400,14 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/10/14/Making-Hexo-Blog/" rel="prev" title="Hexo로 블로그 만들기">
-                  <i class="fa fa-chevron-left"></i> Hexo로 블로그 만들기
+                <a href="/2022/10/14/Making-Hexo-Blog/" rel="prev" title="[Hexo] Hexo로 블로그 만들기">
+                  <i class="fa fa-chevron-left"></i> [Hexo] Hexo로 블로그 만들기
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/11/15/Coding-Test-Programmers-1/" rel="next" title="[Coding Test] 프로그래머스 -폰켓몬-">
+                  [Coding Test] 프로그래머스 -폰켓몬- <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

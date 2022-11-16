@@ -21,23 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Elio&#39;s Blog">
-<meta property="og:url" content="http://example.com/tags/Database/index.html">
+    <meta name="description" content="📃문제 링크https:&#x2F;&#x2F;school.programmers.co.kr&#x2F;learn&#x2F;courses&#x2F;30&#x2F;lessons&#x2F;12910 🤨생각하기문제 그대로 구현하면 된다. filter 메서드를 사용하면 좀 더 가독성 높은 코드를 작성할 수 있다고 생각한다. 😎내 풀이12345678function solution(arr, divisor) &amp;#123;  const">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열-">
+<meta property="og:url" content="http://example.com/2022/11/16/Coding-Test-Programmers-5/index.html">
 <meta property="og:site_name" content="Elio&#39;s Blog">
+<meta property="og:description" content="📃문제 링크https:&#x2F;&#x2F;school.programmers.co.kr&#x2F;learn&#x2F;courses&#x2F;30&#x2F;lessons&#x2F;12910 🤨생각하기문제 그대로 구현하면 된다. filter 메서드를 사용하면 좀 더 가독성 높은 코드를 작성할 수 있다고 생각한다. 😎내 풀이12345678function solution(arr, divisor) &amp;#123;  const">
 <meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2022-11-16T04:57:02.000Z">
+<meta property="article:modified_time" content="2022-11-16T05:05:17.163Z">
 <meta property="article:author" content="Elio">
+<meta property="article:tag" content="Coding-Test">
+<meta property="article:tag" content="Programmers">
+<meta property="article:tag" content="Lv.1">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/tags/Database/">
+<link rel="canonical" href="http://example.com/2022/11/16/Coding-Test-Programmers-5/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"ko","comments":"","permalink":"","path":"tags/Database/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ko","comments":true,"permalink":"http://example.com/2022/11/16/Coding-Test-Programmers-5/","path":"2022/11/16/Coding-Test-Programmers-5/","title":"[Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열-"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>태그: Database | Elio's Blog</title>
+<title>[Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열- | Elio's Blog</title>
   
 
 
@@ -127,7 +134,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           목차
@@ -140,6 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%93%83%EB%AC%B8%EC%A0%9C-%EB%A7%81%ED%81%AC"><span class="nav-number">1.</span> <span class="nav-text">📃문제 링크</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%A4%A8%EC%83%9D%EA%B0%81%ED%95%98%EA%B8%B0"><span class="nav-number">2.</span> <span class="nav-text">🤨생각하기</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%98%8E%EB%82%B4-%ED%92%80%EC%9D%B4"><span class="nav-number">3.</span> <span class="nav-text">😎내 풀이</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,51 +209,132 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Database
-          <small>태그</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/16/Coding-Test-Programmers-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-Elio.jpg">
+      <meta itemprop="name" content="Elio">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Elio's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열- | Elio's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열-
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="Post created: 2022-11-16 13:57:02 / Updated at: 14:05:17" itemprop="dateCreated datePublished" datetime="2022-11-16T13:57:02+09:00">2022-11-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2022/11/16/Coding-Test-Programmers-5/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/16/Coding-Test-Programmers-5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12910">https://school.programmers.co.kr/learn/courses/30/lessons/12910</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
+<p>filter 메서드를 사용하면 좀 더 가독성 높은 코드를 작성할 수 있다고 생각한다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr, divisor</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> answer = arr.<span class="title function_">filter</span>(<span class="function">(<span class="params">num</span>) =&gt;</span> num % divisor === <span class="number">0</span>).<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)</span><br><span class="line">  <span class="keyword">if</span> (answer.<span class="property">length</span> === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> [-<span class="number">1</span>]</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-10-26T11:47:52+09:00"
-              content="2022-10-26">
-          10-26
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/10/26/Using-IndexedDB/" itemprop="url">
-            <span itemprop="name">[Database] IndexedDB 기초</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Coding-Test/" rel="tag"># Coding-Test</a>
+              <a href="/tags/Programmers/" rel="tag"># Programmers</a>
+              <a href="/tags/Lv-1/" rel="tag"># Lv.1</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/16/Coding-Test-Programmers-4/" rel="prev" title="[Coding Test] 프로그래머스 -같은 숫자는 싫어-">
+                  <i class="fa fa-chevron-left"></i> [Coding Test] 프로그래머스 -같은 숫자는 싫어-
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/11/16/Coding-Test-Programmers-6/" rel="next" title="[Coding Test] 프로그래머스 -두 정수 사이의 합-">
+                  [Coding Test] 프로그래머스 -두 정수 사이의 합- <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-  
-  
-
 </div>
   </main>
 
