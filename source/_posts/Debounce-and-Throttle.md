@@ -1,9 +1,10 @@
 ---
-title: Debounce and Throttle
+title: "[Javscript] Debounce and Throttle"
 date: 2022-10-06 16:23:09
 categories:
 - Javascript
 tags:
+- Javascript
 - Debounce
 - Throttle
 ---

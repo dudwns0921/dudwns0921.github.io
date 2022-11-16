@@ -1,9 +1,8 @@
 ---
-title: IndexedDB 기초
+title: "[Database] IndexedDB 기초"
 date: 2022-10-26 11:47:52
 categories:
 - Database
-- IndexedDB
 tags:
 - Database
 - indexedDB

@@ -1,5 +1,5 @@
 ---
-title: Hexo로 블로그 만들기
+title: "[Hexo] Hexo로 블로그 만들기"
 date: 2022-10-14 08:30:26
 categories:
 - Hexo
