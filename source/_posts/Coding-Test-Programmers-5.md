@@ -13,7 +13,7 @@ date: 2022-11-16 13:57:02
 https://school.programmers.co.kr/learn/courses/30/lessons/12910
 
 # 🤨생각하기
-문제 그대로 구현하면 된다.
+문제 그대로 구현
 
 filter 메서드를 사용하면 좀 더 가독성 높은 코드를 작성할 수 있다고 생각한다.
 
