@@ -20,6 +20,172 @@
       </tags>
   </entry>
   <entry>
+    <title>[Coding Test] 프로그래머스 -서울에서 김서방 찾기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-10/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12919">https://school.programmers.co.kr/learn/courses/30/lessons/12919</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">seoul</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; seoul.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (seoul[i] === <span class="string">&#x27;Kim&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`김서방은 <span class="subst">$&#123;i&#125;</span>에 있다`</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -수박수박수박수박수박수?-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-11/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12922">https://school.programmers.co.kr/learn/courses/30/lessons/12922</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> answer = <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i % <span class="number">2</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">      answer += <span class="string">&#x27;수&#x27;</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      answer += <span class="string">&#x27;박&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -문자열을 정수로 바꾸기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-12/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12925">https://school.programmers.co.kr/learn/courses/30/lessons/12925</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>사실 Number 생성자나 ParseInt 메서드를 사용하면 정말 간단하게 풀 수 있는 문제이다.</p>
+<p>다만 사칙연산을 사용해 문자열을 자동으로 수로 바꾸는 풀이도 존재했다.  </p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Number</span>(s)</span><br><span class="line">  <span class="comment">// return s/1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -약수의 합-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-13/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12928">https://school.programmers.co.kr/learn/courses/30/lessons/12928</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n % i === <span class="number">0</span>) sum += i</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -이상한 문자 만들기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-14/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12930">https://school.programmers.co.kr/learn/courses/30/lessons/12930</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><blockquote>
+<p>문자열 전체의 짝&#x2F;홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝&#x2F;홀수 인덱스를 판단해야합니다.</p>
+</blockquote>
+<p>위 조건을 만족시키기 위해서는 주어진 문자열을 먼저 공백을 기준으로 나누어야 한다. 그리고 그 나눠진 각각의 문자열을 순회하며 소문자, 대문자로 변경시키면 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> s</span><br><span class="line">    .<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    <span class="comment">// 공백을 기준으로 나눔</span></span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">word</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> word</span><br><span class="line">        .<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        <span class="comment">// 문자열의 글자 하나하나를 요소로 갖는 배열 생성</span></span><br><span class="line">        <span class="comment">// 배열로 만든 이유는 map 메서드를 사용하기 위함</span></span><br><span class="line">        .<span class="title function_">map</span>(<span class="function">(<span class="params">letter, index</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (index % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> letter.<span class="title function_">toUpperCase</span>()</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> letter.<span class="title function_">toLowerCase</span>()</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">join</span>(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -자릿수 더하기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-15/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12931">https://school.programmers.co.kr/learn/courses/30/lessons/12931</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>조금 설명을 덧붙이자면 문자열은 순회가 가능한 iterator이기 때문에 숫자를 문자열로 만들어 각 자릿수를 순회하는 방법이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> a <span class="keyword">of</span> n.<span class="title function_">toString</span>()) &#123;</span><br><span class="line">    sum += <span class="built_in">parseInt</span>(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -자연수 뒤집어 배열로 만들기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-16/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12932">https://school.programmers.co.kr/learn/courses/30/lessons/12932</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>수를 뒤집는 방법에는 여러 가지가 있겠지만, 나는 문자열로 만들어 뒤집는 방법을 선택했다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> letter <span class="keyword">of</span> n.<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>).<span class="title function_">reverse</span>()) &#123;</span><br><span class="line">    answer.<span class="title function_">push</span>(<span class="built_in">parseInt</span>(letter))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -정수 내림차순으로 배치하기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-17/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12933">https://school.programmers.co.kr/learn/courses/30/lessons/12933</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">parseInt</span>(</span><br><span class="line">    n</span><br><span class="line">      .<span class="title function_">toString</span>()</span><br><span class="line">      .<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">      .<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> b - a)</span><br><span class="line">      .<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>),</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -정수 제곱근 판별-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-18/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12934">https://school.programmers.co.kr/learn/courses/30/lessons/12934</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="title class_">Number</span>.<span class="title function_">isInteger</span>(<span class="title class_">Math</span>.<span class="title function_">sqrt</span>(n))) &#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="title class_">Math</span>.<span class="title function_">sqrt</span>(n) + <span class="number">1</span>) ** <span class="number">2</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -제일 작은 수 제거하기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-19/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12935">https://school.programmers.co.kr/learn/courses/30/lessons/12935</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (arr.<span class="property">length</span> == <span class="number">1</span>) <span class="keyword">return</span> [-<span class="number">1</span>]</span><br><span class="line">  <span class="keyword">const</span> min = <span class="title class_">Math</span>.<span class="title function_">min</span>(...arr)</span><br><span class="line">  <span class="keyword">let</span> answer = arr</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (arr[i] == min) answer.<span class="title function_">splice</span>(i, <span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Coding Test] 프로그래머스 -2016년-</title>
     <url>/2022/11/16/Coding-Test-Programmers-2/</url>
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12901">https://school.programmers.co.kr/learn/courses/30/lessons/12901</a></p>
@@ -30,6 +196,55 @@
 <h1 id="🚨주의할-점"><a href="#🚨주의할-점" class="headerlink" title="🚨주의할 점"></a>🚨주의할 점</h1><p>위의 로직에서는 b에서 1을 빼주는 이유는 b의 값이 1월 1일부터 주어진 날짜와의 차이가 아니기 때문이다.</p>
 <p>주어진 날짜가 1월 3일이라고 해보자.<br>이 때 b의 값은 3인데, 1월 1일과의 1월 3일의 차이는 2이다. 따라서 차이를 구하기 위해서는 b의 값에서 1을 빼주어야 한다.</p>
 ]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -짝수와 홀수-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-20/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12937">https://school.programmers.co.kr/learn/courses/30/lessons/12937</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">num</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (num % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Even&#x27;</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Odd&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -가운데 글자 가져오기-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-3/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12903">https://school.programmers.co.kr/learn/courses/30/lessons/12903</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (s.<span class="property">length</span> % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> s.<span class="title function_">substring</span>(</span><br><span class="line">      <span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>) - <span class="number">1</span>,</span><br><span class="line">      <span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>) + <span class="number">1</span>,</span><br><span class="line">    )</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> s.<span class="title function_">substring</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>), <span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>) + <span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 소수점 제거를 위한 floor 메서드 사용</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-5/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12910">https://school.programmers.co.kr/learn/courses/30/lessons/12910</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>filter 메서드를 사용하면 좀 더 가독성 높은 코드를 작성할 수 있다고 생각한다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr, divisor</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> answer = arr.<span class="title function_">filter</span>(<span class="function">(<span class="params">num</span>) =&gt;</span> num % divisor === <span class="number">0</span>).<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)</span><br><span class="line">  <span class="keyword">if</span> (answer.<span class="property">length</span> === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> [-<span class="number">1</span>]</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -58,45 +273,28 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -가운데 글자 가져오기-</title>
-    <url>/2022/11/16/Coding-Test-Programmers-3/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12903">https://school.programmers.co.kr/learn/courses/30/lessons/12903</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (s.<span class="property">length</span> % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> s.<span class="title function_">substring</span>(</span><br><span class="line">      <span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>) - <span class="number">1</span>,</span><br><span class="line">      <span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>) + <span class="number">1</span>,</span><br><span class="line">    )</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> s.<span class="title function_">substring</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>), <span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>) + <span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 소수점 제거를 위한 floor 메서드 사용</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Coding-Test</category>
-        <category>Programmers</category>
-      </categories>
-      <tags>
-        <tag>Coding-Test</tag>
-        <tag>Programmers</tag>
-        <tag>Lv.1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열-</title>
-    <url>/2022/11/16/Coding-Test-Programmers-5/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12910">https://school.programmers.co.kr/learn/courses/30/lessons/12910</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
-<p>filter 메서드를 사용하면 좀 더 가독성 높은 코드를 작성할 수 있다고 생각한다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr, divisor</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> answer = arr.<span class="title function_">filter</span>(<span class="function">(<span class="params">num</span>) =&gt;</span> num % divisor === <span class="number">0</span>).<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)</span><br><span class="line">  <span class="keyword">if</span> (answer.<span class="property">length</span> === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> [-<span class="number">1</span>]</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Coding-Test</category>
-        <category>Programmers</category>
-      </categories>
-      <tags>
-        <tag>Coding-Test</tag>
-        <tag>Programmers</tag>
-        <tag>Lv.1</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[Coding Test] 프로그래머스 -두 정수 사이의 합-</title>
     <url>/2022/11/16/Coding-Test-Programmers-6/</url>
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12912">https://school.programmers.co.kr/learn/courses/30/lessons/12912</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
-<p>a,b가 대소 구분 없이 주어진다는 점이 그나마 신경 쓸 부분인데, 구조 분해 할당을 사용하면 쉽게 두 변수의 값을 바꿀 수 있다.</p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>a,b가 대소 구분 없이 주어진다는 점이 신경 써야할 부분인데, 구조 분해 할당을 사용하면 쉽게 두 변수의 값을 바꿀 수 있다.</p>
 <h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (a === b) <span class="keyword">return</span> a</span><br><span class="line">  <span class="keyword">if</span> (b &lt; a) &#123;</span><br><span class="line">    ;[a, b] = [b, a]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = a; i &lt;= b; i++) &#123;</span><br><span class="line">    sum += i</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -문자열 내 p와 y의 개수-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-8/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12916">https://school.programmers.co.kr/learn/courses/30/lessons/12916</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> pCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> yCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> letter <span class="keyword">of</span> s) &#123;</span><br><span class="line">    <span class="keyword">if</span> (letter === <span class="string">&#x27;p&#x27;</span> || letter === <span class="string">&#x27;P&#x27;</span>) &#123;</span><br><span class="line">      pCnt++</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (letter === <span class="string">&#x27;y&#x27;</span> || letter === <span class="string">&#x27;Y&#x27;</span>) &#123;</span><br><span class="line">      yCnt++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (pCnt === yCnt) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -111,9 +309,26 @@
     <title>[Coding Test] 프로그래머스 -문자열 내 마음대로 정렬하기-</title>
     <url>/2022/11/16/Coding-Test-Programmers-7/</url>
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12915">https://school.programmers.co.kr/learn/courses/30/lessons/12915</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제만 잘 이해하면 풀 수 있다.</p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제를 제대로 이해하지 못해 시간이 좀 걸렸던 문제이다. </p>
 <p>sort 메서드를 사용하면 기본적으로 맨 앞의 문자를 비교해서 정렬이 이루어지는데, 조건을 추가해 두 번째 글자를 기준으로 정렬을 하라는 문제이다.</p>
 <h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">strings, n</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> strings.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (a[n] &lt; b[n]) <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> (a[n] &gt; b[n]) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> (a[n] === b[n]) <span class="keyword">return</span> a &lt; b ? -<span class="number">1</span> : <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -문자열 다루기 기본-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-9/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12918">https://school.programmers.co.kr/learn/courses/30/lessons/12918</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>처음에는 정규표현식을 잘 몰라 아래 풀이로 해결했다. 문자가 하나라도 포함되어있는지 확인하면 되기 때문에 정규표현식이 훨씬 간단하다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (s.<span class="property">length</span> !== <span class="number">4</span> &amp;&amp; s.<span class="property">length</span> !== <span class="number">6</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> letter <span class="keyword">of</span> s) &#123;</span><br><span class="line">    <span class="keyword">if</span> (letter.<span class="title function_">charCodeAt</span>() &lt; <span class="number">48</span> || <span class="number">57</span> &lt; letter.<span class="title function_">charCodeAt</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// if (new RegExp(&#x27;[^0-9]&#x27;, &#x27;g&#x27;).test(s)) &#123;</span></span><br><span class="line">  <span class="comment">//   return false</span></span><br><span class="line">  <span class="comment">// &#125;</span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -225,22 +440,6 @@
         <tag>Javascript</tag>
         <tag>Debounce</tag>
         <tag>Throttle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Coding Test] 프로그래머스 -문자열 내 p와 y의 개수-</title>
-    <url>/2022/11/16/Coding-Test-Programmers-8/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12916">https://school.programmers.co.kr/learn/courses/30/lessons/12916</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> pCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> yCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> letter <span class="keyword">of</span> s) &#123;</span><br><span class="line">    <span class="keyword">if</span> (letter === <span class="string">&#x27;p&#x27;</span> || letter === <span class="string">&#x27;P&#x27;</span>) &#123;</span><br><span class="line">      pCnt++</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (letter === <span class="string">&#x27;y&#x27;</span> || letter === <span class="string">&#x27;Y&#x27;</span>) &#123;</span><br><span class="line">      yCnt++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (pCnt === yCnt) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Coding-Test</category>
-        <category>Programmers</category>
-      </categories>
-      <tags>
-        <tag>Coding-Test</tag>
-        <tag>Programmers</tag>
-        <tag>Lv.1</tag>
       </tags>
   </entry>
   <entry>
