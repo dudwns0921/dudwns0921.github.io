@@ -19,7 +19,7 @@ tags:
 
 # 🔧기본 패턴
 
-1. 데이터베이스를 연다.
+1. 데이터베이스와의 연결을 시작한다.
 
 2. 데이터베이스에 object store을 생성한다.
 
@@ -50,13 +50,13 @@ openRequest.onupgradeneeded = (event) => {
   });
 }
 ```
-1. **indexedDB** api의 open 메서드를 통해 데이터베이스 생성을 요청한다.
+1. **indexedDB** api의 open 메서드를 통해 데이터베이스와의 연결을 시작한다.
 
-    **indexedDB**의 모든 작업은 비동기적으로 수행된다. 그러니까 open 메서드는 데이터베이스를 생성하도록 요청했을뿐 데이터베이스를 생성해 바로 반환하지 않는다는 것이다.
+    **indexedDB**의 모든 작업은 비동기적으로 수행된다. 그러니까 open 메서드는 데이터베이스와 연결을 요청했을뿐 바로 연결이 이루어지지 않는다는 것이다.
 
 2. 트리거된 onupgradeneeded event에서 object store 생성을 요청한다.
 
-    앞에서 말했듯이 open 메서드로 인해 데이터베이스 생성 작업이 요청되었고, 그 작업이 완료됨에 따라 onupgradeneeded event가 트리거된다.
+    데이터베이스와의 연결이 정상적으로 시작되면 onupgradeneeded event가 트리거된다.
     
     Promise나 async await을 사용하는 것처럼 **IndexedDB**에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.
     
@@ -73,9 +73,7 @@ openRequest.onupgradeneeded = (event) => {
       
               데이터의 키를 생성해주는 매커니즘인 key-generator 사용 여부를 설정한다. 기본값은 false이다.  
         
-          여기서 주의할 점은 keypath를 작성하지 않고 autoIncrement도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 Keypath의 값을 작성해주는 게 가장 좋다.
-          
-          물론 autoIncrement를 true로 바꿔 key-generator을 사용해서 데이터의 키를 자동으로 생성할 수도 있다. 하지만 실제로 사용해본 결과, 데이터가 삽입된 순서대로 1,2,3... 의 값을 키로 사용하기 때문에 기본키로서는 적합하지 않다고 생각한다. 
+          여기서 주의할 점은 keypath를 작성하지 않고 autoIncrement도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 Keypath의 값을 작성해주는 게 가장 좋다. 혹은 autoIncrement를 true로 바꿔 key-generator을 사용해서 데이터의 키를 자동으로 생성할 수도 있다.
 
 ```js
 openRequest.onupgradeneeded = (event) => {
@@ -111,8 +109,9 @@ openRequest.onupgradeneeded = (event) => {
 
         1. readonly
         2. readwrite
-        3. readwriteflush(Firefox-only)
+        3. versionUpdate
 
+        여기서 versionUpdate는 수동으로는 설정할 수 없으며 onupgradeneeded 이벤트에서 자동으로 생성된다.
         mode의 값을 정의하지 않으면, 기본값인 readonly로 설정된다.
 
     - **options** [Optional]
@@ -121,7 +120,7 @@ openRequest.onupgradeneeded = (event) => {
 
       1. **durability**
 
-          default, strict, 그리고 relaxed의 3가지 값을 가진다. 기본값은 default이다. 각 값에 따라 성능이 달라지며, 사용자의 환경에 따라 다른 값을 설정해주면 된다.
+          트랜잭션을 커밋할 때 성능 또는 내구성의 우선 순위를 지정할지 여부를 웹 브라우저에게 알려주는 힌트이다. strict, relaxed, default까지 총 3가지 값을 설정할 수 있으며 기본값은 default이다.
 ![](image1.PNG)
     
 # 😎마무리
