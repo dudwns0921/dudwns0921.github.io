@@ -104,12 +104,12 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -자릿수 더하기-</title>
-    <url>/2022/11/17/Coding-Test-Programmers-15/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12931">https://school.programmers.co.kr/learn/courses/30/lessons/12931</a></p>
+    <title>[Coding Test] 프로그래머스 -자연수 뒤집어 배열로 만들기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-16/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12932">https://school.programmers.co.kr/learn/courses/30/lessons/12932</a></p>
 <h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
-<p>조금 설명을 덧붙이자면 문자열은 순회가 가능한 iterator이기 때문에 숫자를 문자열로 만들어 각 자릿수를 순회하는 방법이다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> a <span class="keyword">of</span> n.<span class="title function_">toString</span>()) &#123;</span><br><span class="line">    sum += <span class="built_in">parseInt</span>(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<p>수를 뒤집는 방법에는 여러 가지가 있겠지만, 나는 문자열로 만들어 뒤집는 방법을 선택했다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> letter <span class="keyword">of</span> n.<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>).<span class="title function_">reverse</span>()) &#123;</span><br><span class="line">    answer.<span class="title function_">push</span>(<span class="built_in">parseInt</span>(letter))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -121,12 +121,12 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -자연수 뒤집어 배열로 만들기-</title>
-    <url>/2022/11/17/Coding-Test-Programmers-16/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12932">https://school.programmers.co.kr/learn/courses/30/lessons/12932</a></p>
+    <title>[Coding Test] 프로그래머스 -자릿수 더하기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-15/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12931">https://school.programmers.co.kr/learn/courses/30/lessons/12931</a></p>
 <h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
-<p>수를 뒤집는 방법에는 여러 가지가 있겠지만, 나는 문자열로 만들어 뒤집는 방법을 선택했다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> letter <span class="keyword">of</span> n.<span class="title function_">toString</span>().<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>).<span class="title function_">reverse</span>()) &#123;</span><br><span class="line">    answer.<span class="title function_">push</span>(<span class="built_in">parseInt</span>(letter))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<p>조금 설명을 덧붙이자면 문자열은 순회가 가능한 iterator이기 때문에 숫자를 문자열로 만들어 각 자릿수를 순회하는 방법이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> a <span class="keyword">of</span> n.<span class="title function_">toString</span>()) &#123;</span><br><span class="line">    sum += <span class="built_in">parseInt</span>(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -223,11 +223,136 @@
       </tags>
   </entry>
   <entry>
+    <title>[Coding Test] 프로그래머스 -시저 코드-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-21/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12926">https://school.programmers.co.kr/learn/courses/30/lessons/12926</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>ascii 코드 변환 메서드만 알고 있다면 큰 어려움 없이 풀 수 있는 문제이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s, n</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> s</span><br><span class="line">    .<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">letter</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> ascii = letter.<span class="title function_">charCodeAt</span>()</span><br><span class="line">      <span class="keyword">let</span> asciiConv</span><br><span class="line">      <span class="keyword">if</span> (<span class="number">65</span> &lt;= ascii &amp;&amp; ascii &lt;= <span class="number">90</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">90</span> &lt; ascii + n) &#123;</span><br><span class="line">          <span class="comment">// 소문자인데 밀었을 때 z초과</span></span><br><span class="line">          <span class="keyword">let</span> excess = ascii + n - <span class="number">91</span></span><br><span class="line">          asciiConv = <span class="number">65</span> + excess</span><br><span class="line">          <span class="keyword">return</span> <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(asciiConv)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="number">97</span> &lt;= ascii &amp;&amp; ascii &lt;= <span class="number">122</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">122</span> &lt; ascii + n) &#123;</span><br><span class="line">          <span class="comment">// 대문자인데 밀었을 때 Z초과</span></span><br><span class="line">          <span class="keyword">let</span> excess = ascii + n - <span class="number">123</span></span><br><span class="line">          asciiConv = <span class="number">97</span> + excess</span><br><span class="line">          <span class="keyword">return</span> <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(asciiConv)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ascii == <span class="number">32</span>) &#123;</span><br><span class="line">        <span class="comment">// 공백</span></span><br><span class="line">        <span class="keyword">return</span> letter</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 초과되지 않은 경우</span></span><br><span class="line">      asciiConv = ascii + n</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(asciiConv)</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="🚨주의할-점"><a href="#🚨주의할-점" class="headerlink" title="🚨주의할 점"></a>🚨주의할 점</h1><p>주의해야 할 부분은 문자를 밀었을 때 z,Z를 초과하는 경우이다. 이 경우, 각각 a,A부터 다시 시작해 초과한 만큼 이동해야 하기 때문에 루프를 구현하면 된다.</p>
+]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -하샤드 수-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-25/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12947">https://school.programmers.co.kr/learn/courses/30/lessons/12947</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 정수가 해당 정수의 자릿값의 합으로 나누어 떨어지는지 확인하는 문제이다.</p>
+<p>이전 문제에서도 확인할 수 있지만, 여러 요소들의 합을 구할 때 reduce를 사용하면 좀 더 간결한 코드가 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> digitSum = x</span><br><span class="line">    .<span class="title function_">toString</span>()</span><br><span class="line">    .<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    .<span class="title function_">reduce</span>(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> <span class="title class_">Number</span>(prev) + <span class="title class_">Number</span>(curr))</span><br><span class="line">  <span class="keyword">if</span> (x % digitSum === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -평균 구하기-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-24/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12944">https://school.programmers.co.kr/learn/courses/30/lessons/12944</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>배열의 합을 구해 배열의 길이로 나눠주면 되는 문제이다.</p>
+<p>다양한 방법들이 있겠지만, 배열 요소들의 값을 누적시킬 수 있는 reduce 메서드를 사용하면 간결한 코드를 짤 수 있다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> prev + curr) / arr.<span class="property">length</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -핸드폰 번호 가리기-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-26/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12948">https://school.programmers.co.kr/learn/courses/30/lessons/12948</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 전화번호의 뒷 4자리를 제외하고서 모두 *로 바꾸면 되는 문제이다.</p>
+<p>substring 메서드를 통해 뒷 4자리를 가져왔고, padStart 메서드를 사용해 다시 앞에다가 맨 처음에 주어진 전화번호의 길이가 될 때까지 *를 추가했다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">phone_number</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> phone_number_len = phone_number.<span class="property">length</span></span><br><span class="line">  <span class="keyword">return</span> phone_number</span><br><span class="line">    .<span class="title function_">substring</span>(phone_number_len - <span class="number">4</span>)</span><br><span class="line">    .<span class="title function_">padStart</span>(phone_number_len, <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -콜라츠 추측-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-23/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12943">https://school.programmers.co.kr/learn/courses/30/lessons/12943</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">num</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (num === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> cnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num === <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> cnt</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cnt === <span class="number">501</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (num % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">      num = num / <span class="number">2</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      num = num * <span class="number">3</span> + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    cnt++</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Coding Test] 프로그래머스 -가운데 글자 가져오기-</title>
     <url>/2022/11/16/Coding-Test-Programmers-3/</url>
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12903">https://school.programmers.co.kr/learn/courses/30/lessons/12903</a></p>
 <h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
 <h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (s.<span class="property">length</span> % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> s.<span class="title function_">substring</span>(</span><br><span class="line">      <span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>) - <span class="number">1</span>,</span><br><span class="line">      <span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>) + <span class="number">1</span>,</span><br><span class="line">    )</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> s.<span class="title function_">substring</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>), <span class="title class_">Math</span>.<span class="title function_">floor</span>(s.<span class="property">length</span> / <span class="number">2</span>) + <span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 소수점 제거를 위한 floor 메서드 사용</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -같은 숫자는 싫어-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-4/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12906">https://school.programmers.co.kr/learn/courses/30/lessons/12906</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>배열 안에서의 연속된 숫자들을 제거하는 문제이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="keyword">if</span> (answer[answer.<span class="property">length</span> - <span class="number">1</span>] !== item) &#123;</span><br><span class="line">      answer.<span class="title function_">push</span>(item)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="🚨주의할-점"><a href="#🚨주의할-점" class="headerlink" title="🚨주의할 점"></a>🚨주의할 점</h1><p>간단한 문제이지만 기존 배열의 순서를 지켜야 하기 때문에 배열의 앞에서부터 순회하며 이전 인덱스의 값과 현재의 값이 같지 않은 경우에만 새로운 배열에다가 push 해주면 된다.</p>
+]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -최대공약수와 최소공배수-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-22/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12940">https://school.programmers.co.kr/learn/courses/30/lessons/12940</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>여러 방법들이 있겠지만, 유클리드 호제법에 대한 개념을 요구하는 문제이다.</p>
+<p>유클리드 호제법을 간단하게 정리하면 아래와 같다.</p>
+<blockquote>
+<p>a, b(단, a&gt;b)에 대해서 a를 b로 나눈 나머지를 r이라 하면, a와 b의 최대공약수는 b와 r의 최대공약수와 같다.</p>
+</blockquote>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getGcd</span>(<span class="params">n, m</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> gcd</span><br><span class="line">  <span class="keyword">if</span> (n &lt; m) &#123;</span><br><span class="line">    ;[n, m] = [m, n]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; m) &#123;</span><br><span class="line">      ;[n, m] = [m, n]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n % m == <span class="number">0</span>) &#123;</span><br><span class="line">      gcd = m</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    n = n % m</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> gcd</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n, m</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> product = n * m</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line">  <span class="keyword">const</span> gcd = <span class="title function_">getGcd</span>(n, m)</span><br><span class="line">  answer.<span class="title function_">push</span>(gcd, product / gcd)</span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -256,45 +381,12 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -같은 숫자는 싫어-</title>
-    <url>/2022/11/16/Coding-Test-Programmers-4/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12906">https://school.programmers.co.kr/learn/courses/30/lessons/12906</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>배열 안에서의 연속된 숫자들을 제거하는 문제이다.</p>
-<p>간단한 문제이지만 기존 배열의 순서를 지켜야 하기 때문에 배열의 앞에서부터 순회하며 이전 인덱스의 값과 현재의 값이 같지 않은 경우에만 새로운 배열에다가 push 해주면 된다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="keyword">if</span> (answer[answer.<span class="property">length</span> - <span class="number">1</span>] !== item) &#123;</span><br><span class="line">      answer.<span class="title function_">push</span>(item)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Coding-Test</category>
-        <category>Programmers</category>
-      </categories>
-      <tags>
-        <tag>Coding-Test</tag>
-        <tag>Programmers</tag>
-        <tag>Lv.1</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[Coding Test] 프로그래머스 -두 정수 사이의 합-</title>
     <url>/2022/11/16/Coding-Test-Programmers-6/</url>
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12912">https://school.programmers.co.kr/learn/courses/30/lessons/12912</a></p>
 <h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
 <p>a,b가 대소 구분 없이 주어진다는 점이 신경 써야할 부분인데, 구조 분해 할당을 사용하면 쉽게 두 변수의 값을 바꿀 수 있다.</p>
 <h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (a === b) <span class="keyword">return</span> a</span><br><span class="line">  <span class="keyword">if</span> (b &lt; a) &#123;</span><br><span class="line">    ;[a, b] = [b, a]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = a; i &lt;= b; i++) &#123;</span><br><span class="line">    sum += i</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Coding-Test</category>
-        <category>Programmers</category>
-      </categories>
-      <tags>
-        <tag>Coding-Test</tag>
-        <tag>Programmers</tag>
-        <tag>Lv.1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Coding Test] 프로그래머스 -문자열 내 p와 y의 개수-</title>
-    <url>/2022/11/16/Coding-Test-Programmers-8/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12916">https://school.programmers.co.kr/learn/courses/30/lessons/12916</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> pCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> yCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> letter <span class="keyword">of</span> s) &#123;</span><br><span class="line">    <span class="keyword">if</span> (letter === <span class="string">&#x27;p&#x27;</span> || letter === <span class="string">&#x27;P&#x27;</span>) &#123;</span><br><span class="line">      pCnt++</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (letter === <span class="string">&#x27;y&#x27;</span> || letter === <span class="string">&#x27;Y&#x27;</span>) &#123;</span><br><span class="line">      yCnt++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (pCnt === yCnt) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -323,6 +415,22 @@
       </tags>
   </entry>
   <entry>
+    <title>[Coding Test] 프로그래머스 -문자열 내 p와 y의 개수-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-8/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12916">https://school.programmers.co.kr/learn/courses/30/lessons/12916</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> pCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> yCnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> letter <span class="keyword">of</span> s) &#123;</span><br><span class="line">    <span class="keyword">if</span> (letter === <span class="string">&#x27;p&#x27;</span> || letter === <span class="string">&#x27;P&#x27;</span>) &#123;</span><br><span class="line">      pCnt++</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (letter === <span class="string">&#x27;y&#x27;</span> || letter === <span class="string">&#x27;Y&#x27;</span>) &#123;</span><br><span class="line">      yCnt++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (pCnt === yCnt) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Coding Test] 프로그래머스 -문자열 다루기 기본-</title>
     <url>/2022/11/17/Coding-Test-Programmers-9/</url>
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12918">https://school.programmers.co.kr/learn/courses/30/lessons/12918</a></p>
@@ -340,106 +448,102 @@
       </tags>
   </entry>
   <entry>
-    <title>[Javscript] Debounce and Throttle</title>
-    <url>/2022/10/06/Debounce-and-Throttle/</url>
-    <content><![CDATA[<p>검색어 자동완성 기능을 만들면서 <strong>Debounce</strong>에 대해 알게 되었고, 자연스럽게 <strong>Throttle</strong>을 접하게 되었다. 먼저 두 기술이 왜 등장하게 되었는지부터 알아보자.</p>
-<h1 id="등장배경"><a href="#등장배경" class="headerlink" title="등장배경"></a>등장배경</h1><p>자, 우리가 영화 정보를 검색할 수 있는 사이트에서  Matrix시리즈를 보고 싶어 검색창에 Matrix를 입력했다고 가정해보자. 해당 사이트에는 자동완성 기능을 제공하고 있는데, 자동완성 기능의 흐름은 다음과 같다.</p>
-<ol>
-<li>사용자가 글자를 입력함</li>
-<li>입력할 때마다 서버에 새로운 요청을 보내 해당 검색어와 관련된 키워드들을 가져옴</li>
-</ol>
-<p>위 흐름대로 자동완성 기능이 수행될 때 결과를 콘솔에 출력해봤다.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search keyword : m / api request 1</span><br><span class="line">search keyword : ma / api request 2</span><br><span class="line">search keyword : mat / api request 3</span><br><span class="line">search keyword : matr / api request 4</span><br><span class="line">search keyword : matri / api request 5</span><br><span class="line">search keyword : matrix / api request 6</span><br></pre></td></tr></table></figure>
-
-<p>우리는 matrix라는 6글자를 입력했을 뿐인데, 6개의 request가 서버로 보내졌다 . 만약 더 긴 제목의 영화를 검색한다면 영화 제목을 입력하는 짧은 시간 동안 수십 개의 request가 발생하는 것이다. 이처럼 너무 많은 이벤트 횟수의 실행으로 이벤트 핸들러가 과도한 연산을 수행하는 경우 성능 문제가 발생하고 이는 사용자 경험까지 떨어뜨리게 된다.</p>
-<p>여기서 필요한 것이 바로 <strong>Debounce</strong>와 <strong>Throttle</strong>이다. 두 기술 모두 자바스크립트의 이벤트를 제어(제한)해 성능을 향상시키는 방법이다.</p>
-<h1 id="Debounce"><a href="#Debounce" class="headerlink" title="Debounce"></a>Debounce</h1><p><strong>Debounce</strong>는 이벤트를 그룹화해서 특정시간이 지난 후 하나의 이벤트만 발생하도록 하는 기술이다. 예시로 살펴보자.</p>
-<ol>
-<li>특정시간(delay)을 1초로 설정</li>
-<li>matrix를 입력(각 글자를 입력하는데 설정한 시간 미만으로 걸린다고 가정)</li>
-<li>설정한 시간 지남</li>
-</ol>
-<p>위 과정대로 진행되면 matrix라는 검색어와 함께 요청이 한 번만 발생한다. 원리는 다음과 같다.</p>
-<ol>
-<li>이벤트 발생 후 설정한 시간이 지나기 전에 이벤트가 다시 발생하면 지나간 시간을 초기화한다.</li>
-<li>설정한 시간이 지나게 되면 연산을 수행한다.</li>
-</ol>
-<p>그러니까 만약 ma를 입력하고 1초가 지났다면 다음과 같은 결과가 나올 것이다.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search keyword : ma / api request 1</span><br></pre></td></tr></table></figure>
-
-<p>어느 정도 개념에 대한 이해가 이루어졌다면 이제 <strong>Debounce</strong> 기술을 직접 구현해보자.</p>
-<h2 id="Debounce-구현하기"><a href="#Debounce-구현하기" class="headerlink" title="Debounce 구현하기"></a>Debounce 구현하기</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">b</span>&gt;</span>Default:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;default&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">b</span>&gt;</span>Debounce:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;debounce&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>Debounce</strong>가 적용됐을 때랑 적용되지 않았을 때의 차이를 좀 더 명확하게 확인하기 위해 위와 같이 HTML구조를 짰다. </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> defaultText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#default&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> debounceText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#debounce&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> debounceReqCnt = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> defaultReqCnt = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> updateDebounceText = <span class="title function_">debounce</span>(<span class="function">(<span class="params">text</span>) =&gt;</span> &#123;</span><br><span class="line">  debounceText.<span class="property">textContent</span> = text</span><br><span class="line">  debounceReqCnt++</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    <span class="string">`[Debounce] search keyword : <span class="subst">$&#123;text&#125;</span> / api request <span class="subst">$&#123;debounceReqCnt&#125;</span>`</span>,</span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">updateDefaultText</span> = (<span class="params">text</span>) =&gt; &#123;</span><br><span class="line">  defaultText.<span class="property">textContent</span> = text</span><br><span class="line">  defaultReqCnt++</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[Default] search keyword : <span class="subst">$&#123;text&#125;</span> / api request <span class="subst">$&#123;defaultReqCnt&#125;</span>`</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input.<span class="title function_">addEventListener</span>(<span class="string">&#x27;input&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">updateDefaultText</span>(e.<span class="property">target</span>.<span class="property">value</span>)</span><br><span class="line">  <span class="title function_">updateDebounceText</span>(e.<span class="property">target</span>.<span class="property">value</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> timeout</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">clearTimeout</span>(timeout)</span><br><span class="line">    timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">cb</span>(arg)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>전체 코드는 위와 같다.</p>
-<ol>
-<li>input에 addEventListener를 적용</li>
-<li>input이벤트가 발생할 때마다 DefaultText와 debounceText가 업데이트됨</li>
-</ol>
-<p>실행 흐름 자체는 그렇게 복잡하지 않다. 자세히 봐야할 부분은 맨 밑에 정의된 <strong>debounce</strong>함수이다.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> timeout</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">clearTimeout</span>(timeout)</span><br><span class="line">    timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">cb</span>(arg)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>debounce</strong>함수가 실행되면 기존에 setTimeout으로 등록되었던 타이머를 없애고 새로운 타이머를 등록한다. 이는 아래 내용을 구현한 것이라고 이해하면 된다.</p>
-<blockquote>
-<p><strong>이벤트 발생 후 설정한 시간이 지나기 전에 이벤트가 다시 발생하면 지나간 시간을 초기화한다.</strong></p>
+    <title>[Database] IndexedDB 기초</title>
+    <url>/2022/10/26/Using-IndexedDB/</url>
+    <content><![CDATA[<p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
+<h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
+<p><em>MDN IndexedDB API 문서</em></p>
+<p><em>IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.</em></p>
 </blockquote>
-<p>그러면 이제 실제 실행 화면을 확인해보자.</p>
-<img width="100%" src="/2022/10/06/Debounce-and-Throttle/debounceExample.gif">
-
-<p><strong>Debounce</strong>를 쓰지 않은 경우 아까와 동일하게 6번의 request 가 발생했고, <strong>Debounce</strong>를 적용시킨 경우 단 한 번의 request만이 발생했다. 수치상으로 6배의 성능 향상을 확인할 수 있다. 그럼 이제 <strong>Throttle</strong>에 대해서 알아보자.</p>
-<h1 id="Throttle"><a href="#Throttle" class="headerlink" title="Throttle"></a>Throttle</h1><p><strong>Throttle</strong>은 이벤트를 일정한 주기마다 발생하도록 하는 기술이다. 예를 들어 <strong>Throttle</strong>의 설정시간으로 1ms를 주면 해당 이벤트는 1ms동안 한 번만 발생하게 된다. <strong>Throttle</strong>을 사용하는 대표적인 예시로는 무한 스크롤 페이지가 있다. </p>
+<h1 id="🔧기본-패턴"><a href="#🔧기본-패턴" class="headerlink" title="🔧기본 패턴"></a>🔧기본 패턴</h1><ol>
+<li><p>데이터베이스와의 연결을 시작한다.</p>
+</li>
+<li><p>데이터베이스에 object store을 생성한다.</p>
+</li>
+<li><p>Transaction을 시작한 후 request를 생성해 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
+</li>
+</ol>
 <blockquote>
-<p><a href="https://www.agoda.com/ko-kr/?cid=1844104">https://www.agoda.com/ko-kr/?cid=1844104</a></p>
+<p><em>W3C IndexedDB API 문서</em></p>
+<p><em>Transaction은 데이터베이스에서 데이터와 상호작용하기 위해 사용된다. 데이터를 읽거나 데이터베이스에 데이터를 기록하는 작업 모두 Transaction에 의해 수행된다.</em></p>
 </blockquote>
-<p>최근 파리에서 묵을 숙소를 찾으면서 사용한 agoda이다. 원하는 도시를 검색하고 계속 스크롤을 내리면 footer에 도달하기 전에 추가로 숙소 정보들을 가져오고 있는 걸 확인할 수 있다. 정확하지는 않을 수도 있지만 아마도 다음과 같은 흐름으로 실행되고 있을 거라고 생각한다.</p>
-<ol>
-<li>스크롤 위치가 footer와 얼마나 떨어져 있는지 확인</li>
-<li>일정 거리 이하라면 콘텐츠를 가져와 페이지를 업데이트함</li>
-</ol>
-<p>스크롤을 조작하면 스크롤 이벤트가 굉장히 많이 발생한다. 그래서 만약 스크롤 이벤트가 발생할 때마다 footer와의 거리를 계산한다면 성능상의 이슈가 생길 수도 있다. 그럴 때 Throttle을 사용할 수 있다. 연산이 몇 초에 한 번, 또는 몇 밀리초에 한 번씩만 수행되도록 제한을 두는 것이다.</p>
-<h2 id="Throttle-구현하기"><a href="#Throttle-구현하기" class="headerlink" title="Throttle 구현하기"></a>Throttle 구현하기</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">b</span>&gt;</span>Default:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;default&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">b</span>&gt;</span>Throttle:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;throttle&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300vh</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>Debounce</strong>와 마찬가지로 <strong>Throttle</strong>을 적용했을 때와 적용하지 않았을 때의 차이를 보기 위해 위와 같이 html 구조를 짰다.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> defaultText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#default&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> throttleText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#throttle&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> defaultCnt = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> throttleCnt = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">countDetectingDefault</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  defaultCnt++</span><br><span class="line">  defaultText.<span class="property">textContent</span> = defaultCnt</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> countDetectingThrottle = <span class="title function_">throttle</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  throttleCnt++</span><br><span class="line">  throttleText.<span class="property">textContent</span> = throttleCnt</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="title function_">countDetectingDefault</span>()</span><br><span class="line">  <span class="title function_">countDetectingThrottle</span>()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> shouldWait = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (shouldWait) <span class="keyword">return</span></span><br><span class="line">    <span class="title function_">cb</span>(...args)</span><br><span class="line">    shouldWait = <span class="literal">true</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      shouldWait = <span class="literal">false</span></span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>winodw객체에 addEventListener 를 적용</li>
-<li>스크롤 이벤트가 발생할 때마다 카운트 증가</li>
-</ol>
-<p>따로 구현은 하지 않았지만 여기서 스크롤 이벤트가 발생한다는 건 아래의 작업이 이루어지는 거라고 가정하자.</p>
-<blockquote>
-<p><strong>스크롤 위치가 footer와 얼마나 떨어져 있는지 확인</strong></p>
+<p>이제 위 패턴에 맞추어 데이터베이스를 만들고 데이터를 추가하는 작업까지 진행해보겠다.</p>
+<h1 id="👶튜토리얼"><a href="#👶튜토리얼" class="headerlink" title="👶튜토리얼"></a>👶튜토리얼</h1><blockquote>
+<p><em>MDN IndexedDB API 문서</em></p>
+<p><em>새로운 데이터베이스를 만들거나, 이미 존재하는 데이터베이스의 버전을 높일 경우 onupgradeneeded event가 트리거된다. 그리고 onupgradeneeded event에 대한 핸들러를 통해서만 데이터베이스의 구조를 변경할 수 있다.</em></p>
 </blockquote>
-<p><strong>Debounce</strong>와 마찬가지로 가장 중요한 건 맨 밑의 <strong>throttle</strong> 함수이다.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> shouldWait = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (shouldWait) <span class="keyword">return</span></span><br><span class="line">    <span class="title function_">cb</span>(arg)</span><br><span class="line">    shouldWait = <span class="literal">true</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      shouldWait = <span class="literal">false</span></span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> testData = [</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;444-44-4444&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Bill&#x27;</span>, <span class="attr">age</span>: <span class="number">35</span>, <span class="attr">email</span>: <span class="string">&#x27;bill@company.com&#x27;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;555-55-5555&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Donna&#x27;</span>, <span class="attr">age</span>: <span class="number">32</span>, <span class="attr">email</span>: <span class="string">&#x27;donna@home.org&#x27;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDBRequest = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(<span class="string">&#x27;test&#x27;</span>);</span><br><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> db = event.<span class="property">target</span>.<span class="property">result</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> createTestStoreRequest = db.<span class="title function_">createObjectStore</span>(<span class="string">&#x27;test&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">keyPath</span>: <span class="string">&#x27;ssn&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
-<li>shouldWait 의 초기값이 false이기 때문에 최초에는 콜백함수가 무조건 실행된다.</li>
-<li>콜백 함수가 실행됐다면 shouldWait의 값을 true로 바꾼다.</li>
-<li>setTimeout을 통해 설정한 시간 뒤에 shouldWait의 값이 바뀌도록 한다.</li>
-<li>설정한 시간이 지나기 전까지는 shouldWait의 값이 true이기 때문에 연산이 수행되지 않는다.</li>
+<li><p><strong>indexedDB</strong> api의 open 메서드를 통해 데이터베이스와의 연결을 시작한다.</p>
+<p> <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행된다. 그러니까 open 메서드는 데이터베이스와 연결을 요청했을뿐 바로 연결이 이루어지지 않는다는 것이다.</p>
+</li>
+<li><p>트리거된 onupgradeneeded event에서 object store 생성을 요청한다.</p>
+<p> 데이터베이스와의 연결이 정상적으로 시작되면 onupgradeneeded event가 트리거된다.</p>
+<p> Promise나 async await을 사용하는 것처럼 <strong>IndexedDB</strong>에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.</p>
+<p> 그러니까 위의 예시는 데이터베이스가 생성된 다음에 발생되는 onupgradeneeded event에 핸들러를 작성해서 db 라는 변수에 데이터베이스를 할당하고, 데이터를 저장하기 위한 object store을 만든 것이다. object store를 생성하기 위해서는 createObjectStore 메서드를 사용하면 되는데, 이 메서드는 두 가지 인자를 받는다.</p>
+<ul>
+<li><p><strong>name</strong> : object store의 이름이다.</p>
+</li>
+<li><p><strong>options</strong> [Optional] : 아래의 속성을 갖는 객체이다.</p>
+<ol>
+<li><p><strong>Keypath</strong> [Optional]</p>
+<p> 새로운 object store에서 사용할 Keypath를 설정한다. 저장할 각 객체 데이터들이 고유한 값을 가지는 속성명을 작성하면 된다. 데이터베이스의 기본키를 설정한다고 생각하면 좀 더 이해가 쉬울 것이다.</p>
+</li>
+<li><p><strong>autoIncrement</strong> [Optional]</p>
+<p> 데이터의 키를 생성해주는 매커니즘인 key-generator 사용 여부를 설정한다. 기본값은 false이다.</p>
+</li>
 </ol>
-<p>실행 화면을 확인해보자.</p>
-<img width="100%" src="/2022/10/06/Debounce-and-Throttle/ThrottleExample.gif">
+<p>  여기서 주의할 점은 keypath를 작성하지 않고 autoIncrement도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 Keypath의 값을 작성해주는 게 가장 좋다. 혹은 autoIncrement를 true로 바꿔 key-generator을 사용해서 데이터의 키를 자동으로 생성할 수도 있다.</p>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  createTestStoreRequest.<span class="property">transaction</span>.<span class="property">oncomplete</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> testObjStore = db.<span class="title function_">transaction</span>(<span class="string">&#x27;test&#x27;</span>, <span class="string">&#x27;readwrite&#x27;</span>).<span class="title function_">objectStore</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    testData.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      testObjStore.<span class="title function_">add</span>(item)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>트리거된 oncomplete event에서 새롭게 생성된 object store에다가 데이터를 삽입한다.<br> 앞 단계에서와 마찬가지로 object store은 생성 요청만 이루어졌을 뿐이다. 따라서 데이터를 정상적으로 삽입하기 위해서는 object store 생성이 완료되는 시점에 트리거되는 oncomplete event에서 데이터를 삽입해주면 된다.</p>
+<p> 데이터베이스와 관련된 작업을 하기 위해서는 먼저 트랜잭션을 시작해야 한다. 이를 위해서는 transaction 메서드를 사용해야 하며, transaction 메서드는 3개의 인자를 받는다.</p>
+<ul>
+<li><p><strong>storeNames</strong></p>
+<p>새로운 트랜잭션의 scope에 포함시킬 object store의 이름들을 값을 갖는 배열이다. 단 하나의 object store만 포함시킬 경우에는 object store의 이름을 문자열로 전달할 수도 있다. </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>([<span class="string">&#x27;my-store-name&#x27;</span>]);</span><br><span class="line">db.<span class="title function_">transaction</span>(<span class="string">&#x27;my-store-name&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>데이터베이스에 있는 모든 object store을 포함시키려면 <code>IDBDatabase.objectStoreNames</code> 속성을 사용할 수 있다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>(db.<span class="property">objectStoreNames</span>);</span><br></pre></td></tr></table></figure>
 
-<p>페이지의 처음부터 끝까지 스크롤하는 동안 <strong>Throttle</strong>을 적용하지 않았을 때는 스크롤이 footer로부터 얼마나 떨어져 있는지 계산하는 연산이 총 67번 수행됐고, <strong>Throttle</strong>을 적용했을 경우에는 단 2번만 수행됐다. </p>
-<h1 id="💡-Tip-Debounce과-Throttle의-차이"><a href="#💡-Tip-Debounce과-Throttle의-차이" class="headerlink" title="💡 Tip - Debounce과 Throttle의 차이"></a>💡 Tip - <strong>Debounce</strong>과 <strong>Throttle</strong>의 차이</h1><p><strong>Debounce</strong>과 <strong>Throttle</strong>의 가장 큰 차이점은 <strong>Throttle</strong>은 설정한 시간마다 연산이 수행됨을 보장한다는 것이다. 그래서 <strong>Throttle</strong>은 지속적인 업데이트가 필요한 경우에 사용하는 게 좋다.</p>
-<p>만약 무한 스크롤 페이지를 구현할 때 <strong>Debounce</strong>를 사용했다고 가정해보자. 스크롤 이벤트가 멈춰야만 footer와의 거리를 확인하고 콘텐츠를 추가로 가져올 것이기 때문에 footer에 도달하더라도 스크롤 이벤트가 설정한 시간 내에 다시 발생한다면 아무런 변화도 일어나지 않을 것이다.</p>
-<p>하지만 <strong>Throttle</strong>은 정기적으로 연산이 실행되기 때문에 위의 문제가 발생하지 않는다. 설정한 시간마다 연산을 수행하기 때문에 footer와의 거리를 지속적으로 업데이트할 수 있어 footer에 도달하기 전에 정상적으로 콘텐츠를 추가로 가져올 수 있을 것이다.</p>
-<h1 id="📚-참고자료"><a href="#📚-참고자료" class="headerlink" title="📚 참고자료"></a>📚 참고자료</h1><p><a href="https://webclub.tistory.com/607">https://webclub.tistory.com/607</a></p>
-<p><a href="https://www.youtube.com/watch?v=cjIswDCKgu0">https://www.youtube.com/watch?v=cjIswDCKgu0</a></p>
+</li>
+<li><p><strong>mode</strong> [Optional]</p>
+<p>트랜잭션에서 수행될 작업의 유형을 설정한다. 이 때 설정할 수 있는 작업의 유형은 총 3가지가 있다.</p>
+<ol>
+<li>readonly</li>
+<li>readwrite</li>
+<li>versionUpdate</li>
+</ol>
+<p>  여기서 versionUpdate는 수동으로는 설정할 수 없으며 onupgradeneeded 이벤트에서 자동으로 생성된다.<br>  mode의 값을 정의하지 않으면, 기본값인 readonly로 설정된다.</p>
+</li>
+<li><p><strong>options</strong> [Optional]</p>
+<p>아래의 속성을 갖는 객체이다.</p>
+<ol>
+<li><p><strong>durability</strong></p>
+<p> 트랜잭션을 커밋할 때 성능 또는 내구성의 우선 순위를 지정할지 여부를 웹 브라우저에게 알려주는 힌트이다. strict, relaxed, default까지 총 3가지 값을 설정할 수 있으며 기본값은 default이다.</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="/2022/10/26/Using-IndexedDB/image1.PNG"></p>
+<h1 id="😎마무리"><a href="#😎마무리" class="headerlink" title="😎마무리"></a>😎마무리</h1><p>지금까지 <strong>indexedDB</strong>를 생성해 데이터를 삽입하는 법에 대해 간단하게 알아봤다. 데이터베이스에 대한 기초적인 지식만 있다면 어렵지 않게 사용할 수 있을 것이라 생각한다. </p>
+<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API</a></li>
+</ul>
 ]]></content>
       <categories>
-        <category>Javascript</category>
+        <category>Database</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
-        <tag>Debounce</tag>
-        <tag>Throttle</tag>
+        <tag>Database</tag>
+        <tag>indexedDB</tag>
+        <tag>Basic</tag>
+        <tag>Tutorial</tag>
       </tags>
   </entry>
   <entry>
@@ -573,108 +677,111 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>Tutorial</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
-    <title>[Database] IndexedDB 기초</title>
-    <url>/2022/10/26/Using-IndexedDB/</url>
-    <content><![CDATA[<p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
-<h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
-<p><em>MDN IndexedDB API 문서</em></p>
-<p><em>IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.</em></p>
-</blockquote>
-<h1 id="🔧기본-패턴"><a href="#🔧기본-패턴" class="headerlink" title="🔧기본 패턴"></a>🔧기본 패턴</h1><ol>
-<li><p>데이터베이스를 연다.</p>
-</li>
-<li><p>데이터베이스에 object store을 생성한다.</p>
-</li>
-<li><p>Transaction을 시작한 후 request를 생성해 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
-</li>
-</ol>
-<blockquote>
-<p><em>W3C IndexedDB API 문서</em></p>
-<p><em>Transaction은 데이터베이스에서 데이터와 상호작용하기 위해 사용된다. 데이터를 읽거나 데이터베이스에 데이터를 기록하는 작업 모두 Transaction에 의해 수행된다.</em></p>
-</blockquote>
-<p>이제 위 패턴에 맞추어 데이터베이스를 만들고 데이터를 추가하는 작업까지 진행해보겠다.</p>
-<h1 id="👶튜토리얼"><a href="#👶튜토리얼" class="headerlink" title="👶튜토리얼"></a>👶튜토리얼</h1><blockquote>
-<p><em>MDN IndexedDB API 문서</em></p>
-<p><em>새로운 데이터베이스를 만들거나, 이미 존재하는 데이터베이스의 버전을 높일 경우 onupgradeneeded event가 트리거된다. 그리고 onupgradeneeded event에 대한 핸들러를 통해서만 데이터베이스의 구조를 변경할 수 있다.</em></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> testData = [</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;444-44-4444&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Bill&#x27;</span>, <span class="attr">age</span>: <span class="number">35</span>, <span class="attr">email</span>: <span class="string">&#x27;bill@company.com&#x27;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;555-55-5555&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Donna&#x27;</span>, <span class="attr">age</span>: <span class="number">32</span>, <span class="attr">email</span>: <span class="string">&#x27;donna@home.org&#x27;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDBRequest = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(<span class="string">&#x27;test&#x27;</span>);</span><br><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> db = event.<span class="property">target</span>.<span class="property">result</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> createTestStoreRequest = db.<span class="title function_">createObjectStore</span>(<span class="string">&#x27;test&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">keyPath</span>: <span class="string">&#x27;ssn&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>[Javscript] Debounce and Throttle</title>
+    <url>/2022/10/06/Debounce-and-Throttle/</url>
+    <content><![CDATA[<p>검색어 자동완성 기능을 만들면서 <strong>Debounce</strong>에 대해 알게 되었고, 자연스럽게 <strong>Throttle</strong>을 접하게 되었다. 먼저 두 기술이 왜 등장하게 되었는지부터 알아보자.</p>
+<h1 id="등장배경"><a href="#등장배경" class="headerlink" title="등장배경"></a>등장배경</h1><p>자, 우리가 영화 정보를 검색할 수 있는 사이트에서  Matrix시리즈를 보고 싶어 검색창에 Matrix를 입력했다고 가정해보자. 해당 사이트에는 자동완성 기능을 제공하고 있는데, 자동완성 기능의 흐름은 다음과 같다.</p>
 <ol>
-<li><p><strong>indexedDB</strong> api의 open 메서드를 통해 데이터베이스 생성을 요청한다.</p>
-<p> <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행된다. 그러니까 open 메서드는 데이터베이스를 생성하도록 요청했을뿐 데이터베이스를 생성해 바로 반환하지 않는다는 것이다.</p>
-</li>
-<li><p>트리거된 onupgradeneeded event에서 object store 생성을 요청한다.</p>
-<p> 앞에서 말했듯이 open 메서드로 인해 데이터베이스 생성 작업이 요청되었고, 그 작업이 완료됨에 따라 onupgradeneeded event가 트리거된다.</p>
-<p> Promise나 async await을 사용하는 것처럼 <strong>IndexedDB</strong>에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.</p>
-<p> 그러니까 위의 예시는 데이터베이스가 생성된 다음에 발생되는 onupgradeneeded event에 핸들러를 작성해서 db 라는 변수에 데이터베이스를 할당하고, 데이터를 저장하기 위한 object store을 만든 것이다. object store를 생성하기 위해서는 createObjectStore 메서드를 사용하면 되는데, 이 메서드는 두 가지 인자를 받는다.</p>
-<ul>
-<li><p><strong>name</strong> : object store의 이름이다.</p>
-</li>
-<li><p><strong>options</strong> [Optional] : 아래의 속성을 갖는 객체이다.</p>
-<ol>
-<li><p><strong>Keypath</strong> [Optional]</p>
-<p> 새로운 object store에서 사용할 Keypath를 설정한다. 저장할 각 객체 데이터들이 고유한 값을 가지는 속성명을 작성하면 된다. 데이터베이스의 기본키를 설정한다고 생각하면 좀 더 이해가 쉬울 것이다.</p>
-</li>
-<li><p><strong>autoIncrement</strong> [Optional]</p>
-<p> 데이터의 키를 생성해주는 매커니즘인 key-generator 사용 여부를 설정한다. 기본값은 false이다.</p>
-</li>
+<li>사용자가 글자를 입력함</li>
+<li>입력할 때마다 서버에 새로운 요청을 보내 해당 검색어와 관련된 키워드들을 가져옴</li>
 </ol>
-<p>  여기서 주의할 점은 keypath를 작성하지 않고 autoIncrement도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 Keypath의 값을 작성해주는 게 가장 좋다.</p>
-<p>  물론 autoIncrement를 true로 바꿔 key-generator을 사용해서 데이터의 키를 자동으로 생성할 수도 있다. 하지만 실제로 사용해본 결과, 데이터가 삽입된 순서대로 1,2,3… 의 값을 키로 사용하기 때문에 기본키로서는 적합하지 않다고 생각한다.</p>
-</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  createTestStoreRequest.<span class="property">transaction</span>.<span class="property">oncomplete</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> testObjStore = db.<span class="title function_">transaction</span>(<span class="string">&#x27;test&#x27;</span>, <span class="string">&#x27;readwrite&#x27;</span>).<span class="title function_">objectStore</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    testData.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      testObjStore.<span class="title function_">add</span>(item)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li><p>트리거된 oncomplete event에서 새롭게 생성된 object store에다가 데이터를 삽입한다.<br> 앞 단계에서와 마찬가지로 object store은 생성 요청만 이루어졌을 뿐이다. 따라서 데이터를 정상적으로 삽입하기 위해서는 object store 생성이 완료되는 시점에 트리거되는 oncomplete event에서 데이터를 삽입해주면 된다.</p>
-<p> 데이터베이스와 관련된 작업을 하기 위해서는 먼저 트랜잭션을 시작해야 한다. 이를 위해서는 transaction 메서드를 사용해야 하며, transaction 메서드는 3개의 인자를 받는다.</p>
-<ul>
-<li><p><strong>storeNames</strong></p>
-<p>새로운 트랜잭션의 scope에 포함시킬 object store의 이름들을 값을 갖는 배열이다. 단 하나의 object store만 포함시킬 경우에는 object store의 이름을 문자열로 전달할 수도 있다. </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>([<span class="string">&#x27;my-store-name&#x27;</span>]);</span><br><span class="line">db.<span class="title function_">transaction</span>(<span class="string">&#x27;my-store-name&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<p>데이터베이스에 있는 모든 object store을 포함시키려면 <code>IDBDatabase.objectStoreNames</code> 속성을 사용할 수 있다.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>(db.<span class="property">objectStoreNames</span>);</span><br></pre></td></tr></table></figure>
+<p>위 흐름대로 자동완성 기능이 수행될 때 결과를 콘솔에 출력해봤다.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search keyword : m / api request 1</span><br><span class="line">search keyword : ma / api request 2</span><br><span class="line">search keyword : mat / api request 3</span><br><span class="line">search keyword : matr / api request 4</span><br><span class="line">search keyword : matri / api request 5</span><br><span class="line">search keyword : matrix / api request 6</span><br></pre></td></tr></table></figure>
 
-</li>
-<li><p><strong>mode</strong> [Optional]</p>
-<p>트랜잭션에서 수행될 작업의 유형을 설정한다. 이 때 설정할 수 있는 작업의 유형은 총 3가지가 있다.</p>
+<p>우리는 matrix라는 6글자를 입력했을 뿐인데, 6개의 request가 서버로 보내졌다 . 만약 더 긴 제목의 영화를 검색한다면 영화 제목을 입력하는 짧은 시간 동안 수십 개의 request가 발생하는 것이다. 이처럼 너무 많은 이벤트 횟수의 실행으로 이벤트 핸들러가 과도한 연산을 수행하는 경우 성능 문제가 발생하고 이는 사용자 경험까지 떨어뜨리게 된다.</p>
+<p>여기서 필요한 것이 바로 <strong>Debounce</strong>와 <strong>Throttle</strong>이다. 두 기술 모두 자바스크립트의 이벤트를 제어(제한)해 성능을 향상시키는 방법이다.</p>
+<h1 id="Debounce"><a href="#Debounce" class="headerlink" title="Debounce"></a>Debounce</h1><p><strong>Debounce</strong>는 이벤트를 그룹화해서 특정시간이 지난 후 하나의 이벤트만 발생하도록 하는 기술이다. 예시로 살펴보자.</p>
 <ol>
-<li>readonly</li>
-<li>readwrite</li>
-<li>readwriteflush(Firefox-only)</li>
+<li>특정시간(delay)을 1초로 설정</li>
+<li>matrix를 입력(각 글자를 입력하는데 설정한 시간 미만으로 걸린다고 가정)</li>
+<li>설정한 시간 지남</li>
 </ol>
-<p>  mode의 값을 정의하지 않으면, 기본값인 readonly로 설정된다.</p>
-</li>
-<li><p><strong>options</strong> [Optional]</p>
-<p>아래의 속성을 갖는 객체이다.</p>
+<p>위 과정대로 진행되면 matrix라는 검색어와 함께 요청이 한 번만 발생한다. 원리는 다음과 같다.</p>
 <ol>
-<li><p><strong>durability</strong></p>
-<p> default, strict, 그리고 relaxed의 3가지 값을 가진다. 기본값은 default이다. 각 값에 따라 성능이 달라지며, 사용자의 환경에 따라 다른 값을 설정해주면 된다.</p>
-</li>
+<li>이벤트 발생 후 설정한 시간이 지나기 전에 이벤트가 다시 발생하면 지나간 시간을 초기화한다.</li>
+<li>설정한 시간이 지나게 되면 연산을 수행한다.</li>
 </ol>
-</li>
-</ul>
-</li>
+<p>그러니까 만약 ma를 입력하고 1초가 지났다면 다음과 같은 결과가 나올 것이다.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search keyword : ma / api request 1</span><br></pre></td></tr></table></figure>
+
+<p>어느 정도 개념에 대한 이해가 이루어졌다면 이제 <strong>Debounce</strong> 기술을 직접 구현해보자.</p>
+<h2 id="Debounce-구현하기"><a href="#Debounce-구현하기" class="headerlink" title="Debounce 구현하기"></a>Debounce 구현하기</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">b</span>&gt;</span>Default:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;default&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">b</span>&gt;</span>Debounce:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;debounce&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Debounce</strong>가 적용됐을 때랑 적용되지 않았을 때의 차이를 좀 더 명확하게 확인하기 위해 위와 같이 HTML구조를 짰다. </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;input&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> defaultText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#default&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> debounceText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#debounce&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> debounceReqCnt = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> defaultReqCnt = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> updateDebounceText = <span class="title function_">debounce</span>(<span class="function">(<span class="params">text</span>) =&gt;</span> &#123;</span><br><span class="line">  debounceText.<span class="property">textContent</span> = text</span><br><span class="line">  debounceReqCnt++</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(</span><br><span class="line">    <span class="string">`[Debounce] search keyword : <span class="subst">$&#123;text&#125;</span> / api request <span class="subst">$&#123;debounceReqCnt&#125;</span>`</span>,</span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">updateDefaultText</span> = (<span class="params">text</span>) =&gt; &#123;</span><br><span class="line">  defaultText.<span class="property">textContent</span> = text</span><br><span class="line">  defaultReqCnt++</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[Default] search keyword : <span class="subst">$&#123;text&#125;</span> / api request <span class="subst">$&#123;defaultReqCnt&#125;</span>`</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input.<span class="title function_">addEventListener</span>(<span class="string">&#x27;input&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">updateDefaultText</span>(e.<span class="property">target</span>.<span class="property">value</span>)</span><br><span class="line">  <span class="title function_">updateDebounceText</span>(e.<span class="property">target</span>.<span class="property">value</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> timeout</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">clearTimeout</span>(timeout)</span><br><span class="line">    timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">cb</span>(arg)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>전체 코드는 위와 같다.</p>
+<ol>
+<li>input에 addEventListener를 적용</li>
+<li>input이벤트가 발생할 때마다 DefaultText와 debounceText가 업데이트됨</li>
 </ol>
-<p><img src="/2022/10/26/Using-IndexedDB/image1.PNG"></p>
-<h1 id="😎마무리"><a href="#😎마무리" class="headerlink" title="😎마무리"></a>😎마무리</h1><p>지금까지 <strong>indexedDB</strong>를 생성해 데이터를 삽입하는 법에 대해 간단하게 알아봤다. 데이터베이스에 대한 기초적인 지식만 있다면 어렵지 않게 사용할 수 있을 것이라 생각한다. </p>
-<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API</a></li>
-</ul>
+<p>실행 흐름 자체는 그렇게 복잡하지 않다. 자세히 봐야할 부분은 맨 밑에 정의된 <strong>debounce</strong>함수이다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> timeout</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">clearTimeout</span>(timeout)</span><br><span class="line">    timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">cb</span>(arg)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>debounce</strong>함수가 실행되면 기존에 setTimeout으로 등록되었던 타이머를 없애고 새로운 타이머를 등록한다. 이는 아래 내용을 구현한 것이라고 이해하면 된다.</p>
+<blockquote>
+<p><strong>이벤트 발생 후 설정한 시간이 지나기 전에 이벤트가 다시 발생하면 지나간 시간을 초기화한다.</strong></p>
+</blockquote>
+<p>그러면 이제 실제 실행 화면을 확인해보자.</p>
+<img width="100%" src="/2022/10/06/Debounce-and-Throttle/debounceExample.gif">
+
+<p><strong>Debounce</strong>를 쓰지 않은 경우 아까와 동일하게 6번의 request 가 발생했고, <strong>Debounce</strong>를 적용시킨 경우 단 한 번의 request만이 발생했다. 수치상으로 6배의 성능 향상을 확인할 수 있다. 그럼 이제 <strong>Throttle</strong>에 대해서 알아보자.</p>
+<h1 id="Throttle"><a href="#Throttle" class="headerlink" title="Throttle"></a>Throttle</h1><p><strong>Throttle</strong>은 이벤트를 일정한 주기마다 발생하도록 하는 기술이다. 예를 들어 <strong>Throttle</strong>의 설정시간으로 1ms를 주면 해당 이벤트는 1ms동안 한 번만 발생하게 된다. <strong>Throttle</strong>을 사용하는 대표적인 예시로는 무한 스크롤 페이지가 있다. </p>
+<blockquote>
+<p><a href="https://www.agoda.com/ko-kr/?cid=1844104">https://www.agoda.com/ko-kr/?cid=1844104</a></p>
+</blockquote>
+<p>최근 파리에서 묵을 숙소를 찾으면서 사용한 agoda이다. 원하는 도시를 검색하고 계속 스크롤을 내리면 footer에 도달하기 전에 추가로 숙소 정보들을 가져오고 있는 걸 확인할 수 있다. 정확하지는 않을 수도 있지만 아마도 다음과 같은 흐름으로 실행되고 있을 거라고 생각한다.</p>
+<ol>
+<li>스크롤 위치가 footer와 얼마나 떨어져 있는지 확인</li>
+<li>일정 거리 이하라면 콘텐츠를 가져와 페이지를 업데이트함</li>
+</ol>
+<p>스크롤을 조작하면 스크롤 이벤트가 굉장히 많이 발생한다. 그래서 만약 스크롤 이벤트가 발생할 때마다 footer와의 거리를 계산한다면 성능상의 이슈가 생길 수도 있다. 그럴 때 Throttle을 사용할 수 있다. 연산이 몇 초에 한 번, 또는 몇 밀리초에 한 번씩만 수행되도록 제한을 두는 것이다.</p>
+<h2 id="Throttle-구현하기"><a href="#Throttle-구현하기" class="headerlink" title="Throttle 구현하기"></a>Throttle 구현하기</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">b</span>&gt;</span>Default:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;default&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">b</span>&gt;</span>Throttle:<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;throttle&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300vh</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Debounce</strong>와 마찬가지로 <strong>Throttle</strong>을 적용했을 때와 적용하지 않았을 때의 차이를 보기 위해 위와 같이 html 구조를 짰다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> defaultText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#default&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> throttleText = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#throttle&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> defaultCnt = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> throttleCnt = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">countDetectingDefault</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  defaultCnt++</span><br><span class="line">  defaultText.<span class="property">textContent</span> = defaultCnt</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> countDetectingThrottle = <span class="title function_">throttle</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  throttleCnt++</span><br><span class="line">  throttleText.<span class="property">textContent</span> = throttleCnt</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="title function_">countDetectingDefault</span>()</span><br><span class="line">  <span class="title function_">countDetectingThrottle</span>()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> shouldWait = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (shouldWait) <span class="keyword">return</span></span><br><span class="line">    <span class="title function_">cb</span>(...args)</span><br><span class="line">    shouldWait = <span class="literal">true</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      shouldWait = <span class="literal">false</span></span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>winodw객체에 addEventListener 를 적용</li>
+<li>스크롤 이벤트가 발생할 때마다 카운트 증가</li>
+</ol>
+<p>따로 구현은 하지 않았지만 여기서 스크롤 이벤트가 발생한다는 건 아래의 작업이 이루어지는 거라고 가정하자.</p>
+<blockquote>
+<p><strong>스크롤 위치가 footer와 얼마나 떨어져 있는지 확인</strong></p>
+</blockquote>
+<p><strong>Debounce</strong>와 마찬가지로 가장 중요한 건 맨 밑의 <strong>throttle</strong> 함수이다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">cb, delay = <span class="number">1000</span></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> shouldWait = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (shouldWait) <span class="keyword">return</span></span><br><span class="line">    <span class="title function_">cb</span>(arg)</span><br><span class="line">    shouldWait = <span class="literal">true</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      shouldWait = <span class="literal">false</span></span><br><span class="line">    &#125;, delay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>shouldWait 의 초기값이 false이기 때문에 최초에는 콜백함수가 무조건 실행된다.</li>
+<li>콜백 함수가 실행됐다면 shouldWait의 값을 true로 바꾼다.</li>
+<li>setTimeout을 통해 설정한 시간 뒤에 shouldWait의 값이 바뀌도록 한다.</li>
+<li>설정한 시간이 지나기 전까지는 shouldWait의 값이 true이기 때문에 연산이 수행되지 않는다.</li>
+</ol>
+<p>실행 화면을 확인해보자.</p>
+<img width="100%" src="/2022/10/06/Debounce-and-Throttle/ThrottleExample.gif">
+
+<p>페이지의 처음부터 끝까지 스크롤하는 동안 <strong>Throttle</strong>을 적용하지 않았을 때는 스크롤이 footer로부터 얼마나 떨어져 있는지 계산하는 연산이 총 67번 수행됐고, <strong>Throttle</strong>을 적용했을 경우에는 단 2번만 수행됐다. </p>
+<h1 id="💡-Tip-Debounce과-Throttle의-차이"><a href="#💡-Tip-Debounce과-Throttle의-차이" class="headerlink" title="💡 Tip - Debounce과 Throttle의 차이"></a>💡 Tip - <strong>Debounce</strong>과 <strong>Throttle</strong>의 차이</h1><p><strong>Debounce</strong>과 <strong>Throttle</strong>의 가장 큰 차이점은 <strong>Throttle</strong>은 설정한 시간마다 연산이 수행됨을 보장한다는 것이다. 그래서 <strong>Throttle</strong>은 지속적인 업데이트가 필요한 경우에 사용하는 게 좋다.</p>
+<p>만약 무한 스크롤 페이지를 구현할 때 <strong>Debounce</strong>를 사용했다고 가정해보자. 스크롤 이벤트가 멈춰야만 footer와의 거리를 확인하고 콘텐츠를 추가로 가져올 것이기 때문에 footer에 도달하더라도 스크롤 이벤트가 설정한 시간 내에 다시 발생한다면 아무런 변화도 일어나지 않을 것이다.</p>
+<p>하지만 <strong>Throttle</strong>은 정기적으로 연산이 실행되기 때문에 위의 문제가 발생하지 않는다. 설정한 시간마다 연산을 수행하기 때문에 footer와의 거리를 지속적으로 업데이트할 수 있어 footer에 도달하기 전에 정상적으로 콘텐츠를 추가로 가져올 수 있을 것이다.</p>
+<h1 id="📚-참고자료"><a href="#📚-참고자료" class="headerlink" title="📚 참고자료"></a>📚 참고자료</h1><p><a href="https://webclub.tistory.com/607">https://webclub.tistory.com/607</a></p>
+<p><a href="https://www.youtube.com/watch?v=cjIswDCKgu0">https://www.youtube.com/watch?v=cjIswDCKgu0</a></p>
 ]]></content>
       <categories>
-        <category>Database</category>
+        <category>Javascript</category>
       </categories>
       <tags>
-        <tag>Tutorial</tag>
-        <tag>Database</tag>
-        <tag>indexedDB</tag>
-        <tag>Basic</tag>
+        <tag>Javascript</tag>
+        <tag>Debounce</tag>
+        <tag>Throttle</tag>
       </tags>
   </entry>
 </search>
