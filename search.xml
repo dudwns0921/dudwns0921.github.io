@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>[Coding Test] 프로그래머스 -폰켓몬-</title>
-    <url>/2022/11/15/Coding-Test-Programmers-1/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/1845">https://school.programmers.co.kr/learn/courses/30/lessons/1845</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제는 굉장히 길지만, 결국 가장 많은 종류의 폰켓몬을 선택할 때의 폰켓몬의 수를 구하면 되는 문제이다.</p>
-<p>폰켓몬 배열에는 중복된 폰켓몬들도 있기 때문에, Set을 사용해 중복을 제거해준다. 그러면 해당 Set에는 각기 다른 종류의 폰켓몬들만이 남으며, 이들을 모두 선택했을 때 가장 많은 종류의 폰켓몬을 선택할 수 있게 되는 것이다.</p>
-<p>하지만 총 폰켓몬 수&#x2F;2만큼의 폰켓몬만을 선택한다고 했기 때문에 Set의 길이가 폰켓몬 수&#x2F;2보다 작으면 Set의 길이를 반환하고, 그렇지 않다면 폰켓몬 수&#x2F;2의 값을 반환하면 된다.  </p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = <span class="number">0</span></span><br><span class="line">  <span class="keyword">const</span> avaliableNum = nums.<span class="property">length</span> / <span class="number">2</span></span><br><span class="line">  <span class="keyword">const</span> numsDeduplicated = <span class="keyword">new</span> <span class="title class_">Set</span>(nums)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (numsDeduplicated.<span class="property">size</span> &lt; avaliableNum) &#123;</span><br><span class="line">    answer = numsDeduplicated.<span class="property">size</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    answer = avaliableNum</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
+    <title>[Coding Test] 프로그래머스 -수박수박수박수박수박수?-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-11/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12922">https://school.programmers.co.kr/learn/courses/30/lessons/12922</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> answer = <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i % <span class="number">2</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">      answer += <span class="string">&#x27;수&#x27;</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      answer += <span class="string">&#x27;박&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -25,22 +22,6 @@
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12919">https://school.programmers.co.kr/learn/courses/30/lessons/12919</a></p>
 <h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
 <h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">seoul</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; seoul.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (seoul[i] === <span class="string">&#x27;Kim&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`김서방은 <span class="subst">$&#123;i&#125;</span>에 있다`</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Coding-Test</category>
-        <category>Programmers</category>
-      </categories>
-      <tags>
-        <tag>Coding-Test</tag>
-        <tag>Programmers</tag>
-        <tag>Lv.1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Coding Test] 프로그래머스 -수박수박수박수박수박수?-</title>
-    <url>/2022/11/17/Coding-Test-Programmers-11/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12922">https://school.programmers.co.kr/learn/courses/30/lessons/12922</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> answer = <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i % <span class="number">2</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">      answer += <span class="string">&#x27;수&#x27;</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      answer += <span class="string">&#x27;박&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -74,6 +55,23 @@
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12928">https://school.programmers.co.kr/learn/courses/30/lessons/12928</a></p>
 <h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
 <h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n % i === <span class="number">0</span>) sum += i</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -자릿수 더하기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-15/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12931">https://school.programmers.co.kr/learn/courses/30/lessons/12931</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>조금 설명을 덧붙이자면 문자열은 순회가 가능한 iterator이기 때문에 숫자를 문자열로 만들어 각 자릿수를 순회하는 방법이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> a <span class="keyword">of</span> n.<span class="title function_">toString</span>()) &#123;</span><br><span class="line">    sum += <span class="built_in">parseInt</span>(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -121,28 +119,14 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -자릿수 더하기-</title>
-    <url>/2022/11/17/Coding-Test-Programmers-15/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12931">https://school.programmers.co.kr/learn/courses/30/lessons/12931</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
-<p>조금 설명을 덧붙이자면 문자열은 순회가 가능한 iterator이기 때문에 숫자를 문자열로 만들어 각 자릿수를 순회하는 방법이다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> a <span class="keyword">of</span> n.<span class="title function_">toString</span>()) &#123;</span><br><span class="line">    sum += <span class="built_in">parseInt</span>(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Coding-Test</category>
-        <category>Programmers</category>
-      </categories>
-      <tags>
-        <tag>Coding-Test</tag>
-        <tag>Programmers</tag>
-        <tag>Lv.1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Coding Test] 프로그래머스 -정수 내림차순으로 배치하기-</title>
-    <url>/2022/11/17/Coding-Test-Programmers-17/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12933">https://school.programmers.co.kr/learn/courses/30/lessons/12933</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">parseInt</span>(</span><br><span class="line">    n</span><br><span class="line">      .<span class="title function_">toString</span>()</span><br><span class="line">      .<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">      .<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> b - a)</span><br><span class="line">      .<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>),</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>[Coding Test] 프로그래머스 -폰켓몬-</title>
+    <url>/2022/11/15/Coding-Test-Programmers-1/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/1845">https://school.programmers.co.kr/learn/courses/30/lessons/1845</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제는 굉장히 길지만, 결국 가장 많은 종류의 폰켓몬을 선택할 때의 폰켓몬의 수를 구하면 되는 문제이다.</p>
+<p>폰켓몬 배열에는 중복된 폰켓몬들도 있기 때문에, Set을 사용해 중복을 제거해준다. 그러면 해당 Set에는 각기 다른 종류의 폰켓몬들만이 남으며, 이들을 모두 선택했을 때 가장 많은 종류의 폰켓몬을 선택할 수 있게 되는 것이다.</p>
+<p>하지만 총 폰켓몬 수&#x2F;2만큼의 폰켓몬만을 선택한다고 했기 때문에 Set의 길이가 폰켓몬 수&#x2F;2보다 작으면 Set의 길이를 반환하고, 그렇지 않다면 폰켓몬 수&#x2F;2의 값을 반환하면 된다.  </p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = <span class="number">0</span></span><br><span class="line">  <span class="keyword">const</span> avaliableNum = nums.<span class="property">length</span> / <span class="number">2</span></span><br><span class="line">  <span class="keyword">const</span> numsDeduplicated = <span class="keyword">new</span> <span class="title class_">Set</span>(nums)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (numsDeduplicated.<span class="property">size</span> &lt; avaliableNum) &#123;</span><br><span class="line">    answer = numsDeduplicated.<span class="property">size</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    answer = avaliableNum</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -159,6 +143,22 @@
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12934">https://school.programmers.co.kr/learn/courses/30/lessons/12934</a></p>
 <h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
 <h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="title class_">Number</span>.<span class="title function_">isInteger</span>(<span class="title class_">Math</span>.<span class="title function_">sqrt</span>(n))) &#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="title class_">Math</span>.<span class="title function_">sqrt</span>(n) + <span class="number">1</span>) ** <span class="number">2</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -정수 내림차순으로 배치하기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-17/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12933">https://school.programmers.co.kr/learn/courses/30/lessons/12933</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">parseInt</span>(</span><br><span class="line">    n</span><br><span class="line">      .<span class="title function_">toString</span>()</span><br><span class="line">      .<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">      .<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> b - a)</span><br><span class="line">      .<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>),</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -242,6 +242,42 @@
       </tags>
   </entry>
   <entry>
+    <title>[Coding Test] 프로그래머스 -최대공약수와 최소공배수-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-22/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12940">https://school.programmers.co.kr/learn/courses/30/lessons/12940</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>여러 방법들이 있겠지만, 유클리드 호제법에 대한 개념을 요구하는 문제이다.</p>
+<p>유클리드 호제법을 간단하게 정리하면 아래와 같다.</p>
+<blockquote>
+<p>a, b(단, a&gt;b)에 대해서 a를 b로 나눈 나머지를 r이라 하면, a와 b의 최대공약수는 b와 r의 최대공약수와 같다.</p>
+</blockquote>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getGcd</span>(<span class="params">n, m</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> gcd</span><br><span class="line">  <span class="keyword">if</span> (n &lt; m) &#123;</span><br><span class="line">    ;[n, m] = [m, n]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; m) &#123;</span><br><span class="line">      ;[n, m] = [m, n]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n % m == <span class="number">0</span>) &#123;</span><br><span class="line">      gcd = m</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    n = n % m</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> gcd</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n, m</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> product = n * m</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line">  <span class="keyword">const</span> gcd = <span class="title function_">getGcd</span>(n, m)</span><br><span class="line">  answer.<span class="title function_">push</span>(gcd, product / gcd)</span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -콜라츠 추측-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-23/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12943">https://school.programmers.co.kr/learn/courses/30/lessons/12943</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">num</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (num === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> cnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num === <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> cnt</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cnt === <span class="number">501</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (num % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">      num = num / <span class="number">2</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      num = num * <span class="number">3</span> + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    cnt++</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Coding Test] 프로그래머스 -하샤드 수-</title>
     <url>/2022/11/22/Coding-Test-Programmers-25/</url>
     <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12947">https://school.programmers.co.kr/learn/courses/30/lessons/12947</a></p>
@@ -293,11 +329,45 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -콜라츠 추측-</title>
-    <url>/2022/11/22/Coding-Test-Programmers-23/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12943">https://school.programmers.co.kr/learn/courses/30/lessons/12943</a></p>
+    <title>[Coding Test] 프로그래머스 -행렬의 덧셈-</title>
+    <url>/2022/11/30/Coding-Test-Programmers-27/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12950">https://school.programmers.co.kr/learn/courses/30/lessons/12950</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다. 다만 map을 활용하면 좀 더 깔끔한 풀이가 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr1, arr2</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr1.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; arr1[<span class="number">0</span>].<span class="property">length</span>; j++) &#123;</span><br><span class="line">      arr1[i][j] += arr2[i][j]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="다른-사람-풀이"><a href="#다른-사람-풀이" class="headerlink" title="다른 사람 풀이"></a>다른 사람 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr1, arr2</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> arr1.<span class="title function_">map</span>(<span class="function">(<span class="params">arr1Item,i</span>) =&gt;</span> arr1Item.<span class="title function_">map</span>(<span class="function">(<span class="params">arr2Item, j</span>) =&gt;</span> arr2Item + arr2[i][j]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-</title>
+    <url>/2022/11/30/Coding-Test-Programmers-28/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12954">https://school.programmers.co.kr/learn/courses/30/lessons/12954</a></p>
 <h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">num</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (num === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> cnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num === <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> cnt</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cnt === <span class="number">501</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (num % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">      num = num / <span class="number">2</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      num = num * <span class="number">3</span> + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    cnt++</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">x, n</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> answer = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    answer.<span class="title function_">push</span>(x * i)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -직사각형 별찍기-</title>
+    <url>/2022/11/30/Coding-Test-Programmers-29/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12969">https://school.programmers.co.kr/learn/courses/30/lessons/12969</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>입력 부분만 구현한다면 코딩 테스트 입문으로 많이 푸는 별찍기 문제와 같다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">process.<span class="property">stdin</span>.<span class="title function_">setEncoding</span>(<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">process.<span class="property">stdin</span>.<span class="title function_">on</span>(<span class="string">&#x27;data&#x27;</span>, <span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> n = data.<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> a = <span class="title class_">Number</span>(n[<span class="number">0</span>])</span><br><span class="line">  <span class="keyword">const</span> b = <span class="title class_">Number</span>(n[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; b; i++) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;*&#x27;</span>.<span class="title function_">repeat</span>(a))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -325,34 +395,11 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -같은 숫자는 싫어-</title>
-    <url>/2022/11/16/Coding-Test-Programmers-4/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12906">https://school.programmers.co.kr/learn/courses/30/lessons/12906</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>배열 안에서의 연속된 숫자들을 제거하는 문제이다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="keyword">if</span> (answer[answer.<span class="property">length</span> - <span class="number">1</span>] !== item) &#123;</span><br><span class="line">      answer.<span class="title function_">push</span>(item)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="🚨주의할-점"><a href="#🚨주의할-점" class="headerlink" title="🚨주의할 점"></a>🚨주의할 점</h1><p>간단한 문제이지만 기존 배열의 순서를 지켜야 하기 때문에 배열의 앞에서부터 순회하며 이전 인덱스의 값과 현재의 값이 같지 않은 경우에만 새로운 배열에다가 push 해주면 된다.</p>
-]]></content>
-      <categories>
-        <category>Coding-Test</category>
-        <category>Programmers</category>
-      </categories>
-      <tags>
-        <tag>Coding-Test</tag>
-        <tag>Programmers</tag>
-        <tag>Lv.1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Coding Test] 프로그래머스 -최대공약수와 최소공배수-</title>
-    <url>/2022/11/22/Coding-Test-Programmers-22/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12940">https://school.programmers.co.kr/learn/courses/30/lessons/12940</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>여러 방법들이 있겠지만, 유클리드 호제법에 대한 개념을 요구하는 문제이다.</p>
-<p>유클리드 호제법을 간단하게 정리하면 아래와 같다.</p>
-<blockquote>
-<p>a, b(단, a&gt;b)에 대해서 a를 b로 나눈 나머지를 r이라 하면, a와 b의 최대공약수는 b와 r의 최대공약수와 같다.</p>
-</blockquote>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getGcd</span>(<span class="params">n, m</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> gcd</span><br><span class="line">  <span class="keyword">if</span> (n &lt; m) &#123;</span><br><span class="line">    ;[n, m] = [m, n]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; m) &#123;</span><br><span class="line">      ;[n, m] = [m, n]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n % m == <span class="number">0</span>) &#123;</span><br><span class="line">      gcd = m</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    n = n % m</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> gcd</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n, m</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> product = n * m</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line">  <span class="keyword">const</span> gcd = <span class="title function_">getGcd</span>(n, m)</span><br><span class="line">  answer.<span class="title function_">push</span>(gcd, product / gcd)</span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>[Coding Test] 프로그래머스 -소수 만들기-</title>
+    <url>/2022/11/30/Coding-Test-Programmers-30/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 배열에서 선택한 3개의 합을 확인해야 하므로, 선택하는 순서는 중요하지 않다.<br>따라서 조합을 구현하면 된다.</p>
+<p>다른 사람의 풀이를 보니, 소수를 판단하는 부분에서 효율성을 고려한 풀이들이 있었다.<br>이 문제에서는 효율성을 따지지 않아 큰 문제가 되지 않았지만, 주의할 필요가 있어보인다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; nums.<span class="property">length</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> k = j + <span class="number">1</span>; k &lt; nums.<span class="property">length</span>; k++) &#123;</span><br><span class="line">        <span class="keyword">const</span> sum = nums[i] + nums[j] + nums[k]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> cnt = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> l = <span class="number">1</span>; l &lt;= sum; l++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (sum % l === <span class="number">0</span>) &#123;</span><br><span class="line">            cnt++</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (cnt === <span class="number">2</span>) &#123;</span><br><span class="line">          answer++</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -448,102 +495,22 @@
       </tags>
   </entry>
   <entry>
-    <title>[Database] IndexedDB 기초</title>
-    <url>/2022/10/26/Using-IndexedDB/</url>
-    <content><![CDATA[<p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
-<h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
-<p><em>MDN IndexedDB API 문서</em></p>
-<p><em>IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.</em></p>
-</blockquote>
-<h1 id="🔧기본-패턴"><a href="#🔧기본-패턴" class="headerlink" title="🔧기본 패턴"></a>🔧기본 패턴</h1><ol>
-<li><p>데이터베이스와의 연결을 시작한다.</p>
-</li>
-<li><p>데이터베이스에 object store을 생성한다.</p>
-</li>
-<li><p>Transaction을 시작한 후 request를 생성해 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
-</li>
-</ol>
-<blockquote>
-<p><em>W3C IndexedDB API 문서</em></p>
-<p><em>Transaction은 데이터베이스에서 데이터와 상호작용하기 위해 사용된다. 데이터를 읽거나 데이터베이스에 데이터를 기록하는 작업 모두 Transaction에 의해 수행된다.</em></p>
-</blockquote>
-<p>이제 위 패턴에 맞추어 데이터베이스를 만들고 데이터를 추가하는 작업까지 진행해보겠다.</p>
-<h1 id="👶튜토리얼"><a href="#👶튜토리얼" class="headerlink" title="👶튜토리얼"></a>👶튜토리얼</h1><blockquote>
-<p><em>MDN IndexedDB API 문서</em></p>
-<p><em>새로운 데이터베이스를 만들거나, 이미 존재하는 데이터베이스의 버전을 높일 경우 onupgradeneeded event가 트리거된다. 그리고 onupgradeneeded event에 대한 핸들러를 통해서만 데이터베이스의 구조를 변경할 수 있다.</em></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> testData = [</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;444-44-4444&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Bill&#x27;</span>, <span class="attr">age</span>: <span class="number">35</span>, <span class="attr">email</span>: <span class="string">&#x27;bill@company.com&#x27;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;555-55-5555&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Donna&#x27;</span>, <span class="attr">age</span>: <span class="number">32</span>, <span class="attr">email</span>: <span class="string">&#x27;donna@home.org&#x27;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDBRequest = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(<span class="string">&#x27;test&#x27;</span>);</span><br><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> db = event.<span class="property">target</span>.<span class="property">result</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> createTestStoreRequest = db.<span class="title function_">createObjectStore</span>(<span class="string">&#x27;test&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">keyPath</span>: <span class="string">&#x27;ssn&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p><strong>indexedDB</strong> api의 open 메서드를 통해 데이터베이스와의 연결을 시작한다.</p>
-<p> <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행된다. 그러니까 open 메서드는 데이터베이스와 연결을 요청했을뿐 바로 연결이 이루어지지 않는다는 것이다.</p>
-</li>
-<li><p>트리거된 onupgradeneeded event에서 object store 생성을 요청한다.</p>
-<p> 데이터베이스와의 연결이 정상적으로 시작되면 onupgradeneeded event가 트리거된다.</p>
-<p> Promise나 async await을 사용하는 것처럼 <strong>IndexedDB</strong>에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.</p>
-<p> 그러니까 위의 예시는 데이터베이스가 생성된 다음에 발생되는 onupgradeneeded event에 핸들러를 작성해서 db 라는 변수에 데이터베이스를 할당하고, 데이터를 저장하기 위한 object store을 만든 것이다. object store를 생성하기 위해서는 createObjectStore 메서드를 사용하면 되는데, 이 메서드는 두 가지 인자를 받는다.</p>
-<ul>
-<li><p><strong>name</strong> : object store의 이름이다.</p>
-</li>
-<li><p><strong>options</strong> [Optional] : 아래의 속성을 갖는 객체이다.</p>
-<ol>
-<li><p><strong>Keypath</strong> [Optional]</p>
-<p> 새로운 object store에서 사용할 Keypath를 설정한다. 저장할 각 객체 데이터들이 고유한 값을 가지는 속성명을 작성하면 된다. 데이터베이스의 기본키를 설정한다고 생각하면 좀 더 이해가 쉬울 것이다.</p>
-</li>
-<li><p><strong>autoIncrement</strong> [Optional]</p>
-<p> 데이터의 키를 생성해주는 매커니즘인 key-generator 사용 여부를 설정한다. 기본값은 false이다.</p>
-</li>
-</ol>
-<p>  여기서 주의할 점은 keypath를 작성하지 않고 autoIncrement도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 Keypath의 값을 작성해주는 게 가장 좋다. 혹은 autoIncrement를 true로 바꿔 key-generator을 사용해서 데이터의 키를 자동으로 생성할 수도 있다.</p>
-</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  createTestStoreRequest.<span class="property">transaction</span>.<span class="property">oncomplete</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> testObjStore = db.<span class="title function_">transaction</span>(<span class="string">&#x27;test&#x27;</span>, <span class="string">&#x27;readwrite&#x27;</span>).<span class="title function_">objectStore</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    testData.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      testObjStore.<span class="title function_">add</span>(item)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li><p>트리거된 oncomplete event에서 새롭게 생성된 object store에다가 데이터를 삽입한다.<br> 앞 단계에서와 마찬가지로 object store은 생성 요청만 이루어졌을 뿐이다. 따라서 데이터를 정상적으로 삽입하기 위해서는 object store 생성이 완료되는 시점에 트리거되는 oncomplete event에서 데이터를 삽입해주면 된다.</p>
-<p> 데이터베이스와 관련된 작업을 하기 위해서는 먼저 트랜잭션을 시작해야 한다. 이를 위해서는 transaction 메서드를 사용해야 하며, transaction 메서드는 3개의 인자를 받는다.</p>
-<ul>
-<li><p><strong>storeNames</strong></p>
-<p>새로운 트랜잭션의 scope에 포함시킬 object store의 이름들을 값을 갖는 배열이다. 단 하나의 object store만 포함시킬 경우에는 object store의 이름을 문자열로 전달할 수도 있다. </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>([<span class="string">&#x27;my-store-name&#x27;</span>]);</span><br><span class="line">db.<span class="title function_">transaction</span>(<span class="string">&#x27;my-store-name&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<p>데이터베이스에 있는 모든 object store을 포함시키려면 <code>IDBDatabase.objectStoreNames</code> 속성을 사용할 수 있다.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>(db.<span class="property">objectStoreNames</span>);</span><br></pre></td></tr></table></figure>
+    <title>[Coding Test] 프로그래머스 -같은 숫자는 싫어-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-4/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12906">https://school.programmers.co.kr/learn/courses/30/lessons/12906</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>배열 안에서의 연속된 숫자들을 제거하는 문제이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="keyword">if</span> (answer[answer.<span class="property">length</span> - <span class="number">1</span>] !== item) &#123;</span><br><span class="line">      answer.<span class="title function_">push</span>(item)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</li>
-<li><p><strong>mode</strong> [Optional]</p>
-<p>트랜잭션에서 수행될 작업의 유형을 설정한다. 이 때 설정할 수 있는 작업의 유형은 총 3가지가 있다.</p>
-<ol>
-<li>readonly</li>
-<li>readwrite</li>
-<li>versionUpdate</li>
-</ol>
-<p>  여기서 versionUpdate는 수동으로는 설정할 수 없으며 onupgradeneeded 이벤트에서 자동으로 생성된다.<br>  mode의 값을 정의하지 않으면, 기본값인 readonly로 설정된다.</p>
-</li>
-<li><p><strong>options</strong> [Optional]</p>
-<p>아래의 속성을 갖는 객체이다.</p>
-<ol>
-<li><p><strong>durability</strong></p>
-<p> 트랜잭션을 커밋할 때 성능 또는 내구성의 우선 순위를 지정할지 여부를 웹 브라우저에게 알려주는 힌트이다. strict, relaxed, default까지 총 3가지 값을 설정할 수 있으며 기본값은 default이다.</p>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<p><img src="/2022/10/26/Using-IndexedDB/image1.PNG"></p>
-<h1 id="😎마무리"><a href="#😎마무리" class="headerlink" title="😎마무리"></a>😎마무리</h1><p>지금까지 <strong>indexedDB</strong>를 생성해 데이터를 삽입하는 법에 대해 간단하게 알아봤다. 데이터베이스에 대한 기초적인 지식만 있다면 어렵지 않게 사용할 수 있을 것이라 생각한다. </p>
-<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API</a></li>
-</ul>
+<h1 id="🚨주의할-점"><a href="#🚨주의할-점" class="headerlink" title="🚨주의할 점"></a>🚨주의할 점</h1><p>간단한 문제이지만 기존 배열의 순서를 지켜야 하기 때문에 배열의 앞에서부터 순회하며 이전 인덱스의 값과 현재의 값이 같지 않은 경우에만 새로운 배열에다가 push 해주면 된다.</p>
 ]]></content>
       <categories>
-        <category>Database</category>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
       </categories>
       <tags>
-        <tag>Database</tag>
-        <tag>indexedDB</tag>
-        <tag>Basic</tag>
-        <tag>Tutorial</tag>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
       </tags>
   </entry>
   <entry>
@@ -677,8 +644,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Tutorial</tag>
         <tag>Hexo</tag>
+        <tag>Tutorial</tag>
       </tags>
   </entry>
   <entry>
@@ -782,6 +749,105 @@
         <tag>Javascript</tag>
         <tag>Debounce</tag>
         <tag>Throttle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Database] IndexedDB 기초</title>
+    <url>/2022/10/26/Using-IndexedDB/</url>
+    <content><![CDATA[<p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
+<h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
+<p><em>MDN IndexedDB API 문서</em></p>
+<p><em>IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.</em></p>
+</blockquote>
+<h1 id="🔧기본-패턴"><a href="#🔧기본-패턴" class="headerlink" title="🔧기본 패턴"></a>🔧기본 패턴</h1><ol>
+<li><p>데이터베이스와의 연결을 시작한다.</p>
+</li>
+<li><p>데이터베이스에 object store을 생성한다.</p>
+</li>
+<li><p>Transaction을 시작한 후 request를 생성해 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
+</li>
+</ol>
+<blockquote>
+<p><em>W3C IndexedDB API 문서</em></p>
+<p><em>Transaction은 데이터베이스에서 데이터와 상호작용하기 위해 사용된다. 데이터를 읽거나 데이터베이스에 데이터를 기록하는 작업 모두 Transaction에 의해 수행된다.</em></p>
+</blockquote>
+<p>이제 위 패턴에 맞추어 데이터베이스를 만들고 데이터를 추가하는 작업까지 진행해보겠다.</p>
+<h1 id="👶튜토리얼"><a href="#👶튜토리얼" class="headerlink" title="👶튜토리얼"></a>👶튜토리얼</h1><blockquote>
+<p><em>MDN IndexedDB API 문서</em></p>
+<p><em>새로운 데이터베이스를 만들거나, 이미 존재하는 데이터베이스의 버전을 높일 경우 onupgradeneeded event가 트리거된다. 그리고 onupgradeneeded event에 대한 핸들러를 통해서만 데이터베이스의 구조를 변경할 수 있다.</em></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> testData = [</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;444-44-4444&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Bill&#x27;</span>, <span class="attr">age</span>: <span class="number">35</span>, <span class="attr">email</span>: <span class="string">&#x27;bill@company.com&#x27;</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">ssn</span>: <span class="string">&#x27;555-55-5555&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;Donna&#x27;</span>, <span class="attr">age</span>: <span class="number">32</span>, <span class="attr">email</span>: <span class="string">&#x27;donna@home.org&#x27;</span> &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> openDBRequest = <span class="variable language_">window</span>.<span class="property">indexedDB</span>.<span class="title function_">open</span>(<span class="string">&#x27;test&#x27;</span>);</span><br><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> db = event.<span class="property">target</span>.<span class="property">result</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> createTestStoreRequest = db.<span class="title function_">createObjectStore</span>(<span class="string">&#x27;test&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">keyPath</span>: <span class="string">&#x27;ssn&#x27;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>indexedDB</strong> api의 open 메서드를 통해 데이터베이스와의 연결을 시작한다.</p>
+<p> <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행된다. 그러니까 open 메서드는 데이터베이스와 연결을 요청했을뿐 바로 연결이 이루어지지 않는다는 것이다.</p>
+</li>
+<li><p>트리거된 onupgradeneeded event에서 object store 생성을 요청한다.</p>
+<p> 데이터베이스와의 연결이 정상적으로 시작되면 onupgradeneeded event가 트리거된다.</p>
+<p> Promise나 async await을 사용하는 것처럼 <strong>IndexedDB</strong>에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.</p>
+<p> 그러니까 위의 예시는 데이터베이스가 생성된 다음에 발생되는 onupgradeneeded event에 핸들러를 작성해서 db 라는 변수에 데이터베이스를 할당하고, 데이터를 저장하기 위한 object store을 만든 것이다. object store를 생성하기 위해서는 createObjectStore 메서드를 사용하면 되는데, 이 메서드는 두 가지 인자를 받는다.</p>
+<ul>
+<li><p><strong>name</strong> : object store의 이름이다.</p>
+</li>
+<li><p><strong>options</strong> [Optional] : 아래의 속성을 갖는 객체이다.</p>
+<ol>
+<li><p><strong>Keypath</strong> [Optional]</p>
+<p> 새로운 object store에서 사용할 Keypath를 설정한다. 저장할 각 객체 데이터들이 고유한 값을 가지는 속성명을 작성하면 된다. 데이터베이스의 기본키를 설정한다고 생각하면 좀 더 이해가 쉬울 것이다.</p>
+</li>
+<li><p><strong>autoIncrement</strong> [Optional]</p>
+<p> 데이터의 키를 생성해주는 매커니즘인 key-generator 사용 여부를 설정한다. 기본값은 false이다.</p>
+</li>
+</ol>
+<p>  여기서 주의할 점은 keypath를 작성하지 않고 autoIncrement도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 Keypath의 값을 작성해주는 게 가장 좋다. 혹은 autoIncrement를 true로 바꿔 key-generator을 사용해서 데이터의 키를 자동으로 생성할 수도 있다.</p>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">openRequest.<span class="property">onupgradeneeded</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  createTestStoreRequest.<span class="property">transaction</span>.<span class="property">oncomplete</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> testObjStore = db.<span class="title function_">transaction</span>(<span class="string">&#x27;test&#x27;</span>, <span class="string">&#x27;readwrite&#x27;</span>).<span class="title function_">objectStore</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    testData.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      testObjStore.<span class="title function_">add</span>(item)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>트리거된 oncomplete event에서 새롭게 생성된 object store에다가 데이터를 삽입한다.<br> 앞 단계에서와 마찬가지로 object store은 생성 요청만 이루어졌을 뿐이다. 따라서 데이터를 정상적으로 삽입하기 위해서는 object store 생성이 완료되는 시점에 트리거되는 oncomplete event에서 데이터를 삽입해주면 된다.</p>
+<p> 데이터베이스와 관련된 작업을 하기 위해서는 먼저 트랜잭션을 시작해야 한다. 이를 위해서는 transaction 메서드를 사용해야 하며, transaction 메서드는 3개의 인자를 받는다.</p>
+<ul>
+<li><p><strong>storeNames</strong></p>
+<p>새로운 트랜잭션의 scope에 포함시킬 object store의 이름들을 값을 갖는 배열이다. 단 하나의 object store만 포함시킬 경우에는 object store의 이름을 문자열로 전달할 수도 있다. </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>([<span class="string">&#x27;my-store-name&#x27;</span>]);</span><br><span class="line">db.<span class="title function_">transaction</span>(<span class="string">&#x27;my-store-name&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>데이터베이스에 있는 모든 object store을 포함시키려면 <code>IDBDatabase.objectStoreNames</code> 속성을 사용할 수 있다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.<span class="title function_">transaction</span>(db.<span class="property">objectStoreNames</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p><strong>mode</strong> [Optional]</p>
+<p>트랜잭션에서 수행될 작업의 유형을 설정한다. 이 때 설정할 수 있는 작업의 유형은 총 3가지가 있다.</p>
+<ol>
+<li>readonly</li>
+<li>readwrite</li>
+<li>versionUpdate</li>
+</ol>
+<p>  여기서 versionUpdate는 수동으로는 설정할 수 없으며 onupgradeneeded 이벤트에서 자동으로 생성된다.<br>  mode의 값을 정의하지 않으면, 기본값인 readonly로 설정된다.</p>
+</li>
+<li><p><strong>options</strong> [Optional]</p>
+<p>아래의 속성을 갖는 객체이다.</p>
+<ol>
+<li><p><strong>durability</strong></p>
+<p> 트랜잭션을 커밋할 때 성능 또는 내구성의 우선 순위를 지정할지 여부를 웹 브라우저에게 알려주는 힌트이다. strict, relaxed, default까지 총 3가지 값을 설정할 수 있으며 기본값은 default이다.</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="/2022/10/26/Using-IndexedDB/image1.PNG"></p>
+<h1 id="😎마무리"><a href="#😎마무리" class="headerlink" title="😎마무리"></a>😎마무리</h1><p>지금까지 <strong>indexedDB</strong>를 생성해 데이터를 삽입하는 법에 대해 간단하게 알아봤다. 데이터베이스에 대한 기초적인 지식만 있다면 어렵지 않게 사용할 수 있을 것이라 생각한다. </p>
+<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Database</category>
+      </categories>
+      <tags>
+        <tag>Tutorial</tag>
+        <tag>Database</tag>
+        <tag>indexedDB</tag>
+        <tag>Basic</tag>
       </tags>
   </entry>
 </search>
