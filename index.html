@@ -1,1242 +1,1126 @@
+
+
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="black" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="black" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="black">
-
-<link rel="stylesheet" href="/css/main.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Korean:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Elio">
+  <meta name="keywords" content="">
+  
     <meta property="og:type" content="website">
 <meta property="og:title" content="Elio&#39;s Blog">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Elio&#39;s Blog">
-<meta property="og:locale" content="ko_KR">
+<meta property="og:locale" content="en_US">
 <meta property="article:author" content="Elio">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Elio&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<link rel="canonical" href="http://example.com/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"ko","comments":"","permalink":"","path":"index.html","title":""}</script>
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Elio's Blog</title>
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
 
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
+<body>
+  
 
-  <div class="site-meta">
+  <header>
+    
 
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">Elio's Blog</h1>
-      <i class="logo-line"></i>
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Elio&#39;s Blog</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>정보</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
-        </a>
-      </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.7)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="{ name: &#39;Elio&#39;, position: &#39;Front-End&#39; }"></span>
+          
+        </div>
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
+        
+      </div>
 
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
   </div>
+</div>
 
 </div>
-        
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
 
-  <aside class="sidebar">
+  </header>
 
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          목차
-        </li>
-        <li class="sidebar-nav-overview">
-          흝어보기
-        </li>
-      </ul>
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
 
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Elio"
-      src="/images/avatar-Elio.jpg">
-  <p class="site-author-name" itemprop="name">Elio</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">33</span>
-          <span class="site-state-item-name">포스트</span>
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/30/Coding-Test-Programmers-30/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -소수 만들기-">
         </a>
       </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">카테고리</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">태그</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/dudwns0921" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dudwns0921" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/30/Coding-Test-Programmers-30/" target="_self">
+          [Coding Test] 프로그래머스 -소수 만들기-
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/11/30/Coding-Test-Programmers-30/" target="_self">
+        <div>
+          📃문제 링크🤨생각하기주어진 배열에서 선택한 3개의 합을 확인해야 하므로, 선택하는 순서는 중요하지 않다.따라서 조합을 구현하면 된다. 다른 사람의 풀이를 보니, 소수를 판단하는 부분에서 효율성을 고려한 풀이들이 있었다.이 문제에서는 효율성을 따지지 않아 큰 문제가 되지 않았지만, 주의할 필요가 있어보인다. 😎내 풀이12345678910111213141
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-30 15:19" pubdate>
+              2022-11-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
       </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/%EC%98%81%EC%A4%80-%EC%A0%95-2416ab22a" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;%EC%98%81%EC%A4%80-%EC%A0%95-2416ab22a" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/30/Coding-Test-Programmers-29/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -직사각형 별찍기-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/30/Coding-Test-Programmers-29/" target="_self">
+          [Coding Test] 프로그래머스 -직사각형 별찍기-
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/11/30/Coding-Test-Programmers-29/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12969 🤨생각하기입력 부분만 구현한다면 코딩 테스트 입문으로 많이 푸는 별찍기 문제와 같다. 😎내 풀이1234567891011process.stdin.setEncoding(&#x27;utf8&#x27;)process.stdin.on(&
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-30 15:13" pubdate>
+              2022-11-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
       </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/30/Coding-Test-Programmers-28/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/30/Coding-Test-Programmers-28/" target="_self">
+          [Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/11/30/Coding-Test-Programmers-28/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12954 🤨생각하기문제 그대로 구현하면 된다. 😎내 풀이1234567function solution(x, n) &#123;  var answer = []  for (let i = 1; i &lt;= n; i++) &#123;    ans
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-30 15:10" pubdate>
+              2022-11-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/30/Coding-Test-Programmers-27/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -행렬의 덧셈-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/30/Coding-Test-Programmers-27/" target="_self">
+          [Coding Test] 프로그래머스 -행렬의 덧셈-
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/11/30/Coding-Test-Programmers-27/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12950 🤨생각하기문제 그대로 구현하면 된다. 다만 map을 활용하면 좀 더 깔끔한 풀이가 된다. 😎내 풀이12345678function solution(arr1, arr2) &#123;  for (let i = 0; i &lt; arr
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-30 14:51" pubdate>
+              2022-11-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-26/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -핸드폰 번호 가리기-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-26/" target="_self">
+          [Coding Test] 프로그래머스 -핸드폰 번호 가리기-
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-26/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12948 🤨생각하기주어진 전화번호의 뒷 4자리를 제외하고서 모두 *로 바꾸면 되는 문제이다. substring 메서드를 통해 뒷 4자리를 가져왔고, padStart 메서드를 사용해 다시 앞에다가 맨 처음에 주어진 전화번호의 길이가 될 때까
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 14:14" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-25/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -하샤드 수-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-25/" target="_self">
+          [Coding Test] 프로그래머스 -하샤드 수-
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-25/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12947 🤨생각하기주어진 정수가 해당 정수의 자릿값의 합으로 나누어 떨어지는지 확인하는 문제이다. 이전 문제에서도 확인할 수 있지만, 여러 요소들의 합을 구할 때 reduce를 사용하면 좀 더 간결한 코드가 된다. 😎내 풀이1234567
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 13:51" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-24/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -평균 구하기-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-24/" target="_self">
+          [Coding Test] 프로그래머스 -평균 구하기-
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-24/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12944 🤨생각하기배열의 합을 구해 배열의 길이로 나눠주면 되는 문제이다. 다양한 방법들이 있겠지만, 배열 요소들의 값을 누적시킬 수 있는 reduce 메서드를 사용하면 간결한 코드를 짤 수 있다. 😎내 풀이123function solu
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 13:48" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-23/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -콜라츠 추측-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-23/" target="_self">
+          [Coding Test] 프로그래머스 -콜라츠 추측-
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-23/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12943 🤨생각하기문제 그대로 구현하면 된다. 😎내 풀이123456789101112131415161718function solution(num) &#123;  if (num === 1) return 0  let cnt = 0  while
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 13:46" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-22/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -최대공약수와 최소공배수-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-22/" target="_self">
+          [Coding Test] 프로그래머스 -최대공약수와 최소공배수-
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-22/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12940 🤨생각하기여러 방법들이 있겠지만, 유클리드 호제법에 대한 개념을 요구하는 문제이다. 유클리드 호제법을 간단하게 정리하면 아래와 같다.  a, b(단, a&gt;b)에 대해서 a를 b로 나눈 나머지를 r이라 하면, a와 b의 최대공
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 13:31" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-21/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -시저 코드-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-21/" target="_self">
+          [Coding Test] 프로그래머스 -시저 코드-
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-21/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12926 🤨생각하기ascii 코드 변환 메서드만 알고 있다면 큰 어려움 없이 풀 수 있는 문제이다. 😎내 풀이123456789101112131415161718192021222324252627282930function solution(s,
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 11:07" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
   </div>
 
 
 
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
-
-    
-  <div class="back-to-top" role="button" aria-label="Back to top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/30/Coding-Test-Programmers-30/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar-Elio.jpg">
-      <meta itemprop="name" content="Elio">
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/30/Coding-Test-Programmers-30/" class="post-title-link" itemprop="url">[Coding Test] 프로그래머스 -소수 만들기-</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2022-11-30 15:19:14 / Updated at: 15:27:26" itemprop="dateCreated datePublished" datetime="2022-11-30T15:19:14+09:00">2022-11-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/11/30/Coding-Test-Programmers-30/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/30/Coding-Test-Programmers-30/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 배열에서 선택한 3개의 합을 확인해야 하므로, 선택하는 순서는 중요하지 않다.<br>따라서 조합을 구현하면 된다.</p>
-<p>다른 사람의 풀이를 보니, 소수를 판단하는 부분에서 효율성을 고려한 풀이들이 있었다.<br>이 문제에서는 효율성을 따지지 않아 큰 문제가 되지 않았지만, 주의할 필요가 있어보인다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> answer = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; nums.<span class="property">length</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> k = j + <span class="number">1</span>; k &lt; nums.<span class="property">length</span>; k++) &#123;</span><br><span class="line">        <span class="keyword">const</span> sum = nums[i] + nums[j] + nums[k]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> cnt = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> l = <span class="number">1</span>; l &lt;= sum; l++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (sum % l === <span class="number">0</span>) &#123;</span><br><span class="line">            cnt++</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (cnt === <span class="number">2</span>) &#123;</span><br><span class="line">          answer++</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/30/Coding-Test-Programmers-29/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar-Elio.jpg">
-      <meta itemprop="name" content="Elio">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/30/Coding-Test-Programmers-29/" class="post-title-link" itemprop="url">[Coding Test] 프로그래머스 -직사각형 별찍기-</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2022-11-30 15:13:35 / Updated at: 15:16:14" itemprop="dateCreated datePublished" datetime="2022-11-30T15:13:35+09:00">2022-11-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/11/30/Coding-Test-Programmers-29/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/30/Coding-Test-Programmers-29/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12969">https://school.programmers.co.kr/learn/courses/30/lessons/12969</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>입력 부분만 구현한다면 코딩 테스트 입문으로 많이 푸는 별찍기 문제와 같다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">process.<span class="property">stdin</span>.<span class="title function_">setEncoding</span>(<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">process.<span class="property">stdin</span>.<span class="title function_">on</span>(<span class="string">&#x27;data&#x27;</span>, <span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> n = data.<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> a = <span class="title class_">Number</span>(n[<span class="number">0</span>])</span><br><span class="line">  <span class="keyword">const</span> b = <span class="title class_">Number</span>(n[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; b; i++) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;*&#x27;</span>.<span class="title function_">repeat</span>(a))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/30/Coding-Test-Programmers-28/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar-Elio.jpg">
-      <meta itemprop="name" content="Elio">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/30/Coding-Test-Programmers-28/" class="post-title-link" itemprop="url">[Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2022-11-30 15:10:29 / Updated at: 15:16:29" itemprop="dateCreated datePublished" datetime="2022-11-30T15:10:29+09:00">2022-11-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/11/30/Coding-Test-Programmers-28/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/30/Coding-Test-Programmers-28/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12954">https://school.programmers.co.kr/learn/courses/30/lessons/12954</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">x, n</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> answer = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    answer.<span class="title function_">push</span>(x * i)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/30/Coding-Test-Programmers-27/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar-Elio.jpg">
-      <meta itemprop="name" content="Elio">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/30/Coding-Test-Programmers-27/" class="post-title-link" itemprop="url">[Coding Test] 프로그래머스 -행렬의 덧셈-</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2022-11-30 14:51:47 / Updated at: 15:03:35" itemprop="dateCreated datePublished" datetime="2022-11-30T14:51:47+09:00">2022-11-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/11/30/Coding-Test-Programmers-27/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/30/Coding-Test-Programmers-27/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12950">https://school.programmers.co.kr/learn/courses/30/lessons/12950</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다. 다만 map을 활용하면 좀 더 깔끔한 풀이가 된다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr1, arr2</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr1.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; arr1[<span class="number">0</span>].<span class="property">length</span>; j++) &#123;</span><br><span class="line">      arr1[i][j] += arr2[i][j]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="다른-사람-풀이"><a href="#다른-사람-풀이" class="headerlink" title="다른 사람 풀이"></a>다른 사람 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr1, arr2</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> arr1.<span class="title function_">map</span>(<span class="function">(<span class="params">arr1Item,i</span>) =&gt;</span> arr1Item.<span class="title function_">map</span>(<span class="function">(<span class="params">arr2Item, j</span>) =&gt;</span> arr2Item + arr2[i][j]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/22/Coding-Test-Programmers-26/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar-Elio.jpg">
-      <meta itemprop="name" content="Elio">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/22/Coding-Test-Programmers-26/" class="post-title-link" itemprop="url">[Coding Test] 프로그래머스 -핸드폰 번호 가리기-</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2022-11-22 14:14:54 / Updated at: 14:17:02" itemprop="dateCreated datePublished" datetime="2022-11-22T14:14:54+09:00">2022-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/11/22/Coding-Test-Programmers-26/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/22/Coding-Test-Programmers-26/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12948">https://school.programmers.co.kr/learn/courses/30/lessons/12948</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 전화번호의 뒷 4자리를 제외하고서 모두 *로 바꾸면 되는 문제이다.</p>
-<p>substring 메서드를 통해 뒷 4자리를 가져왔고, padStart 메서드를 사용해 다시 앞에다가 맨 처음에 주어진 전화번호의 길이가 될 때까지 *를 추가했다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">phone_number</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> phone_number_len = phone_number.<span class="property">length</span></span><br><span class="line">  <span class="keyword">return</span> phone_number</span><br><span class="line">    .<span class="title function_">substring</span>(phone_number_len - <span class="number">4</span>)</span><br><span class="line">    .<span class="title function_">padStart</span>(phone_number_len, <span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/22/Coding-Test-Programmers-25/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar-Elio.jpg">
-      <meta itemprop="name" content="Elio">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/22/Coding-Test-Programmers-25/" class="post-title-link" itemprop="url">[Coding Test] 프로그래머스 -하샤드 수-</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2022-11-22 13:51:00 / Updated at: 13:55:27" itemprop="dateCreated datePublished" datetime="2022-11-22T13:51:00+09:00">2022-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/11/22/Coding-Test-Programmers-25/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/22/Coding-Test-Programmers-25/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12947">https://school.programmers.co.kr/learn/courses/30/lessons/12947</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 정수가 해당 정수의 자릿값의 합으로 나누어 떨어지는지 확인하는 문제이다.</p>
-<p>이전 문제에서도 확인할 수 있지만, 여러 요소들의 합을 구할 때 reduce를 사용하면 좀 더 간결한 코드가 된다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> digitSum = x</span><br><span class="line">    .<span class="title function_">toString</span>()</span><br><span class="line">    .<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    .<span class="title function_">reduce</span>(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> <span class="title class_">Number</span>(prev) + <span class="title class_">Number</span>(curr))</span><br><span class="line">  <span class="keyword">if</span> (x % digitSum === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/22/Coding-Test-Programmers-24/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar-Elio.jpg">
-      <meta itemprop="name" content="Elio">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/22/Coding-Test-Programmers-24/" class="post-title-link" itemprop="url">[Coding Test] 프로그래머스 -평균 구하기-</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2022-11-22 13:48:04 / Updated at: 13:50:55" itemprop="dateCreated datePublished" datetime="2022-11-22T13:48:04+09:00">2022-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/11/22/Coding-Test-Programmers-24/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/22/Coding-Test-Programmers-24/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12944">https://school.programmers.co.kr/learn/courses/30/lessons/12944</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>배열의 합을 구해 배열의 길이로 나눠주면 되는 문제이다.</p>
-<p>다양한 방법들이 있겠지만, 배열 요소들의 값을 누적시킬 수 있는 reduce 메서드를 사용하면 간결한 코드를 짤 수 있다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> prev + curr) / arr.<span class="property">length</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/22/Coding-Test-Programmers-23/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar-Elio.jpg">
-      <meta itemprop="name" content="Elio">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/22/Coding-Test-Programmers-23/" class="post-title-link" itemprop="url">[Coding Test] 프로그래머스 -콜라츠 추측-</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2022-11-22 13:46:42 / Updated at: 13:47:57" itemprop="dateCreated datePublished" datetime="2022-11-22T13:46:42+09:00">2022-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/11/22/Coding-Test-Programmers-23/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/22/Coding-Test-Programmers-23/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12943">https://school.programmers.co.kr/learn/courses/30/lessons/12943</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">num</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (num === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> cnt = <span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num === <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> cnt</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cnt === <span class="number">501</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (num % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">      num = num / <span class="number">2</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      num = num * <span class="number">3</span> + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    cnt++</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/22/Coding-Test-Programmers-22/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar-Elio.jpg">
-      <meta itemprop="name" content="Elio">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/22/Coding-Test-Programmers-22/" class="post-title-link" itemprop="url">[Coding Test] 프로그래머스 -최대공약수와 최소공배수-</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2022-11-22 13:31:01 / Updated at: 13:33:22" itemprop="dateCreated datePublished" datetime="2022-11-22T13:31:01+09:00">2022-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/11/22/Coding-Test-Programmers-22/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/22/Coding-Test-Programmers-22/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12940">https://school.programmers.co.kr/learn/courses/30/lessons/12940</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>여러 방법들이 있겠지만, 유클리드 호제법에 대한 개념을 요구하는 문제이다.</p>
-<p>유클리드 호제법을 간단하게 정리하면 아래와 같다.</p>
-<blockquote>
-<p>a, b(단, a&gt;b)에 대해서 a를 b로 나눈 나머지를 r이라 하면, a와 b의 최대공약수는 b와 r의 최대공약수와 같다.</p>
-</blockquote>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getGcd</span>(<span class="params">n, m</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> gcd</span><br><span class="line">  <span class="keyword">if</span> (n &lt; m) &#123;</span><br><span class="line">    ;[n, m] = [m, n]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; m) &#123;</span><br><span class="line">      ;[n, m] = [m, n]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n % m == <span class="number">0</span>) &#123;</span><br><span class="line">      gcd = m</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    n = n % m</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> gcd</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">n, m</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> product = n * m</span><br><span class="line">  <span class="keyword">let</span> answer = []</span><br><span class="line">  <span class="keyword">const</span> gcd = <span class="title function_">getGcd</span>(n, m)</span><br><span class="line">  answer.<span class="title function_">push</span>(gcd, product / gcd)</span><br><span class="line">  <span class="keyword">return</span> answer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/22/Coding-Test-Programmers-21/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar-Elio.jpg">
-      <meta itemprop="name" content="Elio">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Elio's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/22/Coding-Test-Programmers-21/" class="post-title-link" itemprop="url">[Coding Test] 프로그래머스 -시저 코드-</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2022-11-22 11:07:13 / Updated at: 13:00:32" itemprop="dateCreated datePublished" datetime="2022-11-22T11:07:13+09:00">2022-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/" itemprop="url" rel="index"><span itemprop="name">Coding-Test</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Coding-Test/Programmers/" itemprop="url" rel="index"><span itemprop="name">Programmers</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/11/22/Coding-Test-Programmers-21/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/22/Coding-Test-Programmers-21/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/12926">https://school.programmers.co.kr/learn/courses/30/lessons/12926</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>ascii 코드 변환 메서드만 알고 있다면 큰 어려움 없이 풀 수 있는 문제이다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">solution</span>(<span class="params">s, n</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> s</span><br><span class="line">    .<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">letter</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> ascii = letter.<span class="title function_">charCodeAt</span>()</span><br><span class="line">      <span class="keyword">let</span> asciiConv</span><br><span class="line">      <span class="keyword">if</span> (<span class="number">65</span> &lt;= ascii &amp;&amp; ascii &lt;= <span class="number">90</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">90</span> &lt; ascii + n) &#123;</span><br><span class="line">          <span class="comment">// 소문자인데 밀었을 때 z초과</span></span><br><span class="line">          <span class="keyword">let</span> excess = ascii + n - <span class="number">91</span></span><br><span class="line">          asciiConv = <span class="number">65</span> + excess</span><br><span class="line">          <span class="keyword">return</span> <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(asciiConv)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="number">97</span> &lt;= ascii &amp;&amp; ascii &lt;= <span class="number">122</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">122</span> &lt; ascii + n) &#123;</span><br><span class="line">          <span class="comment">// 대문자인데 밀었을 때 Z초과</span></span><br><span class="line">          <span class="keyword">let</span> excess = ascii + n - <span class="number">123</span></span><br><span class="line">          asciiConv = <span class="number">97</span> + excess</span><br><span class="line">          <span class="keyword">return</span> <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(asciiConv)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ascii == <span class="number">32</span>) &#123;</span><br><span class="line">        <span class="comment">// 공백</span></span><br><span class="line">        <span class="keyword">return</span> letter</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 초과되지 않은 경우</span></span><br><span class="line">      asciiConv = ascii + n</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(asciiConv)</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="🚨주의할-점"><a href="#🚨주의할-점" class="headerlink" title="🚨주의할 점"></a>🚨주의할 점</h1><p>주의해야 할 부분은 문자를 밀었을 때 z,Z를 초과하는 경우이다. 이 경우, 각각 a,A부터 다시 시작해 초과한 만큼 이동해야 하기 때문에 루프를 구현하면 된다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
   </nav>
 
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
 </div>
+
+    
+
+    
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Elio</span>
+  
+    <div class="footer-content">
+       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <i class="iconfont icon-love"></i> <span>Elio</span> 
+    </div>
+  
+  
+  
+  
 </div>
 
-    </div>
   </footer>
 
+  <!-- Scripts -->
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
 
   
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-
-
-
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
 
 
-<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"dudwns0921","count":true,"i18n":{"disqus":"disqus"}}</script>
-<script src="/js/third-party/comments/disqus.js"></script>
+  <script  src="/js/local-search.js" ></script>
 
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>
