@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -서울에서 김서방 찾기-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

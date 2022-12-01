@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -자릿수 더하기-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

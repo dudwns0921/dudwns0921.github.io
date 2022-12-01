@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -가운데 글자 가져오기-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

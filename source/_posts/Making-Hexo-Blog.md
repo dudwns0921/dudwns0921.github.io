@@ -1,5 +1,6 @@
 ---
 title: "[Hexo] Hexo로 블로그 만들기"
+index_img: /img/Hexo.png
 date: 2022-10-14 08:30:26
 categories:
 - Hexo

@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -문자열 내 마음대로 정렬하기-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

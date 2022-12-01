@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -직사각형 별찍기-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

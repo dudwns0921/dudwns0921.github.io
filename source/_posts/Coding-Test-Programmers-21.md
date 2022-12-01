@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -시저 코드-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

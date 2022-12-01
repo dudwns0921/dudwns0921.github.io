@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -제일 작은 수 제거하기-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

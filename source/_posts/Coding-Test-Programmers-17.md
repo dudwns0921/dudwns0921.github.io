@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -정수 내림차순으로 배치하기-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

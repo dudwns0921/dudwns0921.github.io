@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -짝수와 홀수-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

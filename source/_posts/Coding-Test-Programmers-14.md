@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -이상한 문자 만들기-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

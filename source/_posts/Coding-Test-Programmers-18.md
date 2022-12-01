@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -정수 제곱근 판별-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

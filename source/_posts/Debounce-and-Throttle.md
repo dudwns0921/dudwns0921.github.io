@@ -1,5 +1,6 @@
 ---
 title: "[Javscript] Debounce and Throttle"
+index_img: /img/Javascript.png
 date: 2022-10-06 16:23:09
 categories:
 - Javascript

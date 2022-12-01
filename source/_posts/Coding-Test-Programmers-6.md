@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -두 정수 사이의 합-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

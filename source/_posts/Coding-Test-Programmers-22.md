@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -최대공약수와 최소공배수-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

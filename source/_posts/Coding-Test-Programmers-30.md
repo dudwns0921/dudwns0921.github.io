@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -소수 만들기-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

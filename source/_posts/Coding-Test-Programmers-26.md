@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -핸드폰 번호 가리기-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers

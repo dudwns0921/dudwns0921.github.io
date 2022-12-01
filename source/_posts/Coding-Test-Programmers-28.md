@@ -1,5 +1,6 @@
 ---
 title: '[Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-'
+index_img: /img/programmers.png
 categories:
   - Coding-Test
   - Programmers
