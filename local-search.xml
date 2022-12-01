@@ -8,7 +8,7 @@
     <link href="/2022/11/30/Coding-Test-Programmers-30/"/>
     <url>/2022/11/30/Coding-Test-Programmers-30/</url>
     
-    <content type="html"><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 배열에서 선택한 3개의 합을 확인해야 하므로, 선택하는 순서는 중요하지 않다.<br>따라서 조합을 구현하면 된다.</p><p>다른 사람의 풀이를 보니, 소수를 판단하는 부분에서 효율성을 고려한 풀이들이 있었다.<br>이 문제에서는 효율성을 따지지 않아 큰 문제가 되지 않았지만, 주의할 필요가 있어보인다.</p><h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">nums</span>) &#123;<br>  <span class="hljs-keyword">let</span> answer = <span class="hljs-number">0</span><br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-property">length</span>; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span class="hljs-number">1</span>; j &lt; nums.<span class="hljs-property">length</span>; j++) &#123;<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> k = j + <span class="hljs-number">1</span>; k &lt; nums.<span class="hljs-property">length</span>; k++) &#123;<br>        <span class="hljs-keyword">const</span> sum = nums[i] + nums[j] + nums[k]<br><br>        <span class="hljs-keyword">let</span> cnt = <span class="hljs-number">0</span><br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> l = <span class="hljs-number">1</span>; l &lt;= sum; l++) &#123;<br>          <span class="hljs-keyword">if</span> (sum % l === <span class="hljs-number">0</span>) &#123;<br>            cnt++<br>          &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (cnt === <span class="hljs-number">2</span>) &#123;<br>          answer++<br>        &#125;<br>      &#125;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> answer<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12977">https://school.programmers.co.kr/learn/courses/30/lessons/12977</a></p><h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 배열에서 선택한 3개의 합을 확인해야 하므로, 선택하는 순서는 중요하지 않다.<br>따라서 조합을 구현하면 된다.</p><p>다른 사람의 풀이를 보니, 소수를 판단하는 부분에서 효율성을 고려한 풀이들이 있었다.<br>이 문제에서는 효율성을 따지지 않아 큰 문제가 되지 않았지만, 주의할 필요가 있어보인다.</p><h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">nums</span>) &#123;<br>  <span class="hljs-keyword">let</span> answer = <span class="hljs-number">0</span><br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-property">length</span>; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span class="hljs-number">1</span>; j &lt; nums.<span class="hljs-property">length</span>; j++) &#123;<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> k = j + <span class="hljs-number">1</span>; k &lt; nums.<span class="hljs-property">length</span>; k++) &#123;<br>        <span class="hljs-keyword">const</span> sum = nums[i] + nums[j] + nums[k]<br><br>        <span class="hljs-keyword">let</span> cnt = <span class="hljs-number">0</span><br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> l = <span class="hljs-number">1</span>; l &lt;= sum; l++) &#123;<br>          <span class="hljs-keyword">if</span> (sum % l === <span class="hljs-number">0</span>) &#123;<br>            cnt++<br>          &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (cnt === <span class="hljs-number">2</span>) &#123;<br>          answer++<br>        &#125;<br>      &#125;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> answer<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -950,13 +950,13 @@
     
     <tags>
       
+      <tag>Tutorial</tag>
+      
       <tag>Database</tag>
       
       <tag>indexedDB</tag>
       
       <tag>Basic</tag>
-      
-      <tag>Tutorial</tag>
       
     </tags>
     
@@ -981,9 +981,9 @@
     
     <tags>
       
-      <tag>Tutorial</tag>
-      
       <tag>Hexo</tag>
+      
+      <tag>Tutorial</tag>
       
     </tags>
     
