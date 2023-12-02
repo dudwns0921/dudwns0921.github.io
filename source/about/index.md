@@ -8,17 +8,13 @@ comments: false
 
 - **Obigo / Moblilty Service Team 2 / Engineer (22.03~재직중)**
 
-    스마트카 SW 플랫폼 및 컨텐츠 서비스 회사인 오비고에서 프론트엔드 개발자로 일하고 있습니다.
+  스마트카 SW 플랫폼 및 컨텐츠 서비스 회사인 오비고에서 프론트엔드 개발자로 일하고 있습니다.
 
 ## 📚 Tech Stack
 
 - **Studying** : <span style="color: #3178C6;">Typescript</span>, <span style="color: #61DAFB;">React</span>
 
 - **Use well** : <span style="color: #F7DF1E;">Javascript</span>, <span style="color: #4FC08D;">Vue</span>
-
-## 🎈 Side-Project
-
-- **[야보자! 이거어때?](https://github.com/Seongtaek-H/yabojaFront)**
 
 ## 🚀 More...
 
