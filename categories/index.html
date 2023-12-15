@@ -1,0 +1,633 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon_pig.png">
+  <link rel="icon" href="/img/favicon_pig.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Elio">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Categories">
+<meta property="og:url" content="http://example.com/categories/index.html">
+<meta property="og:site_name" content="Elio&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Elio">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Categories - Elio&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Elio&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Categories"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Coding-Test"
+        id="heading-f6ff0897a51712b3ab23e04a21d50850" role="tab" data-toggle="collapse" href="#collapse-f6ff0897a51712b3ab23e04a21d50850"
+        aria-expanded="false"
+      >
+        Coding-Test
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Coding-Test/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>30</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-f6ff0897a51712b3ab23e04a21d50850"
+           role="tabpanel" aria-labelledby="heading-f6ff0897a51712b3ab23e04a21d50850">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Programmers"
+        id="heading-5d07eba0ff307b59e6569ea86d533fdf" role="tab" data-toggle="collapse" href="#collapse-5d07eba0ff307b59e6569ea86d533fdf"
+        aria-expanded="false"
+      >
+        Programmers
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Coding-Test/Programmers/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>30</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-5d07eba0ff307b59e6569ea86d533fdf"
+           role="tabpanel" aria-labelledby="heading-5d07eba0ff307b59e6569ea86d533fdf">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/11/30/Coding-Test-Programmers-30/" title="[Coding Test] 프로그래머스 -소수 만들기-"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Coding Test] 프로그래머스 -소수 만들기-</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/11/30/Coding-Test-Programmers-29/" title="[Coding Test] 프로그래머스 -직사각형 별찍기-"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Coding Test] 프로그래머스 -직사각형 별찍기-</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/11/30/Coding-Test-Programmers-28/" title="[Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/11/30/Coding-Test-Programmers-27/" title="[Coding Test] 프로그래머스 -행렬의 덧셈-"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Coding Test] 프로그래머스 -행렬의 덧셈-</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/11/22/Coding-Test-Programmers-26/" title="[Coding Test] 프로그래머스 -핸드폰 번호 가리기-"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Coding Test] 프로그래머스 -핸드폰 번호 가리기-</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/11/22/Coding-Test-Programmers-25/" title="[Coding Test] 프로그래머스 -하샤드 수-"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Coding Test] 프로그래머스 -하샤드 수-</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/11/22/Coding-Test-Programmers-24/" title="[Coding Test] 프로그래머스 -평균 구하기-"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Coding Test] 프로그래머스 -평균 구하기-</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/11/22/Coding-Test-Programmers-23/" title="[Coding Test] 프로그래머스 -콜라츠 추측-"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Coding Test] 프로그래머스 -콜라츠 추측-</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/11/22/Coding-Test-Programmers-22/" title="[Coding Test] 프로그래머스 -최대공약수와 최소공배수-"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Coding Test] 프로그래머스 -최대공약수와 최소공배수-</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/11/22/Coding-Test-Programmers-21/" title="[Coding Test] 프로그래머스 -시저 코드-"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Coding Test] 프로그래머스 -시저 코드-</span>
+        </a>
+      
+    
+      
+      
+        <a href="/categories/Coding-Test/Programmers/" class="list-group-item list-group-item-action">
+          <span class="category-post">More...</span>
+        </a>
+        
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Hexo"
+        id="heading-c00d1eb68b529768ba98c975c76a9b66" role="tab" data-toggle="collapse" href="#collapse-c00d1eb68b529768ba98c975c76a9b66"
+        aria-expanded="false"
+      >
+        Hexo
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Hexo/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-c00d1eb68b529768ba98c975c76a9b66"
+           role="tabpanel" aria-labelledby="heading-c00d1eb68b529768ba98c975c76a9b66">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/10/14/Making-Hexo-Blog/" title="[Hexo] Hexo로 블로그 만들기"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Hexo] Hexo로 블로그 만들기</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Javascript"
+        id="heading-9e13b69d1d2da927102acaaaf7154a37" role="tab" data-toggle="collapse" href="#collapse-9e13b69d1d2da927102acaaaf7154a37"
+        aria-expanded="false"
+      >
+        Javascript
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Javascript/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-9e13b69d1d2da927102acaaaf7154a37"
+           role="tabpanel" aria-labelledby="heading-9e13b69d1d2da927102acaaaf7154a37">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/10/06/Debounce-and-Throttle/" title="[Javscript] Debounce and Throttle"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Javscript] Debounce and Throttle</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Database"
+        id="heading-e307db07b3975fef922a80d07455ee5e" role="tab" data-toggle="collapse" href="#collapse-e307db07b3975fef922a80d07455ee5e"
+        aria-expanded="false"
+      >
+        Database
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Database/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-e307db07b3975fef922a80d07455ee5e"
+           role="tabpanel" aria-labelledby="heading-e307db07b3975fef922a80d07455ee5e">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/10/26/Using-IndexedDB/" title="[Database] IndexedDB 기초"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">[Database] IndexedDB 기초</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+</div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
