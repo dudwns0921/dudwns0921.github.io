@@ -1,0 +1,7 @@
+:root {
+    --table-border-color: #d0d0d0;
+}
+
+[data-user-color-scheme="dark"] {
+    --table-border-color: #fff;
+}
