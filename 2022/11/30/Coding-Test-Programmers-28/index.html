@@ -16,12 +16,12 @@
   <meta name="author" content="Elio">
   <meta name="keywords" content="">
   
-    <meta name="description" content="📃문제 링크https:&#x2F;&#x2F;school.programmers.co.kr&#x2F;learn&#x2F;courses&#x2F;30&#x2F;lessons&#x2F;12954 🤨생각하기문제 그대로 구현하면 된다. 😎내 풀이1234567function solution(x, n) &amp;#123;  var answer &#x3D; []  for (let i &#x3D; 1; i &lt;&#x3D; n; i++) &amp;#123;    ans">
+    <meta name="description" content="📃문제 링크https:&#x2F;&#x2F;school.programmers.co.kr&#x2F;learn&#x2F;courses&#x2F;30&#x2F;lessons&#x2F;12954 🤨생각하기문제 그대로 구현하면 된다. 😎내 풀이1234567function solution(x, n) &#123;  var answer &#x3D; []  for (let i &#x3D; 1; i &lt;&#x3D; n; i++) &#123;    ans">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-">
 <meta property="og:url" content="http://example.com/2022/11/30/Coding-Test-Programmers-28/index.html">
 <meta property="og:site_name" content="Elio&#39;s Blog">
-<meta property="og:description" content="📃문제 링크https:&#x2F;&#x2F;school.programmers.co.kr&#x2F;learn&#x2F;courses&#x2F;30&#x2F;lessons&#x2F;12954 🤨생각하기문제 그대로 구현하면 된다. 😎내 풀이1234567function solution(x, n) &amp;#123;  var answer &#x3D; []  for (let i &#x3D; 1; i &lt;&#x3D; n; i++) &amp;#123;    ans">
+<meta property="og:description" content="📃문제 링크https:&#x2F;&#x2F;school.programmers.co.kr&#x2F;learn&#x2F;courses&#x2F;30&#x2F;lessons&#x2F;12954 🤨생각하기문제 그대로 구현하면 된다. 😎내 풀이1234567function solution(x, n) &#123;  var answer &#x3D; []  for (let i &#x3D; 1; i &lt;&#x3D; n; i++) &#123;    ans">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/img/programmers.png">
 <meta property="article:published_time" content="2022-11-30T06:10:29.000Z">
@@ -77,7 +77,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -90,7 +90,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 
 <body>
@@ -121,7 +121,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>Home</span>
               </a>
@@ -133,7 +133,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>Archives</span>
               </a>
@@ -145,7 +145,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>Categories</span>
               </a>
@@ -157,7 +157,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>Tags</span>
               </a>
@@ -169,21 +169,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>About</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/TIL/">
-                <i class="iconfont icon-books"></i>
-                <span>TIL</span>
               </a>
             </li>
           
@@ -240,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          207 words
+          33 words
         
       </span>
     
@@ -251,7 +239,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -288,8 +276,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">[Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-</h1>
+            <h1 id="seo-header">[Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-</h1>
             
             
               <div class="markdown-body">
@@ -336,11 +323,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Coding-Test/">#Coding-Test</a>
+        <a href="/tags/Coding-Test/" class="print-no-link">#Coding-Test</a>
       
-        <a href="/tags/Programmers/">#Programmers</a>
+        <a href="/tags/Programmers/" class="print-no-link">#Programmers</a>
       
-        <a href="/tags/Lv-1/">#Lv.1</a>
+        <a href="/tags/Lv-1/" class="print-no-link">#Lv.1</a>
       
     </div>
   
@@ -376,7 +363,7 @@
             
               
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - Attribution">
                     <i class="iconfont icon-by"></i>
                   </span>

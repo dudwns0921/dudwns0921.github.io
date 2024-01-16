@@ -62,7 +62,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -75,7 +75,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 
 <body>
@@ -106,7 +106,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>Home</span>
               </a>
@@ -118,7 +118,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>Archives</span>
               </a>
@@ -130,7 +130,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>Categories</span>
               </a>
@@ -142,7 +142,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>Tags</span>
               </a>
@@ -154,21 +154,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>About</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/TIL/">
-                <i class="iconfont icon-books"></i>
-                <span>TIL</span>
               </a>
             </li>
           
@@ -234,7 +222,7 @@
                 
 
 <div class="text-center tagcloud">
-  <a href="/tags/Basic/" style="font-size: 15px; color: #bbe">Basic</a> <a href="/tags/Coding-Test/" style="font-size: 30px; color: #337ab7">Coding-Test</a> <a href="/tags/Database/" style="font-size: 15px; color: #bbe">Database</a> <a href="/tags/Debounce/" style="font-size: 15px; color: #bbe">Debounce</a> <a href="/tags/Hexo/" style="font-size: 15px; color: #bbe">Hexo</a> <a href="/tags/Javascript/" style="font-size: 15px; color: #bbe">Javascript</a> <a href="/tags/Lv-1/" style="font-size: 30px; color: #337ab7">Lv.1</a> <a href="/tags/Programmers/" style="font-size: 30px; color: #337ab7">Programmers</a> <a href="/tags/Throttle/" style="font-size: 15px; color: #bbe">Throttle</a> <a href="/tags/Tutorial/" style="font-size: 22.5px; color: #779bd3">Tutorial</a> <a href="/tags/indexedDB/" style="font-size: 15px; color: #bbe">indexedDB</a>
+  <a href="/tags/Basic/" style="font-size: 15px; color: #bbe">Basic</a> <a href="/tags/Basic-Training/" style="font-size: 15px; color: #bbe">Basic Training</a> <a href="/tags/Coding-Test/" style="font-size: 30px; color: #337ab7">Coding-Test</a> <a href="/tags/Database/" style="font-size: 15px; color: #bbe">Database</a> <a href="/tags/Debounce/" style="font-size: 15px; color: #bbe">Debounce</a> <a href="/tags/Hexo/" style="font-size: 15px; color: #bbe">Hexo</a> <a href="/tags/Introduction-Training/" style="font-size: 15px; color: #bbe">Introduction Training</a> <a href="/tags/Javascript/" style="font-size: 15px; color: #bbe">Javascript</a> <a href="/tags/Lv-1/" style="font-size: 25px; color: #6090c9">Lv.1</a> <a href="/tags/Programmers/" style="font-size: 30px; color: #337ab7">Programmers</a> <a href="/tags/Throttle/" style="font-size: 15px; color: #bbe">Throttle</a> <a href="/tags/Tutorial/" style="font-size: 20px; color: #8ea5dc">Tutorial</a> <a href="/tags/indexedDB/" style="font-size: 15px; color: #bbe">indexedDB</a>
 </div>
 
               </div>

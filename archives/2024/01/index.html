@@ -16,21 +16,17 @@
   <meta name="author" content="Elio">
   <meta name="keywords" content="">
   
-    <meta name="description" content="날짜 TIL    23.12.15 -curl 명령어  curl은 URL을 사용하여 데이터를 전송하기 위한 명령줄 도구이자 라이브러리 -bluetooth 관련 명령어들sudo vi &#x2F;etc&#x2F;bluetooth&#x2F;main.conf (블루투스 설정 파일 편집기로 열기)ControllerMode의 값을 dual 혹은 bredr로 변경">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TIL">
-<meta property="og:url" content="http://example.com/TIL/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Archives">
+<meta property="og:url" content="http://example.com/archives/2024/01/index.html">
 <meta property="og:site_name" content="Elio&#39;s Blog">
-<meta property="og:description" content="날짜 TIL    23.12.15 -curl 명령어  curl은 URL을 사용하여 데이터를 전송하기 위한 명령줄 도구이자 라이브러리 -bluetooth 관련 명령어들sudo vi &#x2F;etc&#x2F;bluetooth&#x2F;main.conf (블루투스 설정 파일 편집기로 열기)ControllerMode의 값을 dual 혹은 bredr로 변경">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-12-15T00:48:09.687Z">
-<meta property="article:modified_time" content="2023-12-15T00:48:09.687Z">
 <meta property="article:author" content="Elio">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>TIL - Elio&#39;s Blog</title>
+  <title>Archives - Elio&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -66,7 +62,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -79,7 +75,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 
 <body>
@@ -110,7 +106,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>Home</span>
               </a>
@@ -122,7 +118,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>Archives</span>
               </a>
@@ -134,7 +130,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>Categories</span>
               </a>
@@ -146,7 +142,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>Tags</span>
               </a>
@@ -158,21 +154,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>About</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/TIL/">
-                <i class="iconfont icon-books"></i>
-                <span>TIL</span>
               </a>
             </li>
           
@@ -206,7 +190,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="TIL"></span>
+            <span id="subtitle" data-typed-text="Archives"></span>
           
         </div>
 
@@ -233,24 +217,29 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<article class="page-content">
-  <table>
-<thead>
-<tr>
-<th>날짜</th>
-<th>TIL</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>23.12.15</td>
-<td>-<strong>curl 명령어</strong> <br /> curl은 URL을 사용하여 데이터를 전송하기 위한 명령줄 도구이자 라이브러리 <br />-<strong>bluetooth 관련 명령어들</strong><br />sudo vi &#x2F;etc&#x2F;bluetooth&#x2F;main.conf (블루투스 설정 파일 편집기로 열기)<br />ControllerMode의 값을 dual 혹은 bredr로 변경 (에어팟 문제 있을시)<br />ContollerMode를 사용하면 통신하려는 장치 유형에 따라 Bluetooth 동작을 최적화 가능 <br />sudo &#x2F;etc&#x2F;init.d&#x2F;bluetooth restart (블루투스 재시작) <br />-<strong>deb 패키지</strong><br />.deb 패키지는 Debian 기반 Linux 배포판에서 사용되는 소프트웨어 패키지 형식</td>
-</tr>
-</tbody></table>
-
-
+<div class="list-group">
+  <p class="h4">35 posts in total</p>
+  <hr>
   
+  
+    
+      
+      <p class="h5">2024</p>
+    
+    <a href="/2024/01/17/Coding-Test-Programmers-introduction/" class="list-group-item list-group-item-action">
+      <time>01-17</time>
+      <div class="list-group-item-title">[Coding Test] 프로그래머스 코딩 입문 트레이닝 후기</div>
+    </a>
+  
+    
+    <a href="/2024/01/17/Coding-Test-Programmers-basic/" class="list-group-item list-group-item-action">
+      <time>01-17</time>
+      <div class="list-group-item-title">[Coding Test] 프로그래머스 코딩 기초 트레이닝 후기</div>
+    </a>
+  
+</div>
 
-</article>
+
 
 
 

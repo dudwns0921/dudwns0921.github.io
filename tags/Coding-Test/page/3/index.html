@@ -62,7 +62,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -75,7 +75,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 
 <body>
@@ -106,7 +106,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>Home</span>
               </a>
@@ -118,7 +118,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>Archives</span>
               </a>
@@ -130,7 +130,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>Categories</span>
               </a>
@@ -142,7 +142,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>Tags</span>
               </a>
@@ -154,21 +154,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>About</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/TIL/">
-                <i class="iconfont icon-books"></i>
-                <span>TIL</span>
               </a>
             </li>
           
@@ -234,13 +222,25 @@
                 
 
 <div class="list-group">
-  <p class="h4">30 posts in total</p>
+  <p class="h4">32 posts in total</p>
   <hr>
   
   
     
       
       <p class="h5">2022</p>
+    
+    <a href="/2022/11/17/Coding-Test-Programmers-12/" class="list-group-item list-group-item-action">
+      <time>11-17</time>
+      <div class="list-group-item-title">[Coding Test] 프로그래머스 -문자열을 정수로 바꾸기-</div>
+    </a>
+  
+    
+    <a href="/2022/11/17/Coding-Test-Programmers-11/" class="list-group-item list-group-item-action">
+      <time>11-17</time>
+      <div class="list-group-item-title">[Coding Test] 프로그래머스 -수박수박수박수박수박수?-</div>
+    </a>
+  
     
     <a href="/2022/11/17/Coding-Test-Programmers-10/" class="list-group-item list-group-item-action">
       <time>11-17</time>
@@ -289,24 +289,12 @@
       <div class="list-group-item-title">[Coding Test] 프로그래머스 -가운데 글자 가져오기-</div>
     </a>
   
-    
-    <a href="/2022/11/16/Coding-Test-Programmers-2/" class="list-group-item list-group-item-action">
-      <time>11-16</time>
-      <div class="list-group-item-title">[Coding Test] 프로그래머스 -2016년-</div>
-    </a>
-  
-    
-    <a href="/2022/11/15/Coding-Test-Programmers-1/" class="list-group-item list-group-item-action">
-      <time>11-15</time>
-      <div class="list-group-item-title">[Coding Test] 프로그래머스 -폰켓몬-</div>
-    </a>
-  
 </div>
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/tags/Coding-Test/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/tags/Coding-Test/">1</a><a class="page-number" href="/tags/Coding-Test/page/2/#board">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/tags/Coding-Test/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/tags/Coding-Test/">1</a><a class="page-number" href="/tags/Coding-Test/page/2/#board">2</a><span class="page-number current">3</span><a class="page-number" href="/tags/Coding-Test/page/4/#board">4</a><a class="extend next" rel="next" href="/tags/Coding-Test/page/4/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 

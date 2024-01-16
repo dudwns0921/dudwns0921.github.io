@@ -62,7 +62,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -75,7 +75,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 
 <body>
@@ -106,7 +106,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
                 <span>Home</span>
               </a>
@@ -118,7 +118,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>Archives</span>
               </a>
@@ -130,7 +130,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
                 <span>Categories</span>
               </a>
@@ -142,7 +142,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>Tags</span>
               </a>
@@ -154,21 +154,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
                 <span>About</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/TIL/">
-                <i class="iconfont icon-books"></i>
-                <span>TIL</span>
               </a>
             </li>
           
@@ -238,18 +226,174 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/17/Coding-Test-Programmers-12/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -문자열을 정수로 바꾸기-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/17/Coding-Test-Programmers-12/" target="_self">
+          [Coding Test] 프로그래머스 -문자열을 정수로 바꾸기-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/17/Coding-Test-Programmers-12/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12925 🤨생각하기사실 Number 생성자나 ParseInt 메서드를 사용하면 정말 간단하게 풀 수 있는 문제이다. 다만 사칙연산을 사용해 문자열을 자동으로 수로 바꾸는 풀이도 존재했다.   😎내 풀이1234function solutio
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-17 13:43" pubdate>
+              2022-11-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/17/Coding-Test-Programmers-11/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -수박수박수박수박수박수?-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/17/Coding-Test-Programmers-11/" target="_self">
+          [Coding Test] 프로그래머스 -수박수박수박수박수박수?-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/17/Coding-Test-Programmers-11/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12922 🤨생각하기문제 그대로 구현 😎내 풀이1234567891011function solution(n) &#123;  var answer = &#x27;&#x27;  for (let i = 1; i &lt;= n; i++) &#123;
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-17 12:31" pubdate>
+              2022-11-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/11/17/Coding-Test-Programmers-10/" target="_self">
           <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -서울에서 김서방 찾기-">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/17/Coding-Test-Programmers-10/" target="_self">
           [Coding Test] 프로그래머스 -서울에서 김서방 찾기-
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/17/Coding-Test-Programmers-10/" target="_self">
@@ -322,12 +466,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/17/Coding-Test-Programmers-9/" target="_self">
           [Coding Test] 프로그래머스 -문자열 다루기 기본-
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/17/Coding-Test-Programmers-9/" target="_self">
@@ -400,12 +544,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/16/Coding-Test-Programmers-8/" target="_self">
           [Coding Test] 프로그래머스 -문자열 내 p와 y의 개수-
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/16/Coding-Test-Programmers-8/" target="_self">
@@ -478,12 +622,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/16/Coding-Test-Programmers-7/" target="_self">
           [Coding Test] 프로그래머스 -문자열 내 마음대로 정렬하기-
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/16/Coding-Test-Programmers-7/" target="_self">
@@ -556,12 +700,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/16/Coding-Test-Programmers-6/" target="_self">
           [Coding Test] 프로그래머스 -두 정수 사이의 합-
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/16/Coding-Test-Programmers-6/" target="_self">
@@ -634,12 +778,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/16/Coding-Test-Programmers-5/" target="_self">
           [Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열-
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/16/Coding-Test-Programmers-5/" target="_self">
@@ -712,12 +856,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/16/Coding-Test-Programmers-4/" target="_self">
           [Coding Test] 프로그래머스 -같은 숫자는 싫어-
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/16/Coding-Test-Programmers-4/" target="_self">
@@ -790,12 +934,12 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/11/16/Coding-Test-Programmers-3/" target="_self">
           [Coding Test] 프로그래머스 -가운데 글자 가져오기-
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/2022/11/16/Coding-Test-Programmers-3/" target="_self">
@@ -810,162 +954,6 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2022-11-16 10:18" pubdate>
               2022-11-16
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Coding-Test/">#Coding-Test</a>
-            
-              <a href="/tags/Programmers/">#Programmers</a>
-            
-              <a href="/tags/Lv-1/">#Lv.1</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022/11/16/Coding-Test-Programmers-2/" target="_self">
-          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -2016년-">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/11/16/Coding-Test-Programmers-2/" target="_self">
-          [Coding Test] 프로그래머스 -2016년-
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/2022/11/16/Coding-Test-Programmers-2/" target="_self">
-        <div>
-          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12901 🤨생각하기2016년 특정 날의 요일을 구하는 문제이다. 1월 1일의 요일을 알고 있기 때문에 주어진 날짜와 1월 1일의 차이가 얼마나 나는지 확인하고, 그 차이를 7로 나눈 나머지를 통해 그 날의 요일을 구할 수 있다. 😎내 풀
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-11-16 09:40" pubdate>
-              2022-11-16
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Coding-Test/">#Coding-Test</a>
-            
-              <a href="/tags/Programmers/">#Programmers</a>
-            
-              <a href="/tags/Lv-1/">#Lv.1</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022/11/15/Coding-Test-Programmers-1/" target="_self">
-          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -폰켓몬-">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/11/15/Coding-Test-Programmers-1/" target="_self">
-          [Coding Test] 프로그래머스 -폰켓몬-
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/2022/11/15/Coding-Test-Programmers-1/" target="_self">
-        <div>
-          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/1845 🤨생각하기문제는 굉장히 길지만, 결국 가장 많은 종류의 폰켓몬을 선택할 때의 폰켓몬의 수를 구하면 되는 문제이다. 폰켓몬 배열에는 중복된 폰켓몬들도 있기 때문에, Set을 사용해 중복을 제거해준다. 그러면 해당 Set에는 각기 다른
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-11-15 12:52" pubdate>
-              2022-11-15
             </time>
           </div>
         
