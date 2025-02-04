@@ -1,0 +1,765 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon_pig.png">
+  <link rel="icon" href="/img/favicon_pig.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Elio">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="검색어 자동완성 기능을 만들면서 Debounce에 대해 알게 되었고, 자연스럽게 Throttle을 접하게 되었다. 먼저 두 기술이 왜 등장하게 되었는지부터 알아보자. 등장배경자, 우리가 영화 정보를 검색할 수 있는 사이트에서  Matrix시리즈를 보고 싶어 검색창에 Matrix를 입력했다고 가정해보자. 해당 사이트에는 자동완성 기능을 제공하고 있는데, 자동">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Javscript] Debounce and Throttle">
+<meta property="og:url" content="http://example.com/2022/10/06/Debounce-and-Throttle/index.html">
+<meta property="og:site_name" content="Elio&#39;s Blog">
+<meta property="og:description" content="검색어 자동완성 기능을 만들면서 Debounce에 대해 알게 되었고, 자연스럽게 Throttle을 접하게 되었다. 먼저 두 기술이 왜 등장하게 되었는지부터 알아보자. 등장배경자, 우리가 영화 정보를 검색할 수 있는 사이트에서  Matrix시리즈를 보고 싶어 검색창에 Matrix를 입력했다고 가정해보자. 해당 사이트에는 자동완성 기능을 제공하고 있는데, 자동">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/Javascript.png">
+<meta property="article:published_time" content="2022-10-06T07:23:09.000Z">
+<meta property="article:modified_time" content="2025-02-04T10:39:39.733Z">
+<meta property="article:author" content="Elio">
+<meta property="article:tag" content="Javascript">
+<meta property="article:tag" content="Debounce">
+<meta property="article:tag" content="Throttle">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/Javascript.png">
+  
+  
+  
+  <title>[Javscript] Debounce and Throttle - Elio&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Elio&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="[Javscript] Debounce and Throttle"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-06 16:23" pubdate>
+          October 6, 2022 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          582 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          5 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">[Javscript] Debounce and Throttle</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>검색어 자동완성 기능을 만들면서 <strong>Debounce</strong>에 대해 알게 되었고, 자연스럽게 <strong>Throttle</strong>을 접하게 되었다. 먼저 두 기술이 왜 등장하게 되었는지부터 알아보자.</p>
+<h1 id="등장배경"><a href="#등장배경" class="headerlink" title="등장배경"></a>등장배경</h1><p>자, 우리가 영화 정보를 검색할 수 있는 사이트에서  Matrix시리즈를 보고 싶어 검색창에 Matrix를 입력했다고 가정해보자. 해당 사이트에는 자동완성 기능을 제공하고 있는데, 자동완성 기능의 흐름은 다음과 같다.</p>
+<ol>
+<li>사용자가 글자를 입력함</li>
+<li>입력할 때마다 서버에 새로운 요청을 보내 해당 검색어와 관련된 키워드들을 가져옴</li>
+</ol>
+<p>위 흐름대로 자동완성 기능이 수행될 때 결과를 콘솔에 출력해봤다.</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">m</span> / api request 1<br><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">ma</span> / api request 2<br><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">mat</span> / api request 3<br><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">matr</span> / api request 4<br><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">matri</span> / api request 5<br><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">matrix</span> / api request 6<br></code></pre></td></tr></table></figure>
+
+<p>우리는 matrix라는 6글자를 입력했을 뿐인데, 6개의 request가 서버로 보내졌다 . 만약 더 긴 제목의 영화를 검색한다면 영화 제목을 입력하는 짧은 시간 동안 수십 개의 request가 발생하는 것이다. 이처럼 너무 많은 이벤트 횟수의 실행으로 이벤트 핸들러가 과도한 연산을 수행하는 경우 성능 문제가 발생하고 이는 사용자 경험까지 떨어뜨리게 된다.</p>
+<p>여기서 필요한 것이 바로 <strong>Debounce</strong>와 <strong>Throttle</strong>이다. 두 기술 모두 자바스크립트의 이벤트를 제어(제한)해 성능을 향상시키는 방법이다.</p>
+<h1 id="Debounce"><a href="#Debounce" class="headerlink" title="Debounce"></a>Debounce</h1><p><strong>Debounce</strong>는 이벤트를 그룹화해서 특정시간이 지난 후 하나의 이벤트만 발생하도록 하는 기술이다. 예시로 살펴보자.</p>
+<ol>
+<li>특정시간(delay)을 1초로 설정</li>
+<li>matrix를 입력(각 글자를 입력하는데 설정한 시간 미만으로 걸린다고 가정)</li>
+<li>설정한 시간 지남</li>
+</ol>
+<p>위 과정대로 진행되면 matrix라는 검색어와 함께 요청이 한 번만 발생한다. 원리는 다음과 같다.</p>
+<ol>
+<li>이벤트 발생 후 설정한 시간이 지나기 전에 이벤트가 다시 발생하면 지나간 시간을 초기화한다.</li>
+<li>설정한 시간이 지나게 되면 연산을 수행한다.</li>
+</ol>
+<p>그러니까 만약 ma를 입력하고 1초가 지났다면 다음과 같은 결과가 나올 것이다.</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">ma</span> / api request 1<br></code></pre></td></tr></table></figure>
+
+<p>어느 정도 개념에 대한 이해가 이루어졌다면 이제 <strong>Debounce</strong> 기술을 직접 구현해보자.</p>
+<h2 id="Debounce-구현하기"><a href="#Debounce-구현하기" class="headerlink" title="Debounce 구현하기"></a>Debounce 구현하기</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Default:<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;default&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Debounce:<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;debounce&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>Debounce</strong>가 적용됐을 때랑 적용되지 않았을 때의 차이를 좀 더 명확하게 확인하기 위해 위와 같이 HTML구조를 짰다. </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> input = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;input&#x27;</span>)<br><span class="hljs-keyword">const</span> defaultText = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#default&#x27;</span>)<br><span class="hljs-keyword">const</span> debounceText = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#debounce&#x27;</span>)<br><br><span class="hljs-keyword">let</span> debounceReqCnt = <span class="hljs-number">0</span><br><span class="hljs-keyword">let</span> defaultReqCnt = <span class="hljs-number">0</span><br><br><span class="hljs-keyword">const</span> updateDebounceText = <span class="hljs-title function_">debounce</span>(<span class="hljs-function">(<span class="hljs-params">text</span>) =&gt;</span> &#123;<br>  debounceText.<span class="hljs-property">textContent</span> = text<br>  debounceReqCnt++<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<br>    <span class="hljs-string">`[Debounce] search keyword : <span class="hljs-subst">$&#123;text&#125;</span> / api request <span class="hljs-subst">$&#123;debounceReqCnt&#125;</span>`</span>,<br>  )<br>&#125;)<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">updateDefaultText</span> = (<span class="hljs-params">text</span>) =&gt; &#123;<br>  defaultText.<span class="hljs-property">textContent</span> = text<br>  defaultReqCnt++<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`[Default] search keyword : <span class="hljs-subst">$&#123;text&#125;</span> / api request <span class="hljs-subst">$&#123;defaultReqCnt&#125;</span>`</span>)<br>&#125;<br><br>input.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;input&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;<br>  <span class="hljs-title function_">updateDefaultText</span>(e.<span class="hljs-property">target</span>.<span class="hljs-property">value</span>)<br>  <span class="hljs-title function_">updateDebounceText</span>(e.<span class="hljs-property">target</span>.<span class="hljs-property">value</span>)<br>&#125;)<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">cb, delay = <span class="hljs-number">1000</span></span>) &#123;<br>  <span class="hljs-keyword">let</span> timeout<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">clearTimeout</span>(timeout)<br>    timeout = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      <span class="hljs-title function_">cb</span>(arg)<br>    &#125;, delay)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>전체 코드는 위와 같다.</p>
+<ol>
+<li>input에 addEventListener를 적용</li>
+<li>input이벤트가 발생할 때마다 DefaultText와 debounceText가 업데이트됨</li>
+</ol>
+<p>실행 흐름 자체는 그렇게 복잡하지 않다. 자세히 봐야할 부분은 맨 밑에 정의된 <strong>debounce</strong>함수이다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">cb, delay = <span class="hljs-number">1000</span></span>) &#123;<br>  <span class="hljs-keyword">let</span> timeout<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">clearTimeout</span>(timeout)<br>    timeout = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      <span class="hljs-title function_">cb</span>(arg)<br>    &#125;, delay)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>debounce</strong>함수가 실행되면 기존에 setTimeout으로 등록되었던 타이머를 없애고 새로운 타이머를 등록한다. 이는 아래 내용을 구현한 것이라고 이해하면 된다.</p>
+<blockquote>
+<p><strong>이벤트 발생 후 설정한 시간이 지나기 전에 이벤트가 다시 발생하면 지나간 시간을 초기화한다.</strong></p>
+</blockquote>
+<p>그러면 이제 실제 실행 화면을 확인해보자.</p>
+<img width="100%" src="/2022/10/06/Debounce-and-Throttle/debounceExample.gif" srcset="/img/loading.gif" lazyload>
+
+<p><strong>Debounce</strong>를 쓰지 않은 경우 아까와 동일하게 6번의 request 가 발생했고, <strong>Debounce</strong>를 적용시킨 경우 단 한 번의 request만이 발생했다. 수치상으로 6배의 성능 향상을 확인할 수 있다. 그럼 이제 <strong>Throttle</strong>에 대해서 알아보자.</p>
+<h1 id="Throttle"><a href="#Throttle" class="headerlink" title="Throttle"></a>Throttle</h1><p><strong>Throttle</strong>은 이벤트를 일정한 주기마다 발생하도록 하는 기술이다. 예를 들어 <strong>Throttle</strong>의 설정시간으로 1ms를 주면 해당 이벤트는 1ms동안 한 번만 발생하게 된다. <strong>Throttle</strong>을 사용하는 대표적인 예시로는 무한 스크롤 페이지가 있다. </p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.agoda.com/ko-kr/?cid=1844104">https://www.agoda.com/ko-kr/?cid=1844104</a></p>
+</blockquote>
+<p>최근 파리에서 묵을 숙소를 찾으면서 사용한 agoda이다. 원하는 도시를 검색하고 계속 스크롤을 내리면 footer에 도달하기 전에 추가로 숙소 정보들을 가져오고 있는 걸 확인할 수 있다. 정확하지는 않을 수도 있지만 아마도 다음과 같은 흐름으로 실행되고 있을 거라고 생각한다.</p>
+<ol>
+<li>스크롤 위치가 footer와 얼마나 떨어져 있는지 확인</li>
+<li>일정 거리 이하라면 콘텐츠를 가져와 페이지를 업데이트함</li>
+</ol>
+<p>스크롤을 조작하면 스크롤 이벤트가 굉장히 많이 발생한다. 그래서 만약 스크롤 이벤트가 발생할 때마다 footer와의 거리를 계산한다면 성능상의 이슈가 생길 수도 있다. 그럴 때 Throttle을 사용할 수 있다. 연산이 몇 초에 한 번, 또는 몇 밀리초에 한 번씩만 수행되도록 제한을 두는 것이다.</p>
+<h2 id="Throttle-구현하기"><a href="#Throttle-구현하기" class="headerlink" title="Throttle 구현하기"></a>Throttle 구현하기</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Default:<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;default&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Throttle:<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;throttle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> &#123;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">300vh</span>;<br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-selector-tag">nav</span> &#123;<br>    <span class="hljs-attribute">position</span>: fixed;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Debounce</strong>와 마찬가지로 <strong>Throttle</strong>을 적용했을 때와 적용하지 않았을 때의 차이를 보기 위해 위와 같이 html 구조를 짰다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> defaultText = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#default&#x27;</span>)<br><span class="hljs-keyword">const</span> throttleText = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#throttle&#x27;</span>)<br><br><span class="hljs-keyword">let</span> defaultCnt = <span class="hljs-number">0</span><br><span class="hljs-keyword">let</span> throttleCnt = <span class="hljs-number">0</span><br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">countDetectingDefault</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  defaultCnt++<br>  defaultText.<span class="hljs-property">textContent</span> = defaultCnt<br>&#125;<br><br><span class="hljs-keyword">const</span> countDetectingThrottle = <span class="hljs-title function_">throttle</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  throttleCnt++<br>  throttleText.<span class="hljs-property">textContent</span> = throttleCnt<br>&#125;)<br><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;scroll&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">countDetectingDefault</span>()<br>  <span class="hljs-title function_">countDetectingThrottle</span>()<br>&#125;)<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">throttle</span>(<span class="hljs-params">cb, delay = <span class="hljs-number">1000</span></span>) &#123;<br>  <span class="hljs-keyword">let</span> shouldWait = <span class="hljs-literal">false</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">...args</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (shouldWait) <span class="hljs-keyword">return</span><br>    <span class="hljs-title function_">cb</span>(...args)<br>    shouldWait = <span class="hljs-literal">true</span><br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      shouldWait = <span class="hljs-literal">false</span><br>    &#125;, delay)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>winodw객체에 addEventListener 를 적용</li>
+<li>스크롤 이벤트가 발생할 때마다 카운트 증가</li>
+</ol>
+<p>따로 구현은 하지 않았지만 여기서 스크롤 이벤트가 발생한다는 건 아래의 작업이 이루어지는 거라고 가정하자.</p>
+<blockquote>
+<p><strong>스크롤 위치가 footer와 얼마나 떨어져 있는지 확인</strong></p>
+</blockquote>
+<p><strong>Debounce</strong>와 마찬가지로 가장 중요한 건 맨 밑의 <strong>throttle</strong> 함수이다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">throttle</span>(<span class="hljs-params">cb, delay = <span class="hljs-number">1000</span></span>) &#123;<br>  <span class="hljs-keyword">let</span> shouldWait = <span class="hljs-literal">false</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (shouldWait) <span class="hljs-keyword">return</span><br>    <span class="hljs-title function_">cb</span>(arg)<br>    shouldWait = <span class="hljs-literal">true</span><br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      shouldWait = <span class="hljs-literal">false</span><br>    &#125;, delay)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>shouldWait 의 초기값이 false이기 때문에 최초에는 콜백함수가 무조건 실행된다.</li>
+<li>콜백 함수가 실행됐다면 shouldWait의 값을 true로 바꾼다.</li>
+<li>setTimeout을 통해 설정한 시간 뒤에 shouldWait의 값이 바뀌도록 한다.</li>
+<li>설정한 시간이 지나기 전까지는 shouldWait의 값이 true이기 때문에 연산이 수행되지 않는다.</li>
+</ol>
+<p>실행 화면을 확인해보자.</p>
+<img width="100%" src="/2022/10/06/Debounce-and-Throttle/ThrottleExample.gif" srcset="/img/loading.gif" lazyload>
+
+<p>페이지의 처음부터 끝까지 스크롤하는 동안 <strong>Throttle</strong>을 적용하지 않았을 때는 스크롤이 footer로부터 얼마나 떨어져 있는지 계산하는 연산이 총 67번 수행됐고, <strong>Throttle</strong>을 적용했을 경우에는 단 2번만 수행됐다. </p>
+<h1 id="💡-Tip-Debounce과-Throttle의-차이"><a href="#💡-Tip-Debounce과-Throttle의-차이" class="headerlink" title="💡 Tip - Debounce과 Throttle의 차이"></a>💡 Tip - <strong>Debounce</strong>과 <strong>Throttle</strong>의 차이</h1><p><strong>Debounce</strong>과 <strong>Throttle</strong>의 가장 큰 차이점은 <strong>Throttle</strong>은 설정한 시간마다 연산이 수행됨을 보장한다는 것이다. 그래서 <strong>Throttle</strong>은 지속적인 업데이트가 필요한 경우에 사용하는 게 좋다.</p>
+<p>만약 무한 스크롤 페이지를 구현할 때 <strong>Debounce</strong>를 사용했다고 가정해보자. 스크롤 이벤트가 멈춰야만 footer와의 거리를 확인하고 콘텐츠를 추가로 가져올 것이기 때문에 footer에 도달하더라도 스크롤 이벤트가 설정한 시간 내에 다시 발생한다면 아무런 변화도 일어나지 않을 것이다.</p>
+<p>하지만 <strong>Throttle</strong>은 정기적으로 연산이 실행되기 때문에 위의 문제가 발생하지 않는다. 설정한 시간마다 연산을 수행하기 때문에 footer와의 거리를 지속적으로 업데이트할 수 있어 footer에 도달하기 전에 정상적으로 콘텐츠를 추가로 가져올 수 있을 것이다.</p>
+<h1 id="📚-참고자료"><a href="#📚-참고자료" class="headerlink" title="📚 참고자료"></a>📚 참고자료</h1><p><a target="_blank" rel="noopener" href="https://webclub.tistory.com/607">https://webclub.tistory.com/607</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=cjIswDCKgu0">https://www.youtube.com/watch?v=cjIswDCKgu0</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Javascript/" class="category-chain-item">Javascript</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Javascript/" class="print-no-link">#Javascript</a>
+      
+        <a href="/tags/Debounce/" class="print-no-link">#Debounce</a>
+      
+        <a href="/tags/Throttle/" class="print-no-link">#Throttle</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>[Javscript] Debounce and Throttle</div>
+      <div>http://example.com/2022/10/06/Debounce-and-Throttle/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Elio</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 6, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/10/14/Making-Hexo-Blog/" title="[Hexo] Hexo로 블로그 만들기">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[Hexo] Hexo로 블로그 만들기</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2022/10/06/Debounce-and-Throttle/';
+          this.page.identifier = '/2022/10/06/Debounce-and-Throttle/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
