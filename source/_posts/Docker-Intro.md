@@ -1,5 +1,5 @@
 ---
-title: Docker 톺아보기
+title: Docker 훑어보기
 date: 2025-09-22 16:27:07
 categories:
 tags:
@@ -86,123 +86,20 @@ Docker를 활용하는 기본 흐름은 이미지를 만들고, 그 이미지를
 // index.js
 import _ from 'lodash';
 
-// 샘플 데이터: 사용자 목록
+// 샘플 사용자 데이터
 const users = [
-  { id: 1, name: 'Alice', age: 28, department: 'Engineering', salary: 75000, active: true },
-  { id: 2, name: 'Bob', age: 32, department: 'Marketing', salary: 60000, active: false },
-  { id: 3, name: 'Charlie', age: 25, department: 'Engineering', salary: 70000, active: true },
-  { id: 4, name: 'Diana', age: 30, department: 'HR', salary: 65000, active: true },
-  { id: 5, name: 'Eve', age: 27, department: 'Marketing', salary: 62000, active: false },
-  { id: 6, name: 'Frank', age: 35, department: 'Engineering', salary: 85000, active: true }
+  { id: 1, name: 'Alice', age: 28, salary: 75000, active: true },
+  { id: 2, name: 'Bob', age: 32, salary: 60000, active: false },
+  { id: 3, name: 'Charlie', age: 25, salary: 70000, active: true }
 ];
 
-// 제품 데이터
-const products = [
-  { id: 1, name: 'Laptop', category: 'Electronics', price: 1200, stock: 15 },
-  { id: 2, name: 'Mouse', category: 'Electronics', price: 25, stock: 50 },
-  { id: 3, name: 'Keyboard', category: 'Electronics', price: 80, stock: 30 },
-  { id: 4, name: 'Monitor', category: 'Electronics', price: 300, stock: 20 },
-  { id: 5, name: 'Chair', category: 'Furniture', price: 150, stock: 10 }
-];
+console.log('=== 간단한 Lodash 예제 ===\n');
 
-console.log('=== Lodash 데이터 처리 예제 ===\n');
-
-// 1. 배열 필터링 - 활성 사용자만 추출
+// 활성 사용자만 필터링
 const activeUsers = _.filter(users, { active: true });
-console.log('1. 활성 사용자들:');
-console.log(activeUsers.map(user => `${user.name} (${user.department})`));
-console.log();
-
-// 2. 그룹화 - 부서별로 사용자 그룹화
-const usersByDepartment = _.groupBy(users, 'department');
-console.log('2. 부서별 사용자 수:');
-_.forEach(usersByDepartment, (users, department) => {
-  console.log(`${department}: ${users.length}명`);
-});
-console.log();
-
-// 3. 정렬 - 급여 기준 내림차순 정렬
-const sortedBySalary = _.orderBy(users, ['salary'], ['desc']);
-console.log('3. 급여 순위 (높은 순):');
-sortedBySalary.forEach((user, index) => {
-  console.log(`${index + 1}. ${user.name}: $${user.salary.toLocaleString()}`);
-});
-console.log();
-
-// 4. 집계 - 평균 급여 계산
-const avgSalary = _.meanBy(users, 'salary');
-console.log(`4. 평균 급여: $${avgSalary.toLocaleString()}`);
-console.log();
-
-// 5. 변환 - 사용자 이름만 추출하여 대문자로 변환
-const userNames = _.map(users, user => _.upperCase(user.name));
-console.log('5. 사용자 이름 (대문자):');
-console.log(userNames.join(', '));
-console.log();
-
-// 6. 검색 - 특정 조건으로 사용자 찾기
-const engineerOver30 = _.find(users, user => 
-  user.department === 'Engineering' && user.age > 30
-);
-console.log('6. 30세 이상 엔지니어:');
-console.log(engineerOver30 ? `${engineerOver30.name} (${engineerOver30.age}세)` : '없음');
-console.log();
-
-// 7. 데이터 요약 통계
-const stats = {
-  totalUsers: users.length,
-  activeUsers: _.filter(users, 'active').length,
-  avgAge: _.round(_.meanBy(users, 'age'), 1),
-  departments: _.uniq(_.map(users, 'department')),
-  salaryRange: {
-    min: _.minBy(users, 'salary').salary,
-    max: _.maxBy(users, 'salary').salary
-  }
-};
-
-console.log('7. 통계 요약:');
-console.log(`- 총 사용자: ${stats.totalUsers}명`);
-console.log(`- 활성 사용자: ${stats.activeUsers}명`);
-console.log(`- 평균 나이: ${stats.avgAge}세`);
-console.log(`- 부서: ${stats.departments.join(', ')}`);
-console.log(`- 급여 범위: $${stats.salaryRange.min.toLocaleString()} ~ $${stats.salaryRange.max.toLocaleString()}`);
-console.log();
-
-// 8. 제품 데이터 처리
-console.log('8. 제품 분석:');
-const productsByCategory = _.groupBy(products, 'category');
-const totalInventoryValue = _.sumBy(products, product => product.price * product.stock);
-
-console.log('카테고리별 제품:');
-_.forEach(productsByCategory, (products, category) => {
-  const categoryValue = _.sumBy(products, p => p.price * p.stock);
-  console.log(`- ${category}: ${products.length}개 제품, 총 가치 $${categoryValue.toLocaleString()}`);
-});
-console.log(`총 재고 가치: $${totalInventoryValue.toLocaleString()}`);
-console.log();
-
-// 9. 복잡한 데이터 변환
-const userSummary = _.chain(users)
-  .filter('active')
-  .groupBy('department')
-  .mapValues(users => ({
-    count: users.length,
-    avgSalary: _.round(_.meanBy(users, 'salary')),
-    names: _.map(users, 'name')
-  }))
-  .value();
-
-console.log('9. 활성 사용자 부서별 요약:');
-_.forEach(userSummary, (summary, department) => {
-  console.log(`${department}:`);
-  console.log(`  - 인원: ${summary.count}명`);
-  console.log(`  - 평균 급여: $${summary.avgSalary.toLocaleString()}`);
-  console.log(`  - 구성원: ${summary.names.join(', ')}`);
-});
+console.log('활성 사용자:', activeUsers.map(u => u.name).join(', '));
 
 console.log('\n=== 애플리케이션 실행 완료 ===');
-
-
 ```
 
 ## 단일 스테이지
@@ -285,65 +182,64 @@ docker run docker-example-single
 run 명령어를 사용해 위에서 만들었던 이미지를 바탕으로 컨테이너를 실행하면 아래와 같은 출력을 확인할 수 있다.
 
 ```
-=== Lodash 데이터 처리 예제 ===
+=== 간단한 Lodash 예제 ===
 
-1. 활성 사용자들:
-[
-  'Alice (Engineering)',
-  'Charlie (Engineering)',
-  'Diana (HR)',
-  'Frank (Engineering)'
-]
-
-2. 부서별 사용자 수:
-Engineering: 3명
-Marketing: 2명
-HR: 1명
-
-3. 급여 순위 (높은 순):
-1. Frank: $85,000
-2. Alice: $75,000
-3. Charlie: $70,000
-4. Diana: $65,000
-5. Eve: $62,000
-6. Bob: $60,000
-
-4. 평균 급여: $69,500
-
-5. 사용자 이름 (대문자):
-ALICE, BOB, CHARLIE, DIANA, EVE, FRANK
-
-6. 30세 이상 엔지니어:
-Frank (35세)
-
-7. 통계 요약:
-- 총 사용자: 6명
-- 활성 사용자: 4명
-- 평균 나이: 29.5세
-- 부서: Engineering, Marketing, HR
-- 급여 범위: $60,000 ~ $85,000
-
-8. 제품 분석:
-카테고리별 제품:
-- Electronics: 4개 제품, 총 가치 $27,650
-- Furniture: 1개 제품, 총 가치 $1,500
-총 재고 가치: $29,150
-
-9. 활성 사용자 부서별 요약:
-Engineering:
-  - 인원: 3명
-  - 평균 급여: $76,667
-  - 구성원: Alice, Charlie, Frank
-HR:
-  - 인원: 1명
-  - 평균 급여: $65,000
-  - 구성원: Diana
+활성 사용자: Alice, Charlie
 
 === 애플리케이션 실행 완료 ===
 ```
 ## Docker Compose
+> Docker Compose는 여러 개의 컨테이너로 이루어진 애플리케이션을 정의하고 실행하기 위한 도구로, docker-compose.yml이라는 YAML 설정 파일을 통해 서비스, 네트워크, 볼륨 등을 한 번에 정의할 수 있다. 단일 명령어인 docker compose up으로 애플리케이션 전체 스택을 실행할 수 있다.
 
+docker compose는 앞의 설명대로 여러 개의 컨테이너로 이루어진 애플리케이션을 정의하고 실행하기 위한 도구이다. 만약 docker cli를 통해서 기본적인 앱(프론트, 백, db)을 실행시키려고 한다면 이미지 빌드를 위한 build 명령어만 3번, 컨테이너 실행을 위한 명령어인 run을 또 3번 실행시켜야 할 것이다. 하지만 docker compose를 사용하면 이러한 번거로움을 한 번에 해결할 수 있다. 
 
+```yml
+  services:
+    postgres:
+      image: postgres:15
+      container_name: my_postgres
+      ports:
+        - "5432:5432"
+      env_file:
+        - ./.env
+      volumes:
+        - pgdata:/var/lib/postgresql/data
+
+    backend:
+      build:
+        context: ./back-end
+        dockerfile: Dockerfile
+      ports:
+        - "3000:3000"
+      volumes:
+        - ./back-end:/app
+      command: npm run start:dev
+      env_file:
+        - ./.env
+      depends_on:
+        - postgres
+
+    frontend:
+      build:
+        context: ./front-end
+        dockerfile: Dockerfile
+      ports:
+        - "5173:5173"
+      volumes:
+        - ./front-end:/app
+      depends_on:
+        - backend
+```
+docker-compose.yml 파일 자체는 직관적이어서 보기만 해도 각 서비스와 설정이 어떤 역할을 하는지 쉽게 이해할 수 있다. 다만, volumes와 depends_on 속성은 조금 더 주의 깊게 살펴볼 필요가 있다.
+
+ volumes는 컨테이너가 삭제되거나 재시작되더라도 데이터를 유지할 수 있는 영속적 저장소를 제공한다. 호스트 디렉토리를 컨테이너 내부와 연결하는 Bind Mount는 코드 변경 사항이 즉시 반영되므로 개발 환경에서 주로 사용된다. 핫 리로드 기능을 사용하려면 필수적인 기능이므로 참고해두자. Named Volume은 컨테이너와 독립적으로 데이터를 관리할 수 있어 운영 환경에서 안정적이다. 위에서 데이터베이스의 데이터 유지를 위해 pgdata가 바로 Named Volume에 해당한다.
+ 
+ 한편, depends_on은 서비스 간 실행 순서를 정의하는 속성으로, 예를 들어 백엔드 서비스가 데이터베이스보다 먼저 실행되지 않도록 제어할 수 있다. 위에서는 db, 백엔드, 프론트 순으로 실행 순서를 정의하고 있다. 다만 이는 컨테이너 실행 순서만 보장하는 것이지 실제 서비스 내부 실행 상태까지는 반영하지 않는다.
+
+ # 결론
+프론트를 주로 다루면서도, 사내에서 Jenkins를 활용한 자동 배포, SonarQube 실행 등을 경험하며 자연스럽게 데브옵스 문화에 관심을 가지게 되었다. 과거 부트캠프에 참여했을 때 동일한 개발 환경을 세팅하는 과정에서 일부 수강생들이 환경 문제로 많은 시간을 허비하는 것을 보며, 동일한 환경에서 개발과 실행을 보장하는 것의 중요성을 직접 체감했다. 회사에서도 QC팀의 테스트 결과와 개발자의 테스트 결과가 달라 혼선이 발생하는 경우를 경험하며, 환경의 일관성과 인프라의 안정성이 얼마나 중요한지 더욱 느꼈다.
+
+이번 Docker 학습을 계기로, 단순히 이식성이나 인프라의 중요성을 인식하는 수준을 넘어, 실질적으로 팀 내 인프라에 기여하고자 하는 동기가 생겼다. 앞으로 이러한 경험을 바탕으로 팀의 개발 환경과 배포 체계를 개선하며, 보다 안정적이고 효율적인 협업 문화를 만드는 데 기여하도록 노력해봐야겠다.
 
 # 📚참고자료
 - https://docs.docker.com/
