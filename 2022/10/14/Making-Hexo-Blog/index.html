@@ -1,0 +1,765 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon_pig.png">
+  <link rel="icon" href="/img/favicon_pig.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Elio">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="개인 블로그를 만들어야겠다는 생각만 계속 하다가 우연히 회사에서 일을 하다가 Hexo 프레임워크를 접하게 되었다. 보자마자 나한테 딱 적합한 프레임워크라는 생각이 들어서 Hexo를 통해 개인 블로그를 만들어야겠다고 결정했다. 다른 무엇보다도 마크다운 파일을 활용할 수 있다는 점이 가장 매력적으로 다가왔다. 그동안 개인적으로 깃허브의 TIL 저장소에 개발 관">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Hexo] Hexo로 블로그 만들기">
+<meta property="og:url" content="http://example.com/2022/10/14/Making-Hexo-Blog/index.html">
+<meta property="og:site_name" content="Elio&#39;s Blog">
+<meta property="og:description" content="개인 블로그를 만들어야겠다는 생각만 계속 하다가 우연히 회사에서 일을 하다가 Hexo 프레임워크를 접하게 되었다. 보자마자 나한테 딱 적합한 프레임워크라는 생각이 들어서 Hexo를 통해 개인 블로그를 만들어야겠다고 결정했다. 다른 무엇보다도 마크다운 파일을 활용할 수 있다는 점이 가장 매력적으로 다가왔다. 그동안 개인적으로 깃허브의 TIL 저장소에 개발 관">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/Hexo.png">
+<meta property="article:published_time" content="2022-10-13T23:30:26.000Z">
+<meta property="article:modified_time" content="2025-09-26T09:50:47.968Z">
+<meta property="article:author" content="Elio">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Tutorial">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/Hexo.png">
+  
+  
+  
+  <title>[Hexo] Hexo로 블로그 만들기 - Elio&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Elio&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://elioground.com/my-resume" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="[Hexo] Hexo로 블로그 만들기"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-14 08:30" pubdate>
+          October 14, 2022 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          416 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          4 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">[Hexo] Hexo로 블로그 만들기</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>개인 블로그를 만들어야겠다는 생각만 계속 하다가 우연히 회사에서 일을 하다가 <strong>Hexo</strong> 프레임워크를 접하게 되었다. 보자마자 나한테 딱 적합한 프레임워크라는 생각이 들어서 <strong>Hexo</strong>를 통해 개인 블로그를 만들어야겠다고 결정했다.</p>
+<p>다른 무엇보다도 마크다운 파일을 활용할 수 있다는 점이 가장 매력적으로 다가왔다. 그동안 개인적으로 깃허브의 TIL 저장소에 개발 관련 지식들을 마크다운 파일로 계속 작성해왔었는데, 그 자료들을 그대로 사용할 수 있게 되었다.</p>
+<h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
+<p><em>공식문서</em></p>
+<p><em>Hexo는 빠르고 간단하고 파워풀한 블로그 프레임워크입니다. Markdown(또는 다른 언어)을 사용하여 포스트를 작성하면 Hexo는 금세 멋진 테마를 가미해서 정적인 파일을 생성합니다.</em></p>
+</blockquote>
+<h1 id="🔧설치"><a href="#🔧설치" class="headerlink" title="🔧설치"></a>🔧설치</h1><p>Hexo의 설치를 위해서는 아래 두 가지가 필요하다.</p>
+<ul>
+<li>Node.js (Should be at least Node.js 10.13, recommends 12.0 or higher)</li>
+<li>Git</li>
+</ul>
+<p>두 가지를 모두 설치했다면, npm을 이용해서 <strong>Hexo</strong>를 설치해주면 된다.</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">$ npm install -g hexo-<span class="hljs-keyword">cli</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="👶초기화"><a href="#👶초기화" class="headerlink" title="👶초기화"></a>👶초기화</h1><p><strong>Hexo</strong>를 설치했다면, 타겟 <code>&lt;folder&gt;</code>의 <strong>Hexo</strong>를 초기화하기 위해 터미널에서 아래 명령어를 실행하자.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift">$ hexo <span class="hljs-keyword">init</span> &lt;folder&gt;<br></code></pre></td></tr></table></figure>
+
+<p>초기화가 완료되면 다음과 같은 폴더 구조를 가지게 된다.</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs 1c">.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br><span class="hljs-string">|   ├── _drafts</span><br><span class="hljs-string">|   └── _posts</span><br>└── themes<br></code></pre></td></tr></table></figure>
+
+<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><ul>
+<li>환경설정 파일</li>
+</ul>
+<h2 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h2><ul>
+<li><strong>Hexo</strong>는 scaffold 폴더를 기준으로 포스트를 생성</li>
+<li>다시 말하면 문서의 기본 틀이 위치하는 폴더이다.</li>
+</ul>
+<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><ul>
+<li>웹 사이트 컨텐츠 폴더</li>
+<li><strong>Hexo</strong>는 숨겨진 파일과 _ (언더스코어)로 시작하는 파일 및 폴더들을 무시(_posts 폴더는 제외)</li>
+<li>렌더링이 가능한 파일들(ex. Markdown, HTML)은 처리된 후 public 폴더로 들어감</li>
+<li>그 외 파일들은 단순히 복사</li>
+</ul>
+<h2 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h2><ul>
+<li><strong>Hexo</strong>는 theme와 source 폴더의 컨텐츠를 혼합해 정적인 웹 사이트를 생성</li>
+</ul>
+<h1 id="🤔튜토리얼"><a href="#🤔튜토리얼" class="headerlink" title="🤔튜토리얼"></a>🤔튜토리얼</h1><blockquote>
+<p>아래 튜토리얼은 hexo 6.3.0을 기준으로 작성됨.</p>
+</blockquote>
+<h2 id="초기-화면-확인"><a href="#초기-화면-확인" class="headerlink" title="초기 화면 확인"></a>초기 화면 확인</h2><p>npm을 통해 <strong>Hexo</strong>를 설치하면 기본적으로 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-theme-landscape#readme">landscape</a> 테마가 설정되어있고, 1개의 포스트가 작성되어있다.</p>
+<p>이를 로컬 서버(<a target="_blank" rel="noopener" href="http://localhost:4000/)%EC%97%90%EC%84%9C">http://localhost:4000/)에서</a> 확인하기 위해서는 아래 명령어를 실행시키면 된다.</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">$ hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="포스트-작성하기"><a href="#포스트-작성하기" class="headerlink" title="포스트 작성하기"></a>포스트 작성하기</h2><p>포스트를 작성하기 위해서는 new라는 명령어를 사용하면 된다.</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">$ hexo <span class="hljs-keyword">new</span> [layout] &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>layout이 제공되지 않으면 default layout 사용</li>
+<li>title에 공백 포함시 따옴표로 감싸주기</li>
+</ul>
+<p>default layout은 환경설정 파일인 _config.yml에서 확인할 수 있다. 초기에는 post layout이 적용되어 있다.</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">$ hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;My First post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/2022/10/14/Making-Hexo-Blog/image1.png" srcset="/img/loading.gif" lazyload></p>
+<p>포스트가 정상적으로 작성되었다.</p>
+<h2 id="Front-matter-활용"><a href="#Front-matter-활용" class="headerlink" title="Front-matter 활용"></a>Front-matter 활용</h2><h3 id="Front-matter란"><a href="#Front-matter란" class="headerlink" title="Front-matter란?"></a>Front-matter란?</h3><p>Front-matter는 YAML 또는 JSON으로 구성된 문단이다. 파일의 처음 부분에 위치해 사용자 글 작성에 대한 설정을 하는데 사용된다.</p>
+<ul>
+<li><strong>YAML</strong><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">Hello</span> <span class="hljs-string">World</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2013</span><span class="hljs-string">/7/13</span> <span class="hljs-number">20</span><span class="hljs-string">:46:25</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure></li>
+<li><strong>JSON</strong><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs llvm"><span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Hello World&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-string">&quot;date&quot;</span>: <span class="hljs-string">&quot;2013/7/13 20:46:25&quot;</span><br><span class="hljs-comment">;;;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>자세한 설정은 <a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter">링크</a>를 확인해보자.</p>
+<h3 id="Categories-Tags"><a href="#Categories-Tags" class="headerlink" title="Categories &amp; Tags"></a>Categories &amp; Tags</h3><p>위 두 가지는 Front-matter의 속성들로, post에만 적용이 가능하다. 카테고리는 게시물에 순서대로 적용되기 때문에 계층이 발생하지만 태그는 계층이 발생하지 않기 때문에 순서는 중요하지 않다.</p>
+<hr>
+<p>그러면 실제로 Front-matter를 사용해보자.</p>
+<ol>
+<li><p>scaffolds폴더에 layout을 작성해준다. </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">root/scaffolds/sports</span><br><br><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;<br><span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;<br><span class="hljs-attr">categories:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Sports</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Fun</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Exciting</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>명령어를 통해 해당 layout을 적용한 post를 생성한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new sports <span class="hljs-string">&quot;About Sports&quot;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="/2022/10/14/Making-Hexo-Blog/image2.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="Asset-Folder-활용"><a href="#Asset-Folder-활용" class="headerlink" title="Asset Folder 활용"></a>Asset Folder 활용</h2><h3 id="Global-Asset-Folder"><a href="#Global-Asset-Folder" class="headerlink" title="Global Asset Folder"></a>Global Asset Folder</h3><p>Assets은 source폴더 안에 위치하는 post가 아닌 파일로 images, CSS, javascript 파일등이 이에 해당한다. <strong>Hexo</strong> 프로젝트에 많은 이미지 파일을 사용할 것이 아니라면 이미지 파일을 관리하기 가장 쉬운 방법은 이미지 파일들을 <code>source/images</code> 디렉토리에 위치시키는 것이다. </p>
+<h3 id="Post-Asset-Folder"><a href="#Post-Asset-Folder" class="headerlink" title="Post Asset Folder"></a>Post Asset Folder</h3><p>Post Asset Folder는 Assets을 주기적으로 사용하며 post별로 Assets을 구분하고 싶은 사람들을 위해 <strong>Hexo</strong>가 제공하는 기능이다.<br>이 기능을 사용하기 위해서는 _config.yml에서 post_asset_folder의 값을 true로 변경해주면 된다. 그 다음부터는 <strong>Hexo</strong>가 post를 생성할 때마다 post와 동일한 이름을 가진 Asset Folder를 생성한다. 그리고 post에서는 상대 경로를 사용해 Assets에 접근할 수 있다. </p>
+<h3 id="이미지-넣기"><a href="#이미지-넣기" class="headerlink" title="이미지 넣기"></a>이미지 넣기</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">_config.yml</span><br><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">marked:</span><br>  <span class="hljs-attr">prependRoot:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">postAsset:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<p>위와 같이 설정하면 Asset image는 자동으로 해당 포스트의 경로로 resolve된다.<br>예를 들어, <code>image.jpg</code>가 <code>/2020/01/02/foo/image.jpg</code>에 있다고 한다면, <code>/2020/01/02/foo</code> post의 Asset image라는 걸 의미한다. 그리고 아래와 같이 작성하면, </p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">!<span class="hljs-selector-attr">[]</span>(image.jpg)<br></code></pre></td></tr></table></figure>
+
+<p><code>&lt;img src=&quot;/2020/01/02/foo/image.jpg&gt;</code>로 렌더링된다.</p>
+<h1 id="🚀배포하기"><a href="#🚀배포하기" class="headerlink" title="🚀배포하기"></a>🚀배포하기</h1><p><strong>Hexo</strong>를 사용하면 다양한 곳에 배포가 가능하지만, 일반적으로 Github Pages를 가장 많이 활용한다. 특히 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>패키지를 사용하면 정말 간단하게 Github Pages로 배포가 가능하다.</p>
+<ol>
+<li><p>깃허브에서 username.github.io의 이름으로 저장소를 만든다. 여기서 username은 사용자 본인의 username이다.</p>
+</li>
+<li><p>해당 저장소에서 블로그를 만든다.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>를 설치한다.</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">$ npm install hexo-deployer-git <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>_config.yml 파일에서 배포 관련 설정을 한다.</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repo:</span> <span class="hljs-params">&lt;repository url&gt;</span> <span class="hljs-meta"># https:<span class="hljs-comment">//bitbucket.org/JohnSmith/johnsmith.bitbucket.io</span></span><br><span class="hljs-symbol">  branch:</span> [branch]<br><span class="hljs-symbol">  message:</span> [message]<br></code></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Description</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">repo</td>
+<td align="left">저장소 URL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">branch</td>
+<td align="left">브랜치 이름</td>
+<td align="left">gh-pages (GitHub) coding-pages (Coding.net) master (others)</td>
+</tr>
+<tr>
+<td align="left">message</td>
+<td align="left">커밋 메시지</td>
+<td align="left"><code>Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>hexo clean &amp;&amp; hexo deploy 명령어로 배포한다.</p>
+</li>
+</ol>
+<h1 id="😎마무리"><a href="#😎마무리" class="headerlink" title="😎마무리"></a>😎마무리</h1><p>지금까지 <strong>Hexo</strong>를 활용해 블로그를 만드는 법에 대해 간단하게 알아봤다. 물론 깊은 내용을 다루자면 끝도 없겠지만 위 내용으로도 블로그를 만들고 배포하는 데에는 전혀 문제가 없을 것이라고 생각한다.</p>
+<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/ko/docs/">https://hexo.io/ko/docs/</a></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/" class="print-no-link">#Hexo</a>
+      
+        <a href="/tags/Tutorial/" class="print-no-link">#Tutorial</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>[Hexo] Hexo로 블로그 만들기</div>
+      <div>http://example.com/2022/10/14/Making-Hexo-Blog/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Elio</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 14, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/10/26/Using-IndexedDB/" title="[Database] IndexedDB 기초">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[Database] IndexedDB 기초</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/10/06/Debounce-and-Throttle/" title="[Javscript] Debounce and Throttle">
+                        <span class="hidden-mobile">[Javscript] Debounce and Throttle</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2022/10/14/Making-Hexo-Blog/';
+          this.page.identifier = '/2022/10/14/Making-Hexo-Blog/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

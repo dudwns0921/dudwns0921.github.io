@@ -1,0 +1,685 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon_pig.png">
+  <link rel="icon" href="/img/favicon_pig.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Elio">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="나는 ‘프론트엔드 개발자에게 코딩 테스트는 무슨 의미일까?’ 라는 생각을 회사에 들어가서도 계속 했었다. 솔직히 실무에서 코딩 테스트 문제에 필요한 알고리즘, 혹은 자료구조 지식들을 응용한 경험은 거의 없었다. 그래서 사실 알고리즘, 자료구조 공부를 한동안 거의 놓고 있었다. 하지만 최근에 내가 너무 프론트엔드라는 직군에 매몰되어 개발자로서 필요한 공부들을">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Coding Test] 프로그래머스 코딩 기초 트레이닝 후기">
+<meta property="og:url" content="http://example.com/2024/01/08/Coding-Test-Programmers-basic/index.html">
+<meta property="og:site_name" content="Elio&#39;s Blog">
+<meta property="og:description" content="나는 ‘프론트엔드 개발자에게 코딩 테스트는 무슨 의미일까?’ 라는 생각을 회사에 들어가서도 계속 했었다. 솔직히 실무에서 코딩 테스트 문제에 필요한 알고리즘, 혹은 자료구조 지식들을 응용한 경험은 거의 없었다. 그래서 사실 알고리즘, 자료구조 공부를 한동안 거의 놓고 있었다. 하지만 최근에 내가 너무 프론트엔드라는 직군에 매몰되어 개발자로서 필요한 공부들을">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/programmers.png">
+<meta property="article:published_time" content="2024-01-07T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-09-26T09:50:47.967Z">
+<meta property="article:author" content="Elio">
+<meta property="article:tag" content="Coding-Test">
+<meta property="article:tag" content="Programmers">
+<meta property="article:tag" content="Basic Training">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/programmers.png">
+  
+  
+  
+  <title>[Coding Test] 프로그래머스 코딩 기초 트레이닝 후기 - Elio&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Elio&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://elioground.com/my-resume" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="[Coding Test] 프로그래머스 코딩 기초 트레이닝 후기"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-01-08 00:00" pubdate>
+          January 8, 2024 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          327 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          3 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">[Coding Test] 프로그래머스 코딩 기초 트레이닝 후기</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>나는 ‘프론트엔드 개발자에게 코딩 테스트는 무슨 의미일까?’ 라는 생각을 회사에 들어가서도 계속 했었다. 솔직히 실무에서 코딩 테스트 문제에 필요한 알고리즘, 혹은 자료구조 지식들을 응용한 경험은 거의 없었다. 그래서 사실 알고리즘, 자료구조 공부를 한동안 거의 놓고 있었다.</p>
+<p>하지만 최근에 내가 너무 프론트엔드라는 직군에 매몰되어 개발자로서 필요한 공부들을 안하고 있다는 생각이 들었다. 이전에 코딩 테스트를 준비했던 경험이 있지만, 당시에는 그냥 닥치는대로 문제를 풀었을뿐 제대로 된 알고리즘, 자료구조 공부를 하지 않았었다. 새해를 맞이한 김에 코딩 테스트를 기초부터 다시 제대로 준비해보자는 마음으로 프로그래머스의 코딩 기초 트레이닝을 풀어보았다.</p>
+<p>총 124문제를 푸는데 한 4일 정도 걸렸던 것 같다. 물론 Lv.0에 해당되는 문제들로 프로그래밍에 익숙해지기 위한 문제들이지만, 나름 이를 통해 얻게 된 점들이 많아 정리를 해보려고 한다.</p>
+<h2 id="배열-순회하기"><a href="#배열-순회하기" class="headerlink" title="배열 순회하기"></a>배열 순회하기</h2><p>이번에 배열을 순회해야 하는 문제들을 풀 때 아래의 방법들을 썼다.</p>
+<ul>
+<li>for문</li>
+<li>forEach</li>
+<li>map</li>
+<li>reduce</li>
+</ul>
+<p>그렇지만 for문과 인덱스를 사용해 배열의 원소에 직접 접근하기 보다는 for문을 제외한 3가지 배열 메서드들을 훨씬 많이 활용했었다.</p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><p>먼저 forEach문 같은 경우에는 반환하는 값이 필요하지 않을 때 사용했다. 가령 배열에 저장된 데이터를 Map으로 다시금 정리하는 경우에 forEach를 사용했다.</p>
+<p>하지만 forEach는 항상 모든 원소들을 순회하기 때문에, 중간에 반복을 멈추거나 할 필요가 있을 때는 기본적인 for문을 활용했다.</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map은 주어진 배열을 순회하며 원소들을 변형시켜야 할 때 사용했다. flatMap을 사용하기도 했는데, flatMap은 map과 달리 콜백 함수의 반환값을 한 단계씩 평탄화한다. 그러니까 map의 콜백 함수의 반환값으로 배열 안의 여러 값들을 한꺼번에 전달하고 싶을 때 flatMap을 사용하면 간편하다.</p>
+<p>다음은 그 예시이다.</p>
+<p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/181836">https://school.programmers.co.kr/learn/courses/30/lessons/181836</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">picture, k</span>) &#123;<br>  <span class="hljs-keyword">return</span> picture.<span class="hljs-title function_">flatMap</span>(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(k).<span class="hljs-title function_">fill</span>(<br>      v<br>        .<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;&quot;</span>)<br>        .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> &#123;<br>          <span class="hljs-keyword">return</span> v.<span class="hljs-title function_">repeat</span>(k);<br>        &#125;)<br>        .<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>)<br>    );<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>이번에 reduce를 가장 많이 활용했던 것 같다. reduce는 배열을 순회하며 새로운 결과값을 만들어내야 할 때 사용했다. 가장 간단한 예로 배열의 모든 합을 구할 때, 아래와 같이 reduce를 사용했다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">arr</span>) &#123;<br>  <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">accu, curr</span>) =&gt;</span> accu + curr, <span class="hljs-number">0</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>처음에는 굳이 reduce를 사용해야 하나라는 생각도 들었지만, 사용하면 할수록 할 수 있는 게 정말 다양하다는 걸 느끼게 되었다.</p>
+<h2 id="배열-자르기"><a href="#배열-자르기" class="headerlink" title="배열 자르기"></a>배열 자르기</h2><ul>
+<li>splice</li>
+<li>slice</li>
+</ul>
+<p>먼저 splice는 원본 배열을 수정할 때 사용했고, slice는 새로운 배열을 만들 필요가 있을 때 사용했다. slice는 문자열을 자를 때도 사용했다.</p>
+<h2 id="보스-문제…"><a href="#보스-문제…" class="headerlink" title="보스 문제…"></a>보스 문제…</h2><p>이 문제가 왜 기초문제에 포함되어 있을까라는 생각이 보자마자 들었던 문제이다. 오답률이 가장 높아 마지막으로 풀었던 문제인데, 코딩 테스트를 처음 접했다면 많이 당황스러웠을 것 같다.</p>
+<h3 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h3><p><a target="_blank" rel="noopener" href="https://school.programmers.co.kr/learn/courses/30/lessons/181832">https://school.programmers.co.kr/learn/courses/30/lessons/181832</a></p>
+<h3 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h3><p>먼저 이차원 배열을 모두 순회해야 하므로 이차원 배열의 원소 수만큼 연산을 반복하는 for문을 만든다. 좌표 객체 하나를 생성하고 좌표 객체의 x좌표, y좌표, 그리고 방향을 변경해주며 나선형으로 좌표가 이동하게끔 구현하면 된다.</p>
+<h3 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">const</span> twoDimension = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(&#123; <span class="hljs-attr">length</span>: n &#125;, <span class="hljs-function">() =&gt;</span> <span class="hljs-title class_">Array</span>(n).<span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>));<br>  <span class="hljs-keyword">const</span> dot = &#123;<br>    <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,<br>    <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,<br>    <span class="hljs-attr">direction</span>: <span class="hljs-string">&quot;right&quot;</span>,<br>  &#125;;<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= n * n; i++) &#123;<br>    twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span>] = i;<br><br>    <span class="hljs-keyword">switch</span> (dot.<span class="hljs-property">direction</span>) &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;right&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">x</span> === n - <span class="hljs-number">1</span> || twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span> + <span class="hljs-number">1</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;down&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;left&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">x</span> === <span class="hljs-number">0</span> || twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span> - <span class="hljs-number">1</span>]) dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;up&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;up&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">y</span> === <span class="hljs-number">0</span> || twoDimension[dot.<span class="hljs-property">y</span> - <span class="hljs-number">1</span>][dot.<span class="hljs-property">x</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;right&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;down&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">y</span> === n - <span class="hljs-number">1</span> || twoDimension[dot.<span class="hljs-property">y</span> + <span class="hljs-number">1</span>][dot.<span class="hljs-property">x</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;left&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">switch</span> (dot.<span class="hljs-property">direction</span>) &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;right&quot;</span>:<br>        dot.<span class="hljs-property">x</span>++;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;left&quot;</span>:<br>        dot.<span class="hljs-property">x</span>--;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;up&quot;</span>:<br>        dot.<span class="hljs-property">y</span>--;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;down&quot;</span>:<br>        dot.<span class="hljs-property">y</span>++;<br>        <span class="hljs-keyword">break</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> twoDimension;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="마무리"><a href="#마무리" class="headerlink" title="마무리"></a>마무리</h2><p>이전에는 코드들을 덕지덕지 붙여가며 어거지로 문제를 푸는 느낌이었다면, 이번에는 내가 계획한 대로 깔끔하게 문제가 풀려 뿌듯했다. 물론 기초 문제들에 불과하긴 하지만 그래도 조금은 성장했음을 느낄 수 있었다.</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Coding-Test/" class="print-no-link">#Coding-Test</a>
+      
+        <a href="/tags/Programmers/" class="print-no-link">#Programmers</a>
+      
+        <a href="/tags/Basic-Training/" class="print-no-link">#Basic Training</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>[Coding Test] 프로그래머스 코딩 기초 트레이닝 후기</div>
+      <div>http://example.com/2024/01/08/Coding-Test-Programmers-basic/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Elio</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>January 8, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/01/17/Coding-Test-Programmers-introduction/" title="[Coding Test] 프로그래머스 코딩 입문 트레이닝 후기">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[Coding Test] 프로그래머스 코딩 입문 트레이닝 후기</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/11/30/Coding-Test-Programmers-30/" title="[Coding Test] 프로그래머스 -소수 만들기-">
+                        <span class="hidden-mobile">[Coding Test] 프로그래머스 -소수 만들기-</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2024/01/08/Coding-Test-Programmers-basic/';
+          this.page.identifier = '/2024/01/08/Coding-Test-Programmers-basic/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

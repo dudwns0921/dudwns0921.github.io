@@ -1,0 +1,689 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon_pig.png">
+  <link rel="icon" href="/img/favicon_pig.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Elio">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="서론Devops 문화 구축에 관심을 가지게 되면서 자연스레 Docker에 관심을 가지게 되었다. 여러 개인 프로젝트를 Docker로 배포하며 경험한 내용과 알게 된 점들을 정리해보려고 한다. Docker란? dockerdocs Docker는 애플리케이션 개발, 배포 및 실행을 위한 개방형 플랫폼입니다. Docker를 사용하면 애플리케이션과 인프라를 분리하여">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker 훑어보기">
+<meta property="og:url" content="http://example.com/2025/09/22/Docker-Intro/index.html">
+<meta property="og:site_name" content="Elio&#39;s Blog">
+<meta property="og:description" content="서론Devops 문화 구축에 관심을 가지게 되면서 자연스레 Docker에 관심을 가지게 되었다. 여러 개인 프로젝트를 Docker로 배포하며 경험한 내용과 알게 된 점들을 정리해보려고 한다. Docker란? dockerdocs Docker는 애플리케이션 개발, 배포 및 실행을 위한 개방형 플랫폼입니다. Docker를 사용하면 애플리케이션과 인프라를 분리하여">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-09-22T07:27:07.000Z">
+<meta property="article:modified_time" content="2025-09-26T10:24:33.161Z">
+<meta property="article:author" content="Elio">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Docker 훑어보기 - Elio&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Elio&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://elioground.com/my-resume" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Docker 훑어보기"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-22 16:27" pubdate>
+          September 22, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          564 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          5 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Docker 훑어보기</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>Devops 문화 구축에 관심을 가지게 되면서 자연스레 Docker에 관심을 가지게 되었다. 여러 개인 프로젝트를 Docker로 배포하며 경험한 내용과 알게 된 점들을 정리해보려고 한다.</p>
+<h1 id="Docker란"><a href="#Docker란" class="headerlink" title="Docker란?"></a>Docker란?</h1><blockquote>
+<p><em>dockerdocs</em></p>
+<p><em>Docker는 애플리케이션 개발, 배포 및 실행을 위한 개방형 플랫폼입니다. Docker를 사용하면 애플리케이션과 인프라를 분리하여 소프트웨어를 신속하게 배포할 수 있습니다. Docker를 사용하면 애플리케이션을 관리하는 것과 동일한 방식으로 인프라를 관리할 수 있습니다. Docker의 코드 배포, 테스트 및 배포 방법론을 활용하면 코드 작성과 운영 환경 실행 간의 지연 시간을 크게 줄일 수 있습니다.</em></p>
+</blockquote>
+<p>Docker의 핵심은 애플리케이션과 인프라를 분리하는 데 있다. 컨테이너라는 표준화된 단위로 애플리케이션을 실행함으로써, 특정 서버 환경에 종속되지 않고 어디서든 동일하게 동작할 수 있도록 해준다.</p>
+<p>즉, Docker는 애플리케이션과 실행환경을 하나로 묶어 배포할 수 있게 해주는 기술로, 다양한 인프라 환경에서도 일관된 실행을 보장한다.</p>
+<h1 id="시작하기"><a href="#시작하기" class="headerlink" title="시작하기"></a>시작하기</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/desktop/">https://docs.docker.com/desktop/</a></p>
+</blockquote>
+<p>Windows와 macOS에서 Docker를 사용하려면 Docker Desktop을 반드시 설치하고 실행해야 한다.</p>
+<p>만약 Docker Desktop을 실행하지 않은 상태에서 <code>docker ps</code>와 같은 명령어를 입력하면 아래와 같은 에러가 발생한다.</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">error </span>during connect: Get &quot;http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/json&quot;: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.<br></code></pre></td></tr></table></figure>
+
+<p>이는 Docker Daemon이 실행되고 있지 않기 때문이다. 리눅스에서는 Docker가 운영체제와 직접 통합되어 별도의 Desktop 프로그램 없이 동작하지만, Windows와 macOS에서는 Docker가 리눅스 VM 안에서만 실행될 수 있기 때문에 Docker Desktop이 VM을 관리하고 실행한다.</p>
+<p>결론적으로, 윈도우에서 docker 명령어를 사용하려면 Docker Desktop을 설치하고 반드시 실행해야 정상적으로 컨테이너를 사용할 수 있다.</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></p>
+</blockquote>
+<p>리눅스에서는 도커 엔진만 설치하면 바로 사용할 수 있으며, Docker Desktop은 선택적으로 설치해 GUI 환경을 제공받을 수 있다.</p>
+<h1 id="실행-흐름"><a href="#실행-흐름" class="headerlink" title="실행 흐름"></a>실행 흐름</h1><p>Docker를 활용하는 기본 흐름은 이미지를 만들고, 그 이미지를 기반으로 컨테이너를 실행하는 것이다. 공식 문서에서도 The basics, Building Images, Running Containers 순서로 설명하고 있다.</p>
+<h2 id="컨테이너란"><a href="#컨테이너란" class="headerlink" title="컨테이너란?"></a>컨테이너란?</h2><p>컨테이너는 애플리케이션 실행에 필요한 모든 파일을 갖춘 고립된 프로세스다.<br>즉, 애플리케이션과 그 실행 환경(OS, 라이브러리, 의존성 등)을 함께 패키징하여 다른 컨테이너나 호스트 환경과 독립적으로 동작할 수 있게 해준다.</p>
+<p>흔히 가상환경인 VM과 많이 비교되는데, 아래와 같은 차이점이 있다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>VM</th>
+<th>컨테이너</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>커널</td>
+<td>자체 커널 사용</td>
+<td>호스트 커널 공유</td>
+</tr>
+<tr>
+<td>OS 포함 여부</td>
+<td>전체 운영체제 포함</td>
+<td>필요 최소 실행 환경만 포함</td>
+</tr>
+<tr>
+<td>자원 사용</td>
+<td>상대적으로 무거움</td>
+<td>가벼움, 빠른 시작 가능</td>
+</tr>
+<tr>
+<td>목적</td>
+<td>완전히 독립된 환경</td>
+<td>애플리케이션 단위 격리</td>
+</tr>
+</tbody></table>
+<p>인프라적 성격을 갖고 있다는 점에서는 같지만, 컨테이너가 좀더 경량화된 형태라고 보면 좋을 것 같다.</p>
+<h2 id="이미지란"><a href="#이미지란" class="headerlink" title="이미지란?"></a>이미지란?</h2><p>이미지는 컨테이너 실행에 필요한 파일, 실행 바이너리, 라이브러리, 설정 등을 모두 포함한 표준화된 패키지다. 따라서 이미지는 컨테이너의 설계도 역할을 한다. </p>
+<p>이미지는 단일 덩어리가 아니라 여러 개의 레이어로 구성되는데, 레이어란 파일 시스템의 변경 내역을 담은 층이라고 할 수 있다. 이 개념은 Git의 커밋과 비슷하다. 여러 커밋이 쌓여 최종 소스 코드 저장소를 이루듯, 여러 레이어가 순서대로 쌓여 하나의 완전한 이미지가 만들어진다.</p>
+<p>레이어는 Git의 커밋과 마찬가지로 불변성을 가진다. 한 번 생성된 레이어는 수정할 수 없으며, 새로운 변경 사항은 항상 새로운 레이어로 추가된다. Git 커밋도 스냅샷, 부모 커밋, 메타데이터를 기반으로 생성되며, 이 조합으로 만들어진 해시값 덕분에 변경이 불가능하다.</p>
+<p>레이어는 불변성뿐만 아니라 재사용성도 가진다. 동일한 베이스 레이어는 여러 이미지에서 공유될 수 있기 때문에, 예를 들어 Python 런타임이 포함된 레이어를 한 번 내려받으면 이후 다른 Python 애플리케이션 이미지에서도 그대로 활용된다. 이 덕분에 이미지 빌드 속도가 빨라지고 저장 공간과 네트워크 자원을 절약할 수 있다.</p>
+<h1 id="이미지-만들기"><a href="#이미지-만들기" class="headerlink" title="이미지 만들기"></a>이미지 만들기</h1><p>이미지를 만들기 위해서는 Dockerfile을 사용한다. Dockerfile은 컨테이너 이미지를 생성하는 데 사용되는 텍스트 기반 문서이다. 이미지 빌더에 실행할 명령, 복사할 파일, 시작 명령 등에 대한 지침을 제공한다.</p>
+<p>이번 글에서는 간단한 Node.js 애플리케이션을 예시로 Docker 이미지를 만들어 실행해보겠다.</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">📦docker-prac<br> ┣ 📂node_modules<br> ┣ 📜.dockerignore<br> ┣ 📜Dockerfile<br> ┣ 📜<span class="hljs-keyword">index</span>.js<br> ┣ 📜package.json<br> ┗ 📜pnpm-<span class="hljs-keyword">lock</span>.yaml<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// index.js</span><br><span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lodash&#x27;</span>;<br><br><span class="hljs-comment">// 샘플 사용자 데이터</span><br><span class="hljs-keyword">const</span> users = [<br>  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Alice&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">28</span>, <span class="hljs-attr">salary</span>: <span class="hljs-number">75000</span>, <span class="hljs-attr">active</span>: <span class="hljs-literal">true</span> &#125;,<br>  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">32</span>, <span class="hljs-attr">salary</span>: <span class="hljs-number">60000</span>, <span class="hljs-attr">active</span>: <span class="hljs-literal">false</span> &#125;,<br>  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Charlie&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">25</span>, <span class="hljs-attr">salary</span>: <span class="hljs-number">70000</span>, <span class="hljs-attr">active</span>: <span class="hljs-literal">true</span> &#125;<br>];<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;=== 간단한 Lodash 예제 ===\n&#x27;</span>);<br><br><span class="hljs-comment">// 활성 사용자만 필터링</span><br><span class="hljs-keyword">const</span> activeUsers = _.<span class="hljs-title function_">filter</span>(users, &#123; <span class="hljs-attr">active</span>: <span class="hljs-literal">true</span> &#125;);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;활성 사용자:&#x27;</span>, activeUsers.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">u</span> =&gt;</span> u.<span class="hljs-property">name</span>).<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;, &#x27;</span>));<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;\n=== 애플리케이션 실행 완료 ===&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<h2 id="단일-스테이지"><a href="#단일-스테이지" class="headerlink" title="단일 스테이지"></a>단일 스테이지</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># Dockerfile</span><br><br><span class="hljs-comment"># Docker에서 제공하는 Node.js 공식 이미지를 베이스 레이어로 사용</span><br><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">18</span>-alpine<br><br><span class="hljs-comment"># 작업 디렉토리 설정</span><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span><br><br><span class="hljs-comment"># pnpm 활성화 및 의존성 설치</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> corepack <span class="hljs-built_in">enable</span> pnpm</span><br><br><span class="hljs-comment"># package.json과 lock 파일 먼저 복사 → 캐시 활용</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> package.json pnpm-lock.yaml ./</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> pnpm install --frozen-lockfile</span><br><br><span class="hljs-comment"># 애플리케이션 코드 복사</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . .</span><br><br><span class="hljs-comment"># 앱 실행</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;node&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>]</span><br></code></pre></td></tr></table></figure>
+<p>앞에서 말했듯이 Docker 이미지는 레이어로 구성되는데, 각 레이어는 FROM, WORKDIR 와 같은 새로운 명령 때마다 하나씩 쌓인다.</p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs erlang">docker build -t docker-example-single .<br></code></pre></td></tr></table></figure>
+<p>위 명령어를 실행하면 현재 디렉토리에 있는 Dockerfile을 기반으로 docker-example-single이라는 이름의 도커 이미지를 생성하게 된다.</p>
+<h2 id="멀티-스테이지"><a href="#멀티-스테이지" class="headerlink" title="멀티 스테이지"></a>멀티 스테이지</h2><p>앞에서는 단일 스테이지로 Dockerfile을 구성했다. 사실 저 정도 규모의 프로젝트는 단일 스테이지로 Dockefile을 구성하는 게 맞다고 생각하지만, 실무나 규모가 있는 프로젝트에서는 멀티 스테이지를 사용하는 것이 효과적이며 공식 문서에서도 Best Practice에 멀티 스테이지 내용을 담고 있다.</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># 1. 빌드 단계</span><br><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">18</span>-alpine AS builder<br><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span><br><br><span class="hljs-comment"># pnpm 활성화 및 의존성 설치</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> corepack <span class="hljs-built_in">enable</span> pnpm</span><br><br><span class="hljs-comment"># package.json과 lock 파일 먼저 복사 → 캐시 활용</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> package.json pnpm-lock.yaml ./</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> pnpm install --frozen-lockfile</span><br><br><span class="hljs-comment"># 애플리케이션 코드 복사</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . .</span><br><br><span class="hljs-comment"># 2. 실행 단계</span><br><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">18</span>-alpine<br><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span><br><br><span class="hljs-comment"># pnpm 활성화</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> corepack <span class="hljs-built_in">enable</span> pnpm</span><br><br><span class="hljs-comment"># 런타임 의존성만 설치 (prod 모드)</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> package.json pnpm-lock.yaml ./</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> pnpm install --frozen-lockfile --prod</span><br><br><span class="hljs-comment"># 앱 코드/산출물만 복사</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> --from=builder /app . </span><br><br><span class="hljs-comment"># 앱 실행</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;node&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>]</span><br></code></pre></td></tr></table></figure>
+<p>단일 스테이지 Dockerfile과 비교하면, 멀티 스테이지는 개발 의존성과 런타임 의존성을 분리하고 있다. 단일 스테이지에서는 모든 의존성이 포함되어 이미지가 상대적으로 크고 불필요한 패키지도 포함될 수 있다. 반면 멀티 스테이지에서는 빌드 단계에서만 개발 의존성을 설치하고, 실행 단계에서는 런타임 의존성만 포함하기 때문에 최종 이미지 크기가 작아지고 보안상 안전하며 배포 효율도 높다. 또한 불필요한 파일과 툴이 최종 이미지에 포함되지 않아, 운영 환경에서 더 최적화된 컨테이너를 실행할 수 있다.</p>
+<p>결론적으로 멀티 스테이지는 이미지 최적화, 보안 강화, 배포 효율 향상이라는 장점을 제공하며, 특히 규모가 있는 프로젝트나 빌드 산출물이 많은 프로젝트에서 유용하게 사용된다.</p>
+<h1 id="컨테이너-실행하기"><a href="#컨테이너-실행하기" class="headerlink" title="컨테이너 실행하기"></a>컨테이너 실행하기</h1><h2 id="Docker-CLI"><a href="#Docker-CLI" class="headerlink" title="Docker CLI"></a>Docker CLI</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">docker <span class="hljs-built_in">run</span> docker-example-single<br></code></pre></td></tr></table></figure>
+<p>run 명령어를 사용해 위에서 만들었던 이미지를 바탕으로 컨테이너를 실행하면 아래와 같은 출력을 확인할 수 있다.</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-section">=== 간단한 Lodash 예제 ===</span><br><br>활성 사용자: Alice, Charlie<br><br><span class="hljs-section">=== 애플리케이션 실행 완료 ===</span><br></code></pre></td></tr></table></figure>
+<h2 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h2><blockquote>
+<p>Docker Compose는 여러 개의 컨테이너로 이루어진 애플리케이션을 정의하고 실행하기 위한 도구로, docker-compose.yml이라는 YAML 설정 파일을 통해 서비스, 네트워크, 볼륨 등을 한 번에 정의할 수 있다. 단일 명령어인 docker compose up으로 애플리케이션 전체 스택을 실행할 수 있다.</p>
+</blockquote>
+<p>docker compose는 앞의 설명대로 여러 개의 컨테이너로 이루어진 애플리케이션을 정의하고 실행하기 위한 도구이다. 만약 docker cli를 통해서 기본적인 앱(프론트, 백, db)을 실행시키려고 한다면 이미지 빌드를 위한 build 명령어만 3번, 컨테이너 실행을 위한 명령어인 run을 또 3번 실행시켜야 할 것이다. 하지만 docker compose를 사용하면 이러한 번거로움을 한 번에 해결할 수 있다. </p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">postgres:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:15</span><br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">my_postgres</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;5432:5432&quot;</span><br>    <span class="hljs-attr">env_file:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./.env</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">pgdata:/var/lib/postgresql/data</span><br><br>  <span class="hljs-attr">backend:</span><br>    <span class="hljs-attr">build:</span><br>      <span class="hljs-attr">context:</span> <span class="hljs-string">./back-end</span><br>      <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">Dockerfile</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;3000:3000&quot;</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./back-end:/app</span><br>    <span class="hljs-attr">command:</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-string">start:dev</span><br>    <span class="hljs-attr">env_file:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./.env</span><br>    <span class="hljs-attr">depends_on:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">postgres</span><br><br>  <span class="hljs-attr">frontend:</span><br>    <span class="hljs-attr">build:</span><br>      <span class="hljs-attr">context:</span> <span class="hljs-string">./front-end</span><br>      <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">Dockerfile</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;5173:5173&quot;</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./front-end:/app</span><br>    <span class="hljs-attr">depends_on:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">backend</span><br></code></pre></td></tr></table></figure>
+<p>docker-compose.yml 파일 자체는 직관적이어서 보기만 해도 각 서비스와 설정이 어떤 역할을 하는지 쉽게 이해할 수 있다. 다만, volumes와 depends_on 속성은 조금 더 주의 깊게 살펴볼 필요가 있다.</p>
+<p> volumes는 컨테이너가 삭제되거나 재시작되더라도 데이터를 유지할 수 있는 영속적 저장소를 제공한다. 호스트 디렉토리를 컨테이너 내부와 연결하는 Bind Mount는 코드 변경 사항이 즉시 반영되므로 개발 환경에서 주로 사용된다. 핫 리로드 기능을 사용하려면 필수적인 기능이므로 참고해두자. Named Volume은 컨테이너와 독립적으로 데이터를 관리할 수 있어 운영 환경에서 안정적이다. 위에서 데이터베이스의 데이터 유지를 위해 pgdata가 바로 Named Volume에 해당한다.</p>
+<p> 한편, depends_on은 서비스 간 실행 순서를 정의하는 속성으로, 예를 들어 백엔드 서비스가 데이터베이스보다 먼저 실행되지 않도록 제어할 수 있다. 위에서는 db, 백엔드, 프론트 순으로 실행 순서를 정의하고 있다. 다만 이는 컨테이너 실행 순서만 보장하는 것이지 실제 서비스 내부 실행 상태까지는 반영하지 않는다.</p>
+<h1 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h1><p>프론트를 주로 다루면서도, 사내에서 Jenkins를 활용한 자동 배포, SonarQube 실행 등을 경험하며 자연스럽게 데브옵스 문화에 관심을 가지게 되었다. 과거 부트캠프에 참여했을 때 동일한 개발 환경을 세팅하는 과정에서 일부 수강생들이 환경 문제로 많은 시간을 허비하는 것을 보며, 동일한 환경에서 개발과 실행을 보장하는 것의 중요성을 직접 체감했다. 회사에서도 QC팀의 테스트 결과와 개발자의 테스트 결과가 달라 혼선이 발생하는 경우를 경험하며, 환경의 일관성과 인프라의 안정성이 얼마나 중요한지 더욱 느꼈다.</p>
+<p>이번 Docker 학습을 계기로, 단순히 이식성이나 인프라의 중요성을 인식하는 수준을 넘어, 실질적으로 팀 내 인프라에 기여하고자 하는 동기가 생겼다. 앞으로 이러한 경험을 바탕으로 팀의 개발 환경과 배포 체계를 개선하며, 보다 안정적이고 효율적인 협업 문화를 만드는 데 기여하도록 노력해봐야겠다.</p>
+<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/">https://docs.docker.com/</a></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Docker 훑어보기</div>
+      <div>http://example.com/2025/09/22/Docker-Intro/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Elio</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 22, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/02/04/Learning-Javascript-Design-Patterns/" title="Learning Javascript Design Patterns">
+                        <span class="hidden-mobile">Learning Javascript Design Patterns</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2025/09/22/Docker-Intro/';
+          this.page.identifier = '/2025/09/22/Docker-Intro/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

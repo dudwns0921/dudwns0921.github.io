@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -폰켓몬-</title>
+    <url>/2022/11/15/Coding-Test-Programmers-1/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/1845">https://school.programmers.co.kr/learn/courses/30/lessons/1845</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제는 굉장히 길지만, 결국 가장 많은 종류의 폰켓몬을 선택할 때의 폰켓몬의 수를 구하면 되는 문제이다.</p>
+<p>폰켓몬 배열에는 중복된 폰켓몬들도 있기 때문에, Set을 사용해 중복을 제거해준다. 그러면 해당 Set에는 각기 다른 종류의 폰켓몬들만이 남으며, 이들을 모두 선택했을 때 가장 많은 종류의 폰켓몬을 선택할 수 있게 되는 것이다.</p>
+<p>하지만 총 폰켓몬 수&#x2F;2만큼의 폰켓몬만을 선택한다고 했기 때문에 Set의 길이가 폰켓몬 수&#x2F;2보다 작으면 Set의 길이를 반환하고, 그렇지 않다면 폰켓몬 수&#x2F;2의 값을 반환하면 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">nums</span>) &#123;<br>  <span class="hljs-keyword">let</span> answer = <span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">const</span> avaliableNum = nums.<span class="hljs-property">length</span> / <span class="hljs-number">2</span>;<br>  <span class="hljs-keyword">const</span> numsDeduplicated = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>(nums);<br><br>  <span class="hljs-keyword">if</span> (numsDeduplicated.<span class="hljs-property">size</span> &lt; avaliableNum) &#123;<br>    answer = numsDeduplicated.<span class="hljs-property">size</span>;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    answer = avaliableNum;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> answer;<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -서울에서 김서방 찾기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-10/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12919">https://school.programmers.co.kr/learn/courses/30/lessons/12919</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">seoul</span>) &#123;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; seoul.<span class="hljs-property">length</span>; i++) &#123;<br>    <span class="hljs-keyword">if</span> (seoul[i] === <span class="hljs-string">&#x27;Kim&#x27;</span>) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">`김서방은 <span class="hljs-subst">$&#123;i&#125;</span>에 있다`</span><br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -수박수박수박수박수박수?-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-11/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12922">https://school.programmers.co.kr/learn/courses/30/lessons/12922</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">var</span> answer = <span class="hljs-string">&#x27;&#x27;</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>    <span class="hljs-keyword">if</span> (i % <span class="hljs-number">2</span> !== <span class="hljs-number">0</span>) &#123;<br>      answer += <span class="hljs-string">&#x27;수&#x27;</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      answer += <span class="hljs-string">&#x27;박&#x27;</span><br>    &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span> answer<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -문자열을 정수로 바꾸기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-12/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12925">https://school.programmers.co.kr/learn/courses/30/lessons/12925</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>사실 Number 생성자나 ParseInt 메서드를 사용하면 정말 간단하게 풀 수 있는 문제이다.</p>
+<p>다만 사칙연산을 사용해 문자열을 자동으로 수로 바꾸는 풀이도 존재했다.  </p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">s</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Number</span>(s)<br>  <span class="hljs-comment">// return s/1</span><br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -약수의 합-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-13/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12928">https://school.programmers.co.kr/learn/courses/30/lessons/12928</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>    <span class="hljs-keyword">if</span> (n % i === <span class="hljs-number">0</span>) sum += i<br>  &#125;<br>  <span class="hljs-keyword">return</span> sum<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -이상한 문자 만들기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-14/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12930">https://school.programmers.co.kr/learn/courses/30/lessons/12930</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><blockquote>
+<p>문자열 전체의 짝&#x2F;홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝&#x2F;홀수 인덱스를 판단해야합니다.</p>
+</blockquote>
+<p>위 조건을 만족시키기 위해서는 주어진 문자열을 먼저 공백을 기준으로 나누어야 한다. 그리고 그 나눠진 각각의 문자열을 순회하며 소문자, 대문자로 변경시키면 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">s</span>) &#123;<br>  <span class="hljs-keyword">return</span> s<br>    .<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27; &#x27;</span>)<br>    <span class="hljs-comment">// 공백을 기준으로 나눔</span><br>    .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">word</span>) =&gt;</span> &#123;<br>      <span class="hljs-keyword">return</span> word<br>        .<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>        <span class="hljs-comment">// 문자열의 글자 하나하나를 요소로 갖는 배열 생성</span><br>        <span class="hljs-comment">// 배열로 만든 이유는 map 메서드를 사용하기 위함</span><br>        .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">letter, index</span>) =&gt;</span> &#123;<br>          <span class="hljs-keyword">if</span> (index % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> letter.<span class="hljs-title function_">toUpperCase</span>()<br>          &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span> letter.<span class="hljs-title function_">toLowerCase</span>()<br>          &#125;<br>        &#125;)<br>        .<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>    &#125;)<br>    .<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27; &#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -자릿수 더하기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-15/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12931">https://school.programmers.co.kr/learn/courses/30/lessons/12931</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>조금 설명을 덧붙이자면 문자열은 순회가 가능한 iterator이기 때문에 숫자를 문자열로 만들어 각 자릿수를 순회하는 방법이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> a <span class="hljs-keyword">of</span> n.<span class="hljs-title function_">toString</span>()) &#123;<br>    sum += <span class="hljs-built_in">parseInt</span>(a)<br>  &#125;<br>  <span class="hljs-keyword">return</span> sum<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -자연수 뒤집어 배열로 만들기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-16/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12932">https://school.programmers.co.kr/learn/courses/30/lessons/12932</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>수를 뒤집는 방법에는 여러 가지가 있겠지만, 나는 문자열로 만들어 뒤집는 방법을 선택했다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">let</span> answer = []<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> letter <span class="hljs-keyword">of</span> n.<span class="hljs-title function_">toString</span>().<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">reverse</span>()) &#123;<br>    answer.<span class="hljs-title function_">push</span>(<span class="hljs-built_in">parseInt</span>(letter))<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -정수 내림차순으로 배치하기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-17/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12933">https://school.programmers.co.kr/learn/courses/30/lessons/12933</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseInt</span>(<br>    n<br>      .<span class="hljs-title function_">toString</span>()<br>      .<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>      .<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a)<br>      .<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;&#x27;</span>),<br>  )<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -정수 제곱근 판별-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-18/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12934">https://school.programmers.co.kr/learn/courses/30/lessons/12934</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Number</span>.<span class="hljs-title function_">isInteger</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sqrt</span>(n))) &#123;<br>    <span class="hljs-keyword">return</span> (<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sqrt</span>(n) + <span class="hljs-number">1</span>) ** <span class="hljs-number">2</span><br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -제일 작은 수 제거하기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-19/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12935">https://school.programmers.co.kr/learn/courses/30/lessons/12935</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">arr</span>) &#123;<br>  <span class="hljs-keyword">if</span> (arr.<span class="hljs-property">length</span> == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> [-<span class="hljs-number">1</span>]<br>  <span class="hljs-keyword">const</span> min = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">min</span>(...arr)<br>  <span class="hljs-keyword">let</span> answer = arr<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.<span class="hljs-property">length</span>; i++) &#123;<br>    <span class="hljs-keyword">if</span> (arr[i] == min) answer.<span class="hljs-title function_">splice</span>(i, <span class="hljs-number">1</span>)<br>  &#125;<br>  <span class="hljs-keyword">return</span> answer<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -2016년-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-2/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12901">https://school.programmers.co.kr/learn/courses/30/lessons/12901</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>2016년 특정 날의 요일을 구하는 문제이다.</p>
+<p>1월 1일의 요일을 알고 있기 때문에 주어진 날짜와 1월 1일의 차이가 얼마나 나는지 확인하고, 그 차이를 7로 나눈 나머지를 통해 그 날의 요일을 구할 수 있다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">a, b</span>) &#123;<br>  <span class="hljs-keyword">const</span> days = [<span class="hljs-string">&#x27;FRI&#x27;</span>, <span class="hljs-string">&#x27;SAT&#x27;</span>, <span class="hljs-string">&#x27;SUN&#x27;</span>, <span class="hljs-string">&#x27;MON&#x27;</span>, <span class="hljs-string">&#x27;TUE&#x27;</span>, <span class="hljs-string">&#x27;WED&#x27;</span>, <span class="hljs-string">&#x27;THU&#x27;</span>]<br>  <span class="hljs-keyword">const</span> monthDays = [<span class="hljs-number">31</span>, <span class="hljs-number">29</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>]<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; a - <span class="hljs-number">1</span>; i++) &#123;<br>    b += monthDays[i]<br>  &#125;<br><br>  b -= <span class="hljs-number">1</span><br><br>  <span class="hljs-keyword">return</span> days[b % <span class="hljs-number">7</span>]<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h1 id="🚨주의할-점"><a href="#🚨주의할-점" class="headerlink" title="🚨주의할 점"></a>🚨주의할 점</h1><p>위의 로직에서는 b에서 1을 빼주는 이유는 b의 값이 1월 1일부터 주어진 날짜와의 차이가 아니기 때문이다.</p>
+<p>주어진 날짜가 1월 3일이라고 해보자.<br>이 때 b의 값은 3인데, 1월 1일과의 1월 3일의 차이는 2이다. 따라서 차이를 구하기 위해서는 b의 값에서 1을 빼주어야 한다.</p>
+]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -시저 코드-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-21/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12926">https://school.programmers.co.kr/learn/courses/30/lessons/12926</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>ascii 코드 변환 메서드만 알고 있다면 큰 어려움 없이 풀 수 있는 문제이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">s, n</span>) &#123;<br>  <span class="hljs-keyword">return</span> s<br>    .<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>    .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">letter</span>) =&gt;</span> &#123;<br>      <span class="hljs-keyword">const</span> ascii = letter.<span class="hljs-title function_">charCodeAt</span>()<br>      <span class="hljs-keyword">let</span> asciiConv<br>      <span class="hljs-keyword">if</span> (<span class="hljs-number">65</span> &lt;= ascii &amp;&amp; ascii &lt;= <span class="hljs-number">90</span>) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-number">90</span> &lt; ascii + n) &#123;<br>          <span class="hljs-comment">// 소문자인데 밀었을 때 z초과</span><br>          <span class="hljs-keyword">let</span> excess = ascii + n - <span class="hljs-number">91</span><br>          asciiConv = <span class="hljs-number">65</span> + excess<br>          <span class="hljs-keyword">return</span> <span class="hljs-title class_">String</span>.<span class="hljs-title function_">fromCharCode</span>(asciiConv)<br>        &#125;<br>      &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-number">97</span> &lt;= ascii &amp;&amp; ascii &lt;= <span class="hljs-number">122</span>) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-number">122</span> &lt; ascii + n) &#123;<br>          <span class="hljs-comment">// 대문자인데 밀었을 때 Z초과</span><br>          <span class="hljs-keyword">let</span> excess = ascii + n - <span class="hljs-number">123</span><br>          asciiConv = <span class="hljs-number">97</span> + excess<br>          <span class="hljs-keyword">return</span> <span class="hljs-title class_">String</span>.<span class="hljs-title function_">fromCharCode</span>(asciiConv)<br>        &#125;<br>      &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ascii == <span class="hljs-number">32</span>) &#123;<br>        <span class="hljs-comment">// 공백</span><br>        <span class="hljs-keyword">return</span> letter<br>      &#125;<br>      <span class="hljs-comment">// 초과되지 않은 경우</span><br>      asciiConv = ascii + n<br>      <span class="hljs-keyword">return</span> <span class="hljs-title class_">String</span>.<span class="hljs-title function_">fromCharCode</span>(asciiConv)<br>    &#125;)<br>    .<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="🚨주의할-점"><a href="#🚨주의할-점" class="headerlink" title="🚨주의할 점"></a>🚨주의할 점</h1><p>주의해야 할 부분은 문자를 밀었을 때 z,Z를 초과하는 경우이다. 이 경우, 각각 a,A부터 다시 시작해 초과한 만큼 이동해야 하기 때문에 루프를 구현하면 된다.</p>
+]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -최대공약수와 최소공배수-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-22/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12940">https://school.programmers.co.kr/learn/courses/30/lessons/12940</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>여러 방법들이 있겠지만, 유클리드 호제법에 대한 개념을 요구하는 문제이다.</p>
+<p>유클리드 호제법을 간단하게 정리하면 아래와 같다.</p>
+<blockquote>
+<p>a, b(단, a&gt;b)에 대해서 a를 b로 나눈 나머지를 r이라 하면, a와 b의 최대공약수는 b와 r의 최대공약수와 같다.</p>
+</blockquote>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getGcd</span>(<span class="hljs-params">n, m</span>) &#123;<br>  <span class="hljs-keyword">let</span> gcd<br>  <span class="hljs-keyword">if</span> (n &lt; m) &#123;<br>    ;[n, m] = [m, n]<br>  &#125;<br>  <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>    <span class="hljs-keyword">if</span> (n &lt; m) &#123;<br>      ;[n, m] = [m, n]<br>    &#125;<br>    <span class="hljs-keyword">if</span> (n % m == <span class="hljs-number">0</span>) &#123;<br>      gcd = m<br>      <span class="hljs-keyword">break</span><br>    &#125;<br>    n = n % m<br>  &#125;<br>  <span class="hljs-keyword">return</span> gcd<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n, m</span>) &#123;<br>  <span class="hljs-keyword">const</span> product = n * m<br>  <span class="hljs-keyword">let</span> answer = []<br>  <span class="hljs-keyword">const</span> gcd = <span class="hljs-title function_">getGcd</span>(n, m)<br>  answer.<span class="hljs-title function_">push</span>(gcd, product / gcd)<br>  <span class="hljs-keyword">return</span> answer<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -콜라츠 추측-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-23/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12943">https://school.programmers.co.kr/learn/courses/30/lessons/12943</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">num</span>) &#123;<br>  <span class="hljs-keyword">if</span> (num === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>  <span class="hljs-keyword">let</span> cnt = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>    <span class="hljs-keyword">if</span> (num === <span class="hljs-number">1</span>) &#123;<br>      <span class="hljs-keyword">return</span> cnt<br>    &#125;<br>    <span class="hljs-keyword">if</span> (cnt === <span class="hljs-number">501</span>) &#123;<br>      <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>    &#125;<br>    <span class="hljs-keyword">if</span> (num % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) &#123;<br>      num = num / <span class="hljs-number">2</span><br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      num = num * <span class="hljs-number">3</span> + <span class="hljs-number">1</span><br>    &#125;<br>    cnt++<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -평균 구하기-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-24/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12944">https://school.programmers.co.kr/learn/courses/30/lessons/12944</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>배열의 합을 구해 배열의 길이로 나눠주면 되는 문제이다.</p>
+<p>다양한 방법들이 있겠지만, 배열 요소들의 값을 누적시킬 수 있는 reduce 메서드를 사용하면 간결한 코드를 짤 수 있다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">arr</span>) &#123;<br>  <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">prev, curr</span>) =&gt;</span> prev + curr) / arr.<span class="hljs-property">length</span><br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -짝수와 홀수-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-20/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12937">https://school.programmers.co.kr/learn/courses/30/lessons/12937</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">num</span>) &#123;<br>  <span class="hljs-keyword">if</span> (num % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Even&#x27;</span><br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Odd&#x27;</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -하샤드 수-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-25/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12947">https://school.programmers.co.kr/learn/courses/30/lessons/12947</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 정수가 해당 정수의 자릿값의 합으로 나누어 떨어지는지 확인하는 문제이다.</p>
+<p>이전 문제에서도 확인할 수 있지만, 여러 요소들의 합을 구할 때 reduce를 사용하면 좀 더 간결한 코드가 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">x</span>) &#123;<br>  <span class="hljs-keyword">const</span> digitSum = x<br>    .<span class="hljs-title function_">toString</span>()<br>    .<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>    .<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">prev, curr</span>) =&gt;</span> <span class="hljs-title class_">Number</span>(prev) + <span class="hljs-title class_">Number</span>(curr))<br>  <span class="hljs-keyword">if</span> (x % digitSum === <span class="hljs-number">0</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -핸드폰 번호 가리기-</title>
+    <url>/2022/11/22/Coding-Test-Programmers-26/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12948">https://school.programmers.co.kr/learn/courses/30/lessons/12948</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 전화번호의 뒷 4자리를 제외하고서 모두 *로 바꾸면 되는 문제이다.</p>
+<p>substring 메서드를 통해 뒷 4자리를 가져왔고, padStart 메서드를 사용해 다시 앞에다가 맨 처음에 주어진 전화번호의 길이가 될 때까지 *를 추가했다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">phone_number</span>) &#123;<br>  <span class="hljs-keyword">const</span> phone_number_len = phone_number.<span class="hljs-property">length</span><br>  <span class="hljs-keyword">return</span> phone_number<br>    .<span class="hljs-title function_">substring</span>(phone_number_len - <span class="hljs-number">4</span>)<br>    .<span class="hljs-title function_">padStart</span>(phone_number_len, <span class="hljs-string">&#x27;*&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -행렬의 덧셈-</title>
+    <url>/2022/11/30/Coding-Test-Programmers-27/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12950">https://school.programmers.co.kr/learn/courses/30/lessons/12950</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다. 다만 map을 활용하면 좀 더 깔끔한 풀이가 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">arr1, arr2</span>) &#123;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr1.<span class="hljs-property">length</span>; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; arr1[<span class="hljs-number">0</span>].<span class="hljs-property">length</span>; j++) &#123;<br>      arr1[i][j] += arr2[i][j]<br>    &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span> arr1<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="다른-사람-풀이"><a href="#다른-사람-풀이" class="headerlink" title="다른 사람 풀이"></a>다른 사람 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">arr1, arr2</span>) &#123;<br>  <span class="hljs-keyword">return</span> arr1.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">arr1Item,i</span>) =&gt;</span> arr1Item.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">arr2Item, j</span>) =&gt;</span> arr2Item + arr2[i][j]));<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -x만큼 간격이 있는 n개의 숫자-</title>
+    <url>/2022/11/30/Coding-Test-Programmers-28/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12954">https://school.programmers.co.kr/learn/courses/30/lessons/12954</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현하면 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">x, n</span>) &#123;<br>  <span class="hljs-keyword">var</span> answer = []<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>    answer.<span class="hljs-title function_">push</span>(x * i)<br>  &#125;<br>  <span class="hljs-keyword">return</span> answer<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -직사각형 별찍기-</title>
+    <url>/2022/11/30/Coding-Test-Programmers-29/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12969">https://school.programmers.co.kr/learn/courses/30/lessons/12969</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>입력 부분만 구현한다면 코딩 테스트 입문으로 많이 푸는 별찍기 문제와 같다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">process.<span class="hljs-property">stdin</span>.<span class="hljs-title function_">setEncoding</span>(<span class="hljs-string">&#x27;utf8&#x27;</span>)<br>process.<span class="hljs-property">stdin</span>.<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;data&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> &#123;<br><br>  <span class="hljs-keyword">const</span> n = data.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27; &#x27;</span>)<br>  <span class="hljs-keyword">const</span> a = <span class="hljs-title class_">Number</span>(n[<span class="hljs-number">0</span>])<br>  <span class="hljs-keyword">const</span> b = <span class="hljs-title class_">Number</span>(n[<span class="hljs-number">1</span>])<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; b; i++) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;*&#x27;</span>.<span class="hljs-title function_">repeat</span>(a))<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -가운데 글자 가져오기-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-3/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12903">https://school.programmers.co.kr/learn/courses/30/lessons/12903</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">s</span>) &#123;<br>  <span class="hljs-keyword">if</span> (s.<span class="hljs-property">length</span> % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) &#123;<br>    <span class="hljs-keyword">return</span> s.<span class="hljs-title function_">substring</span>(<br>      <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(s.<span class="hljs-property">length</span> / <span class="hljs-number">2</span>) - <span class="hljs-number">1</span>,<br>      <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(s.<span class="hljs-property">length</span> / <span class="hljs-number">2</span>) + <span class="hljs-number">1</span>,<br>    )<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">return</span> s.<span class="hljs-title function_">substring</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(s.<span class="hljs-property">length</span> / <span class="hljs-number">2</span>), <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(s.<span class="hljs-property">length</span> / <span class="hljs-number">2</span>) + <span class="hljs-number">1</span>)<br>  &#125;<br>  <span class="hljs-comment">// 소수점 제거를 위한 floor 메서드 사용</span><br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -소수 만들기-</title>
+    <url>/2022/11/30/Coding-Test-Programmers-30/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12977">https://school.programmers.co.kr/learn/courses/30/lessons/12977</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>주어진 배열에서 선택한 3개의 합을 확인해야 하므로, 선택하는 순서는 중요하지 않다.<br>따라서 조합을 구현하면 된다.</p>
+<p>다른 사람의 풀이를 보니, 소수를 판단하는 부분에서 효율성을 고려한 풀이들이 있었다.<br>이 문제에서는 효율성을 따지지 않아 큰 문제가 되지 않았지만, 주의할 필요가 있어보인다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">nums</span>) &#123;<br>  <span class="hljs-keyword">let</span> answer = <span class="hljs-number">0</span><br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-property">length</span>; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span class="hljs-number">1</span>; j &lt; nums.<span class="hljs-property">length</span>; j++) &#123;<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> k = j + <span class="hljs-number">1</span>; k &lt; nums.<span class="hljs-property">length</span>; k++) &#123;<br>        <span class="hljs-keyword">const</span> sum = nums[i] + nums[j] + nums[k]<br><br>        <span class="hljs-keyword">let</span> cnt = <span class="hljs-number">0</span><br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> l = <span class="hljs-number">1</span>; l &lt;= sum; l++) &#123;<br>          <span class="hljs-keyword">if</span> (sum % l === <span class="hljs-number">0</span>) &#123;<br>            cnt++<br>          &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (cnt === <span class="hljs-number">2</span>) &#123;<br>          answer++<br>        &#125;<br>      &#125;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> answer<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -같은 숫자는 싫어-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-4/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12906">https://school.programmers.co.kr/learn/courses/30/lessons/12906</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>배열 안에서의 연속된 숫자들을 제거하는 문제이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">arr</span>) &#123;<br>  <span class="hljs-keyword">let</span> answer = []<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> arr) &#123;<br>    <span class="hljs-keyword">if</span> (answer[answer.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>] !== item) &#123;<br>      answer.<span class="hljs-title function_">push</span>(item)<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> answer<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="🚨주의할-점"><a href="#🚨주의할-점" class="headerlink" title="🚨주의할 점"></a>🚨주의할 점</h1><p>간단한 문제이지만 기존 배열의 순서를 지켜야 하기 때문에 배열의 앞에서부터 순회하며 이전 인덱스의 값과 현재의 값이 같지 않은 경우에만 새로운 배열에다가 push 해주면 된다.</p>
+]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -나누어 떨어지는 숫자 배열-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-5/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12910">https://school.programmers.co.kr/learn/courses/30/lessons/12910</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>filter 메서드를 사용하면 좀 더 가독성 높은 코드를 작성할 수 있다고 생각한다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">arr, divisor</span>) &#123;<br>  <span class="hljs-keyword">const</span> answer = arr.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">num</span>) =&gt;</span> num % divisor === <span class="hljs-number">0</span>).<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a - b)<br>  <span class="hljs-keyword">if</span> (answer.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) &#123;<br>    <span class="hljs-keyword">return</span> [-<span class="hljs-number">1</span>]<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">return</span> answer<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -두 정수 사이의 합-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-6/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12912">https://school.programmers.co.kr/learn/courses/30/lessons/12912</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>a,b가 대소 구분 없이 주어진다는 점이 신경 써야할 부분인데, 구조 분해 할당을 사용하면 쉽게 두 변수의 값을 바꿀 수 있다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">a, b</span>) &#123;<br>  <span class="hljs-keyword">if</span> (a === b) <span class="hljs-keyword">return</span> a<br>  <span class="hljs-keyword">if</span> (b &lt; a) &#123;<br>    ;[a, b] = [b, a]<br>  &#125;<br>  <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = a; i &lt;= b; i++) &#123;<br>    sum += i<br>  &#125;<br>  <span class="hljs-keyword">return</span> sum<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -문자열 내 마음대로 정렬하기-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-7/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12915">https://school.programmers.co.kr/learn/courses/30/lessons/12915</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제를 제대로 이해하지 못해 시간이 좀 걸렸던 문제이다. </p>
+<p>sort 메서드를 사용하면 기본적으로 맨 앞의 문자를 비교해서 정렬이 이루어지는데, 조건을 추가해 두 번째 글자를 기준으로 정렬을 하라는 문제이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">strings, n</span>) &#123;<br>  <span class="hljs-keyword">return</span> strings.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (a[n] &lt; b[n]) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> (a[n] &gt; b[n]) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> (a[n] === b[n]) <span class="hljs-keyword">return</span> a &lt; b ? -<span class="hljs-number">1</span> : <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -문자열 내 p와 y의 개수-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-8/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12916">https://school.programmers.co.kr/learn/courses/30/lessons/12916</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">s</span>) &#123;<br>  <span class="hljs-keyword">let</span> pCnt = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">let</span> yCnt = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> letter <span class="hljs-keyword">of</span> s) &#123;<br>    <span class="hljs-keyword">if</span> (letter === <span class="hljs-string">&#x27;p&#x27;</span> || letter === <span class="hljs-string">&#x27;P&#x27;</span>) &#123;<br>      pCnt++<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (letter === <span class="hljs-string">&#x27;y&#x27;</span> || letter === <span class="hljs-string">&#x27;Y&#x27;</span>) &#123;<br>      yCnt++<br>    &#125;<br>  &#125;<br>  <span class="hljs-keyword">if</span> (pCnt === yCnt) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 -문자열 다루기 기본-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-9/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12918">https://school.programmers.co.kr/learn/courses/30/lessons/12918</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>처음에는 정규표현식을 잘 몰라 아래 풀이로 해결했다. 문자가 하나라도 포함되어있는지 확인하면 되기 때문에 정규표현식이 훨씬 간단하다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">s</span>) &#123;<br>  <span class="hljs-keyword">if</span> (s.<span class="hljs-property">length</span> !== <span class="hljs-number">4</span> &amp;&amp; s.<span class="hljs-property">length</span> !== <span class="hljs-number">6</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>  &#125;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> letter <span class="hljs-keyword">of</span> s) &#123;<br>    <span class="hljs-keyword">if</span> (letter.<span class="hljs-title function_">charCodeAt</span>() &lt; <span class="hljs-number">48</span> || <span class="hljs-number">57</span> &lt; letter.<span class="hljs-title function_">charCodeAt</span>()) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>  &#125;<br>  <span class="hljs-comment">// if (new RegExp(&#x27;[^0-9]&#x27;, &#x27;g&#x27;).test(s)) &#123;</span><br>  <span class="hljs-comment">//   return false</span><br>  <span class="hljs-comment">// &#125;</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Lv.1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 코딩 기초 트레이닝 후기</title>
+    <url>/2024/01/08/Coding-Test-Programmers-basic/</url>
+    <content><![CDATA[<p>나는 ‘프론트엔드 개발자에게 코딩 테스트는 무슨 의미일까?’ 라는 생각을 회사에 들어가서도 계속 했었다. 솔직히 실무에서 코딩 테스트 문제에 필요한 알고리즘, 혹은 자료구조 지식들을 응용한 경험은 거의 없었다. 그래서 사실 알고리즘, 자료구조 공부를 한동안 거의 놓고 있었다.</p>
+<p>하지만 최근에 내가 너무 프론트엔드라는 직군에 매몰되어 개발자로서 필요한 공부들을 안하고 있다는 생각이 들었다. 이전에 코딩 테스트를 준비했던 경험이 있지만, 당시에는 그냥 닥치는대로 문제를 풀었을뿐 제대로 된 알고리즘, 자료구조 공부를 하지 않았었다. 새해를 맞이한 김에 코딩 테스트를 기초부터 다시 제대로 준비해보자는 마음으로 프로그래머스의 코딩 기초 트레이닝을 풀어보았다.</p>
+<p>총 124문제를 푸는데 한 4일 정도 걸렸던 것 같다. 물론 Lv.0에 해당되는 문제들로 프로그래밍에 익숙해지기 위한 문제들이지만, 나름 이를 통해 얻게 된 점들이 많아 정리를 해보려고 한다.</p>
+<h2 id="배열-순회하기"><a href="#배열-순회하기" class="headerlink" title="배열 순회하기"></a>배열 순회하기</h2><p>이번에 배열을 순회해야 하는 문제들을 풀 때 아래의 방법들을 썼다.</p>
+<ul>
+<li>for문</li>
+<li>forEach</li>
+<li>map</li>
+<li>reduce</li>
+</ul>
+<p>그렇지만 for문과 인덱스를 사용해 배열의 원소에 직접 접근하기 보다는 for문을 제외한 3가지 배열 메서드들을 훨씬 많이 활용했었다.</p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><p>먼저 forEach문 같은 경우에는 반환하는 값이 필요하지 않을 때 사용했다. 가령 배열에 저장된 데이터를 Map으로 다시금 정리하는 경우에 forEach를 사용했다.</p>
+<p>하지만 forEach는 항상 모든 원소들을 순회하기 때문에, 중간에 반복을 멈추거나 할 필요가 있을 때는 기본적인 for문을 활용했다.</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map은 주어진 배열을 순회하며 원소들을 변형시켜야 할 때 사용했다. flatMap을 사용하기도 했는데, flatMap은 map과 달리 콜백 함수의 반환값을 한 단계씩 평탄화한다. 그러니까 map의 콜백 함수의 반환값으로 배열 안의 여러 값들을 한꺼번에 전달하고 싶을 때 flatMap을 사용하면 간편하다.</p>
+<p>다음은 그 예시이다.</p>
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181836">https://school.programmers.co.kr/learn/courses/30/lessons/181836</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">picture, k</span>) &#123;<br>  <span class="hljs-keyword">return</span> picture.<span class="hljs-title function_">flatMap</span>(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(k).<span class="hljs-title function_">fill</span>(<br>      v<br>        .<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;&quot;</span>)<br>        .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> &#123;<br>          <span class="hljs-keyword">return</span> v.<span class="hljs-title function_">repeat</span>(k);<br>        &#125;)<br>        .<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>)<br>    );<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>이번에 reduce를 가장 많이 활용했던 것 같다. reduce는 배열을 순회하며 새로운 결과값을 만들어내야 할 때 사용했다. 가장 간단한 예로 배열의 모든 합을 구할 때, 아래와 같이 reduce를 사용했다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">arr</span>) &#123;<br>  <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">accu, curr</span>) =&gt;</span> accu + curr, <span class="hljs-number">0</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>처음에는 굳이 reduce를 사용해야 하나라는 생각도 들었지만, 사용하면 할수록 할 수 있는 게 정말 다양하다는 걸 느끼게 되었다.</p>
+<h2 id="배열-자르기"><a href="#배열-자르기" class="headerlink" title="배열 자르기"></a>배열 자르기</h2><ul>
+<li>splice</li>
+<li>slice</li>
+</ul>
+<p>먼저 splice는 원본 배열을 수정할 때 사용했고, slice는 새로운 배열을 만들 필요가 있을 때 사용했다. slice는 문자열을 자를 때도 사용했다.</p>
+<h2 id="보스-문제…"><a href="#보스-문제…" class="headerlink" title="보스 문제…"></a>보스 문제…</h2><p>이 문제가 왜 기초문제에 포함되어 있을까라는 생각이 보자마자 들었던 문제이다. 오답률이 가장 높아 마지막으로 풀었던 문제인데, 코딩 테스트를 처음 접했다면 많이 당황스러웠을 것 같다.</p>
+<h3 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h3><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181832">https://school.programmers.co.kr/learn/courses/30/lessons/181832</a></p>
+<h3 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h3><p>먼저 이차원 배열을 모두 순회해야 하므로 이차원 배열의 원소 수만큼 연산을 반복하는 for문을 만든다. 좌표 객체 하나를 생성하고 좌표 객체의 x좌표, y좌표, 그리고 방향을 변경해주며 나선형으로 좌표가 이동하게끔 구현하면 된다.</p>
+<h3 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">const</span> twoDimension = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(&#123; <span class="hljs-attr">length</span>: n &#125;, <span class="hljs-function">() =&gt;</span> <span class="hljs-title class_">Array</span>(n).<span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>));<br>  <span class="hljs-keyword">const</span> dot = &#123;<br>    <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,<br>    <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,<br>    <span class="hljs-attr">direction</span>: <span class="hljs-string">&quot;right&quot;</span>,<br>  &#125;;<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= n * n; i++) &#123;<br>    twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span>] = i;<br><br>    <span class="hljs-keyword">switch</span> (dot.<span class="hljs-property">direction</span>) &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;right&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">x</span> === n - <span class="hljs-number">1</span> || twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span> + <span class="hljs-number">1</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;down&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;left&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">x</span> === <span class="hljs-number">0</span> || twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span> - <span class="hljs-number">1</span>]) dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;up&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;up&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">y</span> === <span class="hljs-number">0</span> || twoDimension[dot.<span class="hljs-property">y</span> - <span class="hljs-number">1</span>][dot.<span class="hljs-property">x</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;right&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;down&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">y</span> === n - <span class="hljs-number">1</span> || twoDimension[dot.<span class="hljs-property">y</span> + <span class="hljs-number">1</span>][dot.<span class="hljs-property">x</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;left&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">switch</span> (dot.<span class="hljs-property">direction</span>) &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;right&quot;</span>:<br>        dot.<span class="hljs-property">x</span>++;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;left&quot;</span>:<br>        dot.<span class="hljs-property">x</span>--;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;up&quot;</span>:<br>        dot.<span class="hljs-property">y</span>--;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;down&quot;</span>:<br>        dot.<span class="hljs-property">y</span>++;<br>        <span class="hljs-keyword">break</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> twoDimension;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="마무리"><a href="#마무리" class="headerlink" title="마무리"></a>마무리</h2><p>이전에는 코드들을 덕지덕지 붙여가며 어거지로 문제를 푸는 느낌이었다면, 이번에는 내가 계획한 대로 깔끔하게 문제가 풀려 뿌듯했다. 물론 기초 문제들에 불과하긴 하지만 그래도 조금은 성장했음을 느낄 수 있었다.</p>
+]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Basic Training</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 코딩 입문 트레이닝 후기</title>
+    <url>/2024/01/17/Coding-Test-Programmers-introduction/</url>
+    <content><![CDATA[<p>이전 포스트에 이어서 이번에는 프로그래머스의 코딩 입문 트레이닝을 모두 풀어보았다. 4일 동안 100문제를 풀었다. 여전히 Lv.0이지만 가끔은 Lv.1보다 어렵게 느껴지는 문제들도 있었고, 특정 수학적 지식들도 필요할 때도 있었다. 그래서 체감상으로는 입문 트레이닝보다 꽤나 어렵게 느껴졌던 것 같다. 이번에도 입문 트레이닝을 풀면서 알게 된 점을 정리해보고자 한다.</p>
+<h2 id="수학적-지식"><a href="#수학적-지식" class="headerlink" title="수학적 지식"></a>수학적 지식</h2><h3 id="유클리드-호제법"><a href="#유클리드-호제법" class="headerlink" title="유클리드 호제법"></a>유클리드 호제법</h3><p>아마 알고리즘을 풀기 시작하면 가장 먼저 접하게 되는 수학적 지식이 아닐까 싶다. 정의는 아래와 같다.</p>
+<blockquote>
+<p>2개의 자연수(또는 정식) a, b에 대해서 a를 b로 나눈 나머지를 r이라 하면(단, a&gt;b), a와 b의 최대공약수는 b와 r의 최대공약수와 같다.</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getGCD</span>(<span class="hljs-params">a, b</span>) &#123;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(b) &gt; <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">abs</span>(a)) &#123;<br>    [a, b] = [b, a];<br>  &#125;<br><br>  <span class="hljs-keyword">while</span> (b !== <span class="hljs-number">0</span>) &#123;<br>    <span class="hljs-keyword">const</span> temp = b;<br>    b = a % b;<br>    a = temp;<br>  &#125;<br>  <span class="hljs-keyword">return</span> a;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>각 문제마다 위의 코드처럼 별도로 최대공약수 메서드를 만들어 사용했다. 유클리드 호제법의 조건을 지키기 위해 a와 b의 크기를 비교한 후 구조 분해 할당을 통해 큰 값이 a에 할당되도록 구현했다.</p>
+<p>그리고 b가 0이 될 때까지 b와 r의 최대공약수를 반복해서 구했다.</p>
+<p>아래는 유클리드 호제법을 사용하는 문제의 예시이다.</p>
+<h4 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h4><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120808">https://school.programmers.co.kr/learn/courses/30/lessons/120808</a></p>
+<h4 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h4><p>기약분수를 만들기 위해서는 분수를 분모와 분자의 최대공약수로 나누어주면 된다.</p>
+<h3 id="소인수분해"><a href="#소인수분해" class="headerlink" title="소인수분해"></a>소인수분해</h3><p>소인수분해란 어떤 수를 소수들의 곱으로 표현하는 것이다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">let</span> factors = [];<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>    <span class="hljs-keyword">while</span> (n % i === <span class="hljs-number">0</span>) &#123;<br>      factors.<span class="hljs-title function_">push</span>(i);<br>      n /= i;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> factors;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>1은 소수가 아니기 때문에 2부터 해당 수까지 반복하는 for문을 구현한다.</li>
+<li>그 다음 n을 i로 나눴을 때의 나머지가 0이 아니게 될 때까지 n을 i로 나눈다.</li>
+<li>나머지가 0인 경우에는 배열에 i를 추가한다.</li>
+</ol>
+<p>아래는 소인수분해를 사용하는 문제의 예시이다.</p>
+<h4 id="📃문제-링크-1"><a href="#📃문제-링크-1" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h4><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120852">https://school.programmers.co.kr/learn/courses/30/lessons/120852</a></p>
+<h3 id="유한소수"><a href="#유한소수" class="headerlink" title="유한소수"></a>유한소수</h3><p>소수점 아래 숫자가 계속되지 않고 유한개인 소수를 유한소수라고 한다. 분수일 경우 기약분수로 나타냈을 때 분모의 소인수가 2와 5만 존재해야 유한소수이다.</p>
+<p>아래는 위 개념을 이용해 푸는 문제이다.</p>
+<h4 id="📃문제-링크-2"><a href="#📃문제-링크-2" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h4><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120878">https://school.programmers.co.kr/learn/courses/30/lessons/120878</a></p>
+<h4 id="🤨생각하기-1"><a href="#🤨생각하기-1" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h4><p>기약분수를 위해 유클리드 호제법을, 소인수 확인을 위해 소인수분해를 사용하면 된다.</p>
+<h3 id="직선의-기울기"><a href="#직선의-기울기" class="headerlink" title="직선의 기울기"></a>직선의 기울기</h3><p>직선의 기울기는 y값의 증가량을 x값의 증가량으로 나누어주면 된다.</p>
+<p>아래는 위 개념을 이용해 푸는 문제이다.</p>
+<h4 id="📃문제-링크-3"><a href="#📃문제-링크-3" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h4><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120875">https://school.programmers.co.kr/learn/courses/30/lessons/120875</a></p>
+<h2 id="자바스크립트-팁"><a href="#자바스크립트-팁" class="headerlink" title="자바스크립트 팁"></a>자바스크립트 팁</h2><p>코딩 테스트 문제를 풀 때 유용하게 사용할 수 있는 방법이다.</p>
+<h3 id="구조분해할당"><a href="#구조분해할당" class="headerlink" title="구조분해할당"></a>구조분해할당</h3><h4 id="swap"><a href="#swap" class="headerlink" title="swap"></a>swap</h4><p>위에서도 유클리드 호제법을 구현하기 위해서도 사용했지만 여러 문제에서 유용하게 쓰였다. 아래와 같이 사용하면 된다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">[a, b] = [b, a];<br></code></pre></td></tr></table></figure>
+
+<p>아래는 구조 분해 할당을 사용해서 푸는 문제의 예시이다.</p>
+<h4 id="📃문제-링크-4"><a href="#📃문제-링크-4" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h4><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120895">https://school.programmers.co.kr/learn/courses/30/lessons/120895</a></p>
+<h3 id="이진수-구하기"><a href="#이진수-구하기" class="headerlink" title="이진수 구하기"></a>이진수 구하기</h3><h4 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt"></a>parseInt</h4><p>parseInt의 두 번째 인자로 2를 전달하면 첫 번째의 인자의 이진수 값을 구할 수 있다. 다만 실제 이진수를 구하는 방법도 알아두면 좋을 것 같다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> bin = <span class="hljs-built_in">parseInt</span>(num, <span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
+
+<h3 id="여집합-구하기"><a href="#여집합-구하기" class="headerlink" title="여집합 구하기"></a>여집합 구하기</h3><p>배열에서 여집합을 구할 때는 주로 두 가지 방법을 사용했다.</p>
+<ul>
+<li>filter</li>
+<li>split</li>
+</ul>
+<h4 id="split"><a href="#split" class="headerlink" title="split"></a>split</h4><p>split은 문자열 객체를 지정한 구분자를 이용해 여러 개의 문자열로 나누는 메서드이다. 이 때 구분자에다가 정규표현식을 사용할 수도 있다.</p>
+<p>여집합을 구할 때의 대상이 배열이라면 바로 filter 메서드를 적용해도 괜찮겠지만, 문자열이라면 filter을 사용하기 위해서는 split(“”)을 한 번 적용해서 배열로 바꿔줘야 하기 때문에 split 메서드를 통해 바로 여집합을 구하는 것도 좋은 방법이라고 생각한다.</p>
+<p>아래는 split을 사용해서 풀 수 있는 문제의 예시이다.</p>
+<h5 id="📃문제-링크-5"><a href="#📃문제-링크-5" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h5><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120864">https://school.programmers.co.kr/learn/courses/30/lessons/120864</a></p>
+<h2 id="가장-오래-걸렸던-문제"><a href="#가장-오래-걸렸던-문제" class="headerlink" title="가장 오래 걸렸던 문제"></a>가장 오래 걸렸던 문제</h2><p>거의 1시간 좀 넘게 걸렸던 문제였다. 어떻게든 풀어내긴 했지만, 너무 무식하게 푼 것 같아 나중에 좀 더 좋은 방법을 찾아야겠다는 생각이 들었다.</p>
+<h3 id="📃문제-링크-6"><a href="#📃문제-링크-6" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h3><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120876">https://school.programmers.co.kr/learn/courses/30/lessons/120876</a></p>
+<h3 id="🤨생각하기-2"><a href="#🤨생각하기-2" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h3><ol>
+<li>먼저 세 선분의 좌표가 모두 담긴 배열을 만든다.</li>
+<li>이중 for문을 통해 세 선분을 비교하며 겹치는 부분을 찾아 배열에 넣는다. 이 때 배열에 들어가는 건 [시작점, 끝점] 형태이다. 하나의 선분을 넣는다고 생각하면 된다.</li>
+<li>그리고 그 선분을 key 값으로 해 Map을 만든다. value는 해당 선분이 겹친 선분들이 있는 배열에 등장하는 횟수이다. 이렇게 하는 건 동일 선분이 중복해서 겹치는 경우가 있기 떄문이다.</li>
+<li>마지막으로 keys()를 사용하면 중복되지 않은 겹친 선분들을 얻을 수 있다.</li>
+</ol>
+<h3 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getRange</span>(<span class="hljs-params">startNum, endNum</span>) &#123;<br>  <span class="hljs-keyword">let</span> range = [];<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = startNum; i &lt;= endNum; i++) &#123;<br>    range.<span class="hljs-title function_">push</span>(i);<br>  &#125;<br>  <span class="hljs-keyword">return</span> range;<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">lines</span>) &#123;<br>  <span class="hljs-keyword">const</span> ranges = [<br>    <span class="hljs-title function_">getRange</span>(lines[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>], lines[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]),<br>    <span class="hljs-title function_">getRange</span>(lines[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>], lines[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]),<br>    <span class="hljs-title function_">getRange</span>(lines[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>], lines[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]),<br>  ];<br><br>  <span class="hljs-keyword">let</span> duplicated = [];<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; ranges.<span class="hljs-property">length</span>; i++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span class="hljs-number">1</span>; j &lt; ranges.<span class="hljs-property">length</span>; j++) &#123;<br>      <span class="hljs-keyword">let</span> line = [];<br>      <span class="hljs-keyword">let</span> range1 = ranges[i];<br>      <span class="hljs-keyword">let</span> range2 = ranges[j];<br>      range1.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (range2.<span class="hljs-title function_">includes</span>(v)) &#123;<br>          line.<span class="hljs-title function_">push</span>(v);<br>        &#125;<br>      &#125;);<br>      <span class="hljs-keyword">if</span> (line.<span class="hljs-property">length</span> &gt; <span class="hljs-number">1</span>) duplicated.<span class="hljs-title function_">push</span>(line);<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">let</span> duplicatedMap = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>();<br><br>  duplicated.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; v.<span class="hljs-property">length</span>; i++) &#123;<br>      <span class="hljs-keyword">if</span> (v[i + <span class="hljs-number">1</span>] === <span class="hljs-literal">undefined</span>) <span class="hljs-keyword">return</span>;<br>      duplicatedMap.<span class="hljs-title function_">set</span>(<br>        v.<span class="hljs-title function_">slice</span>(i, i + <span class="hljs-number">2</span>).<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>),<br>        duplicatedMap.<span class="hljs-title function_">get</span>(v.<span class="hljs-title function_">slice</span>(i, i + <span class="hljs-number">2</span>).<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>))<br>          ? duplicatedMap.<span class="hljs-title function_">get</span>(v.<span class="hljs-title function_">slice</span>(i, i + <span class="hljs-number">2</span>).<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>)) + <span class="hljs-number">1</span><br>          : <span class="hljs-number">1</span><br>      );<br>    &#125;<br>  &#125;);<br>  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(duplicatedMap.<span class="hljs-title function_">keys</span>()).<span class="hljs-property">length</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="마무리"><a href="#마무리" class="headerlink" title="마무리"></a>마무리</h2><p>다른 사람들의 풀이를 보면서 여전히 많이 부족하다는 걸 느꼈다. 좋은 풀이가 있다면 내 풀이에 집착하기보다는 배우려는 자세로 받아들여야겠다는 생각이 들었다.</p>
+]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Introduction Training</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Javscript] Debounce and Throttle</title>
+    <url>/2022/10/06/Debounce-and-Throttle/</url>
+    <content><![CDATA[<p>검색어 자동완성 기능을 만들면서 <strong>Debounce</strong>에 대해 알게 되었고, 자연스럽게 <strong>Throttle</strong>을 접하게 되었다. 먼저 두 기술이 왜 등장하게 되었는지부터 알아보자.</p>
+<h1 id="등장배경"><a href="#등장배경" class="headerlink" title="등장배경"></a>등장배경</h1><p>자, 우리가 영화 정보를 검색할 수 있는 사이트에서  Matrix시리즈를 보고 싶어 검색창에 Matrix를 입력했다고 가정해보자. 해당 사이트에는 자동완성 기능을 제공하고 있는데, 자동완성 기능의 흐름은 다음과 같다.</p>
+<ol>
+<li>사용자가 글자를 입력함</li>
+<li>입력할 때마다 서버에 새로운 요청을 보내 해당 검색어와 관련된 키워드들을 가져옴</li>
+</ol>
+<p>위 흐름대로 자동완성 기능이 수행될 때 결과를 콘솔에 출력해봤다.</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">m</span> / api request 1<br><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">ma</span> / api request 2<br><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">mat</span> / api request 3<br><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">matr</span> / api request 4<br><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">matri</span> / api request 5<br><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">matrix</span> / api request 6<br></code></pre></td></tr></table></figure>
+
+<p>우리는 matrix라는 6글자를 입력했을 뿐인데, 6개의 request가 서버로 보내졌다 . 만약 더 긴 제목의 영화를 검색한다면 영화 제목을 입력하는 짧은 시간 동안 수십 개의 request가 발생하는 것이다. 이처럼 너무 많은 이벤트 횟수의 실행으로 이벤트 핸들러가 과도한 연산을 수행하는 경우 성능 문제가 발생하고 이는 사용자 경험까지 떨어뜨리게 된다.</p>
+<p>여기서 필요한 것이 바로 <strong>Debounce</strong>와 <strong>Throttle</strong>이다. 두 기술 모두 자바스크립트의 이벤트를 제어(제한)해 성능을 향상시키는 방법이다.</p>
+<h1 id="Debounce"><a href="#Debounce" class="headerlink" title="Debounce"></a>Debounce</h1><p><strong>Debounce</strong>는 이벤트를 그룹화해서 특정시간이 지난 후 하나의 이벤트만 발생하도록 하는 기술이다. 예시로 살펴보자.</p>
+<ol>
+<li>특정시간(delay)을 1초로 설정</li>
+<li>matrix를 입력(각 글자를 입력하는데 설정한 시간 미만으로 걸린다고 가정)</li>
+<li>설정한 시간 지남</li>
+</ol>
+<p>위 과정대로 진행되면 matrix라는 검색어와 함께 요청이 한 번만 발생한다. 원리는 다음과 같다.</p>
+<ol>
+<li>이벤트 발생 후 설정한 시간이 지나기 전에 이벤트가 다시 발생하면 지나간 시간을 초기화한다.</li>
+<li>설정한 시간이 지나게 되면 연산을 수행한다.</li>
+</ol>
+<p>그러니까 만약 ma를 입력하고 1초가 지났다면 다음과 같은 결과가 나올 것이다.</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">search</span> keyword : <span class="hljs-keyword">ma</span> / api request 1<br></code></pre></td></tr></table></figure>
+
+<p>어느 정도 개념에 대한 이해가 이루어졌다면 이제 <strong>Debounce</strong> 기술을 직접 구현해보자.</p>
+<h2 id="Debounce-구현하기"><a href="#Debounce-구현하기" class="headerlink" title="Debounce 구현하기"></a>Debounce 구현하기</h2><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Default:<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;default&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Debounce:<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;debounce&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>Debounce</strong>가 적용됐을 때랑 적용되지 않았을 때의 차이를 좀 더 명확하게 확인하기 위해 위와 같이 HTML구조를 짰다. </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> input = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;input&#x27;</span>)<br><span class="hljs-keyword">const</span> defaultText = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#default&#x27;</span>)<br><span class="hljs-keyword">const</span> debounceText = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#debounce&#x27;</span>)<br><br><span class="hljs-keyword">let</span> debounceReqCnt = <span class="hljs-number">0</span><br><span class="hljs-keyword">let</span> defaultReqCnt = <span class="hljs-number">0</span><br><br><span class="hljs-keyword">const</span> updateDebounceText = <span class="hljs-title function_">debounce</span>(<span class="hljs-function">(<span class="hljs-params">text</span>) =&gt;</span> &#123;<br>  debounceText.<span class="hljs-property">textContent</span> = text<br>  debounceReqCnt++<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<br>    <span class="hljs-string">`[Debounce] search keyword : <span class="hljs-subst">$&#123;text&#125;</span> / api request <span class="hljs-subst">$&#123;debounceReqCnt&#125;</span>`</span>,<br>  )<br>&#125;)<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">updateDefaultText</span> = (<span class="hljs-params">text</span>) =&gt; &#123;<br>  defaultText.<span class="hljs-property">textContent</span> = text<br>  defaultReqCnt++<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`[Default] search keyword : <span class="hljs-subst">$&#123;text&#125;</span> / api request <span class="hljs-subst">$&#123;defaultReqCnt&#125;</span>`</span>)<br>&#125;<br><br>input.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;input&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;<br>  <span class="hljs-title function_">updateDefaultText</span>(e.<span class="hljs-property">target</span>.<span class="hljs-property">value</span>)<br>  <span class="hljs-title function_">updateDebounceText</span>(e.<span class="hljs-property">target</span>.<span class="hljs-property">value</span>)<br>&#125;)<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">cb, delay = <span class="hljs-number">1000</span></span>) &#123;<br>  <span class="hljs-keyword">let</span> timeout<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">clearTimeout</span>(timeout)<br>    timeout = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      <span class="hljs-title function_">cb</span>(arg)<br>    &#125;, delay)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>전체 코드는 위와 같다.</p>
+<ol>
+<li>input에 addEventListener를 적용</li>
+<li>input이벤트가 발생할 때마다 DefaultText와 debounceText가 업데이트됨</li>
+</ol>
+<p>실행 흐름 자체는 그렇게 복잡하지 않다. 자세히 봐야할 부분은 맨 밑에 정의된 <strong>debounce</strong>함수이다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">cb, delay = <span class="hljs-number">1000</span></span>) &#123;<br>  <span class="hljs-keyword">let</span> timeout<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">clearTimeout</span>(timeout)<br>    timeout = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      <span class="hljs-title function_">cb</span>(arg)<br>    &#125;, delay)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>debounce</strong>함수가 실행되면 기존에 setTimeout으로 등록되었던 타이머를 없애고 새로운 타이머를 등록한다. 이는 아래 내용을 구현한 것이라고 이해하면 된다.</p>
+<blockquote>
+<p><strong>이벤트 발생 후 설정한 시간이 지나기 전에 이벤트가 다시 발생하면 지나간 시간을 초기화한다.</strong></p>
+</blockquote>
+<p>그러면 이제 실제 실행 화면을 확인해보자.</p>
+<img width="100%" src="/2022/10/06/Debounce-and-Throttle/debounceExample.gif">
+
+<p><strong>Debounce</strong>를 쓰지 않은 경우 아까와 동일하게 6번의 request 가 발생했고, <strong>Debounce</strong>를 적용시킨 경우 단 한 번의 request만이 발생했다. 수치상으로 6배의 성능 향상을 확인할 수 있다. 그럼 이제 <strong>Throttle</strong>에 대해서 알아보자.</p>
+<h1 id="Throttle"><a href="#Throttle" class="headerlink" title="Throttle"></a>Throttle</h1><p><strong>Throttle</strong>은 이벤트를 일정한 주기마다 발생하도록 하는 기술이다. 예를 들어 <strong>Throttle</strong>의 설정시간으로 1ms를 주면 해당 이벤트는 1ms동안 한 번만 발생하게 된다. <strong>Throttle</strong>을 사용하는 대표적인 예시로는 무한 스크롤 페이지가 있다. </p>
+<blockquote>
+<p><a href="https://www.agoda.com/ko-kr/?cid=1844104">https://www.agoda.com/ko-kr/?cid=1844104</a></p>
+</blockquote>
+<p>최근 파리에서 묵을 숙소를 찾으면서 사용한 agoda이다. 원하는 도시를 검색하고 계속 스크롤을 내리면 footer에 도달하기 전에 추가로 숙소 정보들을 가져오고 있는 걸 확인할 수 있다. 정확하지는 않을 수도 있지만 아마도 다음과 같은 흐름으로 실행되고 있을 거라고 생각한다.</p>
+<ol>
+<li>스크롤 위치가 footer와 얼마나 떨어져 있는지 확인</li>
+<li>일정 거리 이하라면 콘텐츠를 가져와 페이지를 업데이트함</li>
+</ol>
+<p>스크롤을 조작하면 스크롤 이벤트가 굉장히 많이 발생한다. 그래서 만약 스크롤 이벤트가 발생할 때마다 footer와의 거리를 계산한다면 성능상의 이슈가 생길 수도 있다. 그럴 때 Throttle을 사용할 수 있다. 연산이 몇 초에 한 번, 또는 몇 밀리초에 한 번씩만 수행되도록 제한을 두는 것이다.</p>
+<h2 id="Throttle-구현하기"><a href="#Throttle-구현하기" class="headerlink" title="Throttle 구현하기"></a>Throttle 구현하기</h2><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Default:<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;default&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Throttle:<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;throttle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> &#123;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">300vh</span>;<br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-selector-tag">nav</span> &#123;<br>    <span class="hljs-attribute">position</span>: fixed;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Debounce</strong>와 마찬가지로 <strong>Throttle</strong>을 적용했을 때와 적용하지 않았을 때의 차이를 보기 위해 위와 같이 html 구조를 짰다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> defaultText = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#default&#x27;</span>)<br><span class="hljs-keyword">const</span> throttleText = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;#throttle&#x27;</span>)<br><br><span class="hljs-keyword">let</span> defaultCnt = <span class="hljs-number">0</span><br><span class="hljs-keyword">let</span> throttleCnt = <span class="hljs-number">0</span><br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">countDetectingDefault</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  defaultCnt++<br>  defaultText.<span class="hljs-property">textContent</span> = defaultCnt<br>&#125;<br><br><span class="hljs-keyword">const</span> countDetectingThrottle = <span class="hljs-title function_">throttle</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  throttleCnt++<br>  throttleText.<span class="hljs-property">textContent</span> = throttleCnt<br>&#125;)<br><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;scroll&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">countDetectingDefault</span>()<br>  <span class="hljs-title function_">countDetectingThrottle</span>()<br>&#125;)<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">throttle</span>(<span class="hljs-params">cb, delay = <span class="hljs-number">1000</span></span>) &#123;<br>  <span class="hljs-keyword">let</span> shouldWait = <span class="hljs-literal">false</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">...args</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (shouldWait) <span class="hljs-keyword">return</span><br>    <span class="hljs-title function_">cb</span>(...args)<br>    shouldWait = <span class="hljs-literal">true</span><br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      shouldWait = <span class="hljs-literal">false</span><br>    &#125;, delay)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>winodw객체에 addEventListener 를 적용</li>
+<li>스크롤 이벤트가 발생할 때마다 카운트 증가</li>
+</ol>
+<p>따로 구현은 하지 않았지만 여기서 스크롤 이벤트가 발생한다는 건 아래의 작업이 이루어지는 거라고 가정하자.</p>
+<blockquote>
+<p><strong>스크롤 위치가 footer와 얼마나 떨어져 있는지 확인</strong></p>
+</blockquote>
+<p><strong>Debounce</strong>와 마찬가지로 가장 중요한 건 맨 밑의 <strong>throttle</strong> 함수이다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">throttle</span>(<span class="hljs-params">cb, delay = <span class="hljs-number">1000</span></span>) &#123;<br>  <span class="hljs-keyword">let</span> shouldWait = <span class="hljs-literal">false</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (shouldWait) <span class="hljs-keyword">return</span><br>    <span class="hljs-title function_">cb</span>(arg)<br>    shouldWait = <span class="hljs-literal">true</span><br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      shouldWait = <span class="hljs-literal">false</span><br>    &#125;, delay)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>shouldWait 의 초기값이 false이기 때문에 최초에는 콜백함수가 무조건 실행된다.</li>
+<li>콜백 함수가 실행됐다면 shouldWait의 값을 true로 바꾼다.</li>
+<li>setTimeout을 통해 설정한 시간 뒤에 shouldWait의 값이 바뀌도록 한다.</li>
+<li>설정한 시간이 지나기 전까지는 shouldWait의 값이 true이기 때문에 연산이 수행되지 않는다.</li>
+</ol>
+<p>실행 화면을 확인해보자.</p>
+<img width="100%" src="/2022/10/06/Debounce-and-Throttle/ThrottleExample.gif">
+
+<p>페이지의 처음부터 끝까지 스크롤하는 동안 <strong>Throttle</strong>을 적용하지 않았을 때는 스크롤이 footer로부터 얼마나 떨어져 있는지 계산하는 연산이 총 67번 수행됐고, <strong>Throttle</strong>을 적용했을 경우에는 단 2번만 수행됐다. </p>
+<h1 id="💡-Tip-Debounce과-Throttle의-차이"><a href="#💡-Tip-Debounce과-Throttle의-차이" class="headerlink" title="💡 Tip - Debounce과 Throttle의 차이"></a>💡 Tip - <strong>Debounce</strong>과 <strong>Throttle</strong>의 차이</h1><p><strong>Debounce</strong>과 <strong>Throttle</strong>의 가장 큰 차이점은 <strong>Throttle</strong>은 설정한 시간마다 연산이 수행됨을 보장한다는 것이다. 그래서 <strong>Throttle</strong>은 지속적인 업데이트가 필요한 경우에 사용하는 게 좋다.</p>
+<p>만약 무한 스크롤 페이지를 구현할 때 <strong>Debounce</strong>를 사용했다고 가정해보자. 스크롤 이벤트가 멈춰야만 footer와의 거리를 확인하고 콘텐츠를 추가로 가져올 것이기 때문에 footer에 도달하더라도 스크롤 이벤트가 설정한 시간 내에 다시 발생한다면 아무런 변화도 일어나지 않을 것이다.</p>
+<p>하지만 <strong>Throttle</strong>은 정기적으로 연산이 실행되기 때문에 위의 문제가 발생하지 않는다. 설정한 시간마다 연산을 수행하기 때문에 footer와의 거리를 지속적으로 업데이트할 수 있어 footer에 도달하기 전에 정상적으로 콘텐츠를 추가로 가져올 수 있을 것이다.</p>
+<h1 id="📚-참고자료"><a href="#📚-참고자료" class="headerlink" title="📚 참고자료"></a>📚 참고자료</h1><p><a href="https://webclub.tistory.com/607">https://webclub.tistory.com/607</a></p>
+<p><a href="https://www.youtube.com/watch?v=cjIswDCKgu0">https://www.youtube.com/watch?v=cjIswDCKgu0</a></p>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Debounce</tag>
+        <tag>Throttle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker 훑어보기</title>
+    <url>/2025/09/22/Docker-Intro/</url>
+    <content><![CDATA[<h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>Devops 문화 구축에 관심을 가지게 되면서 자연스레 Docker에 관심을 가지게 되었다. 여러 개인 프로젝트를 Docker로 배포하며 경험한 내용과 알게 된 점들을 정리해보려고 한다.</p>
+<h1 id="Docker란"><a href="#Docker란" class="headerlink" title="Docker란?"></a>Docker란?</h1><blockquote>
+<p><em>dockerdocs</em></p>
+<p><em>Docker는 애플리케이션 개발, 배포 및 실행을 위한 개방형 플랫폼입니다. Docker를 사용하면 애플리케이션과 인프라를 분리하여 소프트웨어를 신속하게 배포할 수 있습니다. Docker를 사용하면 애플리케이션을 관리하는 것과 동일한 방식으로 인프라를 관리할 수 있습니다. Docker의 코드 배포, 테스트 및 배포 방법론을 활용하면 코드 작성과 운영 환경 실행 간의 지연 시간을 크게 줄일 수 있습니다.</em></p>
+</blockquote>
+<p>Docker의 핵심은 애플리케이션과 인프라를 분리하는 데 있다. 컨테이너라는 표준화된 단위로 애플리케이션을 실행함으로써, 특정 서버 환경에 종속되지 않고 어디서든 동일하게 동작할 수 있도록 해준다.</p>
+<p>즉, Docker는 애플리케이션과 실행환경을 하나로 묶어 배포할 수 있게 해주는 기술로, 다양한 인프라 환경에서도 일관된 실행을 보장한다.</p>
+<h1 id="시작하기"><a href="#시작하기" class="headerlink" title="시작하기"></a>시작하기</h1><blockquote>
+<p><a href="https://docs.docker.com/desktop/">https://docs.docker.com/desktop/</a></p>
+</blockquote>
+<p>Windows와 macOS에서 Docker를 사용하려면 Docker Desktop을 반드시 설치하고 실행해야 한다.</p>
+<p>만약 Docker Desktop을 실행하지 않은 상태에서 <code>docker ps</code>와 같은 명령어를 입력하면 아래와 같은 에러가 발생한다.</p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">error </span>during connect: Get &quot;http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/containers/json&quot;: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.<br></code></pre></td></tr></table></figure>
+
+<p>이는 Docker Daemon이 실행되고 있지 않기 때문이다. 리눅스에서는 Docker가 운영체제와 직접 통합되어 별도의 Desktop 프로그램 없이 동작하지만, Windows와 macOS에서는 Docker가 리눅스 VM 안에서만 실행될 수 있기 때문에 Docker Desktop이 VM을 관리하고 실행한다.</p>
+<p>결론적으로, 윈도우에서 docker 명령어를 사용하려면 Docker Desktop을 설치하고 반드시 실행해야 정상적으로 컨테이너를 사용할 수 있다.</p>
+<blockquote>
+<p><a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></p>
+</blockquote>
+<p>리눅스에서는 도커 엔진만 설치하면 바로 사용할 수 있으며, Docker Desktop은 선택적으로 설치해 GUI 환경을 제공받을 수 있다.</p>
+<h1 id="실행-흐름"><a href="#실행-흐름" class="headerlink" title="실행 흐름"></a>실행 흐름</h1><p>Docker를 활용하는 기본 흐름은 이미지를 만들고, 그 이미지를 기반으로 컨테이너를 실행하는 것이다. 공식 문서에서도 The basics, Building Images, Running Containers 순서로 설명하고 있다.</p>
+<h2 id="컨테이너란"><a href="#컨테이너란" class="headerlink" title="컨테이너란?"></a>컨테이너란?</h2><p>컨테이너는 애플리케이션 실행에 필요한 모든 파일을 갖춘 고립된 프로세스다.<br>즉, 애플리케이션과 그 실행 환경(OS, 라이브러리, 의존성 등)을 함께 패키징하여 다른 컨테이너나 호스트 환경과 독립적으로 동작할 수 있게 해준다.</p>
+<p>흔히 가상환경인 VM과 많이 비교되는데, 아래와 같은 차이점이 있다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>VM</th>
+<th>컨테이너</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>커널</td>
+<td>자체 커널 사용</td>
+<td>호스트 커널 공유</td>
+</tr>
+<tr>
+<td>OS 포함 여부</td>
+<td>전체 운영체제 포함</td>
+<td>필요 최소 실행 환경만 포함</td>
+</tr>
+<tr>
+<td>자원 사용</td>
+<td>상대적으로 무거움</td>
+<td>가벼움, 빠른 시작 가능</td>
+</tr>
+<tr>
+<td>목적</td>
+<td>완전히 독립된 환경</td>
+<td>애플리케이션 단위 격리</td>
+</tr>
+</tbody></table>
+<p>인프라적 성격을 갖고 있다는 점에서는 같지만, 컨테이너가 좀더 경량화된 형태라고 보면 좋을 것 같다.</p>
+<h2 id="이미지란"><a href="#이미지란" class="headerlink" title="이미지란?"></a>이미지란?</h2><p>이미지는 컨테이너 실행에 필요한 파일, 실행 바이너리, 라이브러리, 설정 등을 모두 포함한 표준화된 패키지다. 따라서 이미지는 컨테이너의 설계도 역할을 한다. </p>
+<p>이미지는 단일 덩어리가 아니라 여러 개의 레이어로 구성되는데, 레이어란 파일 시스템의 변경 내역을 담은 층이라고 할 수 있다. 이 개념은 Git의 커밋과 비슷하다. 여러 커밋이 쌓여 최종 소스 코드 저장소를 이루듯, 여러 레이어가 순서대로 쌓여 하나의 완전한 이미지가 만들어진다.</p>
+<p>레이어는 Git의 커밋과 마찬가지로 불변성을 가진다. 한 번 생성된 레이어는 수정할 수 없으며, 새로운 변경 사항은 항상 새로운 레이어로 추가된다. Git 커밋도 스냅샷, 부모 커밋, 메타데이터를 기반으로 생성되며, 이 조합으로 만들어진 해시값 덕분에 변경이 불가능하다.</p>
+<p>레이어는 불변성뿐만 아니라 재사용성도 가진다. 동일한 베이스 레이어는 여러 이미지에서 공유될 수 있기 때문에, 예를 들어 Python 런타임이 포함된 레이어를 한 번 내려받으면 이후 다른 Python 애플리케이션 이미지에서도 그대로 활용된다. 이 덕분에 이미지 빌드 속도가 빨라지고 저장 공간과 네트워크 자원을 절약할 수 있다.</p>
+<h1 id="이미지-만들기"><a href="#이미지-만들기" class="headerlink" title="이미지 만들기"></a>이미지 만들기</h1><p>이미지를 만들기 위해서는 Dockerfile을 사용한다. Dockerfile은 컨테이너 이미지를 생성하는 데 사용되는 텍스트 기반 문서이다. 이미지 빌더에 실행할 명령, 복사할 파일, 시작 명령 등에 대한 지침을 제공한다.</p>
+<p>이번 글에서는 간단한 Node.js 애플리케이션을 예시로 Docker 이미지를 만들어 실행해보겠다.</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql">📦docker-prac<br> ┣ 📂node_modules<br> ┣ 📜.dockerignore<br> ┣ 📜Dockerfile<br> ┣ 📜<span class="hljs-keyword">index</span>.js<br> ┣ 📜package.json<br> ┗ 📜pnpm-<span class="hljs-keyword">lock</span>.yaml<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// index.js</span><br><span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lodash&#x27;</span>;<br><br><span class="hljs-comment">// 샘플 사용자 데이터</span><br><span class="hljs-keyword">const</span> users = [<br>  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Alice&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">28</span>, <span class="hljs-attr">salary</span>: <span class="hljs-number">75000</span>, <span class="hljs-attr">active</span>: <span class="hljs-literal">true</span> &#125;,<br>  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">32</span>, <span class="hljs-attr">salary</span>: <span class="hljs-number">60000</span>, <span class="hljs-attr">active</span>: <span class="hljs-literal">false</span> &#125;,<br>  &#123; <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Charlie&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">25</span>, <span class="hljs-attr">salary</span>: <span class="hljs-number">70000</span>, <span class="hljs-attr">active</span>: <span class="hljs-literal">true</span> &#125;<br>];<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;=== 간단한 Lodash 예제 ===\n&#x27;</span>);<br><br><span class="hljs-comment">// 활성 사용자만 필터링</span><br><span class="hljs-keyword">const</span> activeUsers = _.<span class="hljs-title function_">filter</span>(users, &#123; <span class="hljs-attr">active</span>: <span class="hljs-literal">true</span> &#125;);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;활성 사용자:&#x27;</span>, activeUsers.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">u</span> =&gt;</span> u.<span class="hljs-property">name</span>).<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;, &#x27;</span>));<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;\n=== 애플리케이션 실행 완료 ===&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<h2 id="단일-스테이지"><a href="#단일-스테이지" class="headerlink" title="단일 스테이지"></a>단일 스테이지</h2><figure class="highlight dockerfile"><table><tr><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># Dockerfile</span><br><br><span class="hljs-comment"># Docker에서 제공하는 Node.js 공식 이미지를 베이스 레이어로 사용</span><br><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">18</span>-alpine<br><br><span class="hljs-comment"># 작업 디렉토리 설정</span><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span><br><br><span class="hljs-comment"># pnpm 활성화 및 의존성 설치</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> corepack <span class="hljs-built_in">enable</span> pnpm</span><br><br><span class="hljs-comment"># package.json과 lock 파일 먼저 복사 → 캐시 활용</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> package.json pnpm-lock.yaml ./</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> pnpm install --frozen-lockfile</span><br><br><span class="hljs-comment"># 애플리케이션 코드 복사</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . .</span><br><br><span class="hljs-comment"># 앱 실행</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;node&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>]</span><br></code></pre></td></tr></table></figure>
+<p>앞에서 말했듯이 Docker 이미지는 레이어로 구성되는데, 각 레이어는 FROM, WORKDIR 와 같은 새로운 명령 때마다 하나씩 쌓인다.</p>
+<figure class="highlight erlang"><table><tr><td class="code"><pre><code class="hljs erlang">docker build -t docker-example-single .<br></code></pre></td></tr></table></figure>
+<p>위 명령어를 실행하면 현재 디렉토리에 있는 Dockerfile을 기반으로 docker-example-single이라는 이름의 도커 이미지를 생성하게 된다.</p>
+<h2 id="멀티-스테이지"><a href="#멀티-스테이지" class="headerlink" title="멀티 스테이지"></a>멀티 스테이지</h2><p>앞에서는 단일 스테이지로 Dockerfile을 구성했다. 사실 저 정도 규모의 프로젝트는 단일 스테이지로 Dockefile을 구성하는 게 맞다고 생각하지만, 실무나 규모가 있는 프로젝트에서는 멀티 스테이지를 사용하는 것이 효과적이며 공식 문서에서도 Best Practice에 멀티 스테이지 내용을 담고 있다.</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># 1. 빌드 단계</span><br><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">18</span>-alpine AS builder<br><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span><br><br><span class="hljs-comment"># pnpm 활성화 및 의존성 설치</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> corepack <span class="hljs-built_in">enable</span> pnpm</span><br><br><span class="hljs-comment"># package.json과 lock 파일 먼저 복사 → 캐시 활용</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> package.json pnpm-lock.yaml ./</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> pnpm install --frozen-lockfile</span><br><br><span class="hljs-comment"># 애플리케이션 코드 복사</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . .</span><br><br><span class="hljs-comment"># 2. 실행 단계</span><br><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">18</span>-alpine<br><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span><br><br><span class="hljs-comment"># pnpm 활성화</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> corepack <span class="hljs-built_in">enable</span> pnpm</span><br><br><span class="hljs-comment"># 런타임 의존성만 설치 (prod 모드)</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> package.json pnpm-lock.yaml ./</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> pnpm install --frozen-lockfile --prod</span><br><br><span class="hljs-comment"># 앱 코드/산출물만 복사</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> --from=builder /app . </span><br><br><span class="hljs-comment"># 앱 실행</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;node&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>]</span><br></code></pre></td></tr></table></figure>
+<p>단일 스테이지 Dockerfile과 비교하면, 멀티 스테이지는 개발 의존성과 런타임 의존성을 분리하고 있다. 단일 스테이지에서는 모든 의존성이 포함되어 이미지가 상대적으로 크고 불필요한 패키지도 포함될 수 있다. 반면 멀티 스테이지에서는 빌드 단계에서만 개발 의존성을 설치하고, 실행 단계에서는 런타임 의존성만 포함하기 때문에 최종 이미지 크기가 작아지고 보안상 안전하며 배포 효율도 높다. 또한 불필요한 파일과 툴이 최종 이미지에 포함되지 않아, 운영 환경에서 더 최적화된 컨테이너를 실행할 수 있다.</p>
+<p>결론적으로 멀티 스테이지는 이미지 최적화, 보안 강화, 배포 효율 향상이라는 장점을 제공하며, 특히 규모가 있는 프로젝트나 빌드 산출물이 많은 프로젝트에서 유용하게 사용된다.</p>
+<h1 id="컨테이너-실행하기"><a href="#컨테이너-실행하기" class="headerlink" title="컨테이너 실행하기"></a>컨테이너 실행하기</h1><h2 id="Docker-CLI"><a href="#Docker-CLI" class="headerlink" title="Docker CLI"></a>Docker CLI</h2><figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros">docker <span class="hljs-built_in">run</span> docker-example-single<br></code></pre></td></tr></table></figure>
+<p>run 명령어를 사용해 위에서 만들었던 이미지를 바탕으로 컨테이너를 실행하면 아래와 같은 출력을 확인할 수 있다.</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-section">=== 간단한 Lodash 예제 ===</span><br><br>활성 사용자: Alice, Charlie<br><br><span class="hljs-section">=== 애플리케이션 실행 완료 ===</span><br></code></pre></td></tr></table></figure>
+<h2 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h2><blockquote>
+<p>Docker Compose는 여러 개의 컨테이너로 이루어진 애플리케이션을 정의하고 실행하기 위한 도구로, docker-compose.yml이라는 YAML 설정 파일을 통해 서비스, 네트워크, 볼륨 등을 한 번에 정의할 수 있다. 단일 명령어인 docker compose up으로 애플리케이션 전체 스택을 실행할 수 있다.</p>
+</blockquote>
+<p>docker compose는 앞의 설명대로 여러 개의 컨테이너로 이루어진 애플리케이션을 정의하고 실행하기 위한 도구이다. 만약 docker cli를 통해서 기본적인 앱(프론트, 백, db)을 실행시키려고 한다면 이미지 빌드를 위한 build 명령어만 3번, 컨테이너 실행을 위한 명령어인 run을 또 3번 실행시켜야 할 것이다. 하지만 docker compose를 사용하면 이러한 번거로움을 한 번에 해결할 수 있다. </p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">postgres:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">postgres:15</span><br>    <span class="hljs-attr">container_name:</span> <span class="hljs-string">my_postgres</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;5432:5432&quot;</span><br>    <span class="hljs-attr">env_file:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./.env</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">pgdata:/var/lib/postgresql/data</span><br><br>  <span class="hljs-attr">backend:</span><br>    <span class="hljs-attr">build:</span><br>      <span class="hljs-attr">context:</span> <span class="hljs-string">./back-end</span><br>      <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">Dockerfile</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;3000:3000&quot;</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./back-end:/app</span><br>    <span class="hljs-attr">command:</span> <span class="hljs-string">npm</span> <span class="hljs-string">run</span> <span class="hljs-string">start:dev</span><br>    <span class="hljs-attr">env_file:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./.env</span><br>    <span class="hljs-attr">depends_on:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">postgres</span><br><br>  <span class="hljs-attr">frontend:</span><br>    <span class="hljs-attr">build:</span><br>      <span class="hljs-attr">context:</span> <span class="hljs-string">./front-end</span><br>      <span class="hljs-attr">dockerfile:</span> <span class="hljs-string">Dockerfile</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;5173:5173&quot;</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./front-end:/app</span><br>    <span class="hljs-attr">depends_on:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">backend</span><br></code></pre></td></tr></table></figure>
+<p>docker-compose.yml 파일 자체는 직관적이어서 보기만 해도 각 서비스와 설정이 어떤 역할을 하는지 쉽게 이해할 수 있다. 다만, volumes와 depends_on 속성은 조금 더 주의 깊게 살펴볼 필요가 있다.</p>
+<p> volumes는 컨테이너가 삭제되거나 재시작되더라도 데이터를 유지할 수 있는 영속적 저장소를 제공한다. 호스트 디렉토리를 컨테이너 내부와 연결하는 Bind Mount는 코드 변경 사항이 즉시 반영되므로 개발 환경에서 주로 사용된다. 핫 리로드 기능을 사용하려면 필수적인 기능이므로 참고해두자. Named Volume은 컨테이너와 독립적으로 데이터를 관리할 수 있어 운영 환경에서 안정적이다. 위에서 데이터베이스의 데이터 유지를 위해 pgdata가 바로 Named Volume에 해당한다.</p>
+<p> 한편, depends_on은 서비스 간 실행 순서를 정의하는 속성으로, 예를 들어 백엔드 서비스가 데이터베이스보다 먼저 실행되지 않도록 제어할 수 있다. 위에서는 db, 백엔드, 프론트 순으로 실행 순서를 정의하고 있다. 다만 이는 컨테이너 실행 순서만 보장하는 것이지 실제 서비스 내부 실행 상태까지는 반영하지 않는다.</p>
+<h1 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h1><p>프론트를 주로 다루면서도, 사내에서 Jenkins를 활용한 자동 배포, SonarQube 실행 등을 경험하며 자연스럽게 데브옵스 문화에 관심을 가지게 되었다. 과거 부트캠프에 참여했을 때 동일한 개발 환경을 세팅하는 과정에서 일부 수강생들이 환경 문제로 많은 시간을 허비하는 것을 보며, 동일한 환경에서 개발과 실행을 보장하는 것의 중요성을 직접 체감했다. 회사에서도 QC팀의 테스트 결과와 개발자의 테스트 결과가 달라 혼선이 발생하는 경우를 경험하며, 환경의 일관성과 인프라의 안정성이 얼마나 중요한지 더욱 느꼈다.</p>
+<p>이번 Docker 학습을 계기로, 단순히 이식성이나 인프라의 중요성을 인식하는 수준을 넘어, 실질적으로 팀 내 인프라에 기여하고자 하는 동기가 생겼다. 앞으로 이러한 경험을 바탕으로 팀의 개발 환경과 배포 체계를 개선하며, 보다 안정적이고 효율적인 협업 문화를 만드는 데 기여하도록 노력해봐야겠다.</p>
+<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
+<li><a href="https://docs.docker.com/">https://docs.docker.com/</a></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>Learning Javascript Design Patterns</title>
+    <url>/2025/02/04/Learning-Javascript-Design-Patterns/</url>
+    <content><![CDATA[<h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p><a href="https://github.com/BookCrushers/Learning-JavaScript-Design-Patterns">https://github.com/BookCrushers/Learning-JavaScript-Design-Patterns</a></p>
+<p>1월 초에 시작한 북스터디를 이제 마무리하면서 회고를 남긴다. 새로운 지식들을 배우는 과정은 정말 즐거웠지만, 매일 책을 읽는 일 자체는 생각보다 꽤 어려웠다. 책 분량이 많지 않았음에도 새로운 습관을 만들고 그것을 꾸준히 이어가는 게 개인적으로 쉽지 않았던 것 같다. 그럼에도 불구하고 끝까지 잘 해냈다는 점에서 뿌듯함을 느끼고, 함께 해준 팀 동료에게 감사함을 표하고 싶다.</p>
+<h1 id="내용-정리"><a href="#내용-정리" class="headerlink" title="내용 정리"></a>내용 정리</h1><p>이 책은 자바스크립트 패턴, 그리고 리액트 패턴을 다루고 있는 책이다. 해당 내용들을 심층적으로 다룬다기보다는 튜토리얼 정도의 느낌으로 알려주는 책이라고 생각한다.</p>
+<h1 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h1><p>이 책을 읽고 느낀 점은 바로 ‘캐시’의 중요성이다. 사실 이 부분은 자바스크립트 패턴보다는 후반부의 렌더링 패턴을 읽으면서 더 크게 와닿았다. 캐시는 일반적으로 데이터를 빠르게 접근할 수 있는 임시 저장 공간을 의미하지만, 내가 강조하고자 하는 건 캐시 그 자체라기보다는 데이터를 임시로 저장해두고 빠르게 가져오는 그 과정이다.</p>
+<p>책을 읽으면서 Tanstack Query와 Next.js 관련 인터넷 강의를 들었는데, 두 기술 모두 캐시를 적극적으로 활용한다는 점이 인상 깊었다. Tanstack Query에서는 API 요청 후 빠른 응답을 위해 데이터를 캐시에 저장하고, Next.js에서도 여러 곳에서 캐시 기능을 활용하는 모습을 볼 수 있었다.</p>
+<p>특히, Next.js에서는 캐시 기능을 다양한 방식으로 활용하여 성능을 최적화하고, 페이지 로딩 속도를 개선하는 데 큰 도움을 준다. 예를 들어, SSG(Static Site Generation)에서는 빌드 시 미리 HTML 파일을 생성해두고, 이를 저장하여 빠르게 응답할 수 있게 만든다.</p>
+<p>이렇게 미리 준비된 페이지는 클라이언트 요청 시 서버에서 데이터를 새로 가져오는 대신, 이미 만들어둔 정적 파일을 즉시 제공하게 되어 응답 속도가 훨씬 빨라진다. 이런 접근은 콘텐츠가 자주 변경되지 않는 페이지에서 특히 유효하다.</p>
+<p>또한, 전역 상태 관리도 캐시와 비슷한 개념처럼 느껴졌다. 캐시의 핵심은 데이터를 빠르게 가져오는 것인데, 전역 상태 관리에서는 데이터를 한 번 저장해두고 애플리케이션의 여러 컴포넌트에서 빠르게 접근할 수 있게 한다. 이는 서버에서 매번 데이터를 새로 요청하는 대신, 이미 저장된 정보를 재사용하는 방식이므로 응답 속도를 높이는 데 중요한 역할을 한다.</p>
+<p>결국, 캐시를 잘 활용한다는 것은 데이터를 효율적으로 관리한다는 의미이고, 이는 좋은 애플리케이션을 만드는 데 필수적인 요소라고 생각한다. 데이터를 효율적으로 관리하고 빠르게 접근할 수 있도록 설계된 애플리케이션은 사용자가 경험하는 속도와 품질을 크게 향상시킬 수 있다.</p>
+<p>그렇기에 캐시가 주니어 개발자와 시니어 개발자를 구분짓는 중요한 기준이 될 수 있다는 생각이 들었다. 이를 위해 캐시에 대해 더 깊이 공부해야겠다는 목표를 세우게 되었다.</p>
+<p>약간 아쉬운 점은 책의 번역이 완전히 자연스럽지 않다는 부분이었지만, 그런 점을 감안하더라도 패턴에 대한 다양한 지식을 이해하기 쉽게 풀어내고 있다는 점에서 여전히 좋은 책이었다고 생각한다.</p>
+]]></content>
+      <categories>
+        <category>Book</category>
+      </categories>
+      <tags>
+        <tag>Book</tag>
+        <tag>Insight</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Hexo] Hexo로 블로그 만들기</title>
+    <url>/2022/10/14/Making-Hexo-Blog/</url>
+    <content><![CDATA[<p>개인 블로그를 만들어야겠다는 생각만 계속 하다가 우연히 회사에서 일을 하다가 <strong>Hexo</strong> 프레임워크를 접하게 되었다. 보자마자 나한테 딱 적합한 프레임워크라는 생각이 들어서 <strong>Hexo</strong>를 통해 개인 블로그를 만들어야겠다고 결정했다.</p>
+<p>다른 무엇보다도 마크다운 파일을 활용할 수 있다는 점이 가장 매력적으로 다가왔다. 그동안 개인적으로 깃허브의 TIL 저장소에 개발 관련 지식들을 마크다운 파일로 계속 작성해왔었는데, 그 자료들을 그대로 사용할 수 있게 되었다.</p>
+<h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
+<p><em>공식문서</em></p>
+<p><em>Hexo는 빠르고 간단하고 파워풀한 블로그 프레임워크입니다. Markdown(또는 다른 언어)을 사용하여 포스트를 작성하면 Hexo는 금세 멋진 테마를 가미해서 정적인 파일을 생성합니다.</em></p>
+</blockquote>
+<h1 id="🔧설치"><a href="#🔧설치" class="headerlink" title="🔧설치"></a>🔧설치</h1><p>Hexo의 설치를 위해서는 아래 두 가지가 필요하다.</p>
+<ul>
+<li>Node.js (Should be at least Node.js 10.13, recommends 12.0 or higher)</li>
+<li>Git</li>
+</ul>
+<p>두 가지를 모두 설치했다면, npm을 이용해서 <strong>Hexo</strong>를 설치해주면 된다.</p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><code class="hljs avrasm">$ npm install -g hexo-<span class="hljs-keyword">cli</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="👶초기화"><a href="#👶초기화" class="headerlink" title="👶초기화"></a>👶초기화</h1><p><strong>Hexo</strong>를 설치했다면, 타겟 <code>&lt;folder&gt;</code>의 <strong>Hexo</strong>를 초기화하기 위해 터미널에서 아래 명령어를 실행하자.</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><code class="hljs swift">$ hexo <span class="hljs-keyword">init</span> &lt;folder&gt;<br></code></pre></td></tr></table></figure>
+
+<p>초기화가 완료되면 다음과 같은 폴더 구조를 가지게 된다.</p>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><code class="hljs 1c">.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br><span class="hljs-string">|   ├── _drafts</span><br><span class="hljs-string">|   └── _posts</span><br>└── themes<br></code></pre></td></tr></table></figure>
+
+<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><ul>
+<li>환경설정 파일</li>
+</ul>
+<h2 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h2><ul>
+<li><strong>Hexo</strong>는 scaffold 폴더를 기준으로 포스트를 생성</li>
+<li>다시 말하면 문서의 기본 틀이 위치하는 폴더이다.</li>
+</ul>
+<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><ul>
+<li>웹 사이트 컨텐츠 폴더</li>
+<li><strong>Hexo</strong>는 숨겨진 파일과 _ (언더스코어)로 시작하는 파일 및 폴더들을 무시(_posts 폴더는 제외)</li>
+<li>렌더링이 가능한 파일들(ex. Markdown, HTML)은 처리된 후 public 폴더로 들어감</li>
+<li>그 외 파일들은 단순히 복사</li>
+</ul>
+<h2 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h2><ul>
+<li><strong>Hexo</strong>는 theme와 source 폴더의 컨텐츠를 혼합해 정적인 웹 사이트를 생성</li>
+</ul>
+<h1 id="🤔튜토리얼"><a href="#🤔튜토리얼" class="headerlink" title="🤔튜토리얼"></a>🤔튜토리얼</h1><blockquote>
+<p>아래 튜토리얼은 hexo 6.3.0을 기준으로 작성됨.</p>
+</blockquote>
+<h2 id="초기-화면-확인"><a href="#초기-화면-확인" class="headerlink" title="초기 화면 확인"></a>초기 화면 확인</h2><p>npm을 통해 <strong>Hexo</strong>를 설치하면 기본적으로 <a href="https://github.com/hexojs/hexo-theme-landscape#readme">landscape</a> 테마가 설정되어있고, 1개의 포스트가 작성되어있다.</p>
+<p>이를 로컬 서버(<a href="http://localhost:4000/)%EC%97%90%EC%84%9C">http://localhost:4000/)에서</a> 확인하기 위해서는 아래 명령어를 실행시키면 된다.</p>
+<figure class="highlight axapta"><table><tr><td class="code"><pre><code class="hljs axapta">$ hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="포스트-작성하기"><a href="#포스트-작성하기" class="headerlink" title="포스트 작성하기"></a>포스트 작성하기</h2><p>포스트를 작성하기 위해서는 new라는 명령어를 사용하면 된다.</p>
+<figure class="highlight gauss"><table><tr><td class="code"><pre><code class="hljs gauss">$ hexo <span class="hljs-keyword">new</span> [layout] &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>layout이 제공되지 않으면 default layout 사용</li>
+<li>title에 공백 포함시 따옴표로 감싸주기</li>
+</ul>
+<p>default layout은 환경설정 파일인 _config.yml에서 확인할 수 있다. 초기에는 post layout이 적용되어 있다.</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><code class="hljs actionscript">$ hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;My First post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/2022/10/14/Making-Hexo-Blog/image1.png"></p>
+<p>포스트가 정상적으로 작성되었다.</p>
+<h2 id="Front-matter-활용"><a href="#Front-matter-활용" class="headerlink" title="Front-matter 활용"></a>Front-matter 활용</h2><h3 id="Front-matter란"><a href="#Front-matter란" class="headerlink" title="Front-matter란?"></a>Front-matter란?</h3><p>Front-matter는 YAML 또는 JSON으로 구성된 문단이다. 파일의 처음 부분에 위치해 사용자 글 작성에 대한 설정을 하는데 사용된다.</p>
+<ul>
+<li><strong>YAML</strong><figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">Hello</span> <span class="hljs-string">World</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2013</span><span class="hljs-string">/7/13</span> <span class="hljs-number">20</span><span class="hljs-string">:46:25</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure></li>
+<li><strong>JSON</strong><figure class="highlight llvm"><table><tr><td class="code"><pre><code class="hljs llvm"><span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Hello World&quot;</span><span class="hljs-punctuation">,</span><br><span class="hljs-string">&quot;date&quot;</span>: <span class="hljs-string">&quot;2013/7/13 20:46:25&quot;</span><br><span class="hljs-comment">;;;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>자세한 설정은 <a href="https://hexo.io/docs/front-matter">링크</a>를 확인해보자.</p>
+<h3 id="Categories-Tags"><a href="#Categories-Tags" class="headerlink" title="Categories &amp; Tags"></a>Categories &amp; Tags</h3><p>위 두 가지는 Front-matter의 속성들로, post에만 적용이 가능하다. 카테고리는 게시물에 순서대로 적용되기 때문에 계층이 발생하지만 태그는 계층이 발생하지 않기 때문에 순서는 중요하지 않다.</p>
+<hr>
+<p>그러면 실제로 Front-matter를 사용해보자.</p>
+<ol>
+<li><p>scaffolds폴더에 layout을 작성해준다. </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">root/scaffolds/sports</span><br><br><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;<br><span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;<br><span class="hljs-attr">categories:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Sports</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Fun</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Exciting</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>명령어를 통해 해당 layout을 적용한 post를 생성한다.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new sports <span class="hljs-string">&quot;About Sports&quot;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="/2022/10/14/Making-Hexo-Blog/image2.png"></p>
+<h2 id="Asset-Folder-활용"><a href="#Asset-Folder-활용" class="headerlink" title="Asset Folder 활용"></a>Asset Folder 활용</h2><h3 id="Global-Asset-Folder"><a href="#Global-Asset-Folder" class="headerlink" title="Global Asset Folder"></a>Global Asset Folder</h3><p>Assets은 source폴더 안에 위치하는 post가 아닌 파일로 images, CSS, javascript 파일등이 이에 해당한다. <strong>Hexo</strong> 프로젝트에 많은 이미지 파일을 사용할 것이 아니라면 이미지 파일을 관리하기 가장 쉬운 방법은 이미지 파일들을 <code>source/images</code> 디렉토리에 위치시키는 것이다. </p>
+<h3 id="Post-Asset-Folder"><a href="#Post-Asset-Folder" class="headerlink" title="Post Asset Folder"></a>Post Asset Folder</h3><p>Post Asset Folder는 Assets을 주기적으로 사용하며 post별로 Assets을 구분하고 싶은 사람들을 위해 <strong>Hexo</strong>가 제공하는 기능이다.<br>이 기능을 사용하기 위해서는 _config.yml에서 post_asset_folder의 값을 true로 변경해주면 된다. 그 다음부터는 <strong>Hexo</strong>가 post를 생성할 때마다 post와 동일한 이름을 가진 Asset Folder를 생성한다. 그리고 post에서는 상대 경로를 사용해 Assets에 접근할 수 있다. </p>
+<h3 id="이미지-넣기"><a href="#이미지-넣기" class="headerlink" title="이미지 넣기"></a>이미지 넣기</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">_config.yml</span><br><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">marked:</span><br>  <span class="hljs-attr">prependRoot:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">postAsset:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<p>위와 같이 설정하면 Asset image는 자동으로 해당 포스트의 경로로 resolve된다.<br>예를 들어, <code>image.jpg</code>가 <code>/2020/01/02/foo/image.jpg</code>에 있다고 한다면, <code>/2020/01/02/foo</code> post의 Asset image라는 걸 의미한다. 그리고 아래와 같이 작성하면, </p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><code class="hljs scss">!<span class="hljs-selector-attr">[]</span>(image.jpg)<br></code></pre></td></tr></table></figure>
+
+<p><code>&lt;img src=&quot;/2020/01/02/foo/image.jpg&gt;</code>로 렌더링된다.</p>
+<h1 id="🚀배포하기"><a href="#🚀배포하기" class="headerlink" title="🚀배포하기"></a>🚀배포하기</h1><p><strong>Hexo</strong>를 사용하면 다양한 곳에 배포가 가능하지만, 일반적으로 Github Pages를 가장 많이 활용한다. 특히 <a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>패키지를 사용하면 정말 간단하게 Github Pages로 배포가 가능하다.</p>
+<ol>
+<li><p>깃허브에서 username.github.io의 이름으로 저장소를 만든다. 여기서 username은 사용자 본인의 username이다.</p>
+</li>
+<li><p>해당 저장소에서 블로그를 만든다.</p>
+</li>
+<li><p><a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>를 설치한다.</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><code class="hljs ada">$ npm install hexo-deployer-git <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>_config.yml 파일에서 배포 관련 설정을 한다.</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repo:</span> <span class="hljs-params">&lt;repository url&gt;</span> <span class="hljs-meta"># https:<span class="hljs-comment">//bitbucket.org/JohnSmith/johnsmith.bitbucket.io</span></span><br><span class="hljs-symbol">  branch:</span> [branch]<br><span class="hljs-symbol">  message:</span> [message]<br></code></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Description</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">repo</td>
+<td align="left">저장소 URL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">branch</td>
+<td align="left">브랜치 이름</td>
+<td align="left">gh-pages (GitHub) coding-pages (Coding.net) master (others)</td>
+</tr>
+<tr>
+<td align="left">message</td>
+<td align="left">커밋 메시지</td>
+<td align="left"><code>Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;</code></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>hexo clean &amp;&amp; hexo deploy 명령어로 배포한다.</p>
+</li>
+</ol>
+<h1 id="😎마무리"><a href="#😎마무리" class="headerlink" title="😎마무리"></a>😎마무리</h1><p>지금까지 <strong>Hexo</strong>를 활용해 블로그를 만드는 법에 대해 간단하게 알아봤다. 물론 깊은 내용을 다루자면 끝도 없겠지만 위 내용으로도 블로그를 만들고 배포하는 데에는 전혀 문제가 없을 것이라고 생각한다.</p>
+<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
+<li><a href="https://hexo.io/ko/docs/">https://hexo.io/ko/docs/</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Tutorial</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Database] IndexedDB 기초</title>
+    <url>/2022/10/26/Using-IndexedDB/</url>
+    <content><![CDATA[<p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
+<h1 id="🙋‍♂️개요"><a href="#🙋‍♂️개요" class="headerlink" title="🙋‍♂️개요"></a>🙋‍♂️개요</h1><blockquote>
+<p><em>MDN IndexedDB API 문서</em></p>
+<p><em>IndexedDB는 대용량의 구조화 데이터를 저장할 수 있는 클라이언트 사이드 저장소이다.</em></p>
+</blockquote>
+<h1 id="🔧기본-패턴"><a href="#🔧기본-패턴" class="headerlink" title="🔧기본 패턴"></a>🔧기본 패턴</h1><ol>
+<li><p>데이터베이스와의 연결을 시작한다.</p>
+</li>
+<li><p>데이터베이스에 object store을 생성한다.</p>
+</li>
+<li><p>Transaction을 시작한 후 request를 생성해 데이터 추가, 받기 등의 데이터베이스 작업을 수행한다.</p>
+</li>
+</ol>
+<blockquote>
+<p><em>W3C IndexedDB API 문서</em></p>
+<p><em>Transaction은 데이터베이스에서 데이터와 상호작용하기 위해 사용된다. 데이터를 읽거나 데이터베이스에 데이터를 기록하는 작업 모두 Transaction에 의해 수행된다.</em></p>
+</blockquote>
+<p>이제 위 패턴에 맞추어 데이터베이스를 만들고 데이터를 추가하는 작업까지 진행해보겠다.</p>
+<h1 id="👶튜토리얼"><a href="#👶튜토리얼" class="headerlink" title="👶튜토리얼"></a>👶튜토리얼</h1><blockquote>
+<p><em>MDN IndexedDB API 문서</em></p>
+<p><em>새로운 데이터베이스를 만들거나, 이미 존재하는 데이터베이스의 버전을 높일 경우 onupgradeneeded event가 트리거된다. 그리고 onupgradeneeded event에 대한 핸들러를 통해서만 데이터베이스의 구조를 변경할 수 있다.</em></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> testData = [<br>  &#123; <span class="hljs-attr">ssn</span>: <span class="hljs-string">&#x27;444-44-4444&#x27;</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Bill&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">35</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">&#x27;bill@company.com&#x27;</span> &#125;,<br>  &#123; <span class="hljs-attr">ssn</span>: <span class="hljs-string">&#x27;555-55-5555&#x27;</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Donna&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">32</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">&#x27;donna@home.org&#x27;</span> &#125;,<br>]<br><br><span class="hljs-keyword">const</span> openDBRequest = <span class="hljs-variable language_">window</span>.<span class="hljs-property">indexedDB</span>.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;test&#x27;</span>);<br>openRequest.<span class="hljs-property">onupgradeneeded</span> = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">let</span> db = event.<span class="hljs-property">target</span>.<span class="hljs-property">result</span>;<br><br>  <span class="hljs-keyword">const</span> createTestStoreRequest = db.<span class="hljs-title function_">createObjectStore</span>(<span class="hljs-string">&#x27;test&#x27;</span>, &#123;<br>    <span class="hljs-attr">keyPath</span>: <span class="hljs-string">&#x27;ssn&#x27;</span>,<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>indexedDB</strong> api의 open 메서드를 통해 데이터베이스와의 연결을 시작한다.</p>
+<p> <strong>indexedDB</strong>의 모든 작업은 비동기적으로 수행된다. 그러니까 open 메서드는 데이터베이스와 연결을 요청했을뿐 바로 연결이 이루어지지 않는다는 것이다.</p>
+</li>
+<li><p>트리거된 onupgradeneeded event에서 object store 생성을 요청한다.</p>
+<p> 데이터베이스와의 연결이 정상적으로 시작되면 onupgradeneeded event가 트리거된다.</p>
+<p> Promise나 async await을 사용하는 것처럼 <strong>IndexedDB</strong>에서는 특정 이벤트에 핸들러를 작성하는 것으로 비동기 처리되는 작업이 완료되는 시점에 핸들러의 로직을 실행시킬 수 있다.</p>
+<p> 그러니까 위의 예시는 데이터베이스가 생성된 다음에 발생되는 onupgradeneeded event에 핸들러를 작성해서 db 라는 변수에 데이터베이스를 할당하고, 데이터를 저장하기 위한 object store을 만든 것이다. object store를 생성하기 위해서는 createObjectStore 메서드를 사용하면 되는데, 이 메서드는 두 가지 인자를 받는다.</p>
+<ul>
+<li><p><strong>name</strong> : object store의 이름이다.</p>
+</li>
+<li><p><strong>options</strong> [Optional] : 아래의 속성을 갖는 객체이다.</p>
+<ol>
+<li><p><strong>Keypath</strong> [Optional]</p>
+<p> 새로운 object store에서 사용할 Keypath를 설정한다. 저장할 각 객체 데이터들이 고유한 값을 가지는 속성명을 작성하면 된다. 데이터베이스의 기본키를 설정한다고 생각하면 좀 더 이해가 쉬울 것이다.</p>
+</li>
+<li><p><strong>autoIncrement</strong> [Optional]</p>
+<p> 데이터의 키를 생성해주는 매커니즘인 key-generator 사용 여부를 설정한다. 기본값은 false이다.</p>
+</li>
+</ol>
+<p>  여기서 주의할 점은 keypath를 작성하지 않고 autoIncrement도 false인 상태라면 데이터를 삽입할 때마다 각 데이터의 키를 별도로 제공해주어야 한다는 점이다. 이렇게 번거로운 과정을 거치지 않기 위해서는 위의 예시처럼 Keypath의 값을 작성해주는 게 가장 좋다. 혹은 autoIncrement를 true로 바꿔 key-generator을 사용해서 데이터의 키를 자동으로 생성할 수도 있다.</p>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">openRequest.<span class="hljs-property">onupgradeneeded</span> = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> &#123;<br>  ...<br>  createTestStoreRequest.<span class="hljs-property">transaction</span>.<span class="hljs-property">oncomplete</span> = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">const</span> testObjStore = db.<span class="hljs-title function_">transaction</span>(<span class="hljs-string">&#x27;test&#x27;</span>, <span class="hljs-string">&#x27;readwrite&#x27;</span>).<span class="hljs-title function_">objectStore</span>(<span class="hljs-string">&#x27;test&#x27;</span>)<br>    testData.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> &#123;<br>      testObjStore.<span class="hljs-title function_">add</span>(item)<br>    &#125;)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>트리거된 oncomplete event에서 새롭게 생성된 object store에다가 데이터를 삽입한다.<br> 앞 단계에서와 마찬가지로 object store은 생성 요청만 이루어졌을 뿐이다. 따라서 데이터를 정상적으로 삽입하기 위해서는 object store 생성이 완료되는 시점에 트리거되는 oncomplete event에서 데이터를 삽입해주면 된다.</p>
+<p> 데이터베이스와 관련된 작업을 하기 위해서는 먼저 트랜잭션을 시작해야 한다. 이를 위해서는 transaction 메서드를 사용해야 하며, transaction 메서드는 3개의 인자를 받는다.</p>
+<ul>
+<li><p><strong>storeNames</strong></p>
+<p>새로운 트랜잭션의 scope에 포함시킬 object store의 이름들을 값을 갖는 배열이다. 단 하나의 object store만 포함시킬 경우에는 object store의 이름을 문자열로 전달할 수도 있다. </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">db.<span class="hljs-title function_">transaction</span>([<span class="hljs-string">&#x27;my-store-name&#x27;</span>]);<br>db.<span class="hljs-title function_">transaction</span>(<span class="hljs-string">&#x27;my-store-name&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<p>데이터베이스에 있는 모든 object store을 포함시키려면 <code>IDBDatabase.objectStoreNames</code> 속성을 사용할 수 있다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">db.<span class="hljs-title function_">transaction</span>(db.<span class="hljs-property">objectStoreNames</span>);<br></code></pre></td></tr></table></figure>
+
+</li>
+<li><p><strong>mode</strong> [Optional]</p>
+<p>트랜잭션에서 수행될 작업의 유형을 설정한다. 이 때 설정할 수 있는 작업의 유형은 총 3가지가 있다.</p>
+<ol>
+<li>readonly</li>
+<li>readwrite</li>
+<li>versionUpdate</li>
+</ol>
+<p>  여기서 versionUpdate는 수동으로는 설정할 수 없으며 onupgradeneeded 이벤트에서 자동으로 생성된다.<br>  mode의 값을 정의하지 않으면, 기본값인 readonly로 설정된다.</p>
+</li>
+<li><p><strong>options</strong> [Optional]</p>
+<p>아래의 속성을 갖는 객체이다.</p>
+<ol>
+<li><p><strong>durability</strong></p>
+<p> 트랜잭션을 커밋할 때 성능 또는 내구성의 우선 순위를 지정할지 여부를 웹 브라우저에게 알려주는 힌트이다. strict, relaxed, default까지 총 3가지 값을 설정할 수 있으며 기본값은 default이다.</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="/2022/10/26/Using-IndexedDB/image1.PNG"></p>
+<h1 id="😎마무리"><a href="#😎마무리" class="headerlink" title="😎마무리"></a>😎마무리</h1><p>지금까지 <strong>indexedDB</strong>를 생성해 데이터를 삽입하는 법에 대해 간단하게 알아봤다. 데이터베이스에 대한 기초적인 지식만 있다면 어렵지 않게 사용할 수 있을 것이라 생각한다. </p>
+<h1 id="📚참고자료"><a href="#📚참고자료" class="headerlink" title="📚참고자료"></a>📚참고자료</h1><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Database</category>
+      </categories>
+      <tags>
+        <tag>Tutorial</tag>
+        <tag>Database</tag>
+        <tag>indexedDB</tag>
+        <tag>Basic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The-Pragmatic-Programmer</title>
+    <url>/2025/01/05/The-Pragmatic-Programmer/</url>
+    <content><![CDATA[<h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>새해는 사람한테 참 좋은 원동력인 것 같다. 그동안 ‘다음에 해야지…’ 라고 생각하면서 미뤄왔던 일들을 한 번에 처리할 수 있는 힘을 얻을 수 있으니 말이다. 나같은 경우에는 개발 관련 서적을 읽는 것이 미뤄왔던 일들 중 하나였다. 개발자가 된 이후 내 개발 지식은 모두 유튜브, 인터넷 강의, 개발 문서에 그 뿌리를 두고 있었다. 이 셋 모두 빠르고 쉽게 정보를 얻을 수 있다는 점에서 좋지만, 책만큼 정제된 지식을 얻기는 어렵다고 생각한다. 정제된 지식은 많은 고민과 생각이 필요하기에 앞의 세 가지에 의지를 많이 했던 것 같다.</p>
+<p>하지만 새해가 된 김에 무작정 책 한 권을 읽겠다고 마음을 먹었고, 그 책이 바로 ‘실용주의 프로그래머’였다. 워낙 유명한 책이기도 하고, 개발 이론과 관련된 책보다는 인사이트에 관련된 책을 읽고 싶었다.</p>
+<p>결론부터 말하자면, 400페이지에 가까운 책을 3~4일에 다 읽을 만큼 너무나 재밌는 책이었다. 회사에서 중간 관리자로서 고민하고 있던 나에게 절실하게 필요한 이야기들이 많다는 생각이 들었고, 마지막에 가서는 괜시리 그냥 일반 직장인인 개발자인 내가 세계의 사명을 짊어진 영웅처럼 느껴지기도 했다. 내 마음에 와닿았던 몇 가지 Topic들을 이야기해보려고 한다.</p>
+<h1 id="내용-정리"><a href="#내용-정리" class="headerlink" title="내용 정리"></a>내용 정리</h1><h2 id="Topic-7-소통하라"><a href="#Topic-7-소통하라" class="headerlink" title="Topic 7 소통하라!"></a>Topic 7 소통하라!</h2><p>취준생 시절, 자소서에는 소통이라는 단어가 빠질 수가 없었다. 회사는 혼자서 할 수 없는 일을 위한 곳이고, 이를 위해서는 소통이 필수적이기 때문이다. 그렇다고 내가 소통을 잘하는 사람이었나 돌이켜 보면 ‘전혀 아니었다’라고 말할 수 있겠다. 가령 동료들과 말을 하다가도 ‘음… 뭐였지?’ 이런 버퍼링이 걸릴 때가 꽤 많았다.</p>
+<p>책에서는 여러 가지 방법들을 제시해주는데, 대부분은 소통하기 전에 생각을 먼저 해보라는 이야기였다. 지금이 이 이야기를 하기 좋은 때인지, 이렇게 전달하는 것이 과연 효과적인 것인지 등…</p>
+<p>팀원들과 소통하기 전에 5분 정도 생각하고, 내 생각을 글로 옮긴 후에 소통을 시작해봤는데, 만족스러운 결과를 얻을 수 있었다. 물론 초심자의 행운일 수도 있겠지만 일들이 내가 원하는 대로 풀리는 느낌이었다. 내가 의도한 바를 상대방에게 명확하게 전달했다는 생각이 들었고, 결과 또한 너무 만족스러웠다.</p>
+<h2 id="Topic-10-직교성"><a href="#Topic-10-직교성" class="headerlink" title="Topic 10 직교성"></a>Topic 10 직교성</h2><p>직교성이란 기하학에서 빌려 온 용어로, 두 직선의 관계를 이야기할 때 사용한다. 두 직선이 직교한다는 건 두 직선이 독립적이라는 걸 의미하는데, 이와 유사하게 컴퓨터 과학에서 이 용어는 하나가 바뀌어도 나머지에 어떤 영향도 주지 않음을 의미한다.</p>
+<p>회사에서 직교성의 중요성을 뼈저리게 느낀 순간이 있었다. 내가 진행하던 프로젝트중 Vue.js 기반의 프로젝트가 있었는데, 비즈니스 로직과 UI 쪽 로직이 무분별하게 섞여있었다. 서버 통신 쪽 로직만을 테스트하려고 했는데, 이를 위해서는 어쩔 수 없이 Vue 컴포넌트를 렌더링해야만 했었다. 비즈니스 로직과 UI 쪽 로직이 잘 구분되어 있었다면 간단했을 일이 직교성을 무시한 채 뒤엉켜있어 엄청난 시간이 드는 일이 되어버리고 말았다.</p>
+<p>직교성이라는 개념을 알고, 이에 따라 빠르게 리팩토링을 했다면 내가 바보라는 생각은 하지 않았을 것 같다.</p>
+<h2 id="Topic-20-디버깅"><a href="#Topic-20-디버깅" class="headerlink" title="Topic 20 디버깅"></a>Topic 20 디버깅</h2><blockquote>
+<p>참으로 고통스러운 일입니다.<br>자신이 겪는 어려움을 보고는 알게 되죠.<br>다른 누구도 아닌 바로 자신이 문제를 만들었다는 걸.</p>
+<p>-소포클레스</p>
+</blockquote>
+<p>스포클레스가 남긴 말로 디버깅 챕터 시작 부분에 인용되어있다. 디버깅을 한다는 건 문제가 발생했다는 것이고, 그 문제를 내가 만들었을지도 모른다는 것이다.나의 부족함을 마주하는 작업이기 때문에 디버깅은 고통스러운 작업일 수밖에 없다.</p>
+<p>너무나 당연한 이야기지만 개발자는 완벽한 존재가 아니다. 그런 사람이 만드는 소프트웨어 또한 불완전할 수 밖에 없다. 그런데 나를 포함한 개발자들은 디버깅의 고통을 느끼기 싫어 ‘그럴리가 없는데?’ 라는 생각을 자주 하곤 한다. 이러한 생각 때문에 디버깅은 책임 떠넘기기와 비슷한 작업이 되어버리는 경우가 많다.</p>
+<p>그래서 ‘디버깅은 단지 문제 풀이일 뿐이라는 사실을 받아들이고, 그런 마음으로 공략하라’는 책의 내용이 날 뜨끔하게 만들었던 것 같다.</p>
+<h2 id="Topic-53-오만과-편견"><a href="#Topic-53-오만과-편견" class="headerlink" title="Topic 53 오만과 편견"></a>Topic 53 오만과 편견</h2><blockquote>
+<p>옛 장인들은 자신의 작품에 서명하는 것을 자랑스러워했다. 여러분도 그래야 한다.</p>
+</blockquote>
+<p>사실상 이 책에서 내게 가장 와닿았던 내용이다. 프로젝트가 끝났을 때 그 결과물에 애정이나 긍지를 가지는 개발자는 거의 없었던 것 같다. 대부분 고객사나 일정 등을 문제 삼으며 결과물에 대한 비판을 많이 하곤 했다. 하지만 어떤 일이 있었건 그 결과물을 본인들이 만든 것에는 변함이 없다.</p>
+<p>옛 장인들처럼 자신의 작품에 자랑스럽게 서명하기 위해서는 코딩을 하는 순간순간 최선을 다해야겠다는 생각을 했다. 사람인지라 매순간 최선을 다한다는 건 쉽지 않은 일이겠지만, 적어도 나에게만큼은 부끄럽지 않은 작품을 만들 수 있는 개발자가 되어야겠다.</p>
+<h1 id="정리하며…"><a href="#정리하며…" class="headerlink" title="정리하며…"></a>정리하며…</h1><p>이번 글에서는 4개 정도의 토픽 정도만을 다뤘지만 사실 책에는 훨씬 더 많은 내용들이 있다. 특히 개발 이론적으로도 유용한 내용들이 많아 널리널리 알리고 싶은 책이다.</p>
+<p>그리고 책 중간중간 코딩 예시나 연습 문제 등이 있는데, 이것도 꽤나 재밌으니 다는 아니더라도 관심이 가는 토픽이라면 직접 코딩도 해보는 걸 추천한다. 나같은 경우는 Topic 35의 액터와 프로세스 부분을 따라해보는 게 특히 재밌게 느껴졌다.</p>
+<p>start_actor 함수가 정의되어있지 않아 직접 구현해야했는데, 별 거 아니었지만 구현하고 동작하는 걸 보니 코딩을 처음 배웠을 때의 뿌듯함과 즐거움을 느낄 수 있었던 것 같다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// Topic 35 액터와 프로세스</span><br><br><span class="hljs-keyword">const</span> &#123; dispatch, start, spawn &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;nact&quot;</span>);<br><br><span class="hljs-keyword">const</span> customerActor = &#123;<br>  <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">dispatch</span>(state.<span class="hljs-property">waiter</span>, &#123;<br>      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;주문&quot;</span>,<br>      <span class="hljs-attr">customer</span>: ctx.<span class="hljs-property">self</span>,<br>      <span class="hljs-attr">wants</span>: <span class="hljs-string">&quot;파이&quot;</span>,<br>    &#125;);<br>  &#125;,<br>  <span class="hljs-string">&quot;테이블에 놓다&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;ctx.self.name&#125;</span>이 테이블에 나타난 <span class="hljs-subst">$&#123;msg.food&#125;</span>를 보다.`</span>);<br>  &#125;,<br>  <span class="hljs-string">&quot;남은 파이 없음&quot;</span>: <span class="hljs-function">(<span class="hljs-params">_msg, ctx, _state</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;ctx.self.name&#125;</span>이 파이가 없다고 불평한다.`</span>);<br>  &#125;,<br>&#125;;<br><br><span class="hljs-keyword">const</span> waiterActor = &#123;<br>  주문: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (msg.<span class="hljs-property">wants</span> === <span class="hljs-string">&quot;파이&quot;</span>) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-title function_">dispatch</span>(state.<span class="hljs-property">pieCase</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;한 조각 꺼내기&quot;</span>,<br>        <span class="hljs-attr">customer</span>: msg.<span class="hljs-property">customer</span>,<br>        <span class="hljs-attr">waiter</span>: ctx.<span class="hljs-property">self</span>,<br>      &#125;);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;주문할 수 없는 음식입니다.&quot;</span>);<br>    &#125;<br>  &#125;,<br>  <span class="hljs-string">&quot;주문서에 추가&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<br>      <span class="hljs-string">`종업원이 <span class="hljs-subst">$&#123;msg.food&#125;</span>을 <span class="hljs-subst">$&#123;msg.customer.name&#125;</span>의 주문서에 추가한다.`</span><br>    );<br>  &#125;,<br>  오류: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">customer</span>, &#123;<br>      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;남은 파이 없음&quot;</span>,<br>      <span class="hljs-attr">msg</span>: msg.<span class="hljs-property">msg</span>,<br>    &#125;);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(msg.<span class="hljs-property">msg</span>);<br>  &#125;,<br>&#125;;<br><br><span class="hljs-keyword">const</span> pieCaseActor = &#123;<br>  <span class="hljs-string">&quot;한 조각 꺼내기&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (state.<span class="hljs-property">slices</span>.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) &#123;<br>      <span class="hljs-keyword">let</span> slice = state.<span class="hljs-property">slices</span>.<span class="hljs-title function_">shift</span>();<br>      <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">waiter</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;주문서에 추가&quot;</span>,<br>        <span class="hljs-attr">food</span>: slice,<br>        <span class="hljs-attr">customer</span>: msg.<span class="hljs-property">customer</span>,<br>      &#125;);<br>      <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">customer</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;테이블에 놓다&quot;</span>,<br>        <span class="hljs-attr">food</span>: slice,<br>      &#125;);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">waiter</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;오류&quot;</span>,<br>        <span class="hljs-attr">msg</span>: <span class="hljs-string">&quot;파이가 없습니다.&quot;</span>,<br>        <span class="hljs-attr">customer</span>: msg.<span class="hljs-property">customer</span>,<br>      &#125;);<br>    &#125;<br>  &#125;,<br>&#125;;<br><br><span class="hljs-keyword">const</span> actorSystem = <span class="hljs-title function_">start</span>();<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">start_actor</span> = (<span class="hljs-params">actorSystem, name, actor, initialState</span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_">spawn</span>(<br>    actorSystem,<br>    <span class="hljs-function">(<span class="hljs-params">state = initialState, msg, ctx</span>) =&gt;</span> &#123;<br>      <span class="hljs-keyword">if</span> (actor[msg.<span class="hljs-property">type</span>]) &#123;<br>        <span class="hljs-keyword">return</span> actor[msg.<span class="hljs-property">type</span>](msg, ctx, state);<br>      &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`액터가 <span class="hljs-subst">$&#123;msg.type&#125;</span>을 처리할 수 없습니다.`</span>);<br>      &#125;<br>    &#125;,<br>    name<br>  );<br>&#125;;<br><br><span class="hljs-keyword">let</span> pieCase = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;pie-case&quot;</span>, pieCaseActor, &#123;<br>  <span class="hljs-attr">slices</span>: [<span class="hljs-string">&quot;사과 파이&quot;</span>, <span class="hljs-string">&quot;딸기 파이&quot;</span>, <span class="hljs-string">&quot;블루베리 파이&quot;</span>],<br>&#125;);<br><span class="hljs-keyword">let</span> waiter = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;waiter&quot;</span>, waiterActor, &#123;<br>  pieCase,<br>&#125;);<br><span class="hljs-keyword">let</span> customer1 = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;customer1&quot;</span>, customerActor, &#123;<br>  waiter,<br>&#125;);<br><span class="hljs-keyword">let</span> customer2 = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;customer2&quot;</span>, customerActor, &#123;<br>  waiter,<br>&#125;);<br><br><span class="hljs-title function_">dispatch</span>(customer1, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br><span class="hljs-title function_">dispatch</span>(customer2, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br><span class="hljs-title function_">dispatch</span>(customer1, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br><span class="hljs-title function_">dispatch</span>(customer2, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br></code></pre></td></tr></table></figure>
+
+<p>책을 다 읽긴 했지만, 한 번 읽었다는 이유로 책장에 계속 넣어두기는 아까운 책이다. 개발자인 내가 어려움을 맞닥뜨렸을 때 조언을 해줄 수 있는 선생님이자 지침서로 늘 가까이 두고 펼쳐봐야겠다.</p>
+]]></content>
+      <categories>
+        <category>Book</category>
+      </categories>
+      <tags>
+        <tag>Book</tag>
+        <tag>Insight</tag>
+      </tags>
+  </entry>
+</search>

@@ -1,0 +1,1091 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon_pig.png">
+  <link rel="icon" href="/img/favicon_pig.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Elio">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Elio&#39;s Blog">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Elio&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Elio">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Elio&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Elio&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://elioground.com/my-resume" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="{ name: &#39;Elio&#39; }"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-25/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -하샤드 수-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-25/" target="_self">
+          [Coding Test] 프로그래머스 -하샤드 수-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-25/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12947 🤨생각하기주어진 정수가 해당 정수의 자릿값의 합으로 나누어 떨어지는지 확인하는 문제이다. 이전 문제에서도 확인할 수 있지만, 여러 요소들의 합을 구할 때 reduce를 사용하면 좀 더 간결한 코드가 된다. 😎내 풀이1234567
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 13:51" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-24/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -평균 구하기-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-24/" target="_self">
+          [Coding Test] 프로그래머스 -평균 구하기-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-24/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12944 🤨생각하기배열의 합을 구해 배열의 길이로 나눠주면 되는 문제이다. 다양한 방법들이 있겠지만, 배열 요소들의 값을 누적시킬 수 있는 reduce 메서드를 사용하면 간결한 코드를 짤 수 있다. 😎내 풀이123function solu
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 13:48" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-23/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -콜라츠 추측-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-23/" target="_self">
+          [Coding Test] 프로그래머스 -콜라츠 추측-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-23/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12943 🤨생각하기문제 그대로 구현하면 된다. 😎내 풀이123456789101112131415161718function solution(num) &#123;  if (num === 1) return 0  let cnt = 0  while
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 13:46" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-22/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -최대공약수와 최소공배수-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-22/" target="_self">
+          [Coding Test] 프로그래머스 -최대공약수와 최소공배수-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-22/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12940 🤨생각하기여러 방법들이 있겠지만, 유클리드 호제법에 대한 개념을 요구하는 문제이다. 유클리드 호제법을 간단하게 정리하면 아래와 같다.  a, b(단, a&gt;b)에 대해서 a를 b로 나눈 나머지를 r이라 하면, a와 b의 최대공
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 13:31" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/22/Coding-Test-Programmers-21/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -시저 코드-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/22/Coding-Test-Programmers-21/" target="_self">
+          [Coding Test] 프로그래머스 -시저 코드-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/22/Coding-Test-Programmers-21/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12926 🤨생각하기ascii 코드 변환 메서드만 알고 있다면 큰 어려움 없이 풀 수 있는 문제이다. 😎내 풀이123456789101112131415161718192021222324252627282930function solution(s,
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-22 11:07" pubdate>
+              2022-11-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/17/Coding-Test-Programmers-20/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -짝수와 홀수-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/17/Coding-Test-Programmers-20/" target="_self">
+          [Coding Test] 프로그래머스 -짝수와 홀수-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/17/Coding-Test-Programmers-20/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12937 🤨생각하기문제 그대로 구현 😎내 풀이1234567function solution(num) &#123;  if (num % 2 === 0) &#123;    return &#x27;Even&#x27;  &#125; else &#1
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-17 14:32" pubdate>
+              2022-11-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/17/Coding-Test-Programmers-19/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -제일 작은 수 제거하기-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/17/Coding-Test-Programmers-19/" target="_self">
+          [Coding Test] 프로그래머스 -제일 작은 수 제거하기-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/17/Coding-Test-Programmers-19/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12935 🤨생각하기문제 그대로 구현 😎내 풀이123456789function solution(arr) &#123;  if (arr.length == 1) return [-1]  const min = Math.min(...arr)  let
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-17 14:18" pubdate>
+              2022-11-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/17/Coding-Test-Programmers-18/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -정수 제곱근 판별-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/17/Coding-Test-Programmers-18/" target="_self">
+          [Coding Test] 프로그래머스 -정수 제곱근 판별-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/17/Coding-Test-Programmers-18/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12934 🤨생각하기문제 그대로 구현 😎내 풀이1234567function solution(n) &#123;  if (Number.isInteger(Math.sqrt(n))) &#123;    return (Math.sqrt(n) + 1)
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-17 14:09" pubdate>
+              2022-11-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/17/Coding-Test-Programmers-17/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -정수 내림차순으로 배치하기-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/17/Coding-Test-Programmers-17/" target="_self">
+          [Coding Test] 프로그래머스 -정수 내림차순으로 배치하기-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/17/Coding-Test-Programmers-17/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12933 🤨생각하기문제 그대로 구현 😎내 풀이123456789function solution(n) &#123;  return parseInt(    n      .toString()      .split(&#x27;&#x27;)
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-17 14:06" pubdate>
+              2022-11-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/11/17/Coding-Test-Programmers-16/" target="_self">
+          <img src="/img/programmers.png" srcset="/img/loading.gif" lazyload alt="[Coding Test] 프로그래머스 -자연수 뒤집어 배열로 만들기-">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2022/11/17/Coding-Test-Programmers-16/" target="_self">
+          [Coding Test] 프로그래머스 -자연수 뒤집어 배열로 만들기-
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/2022/11/17/Coding-Test-Programmers-16/" target="_self">
+        <div>
+          📃문제 링크https://school.programmers.co.kr/learn/courses/30/lessons/12932 🤨생각하기문제 그대로 구현 수를 뒤집는 방법에는 여러 가지가 있겠지만, 나는 문자열로 만들어 뒤집는 방법을 선택했다. 😎내 풀이123456function solution(n) &#123;  let answer = []  for
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-17 14:03" pubdate>
+              2022-11-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Coding-Test/" class="category-chain-item">Coding-Test</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Coding-Test/Programmers/" class="category-chain-item">Programmers</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Coding-Test/">#Coding-Test</a>
+            
+              <a href="/tags/Programmers/">#Programmers</a>
+            
+              <a href="/tags/Lv-1/">#Lv.1</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
