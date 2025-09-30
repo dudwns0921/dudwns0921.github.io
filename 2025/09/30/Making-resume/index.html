@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon_pig.png">
+  <link rel="icon" href="/img/favicon_pig.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Elio">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="서론개발자에게 이력서는 미술 작품과 같다. 자신을 표현한다는 목적은 같지만, 그 표현 방법은 무궁무진하기 때문이다. 이번 글에서는 나만의 웹 이력서를 만들면서 겪었던 기술적 도전과 해결 과정을 공유하고자 한다. 프로젝트 시작: 원티드 양식에서 벗어나기꽤 최근까지는 원티드의 이력서 양식을 사용했다. 군더더기 없는 깔끔한 디자인이 마음에 들었기 때문이다. 하지">
+<meta property="og:type" content="article">
+<meta property="og:title" content="웹 이력서 제작기">
+<meta property="og:url" content="http://example.com/2025/09/30/Making-resume/index.html">
+<meta property="og:site_name" content="Elio&#39;s Blog">
+<meta property="og:description" content="서론개발자에게 이력서는 미술 작품과 같다. 자신을 표현한다는 목적은 같지만, 그 표현 방법은 무궁무진하기 때문이다. 이번 글에서는 나만의 웹 이력서를 만들면서 겪었던 기술적 도전과 해결 과정을 공유하고자 한다. 프로젝트 시작: 원티드 양식에서 벗어나기꽤 최근까지는 원티드의 이력서 양식을 사용했다. 군더더기 없는 깔끔한 디자인이 마음에 들었기 때문이다. 하지">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2025/09/30/Making-resume/wantedResume.jpg">
+<meta property="og:image" content="http://example.com/2025/09/30/Making-resume/resume1.png">
+<meta property="og:image" content="http://example.com/2025/09/30/Making-resume/resume2.png">
+<meta property="og:image" content="http://example.com/2025/09/30/Making-resume/resume3.png">
+<meta property="og:image" content="http://example.com/2025/09/30/Making-resume/resume4.png">
+<meta property="article:published_time" content="2025-09-30T12:18:00.000Z">
+<meta property="article:modified_time" content="2025-09-30T13:22:59.661Z">
+<meta property="article:author" content="Elio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2025/09/30/Making-resume/wantedResume.jpg">
+  
+  
+  
+  <title>웹 이력서 제작기 - Elio&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Elio&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://elioground.com/my-resume" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="웹 이력서 제작기"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-09-30 21:18" pubdate>
+          September 30, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          441 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          4 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">웹 이력서 제작기</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>개발자에게 이력서는 미술 작품과 같다. 자신을 표현한다는 목적은 같지만, 그 표현 방법은 무궁무진하기 때문이다. 이번 글에서는 나만의 웹 이력서를 만들면서 겪었던 기술적 도전과 해결 과정을 공유하고자 한다.</p>
+<h1 id="프로젝트-시작-원티드-양식에서-벗어나기"><a href="#프로젝트-시작-원티드-양식에서-벗어나기" class="headerlink" title="프로젝트 시작: 원티드 양식에서 벗어나기"></a>프로젝트 시작: 원티드 양식에서 벗어나기</h1><p>꽤 최근까지는 원티드의 이력서 양식을 사용했다. 군더더기 없는 깔끔한 디자인이 마음에 들었기 때문이다. 하지만 플랫폼이 업데이트되면서 미니멀리즘을 선호하는 내 취향과는 점점 맞지 않는 부분들이 생겨났다.</p>
+<p><img src="/2025/09/30/Making-resume/wantedResume.jpg" srcset="/img/loading.gif" lazyload alt="이 때가 좋았지..."></p>
+<p>고민 끝에 내린 결론은 간단했다. <strong>직접 만들자.</strong></p>
+<h2 id="벤치마킹-좋은-레퍼런스의-발견"><a href="#벤치마킹-좋은-레퍼런스의-발견" class="headerlink" title="벤치마킹: 좋은 레퍼런스의 발견"></a>벤치마킹: 좋은 레퍼런스의 발견</h2><p>프로젝트를 시작하기 전, 좋은 레퍼런스를 찾던 중 <a target="_blank" rel="noopener" href="https://hyunseob.github.io/resume/">현섭님의 이력서</a>를 발견했다. 내가 구상했던 이상적인 이력서 양식과 놀랍도록 유사했다. 전체적인 구조는 벤치마킹하되, 나만의 개성을 담은 요소들을 추가하기로 계획했다.</p>
+<h1 id="개발-과정"><a href="#개발-과정" class="headerlink" title="개발 과정"></a>개발 과정</h1><h2 id="초기-개발"><a href="#초기-개발" class="headerlink" title="초기 개발"></a>초기 개발</h2><p>사실 초기 버전을 만드는 데는 오랜 시간이 걸리지 않았다. 데이터를 보여주는 정적인 페이지였기 때문이다. </p>
+<p>처음에는 바닐라 JavaScript로 만들까 고민했지만, 향후 기능 확장 가능성을 고려해 React를 선택했다. 컴포넌트 기반 구조로 관리하면 유지보수가 용이하고, 필요에 따라 인터랙티브한 기능을 추가하기도 쉬울 것이라 판단했다.</p>
+<h2 id="첫-번째-도전-PDF-변환-문제"><a href="#첫-번째-도전-PDF-변환-문제" class="headerlink" title="첫 번째 도전: PDF 변환 문제"></a>첫 번째 도전: PDF 변환 문제</h2><p>완성된 웹 이력서를 배포한 후, 예상치 못한 문제에 직면했다. <strong>의외로 많은 회사들이 PDF 형식을 요구</strong>했던 것이다.</p>
+<p>물론 HTML을 PDF로 변환해주는 온라인 서비스들이 존재했다. 하지만 여러 문제점이 있었다:</p>
+<ul>
+<li>원하지 않는 요소(PDF 변환 버튼 등)까지 포함됨</li>
+<li>페이지가 넘어갈 때 여백이 제대로 적용되지 않음</li>
+<li>세밀한 레이아웃 조정이 불가능</li>
+</ul>
+<p>사소해 보이지만 계속 신경 쓰이는 부분들이었다. 결국 <strong>직접 PDF 변환 기능을 구현하기로 결정</strong>했다.</p>
+<h2 id="PDF-변환-라이브러리-탐색"><a href="#PDF-변환-라이브러리-탐색" class="headerlink" title="PDF 변환 라이브러리 탐색"></a>PDF 변환 라이브러리 탐색</h2><h3 id="1-react-to-pdf"><a href="#1-react-to-pdf" class="headerlink" title="1. react-to-pdf"></a>1. react-to-pdf</h3><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/react-to-pdf">react-to-pdf</a></p>
+<p>가장 먼저 시도한 것은 <code>react-to-pdf</code> 라이브러리였다. 그러나 즉시 문제가 발생했다.</p>
+<p>이 라이브러리는 내부적으로 <code>html2canvas</code>를 사용하는데, Canvas 기반으로 DOM을 변환하기 때문에 <strong>최신 CSS 기능을 완벽하게 지원하지 못했다</strong>. 특히 내가 사용하고 있던 Tailwind CSS와 호환성 문제가 있었다. Tailwind CSS에서는 색상 변수를 정의할 때 CSS 함수인 oklch를 사용하는데, 이를 지원하지 않았다.</p>
+<p>물론 번들링 시 oklch 함수를 hex로 변환하거나 Tailwind 버전을 낮추는 등의 해결책도 있었다. 하지만 최신 기술 스택으로 프로젝트를 구성하고 싶었고, 문제를 근본적으로 해결하지 못한다는 느낌이 들어 과감하게 다른 대안을 찾았다. </p>
+<h3 id="2-react-pdf"><a href="#2-react-pdf" class="headerlink" title="2. react-pdf"></a>2. react-pdf</h3><p><a target="_blank" rel="noopener" href="https://react-pdf.org/">react-pdf</a></p>
+<p>다음으로 고려한 것은 <code>react-pdf</code> 라이브러리였다. 아래 블로그에서 알게 된 라이브러리로, PDF 생성 결과물의 품질이 우수하다는 후기가 있었다.</p>
+<p><a target="_blank" rel="noopener" href="https://cdragon.tistory.com/entry/kakao-tech-bootcamp-React-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EB%A5%BC-PDF%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0react-pdfO-react-to-pdfX">[kakao tech bootcamp] React 컴포넌트를 PDF로 만들기(react-pdf(O), react-to-pdf(X))</a></p>
+<p>하지만 큰 문제가 있었다. 이 라이브러리는 <strong>완전히 다른 컴포넌트 체계</strong>를 사용한다. 즉, 기존에 작성한 React 컴포넌트를 그대로 사용할 수 없고, react-pdf 전용 컴포넌트로 처음부터 다시 구현해야 했다.</p>
+<p>내가 원했던 것은 현재 상태 그대로 PDF 변환 기능만 추가하는 것이었다. PDF 변환을 위해 이력서 전체를 다시 만드는 것은 비효율적이라고 판단했다.</p>
+<h3 id="3-Puppeteer-최종-선택"><a href="#3-Puppeteer-최종-선택" class="headerlink" title="3. Puppeteer: 최종 선택"></a>3. Puppeteer: 최종 선택</h3><p>고민 끝에 선택한 것은 서버사이드 솔루션인 <strong>Puppeteer</strong>였다.</p>
+<h2 id="Puppeteer란"><a href="#Puppeteer란" class="headerlink" title="Puppeteer란?"></a>Puppeteer란?</h2><p><a target="_blank" rel="noopener" href="https://pptr.dev/">puppeteer</a></p>
+<p>Puppeteer는 Google에서 개발한 Node.js 라이브러리로, Chrome 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 그리고 브라우저의 인쇄 기능을 활용한 벡터 기반 pdf 생성 기능도 포함하고 있다. </p>
+<h2 id="아키텍처-전환-React에서-Next-js로"><a href="#아키텍처-전환-React에서-Next-js로" class="headerlink" title="아키텍처 전환: React에서 Next.js로"></a>아키텍처 전환: React에서 Next.js로</h2><p>Puppeteer 도입 결정과 함께 중요한 변화가 필요했다. <strong>서버 환경이 필수</strong>라는 점이었다.</p>
+<h2 id="마이그레이션-과정"><a href="#마이그레이션-과정" class="headerlink" title="마이그레이션 과정"></a>마이그레이션 과정</h2><p>Puppeteer는 Node.js 환경에서만 실행되기 때문에 서버사이드 기능을 제공하는 프레임워크가 필요했다.</p>
+<p>다행히 React에서 Next.js로의 마이그레이션은 예상보다 훨씬 간단했다. 복잡한 상태 관리나 클라이언트 로직이 많지 않은 정적 페이지였기 때문에, 폴더 구조를 조정하고 몇 가지 설정만 변경하니 바로 정상 동작함을 확인할 수 있었다.</p>
+<h3 id="PDF-변환-기능-구현"><a href="#PDF-변환-기능-구현" class="headerlink" title="PDF 변환 기능 구현"></a>PDF 변환 기능 구현</h3><p>Next.js로 마이그레이션을 완료한 후, API Route를 활용하여 PDF 변환 기능을 구현했다.</p>
+<h3 id="구현-세부사항"><a href="#구현-세부사항" class="headerlink" title="구현 세부사항"></a>구현 세부사항</h3><p><strong>핵심 기능:</strong></p>
+<ol>
+<li>특정 요소 제외: <code>.no-pdf</code> 클래스를 가진 요소(PDF 변환 버튼 등)를 자동으로 숨김</li>
+<li>페이지 여백 설정: A4 용지 기준으로 상하단 여백 조정</li>
+<li>배경색 보존: <code>printBackground</code> 옵션 사용</li>
+</ol>
+<p><strong>API 엔드포인트 코드:</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">NextRequest</span>, <span class="hljs-title class_">NextResponse</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;next/server&#x27;</span>;<br><span class="hljs-keyword">import</span> puppeteer <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;puppeteer&#x27;</span>;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">GET</span>(<span class="hljs-params">req: NextRequest</span>) &#123;<br>  <span class="hljs-keyword">const</span> &#123; searchParams &#125; = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(req.<span class="hljs-property">url</span>);<br>  <span class="hljs-keyword">const</span> urlParam = searchParams.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;url&#x27;</span>);<br><br>  <span class="hljs-keyword">if</span> (!url) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title class_">NextResponse</span>.<span class="hljs-title function_">json</span>(<br>      &#123; <span class="hljs-attr">error</span>: <span class="hljs-string">&#x27;URL parameter is required&#x27;</span> &#125;, <br>      &#123; <span class="hljs-attr">status</span>: <span class="hljs-number">400</span> &#125;<br>    );<br>  &#125;<br><br>  <span class="hljs-comment">// --no-sandbox: Docker 등 제한된 환경에서 실행을 위해 필요</span><br>  <span class="hljs-comment">// --disable-setuid-sandbox: 권한 관련 이슈 해결</span><br>  <span class="hljs-comment">// --disable-web-security: CORS 문제 방지</span><br>  <span class="hljs-keyword">const</span> browser = <span class="hljs-keyword">await</span> puppeteer.<span class="hljs-title function_">launch</span>(&#123;<br>    <span class="hljs-attr">headless</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">args</span>: [<br>      <span class="hljs-string">&#x27;--no-sandbox&#x27;</span>,<br>      <span class="hljs-string">&#x27;--disable-setuid-sandbox&#x27;</span>,<br>      <span class="hljs-string">&#x27;--disable-web-security&#x27;</span>,<br>    ],<br>  &#125;);<br><br>  <span class="hljs-keyword">const</span> page = <span class="hljs-keyword">await</span> browser.<span class="hljs-title function_">newPage</span>();<br>  <span class="hljs-comment">// 모든 네트워크 요청 대기</span><br>  <span class="hljs-keyword">await</span> page.<span class="hljs-title function_">goto</span>(url, &#123; <span class="hljs-attr">waitUntil</span>: <span class="hljs-string">&#x27;networkidle0&#x27;</span> &#125;);<br><br>  <span class="hljs-comment">// PDF에서 제외할 요소 숨기기</span><br>  <span class="hljs-keyword">await</span> page.evaluate(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-keyword">const</span> elements = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;.no-pdf&#x27;</span>);<br>    elements.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> &#123;<br>      (item <span class="hljs-keyword">as</span> <span class="hljs-title class_">HTMLElement</span>).<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span>;<br>    &#125;);<br>  &#125;);<br><br>  <span class="hljs-comment">// PDF 생성</span><br>  <span class="hljs-keyword">const</span> pdfBuffer = <span class="hljs-keyword">await</span> page.<span class="hljs-title function_">pdf</span>(&#123;<br>    <span class="hljs-attr">format</span>: <span class="hljs-string">&#x27;A4&#x27;</span>,<br>    <span class="hljs-attr">printBackground</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">margin</span>: &#123;<br>      <span class="hljs-attr">top</span>: <span class="hljs-string">&#x27;40px&#x27;</span>,<br>      <span class="hljs-attr">bottom</span>: <span class="hljs-string">&#x27;40px&#x27;</span><br>    &#125;<br>  &#125;);<br><br>  <span class="hljs-keyword">await</span> browser.<span class="hljs-title function_">close</span>();<br><br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">NextResponse</span>(<span class="hljs-title class_">Buffer</span>.<span class="hljs-title function_">from</span>(pdfBuffer), &#123;<br>    <span class="hljs-attr">status</span>: <span class="hljs-number">200</span>,<br>    <span class="hljs-attr">headers</span>: &#123;<br>      <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/pdf&#x27;</span>,<br>      <span class="hljs-string">&#x27;Content-Disposition&#x27;</span>: <span class="hljs-string">&#x27;attachment; filename=&quot;resume.pdf&quot;&#x27;</span>,<br>    &#125;,<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="결과-및-회고"><a href="#결과-및-회고" class="headerlink" title="결과 및 회고"></a>결과 및 회고</h1><p>결과는…?</p>
+<p><a target="_blank" rel="noopener" href="https://elioground.com/my-resume/">웹 이력서 링크</a></p>
+<h2 id="pdf-변환-결과"><a href="#pdf-변환-결과" class="headerlink" title="pdf 변환 결과"></a>pdf 변환 결과</h2><p><img src="/2025/09/30/Making-resume/resume1.png" srcset="/img/loading.gif" lazyload><br><img src="/2025/09/30/Making-resume/resume2.png" srcset="/img/loading.gif" lazyload><br><img src="/2025/09/30/Making-resume/resume3.png" srcset="/img/loading.gif" lazyload><br><img src="/2025/09/30/Making-resume/resume4.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="성과"><a href="#성과" class="headerlink" title="성과"></a>성과</h2><p>PDF 변환 시 몇 초의 시간이 소요되지만, 원하는 방식대로 완벽한 PDF를 생성할 수 있게 되었다. 웹에서 보이는 그대로의 디자인과 레이아웃이 PDF에 반영되어, 별도로 PDF용 이력서를 만들 필요가 없다는 점이 가장 큰 장점이었다.</p>
+<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>이번 프로젝트를 진행하며 기술 선택의 중요성을 다시 한번 느꼈다. 라이브러리를 선택할 때는 당장의 요구사항만 보는 것이 아니라 향후 확장 가능성까지 고려해야 한다. react-to-pdf나 react-pdf처럼 처음에는 간단해 보이는 솔루션이 오히려 제약이 될 수 있고, Puppeteer처럼 복잡해 보이는 선택이 장기적으로는 더 효율적일 수 있다는 것을 배웠다.</p>
+<p>또한 적절한 아키텍처로 설계된 프로젝트는 마이그레이션이 훨씬 수월하다는 점도 확인했다. React에서 Next.js로의 전환이 생각보다 쉬웠던 것은 컴포넌트 기반으로 깔끔하게 구조화되어 있었기 때문이다. Next.js와 React의 높은 호환성 덕분에 적은 비용으로 큰 효과를 얻을 수 있었다.</p>
+<p>무엇보다 완벽한 코드를 작성하는 것보다 실제 문제를 해결하는 것이 더 중요하다는 실용주의적 접근을 체득했다. 사용자 경험을 우선시하여 기술을 선택하고, 필요하다면 과감하게 기술 스택을 변경하는 유연함이 때로는 더 가치 있는 선택이 될 수 있다.</p>
+<p>개발자로서 자신을 표현하는 이력서를 직접 만들어보는 것은 단순히 문서를 작성하는 것 이상의 의미가 있다고 생각한다. 특히나 웹을 활용하는 건 지금까지 자신이 쌓아온 역량을 그대로 보여줄 수 있기에 더욱더 의미가 있다.</p>
+<p>그동안 정말 여러 이력서를 작성해왔지만, 개인적으로 이번 이력서가 가장 마음에 든다. 단순히 결과물이 좋아서가 아니다. 회사 지원을 위한 문서가 아닌, 문제를 정의하고 해결책을 찾아가는 과정 자체가 즐거웠기 때문이다. 이 과정을 통해 처음 개발자가 되었던 3년 전보다 확실히 성장했다는 것을 느낄 수 있었다.</p>
+<h1 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://hyunseob.github.io/resume/">현섭님의 이력서</a></li>
+<li><a target="_blank" rel="noopener" href="https://cdragon.tistory.com/entry/kakao-tech-bootcamp-React-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EB%A5%BC-PDF%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0react-pdfO-react-to-pdfX">[kakao tech bootcamp] React 컴포넌트를 PDF로 만들기(react-pdf(O), react-to-pdf(X))</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/react-to-pdf">react-to-pdf npm 페이지</a></li>
+<li><a target="_blank" rel="noopener" href="https://react-pdf.org/">react-pdf 공식 문서</a></li>
+<li><a target="_blank" rel="noopener" href="https://pptr.dev/">Puppeteer 공식 문서</a></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>웹 이력서 제작기</div>
+      <div>http://example.com/2025/09/30/Making-resume/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Elio</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 30, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/22/Docker-Intro/" title="Docker 훑어보기">
+                        <span class="hidden-mobile">Docker 훑어보기</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2025/09/30/Making-resume/';
+          this.page.identifier = '/2025/09/30/Making-resume/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
