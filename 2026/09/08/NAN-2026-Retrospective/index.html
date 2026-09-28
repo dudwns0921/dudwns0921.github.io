@@ -1,0 +1,836 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon_pig.png">
+  <link rel="icon" href="/img/favicon_pig.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Elio">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="서론https:&#x2F;&#x2F;nan2026.nhn.com&#x2F; 직장 동료와 둘이서 AI를 활용한 게임 제작 해커톤 NAN 2026에 참여해 최종적으로 우수상을 받았다. 회고를 쓰는 지금도 아직 얼떨떨하고, 현실처럼 느껴지지 않는다. 그만큼 경쟁이 치열했고, 본선에 진출한 팀들의 결과물도 쟁쟁했다. 9월 4일 오후 4시에 주제를 받고 9월 6일 아침 8시에 제출하기까지,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NAN 2026 본선 회고 - 감각을 사고파는 상점, 23">
+<meta property="og:url" content="https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/index.html">
+<meta property="og:site_name" content="Elio&#39;s Blog">
+<meta property="og:description" content="서론https:&#x2F;&#x2F;nan2026.nhn.com&#x2F; 직장 동료와 둘이서 AI를 활용한 게임 제작 해커톤 NAN 2026에 참여해 최종적으로 우수상을 받았다. 회고를 쓰는 지금도 아직 얼떨떨하고, 현실처럼 느껴지지 않는다. 그만큼 경쟁이 치열했고, 본선에 진출한 팀들의 결과물도 쟁쟁했다. 9월 4일 오후 4시에 주제를 받고 9월 6일 아침 8시에 제출하기까지,">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/worldview-1.png">
+<meta property="og:image" content="https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/worldview-2.png">
+<meta property="og:image" content="https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/image-1.png">
+<meta property="og:image" content="https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/image-2.png">
+<meta property="og:image" content="https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/image-3.png">
+<meta property="og:image" content="https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/image-4.png">
+<meta property="article:published_time" content="2026-09-08T05:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-28T14:51:41.434Z">
+<meta property="article:author" content="Elio">
+<meta property="article:tag" content="Hackathon">
+<meta property="article:tag" content="Godot">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="Retrospective">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/worldview-1.png">
+  
+  
+  
+  <title>NAN 2026 본선 회고 - 감각을 사고파는 상점, 23 - Elio&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dudwns0921.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Elio&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://elioground.com/my-resume" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/background.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="NAN 2026 본선 회고 - 감각을 사고파는 상점, 23"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-09-08 14:00" pubdate>
+          September 8, 2026 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          560 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          5 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">NAN 2026 본선 회고 - 감각을 사고파는 상점, 23</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p><a target="_blank" rel="noopener" href="https://nan2026.nhn.com/">https://nan2026.nhn.com/</a></p>
+<p>직장 동료와 둘이서 AI를 활용한 게임 제작 해커톤 NAN 2026에 참여해 최종적으로 <strong>우수상</strong>을 받았다. 회고를 쓰는 지금도 아직 얼떨떨하고, 현실처럼 느껴지지 않는다. 그만큼 경쟁이 치열했고, 본선에 진출한 팀들의 결과물도 쟁쟁했다.</p>
+<p>9월 4일 오후 4시에 주제를 받고 9월 6일 아침 8시에 제출하기까지, 약 40시간 동안의 경험을 곱씹어보며 기록해보고자 한다.</p>
+<h1 id="게임-소개-23"><a href="#게임-소개-23" class="headerlink" title="게임 소개: 23"></a>게임 소개: 23</h1><p>주어진 소재는 셋이었다. 공통 소재 <strong>2026년</strong>, 팀 소재 <strong>감각</strong>, 기능 소재 <strong>수집</strong>.</p>
+<p>세 키워드를 반영해 게임을 한 줄로 정리하면 이렇다.</p>
+<p><strong>감각이 화폐가 된 2026년, 감각을 사고팔아 내 몸의 빈 칸을 채우는 상점 주인이 된다.</strong></p>
+<p>제목이 <strong>23</strong>인 이유는 사람의 감각이 스물셋이기 때문이다. 시각 9(색 7 + 흑·백), 청각 2, 촉각 4, 후각 3, 미각 5.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>장르</td>
+<td>상점 운영 시뮬레이션</td>
+</tr>
+<tr>
+<td>시점</td>
+<td>1인칭 3D</td>
+</tr>
+<tr>
+<td>엔진</td>
+<td>Godot 4.7.2 + LLM 손님 서버 (TypeScript)</td>
+</tr>
+<tr>
+<td>배포</td>
+<td>로컬 공유 폴더 + Railway</td>
+</tr>
+</tbody></table>
+<h2 id="세계관"><a href="#세계관" class="headerlink" title="세계관"></a>세계관</h2><p>2026년, 자산 광풍이 화폐를 죽였다. 정부는 버블을 떠받치려 돈을 찍었고, 돈은 종이가 됐다.</p>
+<p>자산은 남았지만 돈이 되지 못했다. 아파트를 쪼개 쌀 한 포대와 바꿀 수는 없었고, 금은 매번 깨물어봐야 했다.</p>
+<p>돈의 조건을 채우는 것은 하나 남았다. 감각 이식 칩이 감각을 뽑아 옮길 수 있게 만든 순간.</p>
+<p>그래서 정부가 감각을 걷기 시작했다. 온전한 스물세 개 감각을 가진 사람은 이 도시에 없다.</p>
+<p>플레이어는 감각을 매매하는 상인이다. 가진 것은 11개뿐이다.</p>
+<p><img src="/2026/09/08/NAN-2026-Retrospective/worldview-1.png" srcset="/img/loading.gif" lazyload alt="세계관 컷씬 1"></p>
+<p><img src="/2026/09/08/NAN-2026-Retrospective/worldview-2.png" srcset="/img/loading.gif" lazyload alt="세계관 컷씬 2"></p>
+<h2 id="하루"><a href="#하루" class="headerlink" title="하루"></a>하루</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">낮 <span class="hljs-comment">(~3분)</span> → 정산 <span class="hljs-comment">(~30초)</span> → 밤 <span class="hljs-comment">(~1분, 선택)</span> → 이벤트 <span class="hljs-comment">(~30초)</span> → 다음 날<br></code></pre></td></tr></table></figure>
+
+<p>낮에는 손님 4명이 차례로 들어온다. 판매자가 오면 감각 종류별 미니게임 5종으로 등급을 감정한 뒤, <strong>사실대로 말할지 낮춰 말할지</strong> 고른다. 이 선택이 게임의 핵심이다. 속이면 싸게 사지만 평판이 깎이고, 간파당하면 그 자리에서 관계가 끝난다. 밤에는 뒷문을 열어 불법 기억 거래를 할 수도 있다.</p>
+<p>플레이어의 선택은 평판으로 쌓이고, 다음 날 아침 이벤트로 돌아온다. 엔딩도 평판에 따라 갈리는 멀티 엔딩 구조다.</p>
+<p><img src="/2026/09/08/NAN-2026-Retrospective/image-1.png" srcset="/img/loading.gif" lazyload alt="상점 - 낮"><br><img src="/2026/09/08/NAN-2026-Retrospective/image-2.png" srcset="/img/loading.gif" lazyload alt="미니게임"><br><img src="/2026/09/08/NAN-2026-Retrospective/image-3.png" srcset="/img/loading.gif" lazyload alt="정산"><br><img src="/2026/09/08/NAN-2026-Retrospective/image-4.png" srcset="/img/loading.gif" lazyload alt="상점 - 밤"></p>
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><h2 id="숫자로-보는-이틀"><a href="#숫자로-보는-이틀" class="headerlink" title="숫자로 보는 이틀"></a>숫자로 보는 이틀</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>기간</td>
+<td>09-04 16:00 주제 발표 ~ 09-06 08:00 제출 (약 40시간)</td>
+</tr>
+<tr>
+<td>첫 커밋</td>
+<td>09-04 21:57</td>
+</tr>
+<tr>
+<td>역할</td>
+<td>나: 게임 로직 · LLM 서버 · 배포 &#x2F; 동료: 3D 에셋 · 애니메이션 · 컷씬</td>
+</tr>
+<tr>
+<td>커밋</td>
+<td>320개 (나 243 · 동료 77)</td>
+</tr>
+<tr>
+<td>테스트</td>
+<td>게임 GUT 526개 · 서버 vitest 175개</td>
+</tr>
+<tr>
+<td>씬</td>
+<td>9개 · 감정 미니게임 5종</td>
+</tr>
+<tr>
+<td>코드</td>
+<td>서버 TS 약 2,800줄 · 게임 GDScript 약 28,700줄 (테스트·도구 포함)</td>
+</tr>
+</tbody></table>
+<h2 id="AI-활용"><a href="#AI-활용" class="headerlink" title="AI 활용"></a>AI 활용</h2><h3 id="하네스-엔지니어링"><a href="#하네스-엔지니어링" class="headerlink" title="하네스 엔지니어링"></a>하네스 엔지니어링</h3><p>가장 익숙한 하네스 엔지니어링 방식을 그대로 썼다.</p>
+<p>웹 개발 현직에서 하네스를 짤 때는 agents·skills·rules 세 층을 나누고, 그 위에 hooks를 얹는다. Claude Code 기준으로는 각각 <code>.claude/agents/</code>, <code>.claude/skills/</code>, <code>.claude/rules/</code>에 들어가는 파일들이고, hooks는 <code>settings.json</code>에 건다. 사냥꾼으로 비유하면 이렇다.</p>
+<p><strong>agent는 누구인가다.</strong> 사냥꾼이라는 agent라면 사냥감을 잡아 오는 것까지가 일이고, 손질은 요리사의 몫이다. 코드로 치면 “이 에이전트는 API 레이어만 만진다, 화면 컴포넌트는 손대지 않는다” 같은 경계다.</p>
+<p><strong>skill은 무엇으로 하는가다.</strong> 칼 skill에는 칼의 제원과 쥐는 법, 젖은 나무에 쓰지 말라는 주의점, 손질법이 들어간다. SKILL.md 한 장에 절차와 주의점, 예시 코드 템플릿까지 둔다. 놓치기 쉬운 것이 하나 있다. <strong>언제 꺼낼지도 skill 안에 있어야 한다.</strong> 세션은 skill의 설명 한 줄만 들고 있다가 작업이 맞을 때 본문을 열기 때문에, 설명에 “언제”가 없으면 그 칼은 쓰이지 않는다.</p>
+<p><strong>rule은 어떤 skill을 꺼냈든 지켜야 할 선이다.</strong> 해가 지면 사냥을 멈춘다, 새끼 딸린 짐승은 잡지 않는다. 칼 skill이 없어도 성립하는 문장들이다. 코드로 치면 “API 호출은 <code>services/</code> 밖에서 하지 않는다”, “컴포넌트 파일은 200줄을 넘기지 않는다” 같은 것이다.</p>
+<p><strong>hook은 읽지 않아도 걸리는 것이다.</strong> rule은 세션이 읽고 따르기를 기대하는 것이라 반드시 새는 순간이 있다. hook은 파일을 쓴 뒤나 커밋 직전 같은 사건에 자동으로 도는 스크립트로 그 자리를 막는다. 칼집에 달린 걸쇠다. rule이 “하지 마라”라면 hook은 “할 수 없다”다.</p>
+<p>이렇게 나누는 이유는 하나다. 층이 섞이면 어디를 고쳐야 할지 모르게 된다. 칼이 안 들면 skill을, 칼로 통나무를 치면 rule을, 사냥꾼이 요리까지 하면 agent를 고치고, 규칙이 있는데도 자꾸 새면 hook을 단다. 각 층이 한 가지 이유로만 바뀌게 두는 것이 하네스를 오래 쓰는 방법이라고 생각한다.</p>
+<h3 id="이번에는-어떤-하네스를"><a href="#이번에는-어떤-하네스를" class="headerlink" title="이번에는 어떤 하네스를?"></a>이번에는 어떤 하네스를?</h3><p>이번에는 <a target="_blank" rel="noopener" href="https://buymeacoffee.com/y1uda/e/512940">Godot MCP Pro</a>를 썼다. AI 세션을 Godot 에디터에 직접 붙이는 MCP 서버다. Node 서버가 WebSocket으로 에디터 플러그인과 붙고, 세션은 그 사이로 170개 남짓한 도구를 부른다. 씬 트리를 읽고 노드를 넣고, 스크립트를 만들고 검증하고, 게임을 실행해 스크린샷을 찍고, 키 입력을 흉내 내고, 에디터 에러 로그를 가져온다.</p>
+<p>사냥꾼 비유로 돌아가면 칼을 사서 온 것이다. 따라서 이번에는 skill은 내가 쓸 필요가 없다고 생각했다.</p>
+<p>하지만 프로젝트 전체에 대한 rules는 유지했다. 다만 이틀짜리 프로젝트이기에 별도 폴더로 나누지 않고 <strong>CLAUDE.md와 settings.json, 훅에 몰아 넣었다.</strong></p>
+<h3 id="어떻게-일했나"><a href="#어떻게-일했나" class="headerlink" title="어떻게 일했나"></a>어떻게 일했나</h3><p>하네스가 정해졌으니 남은 것은 흐름이다. 기획 → 초안 → 깎아 나가기 세 단계였다.</p>
+<p>Godot MCP Pro와 Claude Code가 있으니, 구현은 맡길 수 있다고 판단했다. 그렇다면 기획만 잘 나오면 된다고 생각했고, 그 기반이 되는 GDD를 팀원과 함께 단단하게 만드는 데 많은 시간을 썼다.</p>
+<p>그 뒤에는 GDD를 기반으로 초안을 만들어 달라고 했다. 이때 ultracode를 처음 써봤다. 간단하게 말하면 여러 서브에이전트가 병렬로 붙는 Claude Code의 멀티 에이전트 워크플로우다. 대규모 작업에서는 확실한 장점이 보였지만, 토큰이 정말 살살 녹았다…</p>
+<p>초안이 나온 뒤에는 직접 플레이하면서 문제가 되는 부분을 리스트업하고, Fable 모델에게 분석을 맡겨 md 파일로 정리해 저장하게 했다.</p>
+<p>해당 문서를 들고 Opus나 Sonnet 같은 모델로 진행해 토큰을 아꼈다. 분석은 비싼 모델이, 구현은 싼 모델이 맡는 구조다.</p>
+<p>즉, 이번에는 구체적인 하네스를 구축하기보다 기획에 시간을 쏟았고, 그 결과물로 초안을 만든 뒤 깎아 나가는 방식으로 게임을 구현했다.</p>
+<h2 id="만들면서-배운-것"><a href="#만들면서-배운-것" class="headerlink" title="만들면서 배운 것"></a>만들면서 배운 것</h2><p>해커톤 당시에는 내가 내린 판단들이 좋은 판단이었다고 고민할 겨를도 없었다. 그냥 눈 앞에 보이는 일들을 쳐내는 데 급급했던 것 같다. 돌아보니 “오? 내가 이런 판단을?” 할 정도로 나쁘지 않은 판단들도 있었고, “역시나 엉망이구나” 싶은 판단들도 있었다.</p>
+<h3 id="잘한-점"><a href="#잘한-점" class="headerlink" title="잘한 점"></a>잘한 점</h3><h4 id="핵심은-기획"><a href="#핵심은-기획" class="headerlink" title="핵심은 기획"></a>핵심은 기획</h4><p>해커톤 소개에 이 대회는 개발자가 아니라 <strong>디렉터</strong>를 뽑는 자리라고 적혀 있었다. 구현도 당연히 평가 항목이었지만, 기획과 아이디어를 더 무겁게 보겠다는 뜻으로 읽었다. 그래서 우리 팀은 GDD를 만드는 데 시간을 아끼지 않았다.</p>
+<p>오후 4시에 주제가 발표됐고 첫 코드는 밤 9시에 짰다. 그 사이 다섯 시간을 아이디어 회의에 썼고, 커밋을 시작한 뒤에도 회의는 끝나지 않았다. 큰 틀은 잡혔지만 세부 사항은 구현하면서 계속 논의했고, 그때마다 GDD를 고쳤다.</p>
+<p>사실 다른 팀의 발표를 보면서 우리는 상을 못 타겠다는 생각이 바로 들었다. 누가 봐도 멋진 결과물이 수두룩했다. 개발 역량이나 에셋 완성도는 솔직히 우리가 상대가 안 될 만큼 뛰어난 팀이 많았다.</p>
+<p>다만 지금 돌아보면, 키워드에 대한 고민의 깊이가 달랐다고 생각한다. 우리는 2026년이라는 키워드를 왜 감각이 화폐가 되는 해인지까지 파고들었고, 세 키워드가 억지 없이 한 줄로 이어지게 만드는 데 공을 들였다. 그 점이 심사위원의 공감을 샀다고 생각한다.</p>
+<h4 id="알맞은-배포-방법"><a href="#알맞은-배포-방법" class="headerlink" title="알맞은 배포 방법"></a>알맞은 배포 방법</h4><p>서버는 Railway에 붙여 <code>main</code>에 push하면 자동으로 재배포되게 했다. 모노레포라 Root Directory를 <code>llm-server</code>로 잡는 것 말고는 손댈 게 없었다.</p>
+<p>Godot 빌드는 공유 폴더로 해결했다. 스크립트 하나가 Windows zip과 macOS dmg를 export한 뒤, 내 맥의 특정 폴더에 날짜·시간 이름으로 복사한다. 그 폴더를 macOS 파일 공유로 열어 두면 팀원은 Windows 탐색기 주소창에 내 맥의 IP를 치는 것으로 끝이다.</p>
+<p>FTP 서버까지도 고민했지만, 이번 해커톤이 외부 배포까지 목표로 하는 것도 아닐 뿐더러 어차피 같은 네트워크 안에서 공유하면 되기 때문에 이 정도로 전략을 짰다. 오버 엔지니어링이 일어나지 않았다는 점에서 잘한 결정이었다고 생각하고, 팀원과 결과물을 쉽게 공유하고 피드백을 받을 수 있어 좋았다.</p>
+<h4 id="경제는-게임이-말은-서버가"><a href="#경제는-게임이-말은-서버가" class="headerlink" title="경제는 게임이, 말은 서버가"></a>경제는 게임이, 말은 서버가</h4><p>LLM을 쓰는 게임에서 가장 쉬운 실패는 <strong>모델에게 다 맡기는 것</strong>이다. 가격·마지노선·거짓말 판정을 프롬프트 안에 넣으면 같은 입력에 다른 답이 나오고, 그 순간 밸런스를 측정할 수 없게 된다.</p>
+<p>그래서 첫 커밋의 설계 문서에 경계선을 한 줄로 박고 시작했다.</p>
+<table>
+<thead>
+<tr>
+<th>게임이 정한다</th>
+<th>서버(LLM)가 정한다</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>가격 공식 · 예산 · 마지노선</td>
+<td>이번 턴에 무슨 말을 하는가</td>
+</tr>
+<tr>
+<td>거짓말이 들킬지 (주사위)</td>
+<td>수락 · 역제안 · 퇴장 · 거짓말 폭로 중 무엇을 고르는가</td>
+</tr>
+<tr>
+<td>손님이 누구인지 (시드 고정)</td>
+<td>기분과 우호도 변화</td>
+</tr>
+<tr>
+<td>평판 · 세금 · 재고 규칙</td>
+<td>페르소나의 살 (이름 · 직업 · 사연)</td>
+</tr>
+</tbody></table>
+<p>한 줄로 하면 <strong>숫자는 게임이, 말은 서버가</strong> 정한다. 서버는 게임이 넘긴 숫자를 받기만 하고, 그 안에서 대사와 결정을 낸다.</p>
+<p>이 한 줄이 이틀 내내 “이건 어디에 넣지?”라는 질문을 대신 답해줬다.</p>
+<h3 id="아쉬운-점"><a href="#아쉬운-점" class="headerlink" title="아쉬운 점"></a>아쉬운 점</h3><p>아쉬운 점은 여러 가지가 있겠지만, 한 줄로 정리하면 <strong>본질을 파고들지 못했다</strong>는 것이다.</p>
+<p>발표 후 평가 시에 심사위원 분들이 이 게임의 핵심인 협상 시스템에 대해 질문을 주셨다. 그런데 그 부분은 LLM에 맡긴 영역이라 설명할 것이 별로 없었다. LLM을 잘 활용했다고 볼 수도 있지만, 뒤집어 보면 가장 중요한 시스템을 가장 적게 고민한 것이다. LLM이 알아서 정리해 주겠지, 하고 넘긴 셈이다.</p>
+<p>정확히 말하면 협상의 <strong>구조</strong>는 고민했다. 숫자는 게임이 쥐고 말만 서버가 하게 한 경계선이 그것이다. 다만 고민하지 않은 것은 협상의 <strong>재미</strong>다. 플레이어가 한 턴에 무엇을 느끼고, 몇 번 주고받아야 손맛이 나는지는 설계하지 않았다. 짧고 별것 아닌 것처럼 보이지만, 가장 큰 부분을 놓쳤다는 얘기다.</p>
+<p>그러면서 든 생각이 있다. <strong>AI가 반드시 들어가야 하는 걸까?</strong></p>
+<p>최근 3년 동안 주요 시상식의 올해의 게임 수상작을 보면 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>GJA</th>
+<th>D.I.C.E.</th>
+<th>GDC</th>
+<th>TGA</th>
+<th>BAFTA</th>
+<th>생성형 AI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025</td>
+<td>클레르 옵스퀴르: 33 원정대</td>
+<td>클레르 옵스퀴르: 33 원정대</td>
+<td>클레르 옵스퀴르: 33 원정대</td>
+<td>클레르 옵스퀴르: 33 원정대</td>
+<td>클레르 옵스퀴르: 33 원정대</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>검은 신화: 오공</td>
+<td>아스트로봇</td>
+<td>Balatro</td>
+<td>아스트로봇</td>
+<td>아스트로봇</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>발더스 게이트 3</td>
+<td>발더스 게이트 3</td>
+<td>발더스 게이트 3</td>
+<td>발더스 게이트 3</td>
+<td>발더스 게이트 3</td>
+<td>없음</td>
+</tr>
+</tbody></table>
+<p>어느 작품도 생성형 AI를 게임 안의 플레이 요소로 넣지 않았다. 특히나 발더스 게이트 3은 오히려 방대한 대사를 전부 작가가 쓰고 성우가 녹음한 것이 평가 포인트였다고 한다.</p>
+<p>상점 시뮬레이션의 핵심은 빠른 성장에서 오는 도파민이라고 생각한다. 빠르게 팔고, 돈을 모으고, 더 비싼 것을 사서 더 비싸게 파는 순환이 게임의 뼈대다. 협상은 그 순환의 한가운데에 있다. 우리는 그것을 LLM과의 대화로 풀었는데, 대화 한 번이 꽤 길어서 협상 자체가 루즈해지는 느낌이 있었다. 상호작용 버튼 몇 개로 빠르게 넘어가게 했어도 충분히 재밌었을 것이다.</p>
+<p>AI 해커톤인 것은 맞다. 다만 AI를 게임 속에서 활용하고자 했다면 시스템적으로 정말 깊은 고민을 해서 이게 AI가 아니면 안 되는 이유를 찾았어야만 했다고 생각한다. 돌아보면 결과물이 부족할까 걱정이 앞서서, 가장 어려운 부분을 LLM에 맡기는 것으로 마무리를 지었던 것 같다.</p>
+<h1 id="마무리"><a href="#마무리" class="headerlink" title="마무리"></a>마무리</h1><p>어렸을 때부터 게임을 정말 좋아했고, 언젠가는 게임을 만들겠다는 꿈도 있었다. 여러 현실적인 이유로 게임 쪽 진로를 택하지는 못하고 웹 개발자의 길을 걷고 있지만, 이번에 좋은 기회를 만나 좋은 결과까지 냈다는 것이 너무나 행복하다.</p>
+<p>AI가 게임에 들어가는 시대라 해도, 사람들은 아직 제작자의 노력이 물씬 느껴지는 땀내 나는 게임을 더 좋아하지 않을까 생각한다. 다음에 게임을 만들 기회가 온다면, 누구나 빠져들 만한 게임을 다시 한 번 만들어 보고 싶다.</p>
+<p>마지막으로, 에셋을 장인처럼 깎아내어 우리 게임의 멋진 분위기를 만들어 주고, 체력적으로 지쳤을 텐데도 끝까지 힘내 준 직장 동료에게 감사를 전한다.</p>
+<p>동료의 회고는 <a target="_blank" rel="noopener" href="https://velog.io/@tnghgks/NAN2026-%ED%95%B4%EC%BB%A4%ED%86%A4-%ED%9A%8C%EA%B3%A0">여기</a>에서 볼 수 있다.</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Retrospective/" class="category-chain-item">Retrospective</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hackathon/" class="print-no-link">#Hackathon</a>
+      
+        <a href="/tags/Godot/" class="print-no-link">#Godot</a>
+      
+        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
+      
+        <a href="/tags/Retrospective/" class="print-no-link">#Retrospective</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>NAN 2026 본선 회고 - 감각을 사고파는 상점, 23</div>
+      <div>https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Elio</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>September 8, 2026</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/09/28/Outis-Devlog/" title="Outis 제작기">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Outis 제작기</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/09/30/Making-resume/" title="웹 이력서 제작기">
+                        <span class="hidden-mobile">웹 이력서 제작기</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/';
+          this.page.identifier = '/2026/09/08/NAN-2026-Retrospective/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

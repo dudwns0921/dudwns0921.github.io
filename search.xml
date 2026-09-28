@@ -85,12 +85,14 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -자릿수 더하기-</title>
-    <url>/2022/11/17/Coding-Test-Programmers-15/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12931">https://school.programmers.co.kr/learn/courses/30/lessons/12931</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
-<p>조금 설명을 덧붙이자면 문자열은 순회가 가능한 iterator이기 때문에 숫자를 문자열로 만들어 각 자릿수를 순회하는 방법이다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> a <span class="hljs-keyword">of</span> n.<span class="hljs-title function_">toString</span>()) &#123;<br>    sum += <span class="hljs-built_in">parseInt</span>(a)<br>  &#125;<br>  <span class="hljs-keyword">return</span> sum<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    <title>[Coding Test] 프로그래머스 -이상한 문자 만들기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-14/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12930">https://school.programmers.co.kr/learn/courses/30/lessons/12930</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><blockquote>
+<p>문자열 전체의 짝&#x2F;홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝&#x2F;홀수 인덱스를 판단해야합니다.</p>
+</blockquote>
+<p>위 조건을 만족시키기 위해서는 주어진 문자열을 먼저 공백을 기준으로 나누어야 한다. 그리고 그 나눠진 각각의 문자열을 순회하며 소문자, 대문자로 변경시키면 된다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">s</span>) &#123;<br>  <span class="hljs-keyword">return</span> s<br>    .<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27; &#x27;</span>)<br>    <span class="hljs-comment">// 공백을 기준으로 나눔</span><br>    .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">word</span>) =&gt;</span> &#123;<br>      <span class="hljs-keyword">return</span> word<br>        .<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>        <span class="hljs-comment">// 문자열의 글자 하나하나를 요소로 갖는 배열 생성</span><br>        <span class="hljs-comment">// 배열로 만든 이유는 map 메서드를 사용하기 위함</span><br>        .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">letter, index</span>) =&gt;</span> &#123;<br>          <span class="hljs-keyword">if</span> (index % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> letter.<span class="hljs-title function_">toUpperCase</span>()<br>          &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span> letter.<span class="hljs-title function_">toLowerCase</span>()<br>          &#125;<br>        &#125;)<br>        .<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>    &#125;)<br>    .<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27; &#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -102,14 +104,12 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -이상한 문자 만들기-</title>
-    <url>/2022/11/17/Coding-Test-Programmers-14/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12930">https://school.programmers.co.kr/learn/courses/30/lessons/12930</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><blockquote>
-<p>문자열 전체의 짝&#x2F;홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝&#x2F;홀수 인덱스를 판단해야합니다.</p>
-</blockquote>
-<p>위 조건을 만족시키기 위해서는 주어진 문자열을 먼저 공백을 기준으로 나누어야 한다. 그리고 그 나눠진 각각의 문자열을 순회하며 소문자, 대문자로 변경시키면 된다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">s</span>) &#123;<br>  <span class="hljs-keyword">return</span> s<br>    .<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27; &#x27;</span>)<br>    <span class="hljs-comment">// 공백을 기준으로 나눔</span><br>    .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">word</span>) =&gt;</span> &#123;<br>      <span class="hljs-keyword">return</span> word<br>        .<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>        <span class="hljs-comment">// 문자열의 글자 하나하나를 요소로 갖는 배열 생성</span><br>        <span class="hljs-comment">// 배열로 만든 이유는 map 메서드를 사용하기 위함</span><br>        .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">letter, index</span>) =&gt;</span> &#123;<br>          <span class="hljs-keyword">if</span> (index % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> letter.<span class="hljs-title function_">toUpperCase</span>()<br>          &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span> letter.<span class="hljs-title function_">toLowerCase</span>()<br>          &#125;<br>        &#125;)<br>        .<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>    &#125;)<br>    .<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27; &#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    <title>[Coding Test] 프로그래머스 -자릿수 더하기-</title>
+    <url>/2022/11/17/Coding-Test-Programmers-15/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12931">https://school.programmers.co.kr/learn/courses/30/lessons/12931</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>조금 설명을 덧붙이자면 문자열은 순회가 가능한 iterator이기 때문에 숫자를 문자열로 만들어 각 자릿수를 순회하는 방법이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> a <span class="hljs-keyword">of</span> n.<span class="hljs-title function_">toString</span>()) &#123;<br>    sum += <span class="hljs-built_in">parseInt</span>(a)<br>  &#125;<br>  <span class="hljs-keyword">return</span> sum<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -448,12 +448,12 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -두 정수 사이의 합-</title>
-    <url>/2022/11/16/Coding-Test-Programmers-6/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12912">https://school.programmers.co.kr/learn/courses/30/lessons/12912</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
-<p>a,b가 대소 구분 없이 주어진다는 점이 신경 써야할 부분인데, 구조 분해 할당을 사용하면 쉽게 두 변수의 값을 바꿀 수 있다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">a, b</span>) &#123;<br>  <span class="hljs-keyword">if</span> (a === b) <span class="hljs-keyword">return</span> a<br>  <span class="hljs-keyword">if</span> (b &lt; a) &#123;<br>    ;[a, b] = [b, a]<br>  &#125;<br>  <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = a; i &lt;= b; i++) &#123;<br>    sum += i<br>  &#125;<br>  <span class="hljs-keyword">return</span> sum<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    <title>[Coding Test] 프로그래머스 -문자열 내 마음대로 정렬하기-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-7/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12915">https://school.programmers.co.kr/learn/courses/30/lessons/12915</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제를 제대로 이해하지 못해 시간이 좀 걸렸던 문제이다. </p>
+<p>sort 메서드를 사용하면 기본적으로 맨 앞의 문자를 비교해서 정렬이 이루어지는데, 조건을 추가해 두 번째 글자를 기준으로 정렬을 하라는 문제이다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">strings, n</span>) &#123;<br>  <span class="hljs-keyword">return</span> strings.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (a[n] &lt; b[n]) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> (a[n] &gt; b[n]) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> (a[n] === b[n]) <span class="hljs-keyword">return</span> a &lt; b ? -<span class="hljs-number">1</span> : <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -465,12 +465,12 @@
       </tags>
   </entry>
   <entry>
-    <title>[Coding Test] 프로그래머스 -문자열 내 마음대로 정렬하기-</title>
-    <url>/2022/11/16/Coding-Test-Programmers-7/</url>
-    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12915">https://school.programmers.co.kr/learn/courses/30/lessons/12915</a></p>
-<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제를 제대로 이해하지 못해 시간이 좀 걸렸던 문제이다. </p>
-<p>sort 메서드를 사용하면 기본적으로 맨 앞의 문자를 비교해서 정렬이 이루어지는데, 조건을 추가해 두 번째 글자를 기준으로 정렬을 하라는 문제이다.</p>
-<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">strings, n</span>) &#123;<br>  <span class="hljs-keyword">return</span> strings.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (a[n] &lt; b[n]) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> (a[n] &gt; b[n]) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> (a[n] === b[n]) <span class="hljs-keyword">return</span> a &lt; b ? -<span class="hljs-number">1</span> : <span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    <title>[Coding Test] 프로그래머스 -두 정수 사이의 합-</title>
+    <url>/2022/11/16/Coding-Test-Programmers-6/</url>
+    <content><![CDATA[<h1 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h1><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12912">https://school.programmers.co.kr/learn/courses/30/lessons/12912</a></p>
+<h1 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h1><p>문제 그대로 구현</p>
+<p>a,b가 대소 구분 없이 주어진다는 점이 신경 써야할 부분인데, 구조 분해 할당을 사용하면 쉽게 두 변수의 값을 바꿀 수 있다.</p>
+<h1 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h1><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">a, b</span>) &#123;<br>  <span class="hljs-keyword">if</span> (a === b) <span class="hljs-keyword">return</span> a<br>  <span class="hljs-keyword">if</span> (b &lt; a) &#123;<br>    ;[a, b] = [b, a]<br>  &#125;<br>  <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = a; i &lt;= b; i++) &#123;<br>    sum += i<br>  &#125;<br>  <span class="hljs-keyword">return</span> sum<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Coding-Test</category>
         <category>Programmers</category>
@@ -512,53 +512,6 @@
         <tag>Coding-Test</tag>
         <tag>Programmers</tag>
         <tag>Lv.1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Coding Test] 프로그래머스 코딩 기초 트레이닝 후기</title>
-    <url>/2024/01/08/Coding-Test-Programmers-basic/</url>
-    <content><![CDATA[<p>나는 ‘프론트엔드 개발자에게 코딩 테스트는 무슨 의미일까?’ 라는 생각을 회사에 들어가서도 계속 했었다. 솔직히 실무에서 코딩 테스트 문제에 필요한 알고리즘, 혹은 자료구조 지식들을 응용한 경험은 거의 없었다. 그래서 사실 알고리즘, 자료구조 공부를 한동안 거의 놓고 있었다.</p>
-<p>하지만 최근에 내가 너무 프론트엔드라는 직군에 매몰되어 개발자로서 필요한 공부들을 안하고 있다는 생각이 들었다. 이전에 코딩 테스트를 준비했던 경험이 있지만, 당시에는 그냥 닥치는대로 문제를 풀었을뿐 제대로 된 알고리즘, 자료구조 공부를 하지 않았었다. 새해를 맞이한 김에 코딩 테스트를 기초부터 다시 제대로 준비해보자는 마음으로 프로그래머스의 코딩 기초 트레이닝을 풀어보았다.</p>
-<p>총 124문제를 푸는데 한 4일 정도 걸렸던 것 같다. 물론 Lv.0에 해당되는 문제들로 프로그래밍에 익숙해지기 위한 문제들이지만, 나름 이를 통해 얻게 된 점들이 많아 정리를 해보려고 한다.</p>
-<h2 id="배열-순회하기"><a href="#배열-순회하기" class="headerlink" title="배열 순회하기"></a>배열 순회하기</h2><p>이번에 배열을 순회해야 하는 문제들을 풀 때 아래의 방법들을 썼다.</p>
-<ul>
-<li>for문</li>
-<li>forEach</li>
-<li>map</li>
-<li>reduce</li>
-</ul>
-<p>그렇지만 for문과 인덱스를 사용해 배열의 원소에 직접 접근하기 보다는 for문을 제외한 3가지 배열 메서드들을 훨씬 많이 활용했었다.</p>
-<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><p>먼저 forEach문 같은 경우에는 반환하는 값이 필요하지 않을 때 사용했다. 가령 배열에 저장된 데이터를 Map으로 다시금 정리하는 경우에 forEach를 사용했다.</p>
-<p>하지만 forEach는 항상 모든 원소들을 순회하기 때문에, 중간에 반복을 멈추거나 할 필요가 있을 때는 기본적인 for문을 활용했다.</p>
-<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map은 주어진 배열을 순회하며 원소들을 변형시켜야 할 때 사용했다. flatMap을 사용하기도 했는데, flatMap은 map과 달리 콜백 함수의 반환값을 한 단계씩 평탄화한다. 그러니까 map의 콜백 함수의 반환값으로 배열 안의 여러 값들을 한꺼번에 전달하고 싶을 때 flatMap을 사용하면 간편하다.</p>
-<p>다음은 그 예시이다.</p>
-<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181836">https://school.programmers.co.kr/learn/courses/30/lessons/181836</a></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">picture, k</span>) &#123;<br>  <span class="hljs-keyword">return</span> picture.<span class="hljs-title function_">flatMap</span>(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(k).<span class="hljs-title function_">fill</span>(<br>      v<br>        .<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;&quot;</span>)<br>        .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> &#123;<br>          <span class="hljs-keyword">return</span> v.<span class="hljs-title function_">repeat</span>(k);<br>        &#125;)<br>        .<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>)<br>    );<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>이번에 reduce를 가장 많이 활용했던 것 같다. reduce는 배열을 순회하며 새로운 결과값을 만들어내야 할 때 사용했다. 가장 간단한 예로 배열의 모든 합을 구할 때, 아래와 같이 reduce를 사용했다.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">arr</span>) &#123;<br>  <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">accu, curr</span>) =&gt;</span> accu + curr, <span class="hljs-number">0</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>처음에는 굳이 reduce를 사용해야 하나라는 생각도 들었지만, 사용하면 할수록 할 수 있는 게 정말 다양하다는 걸 느끼게 되었다.</p>
-<h2 id="배열-자르기"><a href="#배열-자르기" class="headerlink" title="배열 자르기"></a>배열 자르기</h2><ul>
-<li>splice</li>
-<li>slice</li>
-</ul>
-<p>먼저 splice는 원본 배열을 수정할 때 사용했고, slice는 새로운 배열을 만들 필요가 있을 때 사용했다. slice는 문자열을 자를 때도 사용했다.</p>
-<h2 id="보스-문제…"><a href="#보스-문제…" class="headerlink" title="보스 문제…"></a>보스 문제…</h2><p>이 문제가 왜 기초문제에 포함되어 있을까라는 생각이 보자마자 들었던 문제이다. 오답률이 가장 높아 마지막으로 풀었던 문제인데, 코딩 테스트를 처음 접했다면 많이 당황스러웠을 것 같다.</p>
-<h3 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h3><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181832">https://school.programmers.co.kr/learn/courses/30/lessons/181832</a></p>
-<h3 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h3><p>먼저 이차원 배열을 모두 순회해야 하므로 이차원 배열의 원소 수만큼 연산을 반복하는 for문을 만든다. 좌표 객체 하나를 생성하고 좌표 객체의 x좌표, y좌표, 그리고 방향을 변경해주며 나선형으로 좌표가 이동하게끔 구현하면 된다.</p>
-<h3 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">const</span> twoDimension = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(&#123; <span class="hljs-attr">length</span>: n &#125;, <span class="hljs-function">() =&gt;</span> <span class="hljs-title class_">Array</span>(n).<span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>));<br>  <span class="hljs-keyword">const</span> dot = &#123;<br>    <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,<br>    <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,<br>    <span class="hljs-attr">direction</span>: <span class="hljs-string">&quot;right&quot;</span>,<br>  &#125;;<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= n * n; i++) &#123;<br>    twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span>] = i;<br><br>    <span class="hljs-keyword">switch</span> (dot.<span class="hljs-property">direction</span>) &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;right&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">x</span> === n - <span class="hljs-number">1</span> || twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span> + <span class="hljs-number">1</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;down&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;left&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">x</span> === <span class="hljs-number">0</span> || twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span> - <span class="hljs-number">1</span>]) dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;up&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;up&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">y</span> === <span class="hljs-number">0</span> || twoDimension[dot.<span class="hljs-property">y</span> - <span class="hljs-number">1</span>][dot.<span class="hljs-property">x</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;right&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;down&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">y</span> === n - <span class="hljs-number">1</span> || twoDimension[dot.<span class="hljs-property">y</span> + <span class="hljs-number">1</span>][dot.<span class="hljs-property">x</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;left&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">switch</span> (dot.<span class="hljs-property">direction</span>) &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;right&quot;</span>:<br>        dot.<span class="hljs-property">x</span>++;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;left&quot;</span>:<br>        dot.<span class="hljs-property">x</span>--;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;up&quot;</span>:<br>        dot.<span class="hljs-property">y</span>--;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;down&quot;</span>:<br>        dot.<span class="hljs-property">y</span>++;<br>        <span class="hljs-keyword">break</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> twoDimension;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h2 id="마무리"><a href="#마무리" class="headerlink" title="마무리"></a>마무리</h2><p>이전에는 코드들을 덕지덕지 붙여가며 어거지로 문제를 푸는 느낌이었다면, 이번에는 내가 계획한 대로 깔끔하게 문제가 풀려 뿌듯했다. 물론 기초 문제들에 불과하긴 하지만 그래도 조금은 성장했음을 느낄 수 있었다.</p>
-]]></content>
-      <categories>
-        <category>Coding-Test</category>
-        <category>Programmers</category>
-      </categories>
-      <tags>
-        <tag>Coding-Test</tag>
-        <tag>Programmers</tag>
-        <tag>Basic Training</tag>
       </tags>
   </entry>
   <entry>
@@ -631,6 +584,53 @@
         <tag>Coding-Test</tag>
         <tag>Programmers</tag>
         <tag>Introduction Training</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Coding Test] 프로그래머스 코딩 기초 트레이닝 후기</title>
+    <url>/2024/01/08/Coding-Test-Programmers-basic/</url>
+    <content><![CDATA[<p>나는 ‘프론트엔드 개발자에게 코딩 테스트는 무슨 의미일까?’ 라는 생각을 회사에 들어가서도 계속 했었다. 솔직히 실무에서 코딩 테스트 문제에 필요한 알고리즘, 혹은 자료구조 지식들을 응용한 경험은 거의 없었다. 그래서 사실 알고리즘, 자료구조 공부를 한동안 거의 놓고 있었다.</p>
+<p>하지만 최근에 내가 너무 프론트엔드라는 직군에 매몰되어 개발자로서 필요한 공부들을 안하고 있다는 생각이 들었다. 이전에 코딩 테스트를 준비했던 경험이 있지만, 당시에는 그냥 닥치는대로 문제를 풀었을뿐 제대로 된 알고리즘, 자료구조 공부를 하지 않았었다. 새해를 맞이한 김에 코딩 테스트를 기초부터 다시 제대로 준비해보자는 마음으로 프로그래머스의 코딩 기초 트레이닝을 풀어보았다.</p>
+<p>총 124문제를 푸는데 한 4일 정도 걸렸던 것 같다. 물론 Lv.0에 해당되는 문제들로 프로그래밍에 익숙해지기 위한 문제들이지만, 나름 이를 통해 얻게 된 점들이 많아 정리를 해보려고 한다.</p>
+<h2 id="배열-순회하기"><a href="#배열-순회하기" class="headerlink" title="배열 순회하기"></a>배열 순회하기</h2><p>이번에 배열을 순회해야 하는 문제들을 풀 때 아래의 방법들을 썼다.</p>
+<ul>
+<li>for문</li>
+<li>forEach</li>
+<li>map</li>
+<li>reduce</li>
+</ul>
+<p>그렇지만 for문과 인덱스를 사용해 배열의 원소에 직접 접근하기 보다는 for문을 제외한 3가지 배열 메서드들을 훨씬 많이 활용했었다.</p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><p>먼저 forEach문 같은 경우에는 반환하는 값이 필요하지 않을 때 사용했다. 가령 배열에 저장된 데이터를 Map으로 다시금 정리하는 경우에 forEach를 사용했다.</p>
+<p>하지만 forEach는 항상 모든 원소들을 순회하기 때문에, 중간에 반복을 멈추거나 할 필요가 있을 때는 기본적인 for문을 활용했다.</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map은 주어진 배열을 순회하며 원소들을 변형시켜야 할 때 사용했다. flatMap을 사용하기도 했는데, flatMap은 map과 달리 콜백 함수의 반환값을 한 단계씩 평탄화한다. 그러니까 map의 콜백 함수의 반환값으로 배열 안의 여러 값들을 한꺼번에 전달하고 싶을 때 flatMap을 사용하면 간편하다.</p>
+<p>다음은 그 예시이다.</p>
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181836">https://school.programmers.co.kr/learn/courses/30/lessons/181836</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">picture, k</span>) &#123;<br>  <span class="hljs-keyword">return</span> picture.<span class="hljs-title function_">flatMap</span>(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(k).<span class="hljs-title function_">fill</span>(<br>      v<br>        .<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;&quot;</span>)<br>        .<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> &#123;<br>          <span class="hljs-keyword">return</span> v.<span class="hljs-title function_">repeat</span>(k);<br>        &#125;)<br>        .<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>)<br>    );<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>이번에 reduce를 가장 많이 활용했던 것 같다. reduce는 배열을 순회하며 새로운 결과값을 만들어내야 할 때 사용했다. 가장 간단한 예로 배열의 모든 합을 구할 때, 아래와 같이 reduce를 사용했다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">arr</span>) &#123;<br>  <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">accu, curr</span>) =&gt;</span> accu + curr, <span class="hljs-number">0</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>처음에는 굳이 reduce를 사용해야 하나라는 생각도 들었지만, 사용하면 할수록 할 수 있는 게 정말 다양하다는 걸 느끼게 되었다.</p>
+<h2 id="배열-자르기"><a href="#배열-자르기" class="headerlink" title="배열 자르기"></a>배열 자르기</h2><ul>
+<li>splice</li>
+<li>slice</li>
+</ul>
+<p>먼저 splice는 원본 배열을 수정할 때 사용했고, slice는 새로운 배열을 만들 필요가 있을 때 사용했다. slice는 문자열을 자를 때도 사용했다.</p>
+<h2 id="보스-문제…"><a href="#보스-문제…" class="headerlink" title="보스 문제…"></a>보스 문제…</h2><p>이 문제가 왜 기초문제에 포함되어 있을까라는 생각이 보자마자 들었던 문제이다. 오답률이 가장 높아 마지막으로 풀었던 문제인데, 코딩 테스트를 처음 접했다면 많이 당황스러웠을 것 같다.</p>
+<h3 id="📃문제-링크"><a href="#📃문제-링크" class="headerlink" title="📃문제 링크"></a>📃문제 링크</h3><p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181832">https://school.programmers.co.kr/learn/courses/30/lessons/181832</a></p>
+<h3 id="🤨생각하기"><a href="#🤨생각하기" class="headerlink" title="🤨생각하기"></a>🤨생각하기</h3><p>먼저 이차원 배열을 모두 순회해야 하므로 이차원 배열의 원소 수만큼 연산을 반복하는 for문을 만든다. 좌표 객체 하나를 생성하고 좌표 객체의 x좌표, y좌표, 그리고 방향을 변경해주며 나선형으로 좌표가 이동하게끔 구현하면 된다.</p>
+<h3 id="😎내-풀이"><a href="#😎내-풀이" class="headerlink" title="😎내 풀이"></a>😎내 풀이</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">solution</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">const</span> twoDimension = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(&#123; <span class="hljs-attr">length</span>: n &#125;, <span class="hljs-function">() =&gt;</span> <span class="hljs-title class_">Array</span>(n).<span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>));<br>  <span class="hljs-keyword">const</span> dot = &#123;<br>    <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,<br>    <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,<br>    <span class="hljs-attr">direction</span>: <span class="hljs-string">&quot;right&quot;</span>,<br>  &#125;;<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= n * n; i++) &#123;<br>    twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span>] = i;<br><br>    <span class="hljs-keyword">switch</span> (dot.<span class="hljs-property">direction</span>) &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;right&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">x</span> === n - <span class="hljs-number">1</span> || twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span> + <span class="hljs-number">1</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;down&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;left&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">x</span> === <span class="hljs-number">0</span> || twoDimension[dot.<span class="hljs-property">y</span>][dot.<span class="hljs-property">x</span> - <span class="hljs-number">1</span>]) dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;up&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;up&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">y</span> === <span class="hljs-number">0</span> || twoDimension[dot.<span class="hljs-property">y</span> - <span class="hljs-number">1</span>][dot.<span class="hljs-property">x</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;right&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;down&quot;</span>:<br>        <span class="hljs-keyword">if</span> (dot.<span class="hljs-property">y</span> === n - <span class="hljs-number">1</span> || twoDimension[dot.<span class="hljs-property">y</span> + <span class="hljs-number">1</span>][dot.<span class="hljs-property">x</span>])<br>          dot.<span class="hljs-property">direction</span> = <span class="hljs-string">&quot;left&quot;</span>;<br>        <span class="hljs-keyword">break</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">switch</span> (dot.<span class="hljs-property">direction</span>) &#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;right&quot;</span>:<br>        dot.<span class="hljs-property">x</span>++;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;left&quot;</span>:<br>        dot.<span class="hljs-property">x</span>--;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;up&quot;</span>:<br>        dot.<span class="hljs-property">y</span>--;<br>        <span class="hljs-keyword">break</span>;<br>      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;down&quot;</span>:<br>        dot.<span class="hljs-property">y</span>++;<br>        <span class="hljs-keyword">break</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> twoDimension;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="마무리"><a href="#마무리" class="headerlink" title="마무리"></a>마무리</h2><p>이전에는 코드들을 덕지덕지 붙여가며 어거지로 문제를 푸는 느낌이었다면, 이번에는 내가 계획한 대로 깔끔하게 문제가 풀려 뿌듯했다. 물론 기초 문제들에 불과하긴 하지만 그래도 조금은 성장했음을 느낄 수 있었다.</p>
+]]></content>
+      <categories>
+        <category>Coding-Test</category>
+        <category>Programmers</category>
+      </categories>
+      <tags>
+        <tag>Coding-Test</tag>
+        <tag>Programmers</tag>
+        <tag>Basic Training</tag>
       </tags>
   </entry>
   <entry>
@@ -852,45 +852,6 @@
       </tags>
   </entry>
   <entry>
-    <title>The-Pragmatic-Programmer</title>
-    <url>/2025/01/05/The-Pragmatic-Programmer/</url>
-    <content><![CDATA[<h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>새해는 사람한테 참 좋은 원동력인 것 같다. 그동안 ‘다음에 해야지…’ 라고 생각하면서 미뤄왔던 일들을 한 번에 처리할 수 있는 힘을 얻을 수 있으니 말이다. 나같은 경우에는 개발 관련 서적을 읽는 것이 미뤄왔던 일들 중 하나였다. 개발자가 된 이후 내 개발 지식은 모두 유튜브, 인터넷 강의, 개발 문서에 그 뿌리를 두고 있었다. 이 셋 모두 빠르고 쉽게 정보를 얻을 수 있다는 점에서 좋지만, 책만큼 정제된 지식을 얻기는 어렵다고 생각한다. 정제된 지식은 많은 고민과 생각이 필요하기에 앞의 세 가지에 의지를 많이 했던 것 같다.</p>
-<p>하지만 새해가 된 김에 무작정 책 한 권을 읽겠다고 마음을 먹었고, 그 책이 바로 ‘실용주의 프로그래머’였다. 워낙 유명한 책이기도 하고, 개발 이론과 관련된 책보다는 인사이트에 관련된 책을 읽고 싶었다.</p>
-<p>결론부터 말하자면, 400페이지에 가까운 책을 3~4일에 다 읽을 만큼 너무나 재밌는 책이었다. 회사에서 중간 관리자로서 고민하고 있던 나에게 절실하게 필요한 이야기들이 많다는 생각이 들었고, 마지막에 가서는 괜시리 그냥 일반 직장인인 개발자인 내가 세계의 사명을 짊어진 영웅처럼 느껴지기도 했다. 내 마음에 와닿았던 몇 가지 Topic들을 이야기해보려고 한다.</p>
-<h1 id="내용-정리"><a href="#내용-정리" class="headerlink" title="내용 정리"></a>내용 정리</h1><h2 id="Topic-7-소통하라"><a href="#Topic-7-소통하라" class="headerlink" title="Topic 7 소통하라!"></a>Topic 7 소통하라!</h2><p>취준생 시절, 자소서에는 소통이라는 단어가 빠질 수가 없었다. 회사는 혼자서 할 수 없는 일을 위한 곳이고, 이를 위해서는 소통이 필수적이기 때문이다. 그렇다고 내가 소통을 잘하는 사람이었나 돌이켜 보면 ‘전혀 아니었다’라고 말할 수 있겠다. 가령 동료들과 말을 하다가도 ‘음… 뭐였지?’ 이런 버퍼링이 걸릴 때가 꽤 많았다.</p>
-<p>책에서는 여러 가지 방법들을 제시해주는데, 대부분은 소통하기 전에 생각을 먼저 해보라는 이야기였다. 지금이 이 이야기를 하기 좋은 때인지, 이렇게 전달하는 것이 과연 효과적인 것인지 등…</p>
-<p>팀원들과 소통하기 전에 5분 정도 생각하고, 내 생각을 글로 옮긴 후에 소통을 시작해봤는데, 만족스러운 결과를 얻을 수 있었다. 물론 초심자의 행운일 수도 있겠지만 일들이 내가 원하는 대로 풀리는 느낌이었다. 내가 의도한 바를 상대방에게 명확하게 전달했다는 생각이 들었고, 결과 또한 너무 만족스러웠다.</p>
-<h2 id="Topic-10-직교성"><a href="#Topic-10-직교성" class="headerlink" title="Topic 10 직교성"></a>Topic 10 직교성</h2><p>직교성이란 기하학에서 빌려 온 용어로, 두 직선의 관계를 이야기할 때 사용한다. 두 직선이 직교한다는 건 두 직선이 독립적이라는 걸 의미하는데, 이와 유사하게 컴퓨터 과학에서 이 용어는 하나가 바뀌어도 나머지에 어떤 영향도 주지 않음을 의미한다.</p>
-<p>회사에서 직교성의 중요성을 뼈저리게 느낀 순간이 있었다. 내가 진행하던 프로젝트중 Vue.js 기반의 프로젝트가 있었는데, 비즈니스 로직과 UI 쪽 로직이 무분별하게 섞여있었다. 서버 통신 쪽 로직만을 테스트하려고 했는데, 이를 위해서는 어쩔 수 없이 Vue 컴포넌트를 렌더링해야만 했었다. 비즈니스 로직과 UI 쪽 로직이 잘 구분되어 있었다면 간단했을 일이 직교성을 무시한 채 뒤엉켜있어 엄청난 시간이 드는 일이 되어버리고 말았다.</p>
-<p>직교성이라는 개념을 알고, 이에 따라 빠르게 리팩토링을 했다면 내가 바보라는 생각은 하지 않았을 것 같다.</p>
-<h2 id="Topic-20-디버깅"><a href="#Topic-20-디버깅" class="headerlink" title="Topic 20 디버깅"></a>Topic 20 디버깅</h2><blockquote>
-<p>참으로 고통스러운 일입니다.<br>자신이 겪는 어려움을 보고는 알게 되죠.<br>다른 누구도 아닌 바로 자신이 문제를 만들었다는 걸.</p>
-<p>-소포클레스</p>
-</blockquote>
-<p>스포클레스가 남긴 말로 디버깅 챕터 시작 부분에 인용되어있다. 디버깅을 한다는 건 문제가 발생했다는 것이고, 그 문제를 내가 만들었을지도 모른다는 것이다.나의 부족함을 마주하는 작업이기 때문에 디버깅은 고통스러운 작업일 수밖에 없다.</p>
-<p>너무나 당연한 이야기지만 개발자는 완벽한 존재가 아니다. 그런 사람이 만드는 소프트웨어 또한 불완전할 수 밖에 없다. 그런데 나를 포함한 개발자들은 디버깅의 고통을 느끼기 싫어 ‘그럴리가 없는데?’ 라는 생각을 자주 하곤 한다. 이러한 생각 때문에 디버깅은 책임 떠넘기기와 비슷한 작업이 되어버리는 경우가 많다.</p>
-<p>그래서 ‘디버깅은 단지 문제 풀이일 뿐이라는 사실을 받아들이고, 그런 마음으로 공략하라’는 책의 내용이 날 뜨끔하게 만들었던 것 같다.</p>
-<h2 id="Topic-53-오만과-편견"><a href="#Topic-53-오만과-편견" class="headerlink" title="Topic 53 오만과 편견"></a>Topic 53 오만과 편견</h2><blockquote>
-<p>옛 장인들은 자신의 작품에 서명하는 것을 자랑스러워했다. 여러분도 그래야 한다.</p>
-</blockquote>
-<p>사실상 이 책에서 내게 가장 와닿았던 내용이다. 프로젝트가 끝났을 때 그 결과물에 애정이나 긍지를 가지는 개발자는 거의 없었던 것 같다. 대부분 고객사나 일정 등을 문제 삼으며 결과물에 대한 비판을 많이 하곤 했다. 하지만 어떤 일이 있었건 그 결과물을 본인들이 만든 것에는 변함이 없다.</p>
-<p>옛 장인들처럼 자신의 작품에 자랑스럽게 서명하기 위해서는 코딩을 하는 순간순간 최선을 다해야겠다는 생각을 했다. 사람인지라 매순간 최선을 다한다는 건 쉽지 않은 일이겠지만, 적어도 나에게만큼은 부끄럽지 않은 작품을 만들 수 있는 개발자가 되어야겠다.</p>
-<h1 id="정리하며…"><a href="#정리하며…" class="headerlink" title="정리하며…"></a>정리하며…</h1><p>이번 글에서는 4개 정도의 토픽 정도만을 다뤘지만 사실 책에는 훨씬 더 많은 내용들이 있다. 특히 개발 이론적으로도 유용한 내용들이 많아 널리널리 알리고 싶은 책이다.</p>
-<p>그리고 책 중간중간 코딩 예시나 연습 문제 등이 있는데, 이것도 꽤나 재밌으니 다는 아니더라도 관심이 가는 토픽이라면 직접 코딩도 해보는 걸 추천한다. 나같은 경우는 Topic 35의 액터와 프로세스 부분을 따라해보는 게 특히 재밌게 느껴졌다.</p>
-<p>start_actor 함수가 정의되어있지 않아 직접 구현해야했는데, 별 거 아니었지만 구현하고 동작하는 걸 보니 코딩을 처음 배웠을 때의 뿌듯함과 즐거움을 느낄 수 있었던 것 같다.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// Topic 35 액터와 프로세스</span><br><br><span class="hljs-keyword">const</span> &#123; dispatch, start, spawn &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;nact&quot;</span>);<br><br><span class="hljs-keyword">const</span> customerActor = &#123;<br>  <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">dispatch</span>(state.<span class="hljs-property">waiter</span>, &#123;<br>      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;주문&quot;</span>,<br>      <span class="hljs-attr">customer</span>: ctx.<span class="hljs-property">self</span>,<br>      <span class="hljs-attr">wants</span>: <span class="hljs-string">&quot;파이&quot;</span>,<br>    &#125;);<br>  &#125;,<br>  <span class="hljs-string">&quot;테이블에 놓다&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;ctx.self.name&#125;</span>이 테이블에 나타난 <span class="hljs-subst">$&#123;msg.food&#125;</span>를 보다.`</span>);<br>  &#125;,<br>  <span class="hljs-string">&quot;남은 파이 없음&quot;</span>: <span class="hljs-function">(<span class="hljs-params">_msg, ctx, _state</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;ctx.self.name&#125;</span>이 파이가 없다고 불평한다.`</span>);<br>  &#125;,<br>&#125;;<br><br><span class="hljs-keyword">const</span> waiterActor = &#123;<br>  주문: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (msg.<span class="hljs-property">wants</span> === <span class="hljs-string">&quot;파이&quot;</span>) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-title function_">dispatch</span>(state.<span class="hljs-property">pieCase</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;한 조각 꺼내기&quot;</span>,<br>        <span class="hljs-attr">customer</span>: msg.<span class="hljs-property">customer</span>,<br>        <span class="hljs-attr">waiter</span>: ctx.<span class="hljs-property">self</span>,<br>      &#125;);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;주문할 수 없는 음식입니다.&quot;</span>);<br>    &#125;<br>  &#125;,<br>  <span class="hljs-string">&quot;주문서에 추가&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<br>      <span class="hljs-string">`종업원이 <span class="hljs-subst">$&#123;msg.food&#125;</span>을 <span class="hljs-subst">$&#123;msg.customer.name&#125;</span>의 주문서에 추가한다.`</span><br>    );<br>  &#125;,<br>  오류: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">customer</span>, &#123;<br>      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;남은 파이 없음&quot;</span>,<br>      <span class="hljs-attr">msg</span>: msg.<span class="hljs-property">msg</span>,<br>    &#125;);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(msg.<span class="hljs-property">msg</span>);<br>  &#125;,<br>&#125;;<br><br><span class="hljs-keyword">const</span> pieCaseActor = &#123;<br>  <span class="hljs-string">&quot;한 조각 꺼내기&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (state.<span class="hljs-property">slices</span>.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) &#123;<br>      <span class="hljs-keyword">let</span> slice = state.<span class="hljs-property">slices</span>.<span class="hljs-title function_">shift</span>();<br>      <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">waiter</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;주문서에 추가&quot;</span>,<br>        <span class="hljs-attr">food</span>: slice,<br>        <span class="hljs-attr">customer</span>: msg.<span class="hljs-property">customer</span>,<br>      &#125;);<br>      <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">customer</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;테이블에 놓다&quot;</span>,<br>        <span class="hljs-attr">food</span>: slice,<br>      &#125;);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">waiter</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;오류&quot;</span>,<br>        <span class="hljs-attr">msg</span>: <span class="hljs-string">&quot;파이가 없습니다.&quot;</span>,<br>        <span class="hljs-attr">customer</span>: msg.<span class="hljs-property">customer</span>,<br>      &#125;);<br>    &#125;<br>  &#125;,<br>&#125;;<br><br><span class="hljs-keyword">const</span> actorSystem = <span class="hljs-title function_">start</span>();<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">start_actor</span> = (<span class="hljs-params">actorSystem, name, actor, initialState</span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_">spawn</span>(<br>    actorSystem,<br>    <span class="hljs-function">(<span class="hljs-params">state = initialState, msg, ctx</span>) =&gt;</span> &#123;<br>      <span class="hljs-keyword">if</span> (actor[msg.<span class="hljs-property">type</span>]) &#123;<br>        <span class="hljs-keyword">return</span> actor[msg.<span class="hljs-property">type</span>](msg, ctx, state);<br>      &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`액터가 <span class="hljs-subst">$&#123;msg.type&#125;</span>을 처리할 수 없습니다.`</span>);<br>      &#125;<br>    &#125;,<br>    name<br>  );<br>&#125;;<br><br><span class="hljs-keyword">let</span> pieCase = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;pie-case&quot;</span>, pieCaseActor, &#123;<br>  <span class="hljs-attr">slices</span>: [<span class="hljs-string">&quot;사과 파이&quot;</span>, <span class="hljs-string">&quot;딸기 파이&quot;</span>, <span class="hljs-string">&quot;블루베리 파이&quot;</span>],<br>&#125;);<br><span class="hljs-keyword">let</span> waiter = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;waiter&quot;</span>, waiterActor, &#123;<br>  pieCase,<br>&#125;);<br><span class="hljs-keyword">let</span> customer1 = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;customer1&quot;</span>, customerActor, &#123;<br>  waiter,<br>&#125;);<br><span class="hljs-keyword">let</span> customer2 = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;customer2&quot;</span>, customerActor, &#123;<br>  waiter,<br>&#125;);<br><br><span class="hljs-title function_">dispatch</span>(customer1, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br><span class="hljs-title function_">dispatch</span>(customer2, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br><span class="hljs-title function_">dispatch</span>(customer1, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br><span class="hljs-title function_">dispatch</span>(customer2, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br></code></pre></td></tr></table></figure>
-
-<p>책을 다 읽긴 했지만, 한 번 읽었다는 이유로 책장에 계속 넣어두기는 아까운 책이다. 개발자인 내가 어려움을 맞닥뜨렸을 때 조언을 해줄 수 있는 선생님이자 지침서로 늘 가까이 두고 펼쳐봐야겠다.</p>
-]]></content>
-      <categories>
-        <category>Book</category>
-      </categories>
-      <tags>
-        <tag>Book</tag>
-        <tag>Insight</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[Hexo] Hexo로 블로그 만들기</title>
     <url>/2022/10/14/Making-Hexo-Blog/</url>
     <content><![CDATA[<p>개인 블로그를 만들어야겠다는 생각만 계속 하다가 우연히 회사에서 일을 하다가 <strong>Hexo</strong> 프레임워크를 접하게 되었다. 보자마자 나한테 딱 적합한 프레임워크라는 생각이 들어서 <strong>Hexo</strong>를 통해 개인 블로그를 만들어야겠다고 결정했다.</p>
@@ -1084,6 +1045,306 @@
 ]]></content>
   </entry>
   <entry>
+    <title>NAN 2026 본선 회고 - 감각을 사고파는 상점, 23</title>
+    <url>/2026/09/08/NAN-2026-Retrospective/</url>
+    <content><![CDATA[<h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p><a href="https://nan2026.nhn.com/">https://nan2026.nhn.com/</a></p>
+<p>직장 동료와 둘이서 AI를 활용한 게임 제작 해커톤 NAN 2026에 참여해 최종적으로 <strong>우수상</strong>을 받았다. 회고를 쓰는 지금도 아직 얼떨떨하고, 현실처럼 느껴지지 않는다. 그만큼 경쟁이 치열했고, 본선에 진출한 팀들의 결과물도 쟁쟁했다.</p>
+<p>9월 4일 오후 4시에 주제를 받고 9월 6일 아침 8시에 제출하기까지, 약 40시간 동안의 경험을 곱씹어보며 기록해보고자 한다.</p>
+<h1 id="게임-소개-23"><a href="#게임-소개-23" class="headerlink" title="게임 소개: 23"></a>게임 소개: 23</h1><p>주어진 소재는 셋이었다. 공통 소재 <strong>2026년</strong>, 팀 소재 <strong>감각</strong>, 기능 소재 <strong>수집</strong>.</p>
+<p>세 키워드를 반영해 게임을 한 줄로 정리하면 이렇다.</p>
+<p><strong>감각이 화폐가 된 2026년, 감각을 사고팔아 내 몸의 빈 칸을 채우는 상점 주인이 된다.</strong></p>
+<p>제목이 <strong>23</strong>인 이유는 사람의 감각이 스물셋이기 때문이다. 시각 9(색 7 + 흑·백), 청각 2, 촉각 4, 후각 3, 미각 5.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>장르</td>
+<td>상점 운영 시뮬레이션</td>
+</tr>
+<tr>
+<td>시점</td>
+<td>1인칭 3D</td>
+</tr>
+<tr>
+<td>엔진</td>
+<td>Godot 4.7.2 + LLM 손님 서버 (TypeScript)</td>
+</tr>
+<tr>
+<td>배포</td>
+<td>로컬 공유 폴더 + Railway</td>
+</tr>
+</tbody></table>
+<h2 id="세계관"><a href="#세계관" class="headerlink" title="세계관"></a>세계관</h2><p>2026년, 자산 광풍이 화폐를 죽였다. 정부는 버블을 떠받치려 돈을 찍었고, 돈은 종이가 됐다.</p>
+<p>자산은 남았지만 돈이 되지 못했다. 아파트를 쪼개 쌀 한 포대와 바꿀 수는 없었고, 금은 매번 깨물어봐야 했다.</p>
+<p>돈의 조건을 채우는 것은 하나 남았다. 감각 이식 칩이 감각을 뽑아 옮길 수 있게 만든 순간.</p>
+<p>그래서 정부가 감각을 걷기 시작했다. 온전한 스물세 개 감각을 가진 사람은 이 도시에 없다.</p>
+<p>플레이어는 감각을 매매하는 상인이다. 가진 것은 11개뿐이다.</p>
+<p><img src="/2026/09/08/NAN-2026-Retrospective/worldview-1.png" alt="세계관 컷씬 1"></p>
+<p><img src="/2026/09/08/NAN-2026-Retrospective/worldview-2.png" alt="세계관 컷씬 2"></p>
+<h2 id="하루"><a href="#하루" class="headerlink" title="하루"></a>하루</h2><figure class="highlight gcode"><table><tr><td class="code"><pre><code class="hljs gcode">낮 <span class="hljs-comment">(~3분)</span> → 정산 <span class="hljs-comment">(~30초)</span> → 밤 <span class="hljs-comment">(~1분, 선택)</span> → 이벤트 <span class="hljs-comment">(~30초)</span> → 다음 날<br></code></pre></td></tr></table></figure>
+
+<p>낮에는 손님 4명이 차례로 들어온다. 판매자가 오면 감각 종류별 미니게임 5종으로 등급을 감정한 뒤, <strong>사실대로 말할지 낮춰 말할지</strong> 고른다. 이 선택이 게임의 핵심이다. 속이면 싸게 사지만 평판이 깎이고, 간파당하면 그 자리에서 관계가 끝난다. 밤에는 뒷문을 열어 불법 기억 거래를 할 수도 있다.</p>
+<p>플레이어의 선택은 평판으로 쌓이고, 다음 날 아침 이벤트로 돌아온다. 엔딩도 평판에 따라 갈리는 멀티 엔딩 구조다.</p>
+<p><img src="/2026/09/08/NAN-2026-Retrospective/image-1.png" alt="상점 - 낮"><br><img src="/2026/09/08/NAN-2026-Retrospective/image-2.png" alt="미니게임"><br><img src="/2026/09/08/NAN-2026-Retrospective/image-3.png" alt="정산"><br><img src="/2026/09/08/NAN-2026-Retrospective/image-4.png" alt="상점 - 밤"></p>
+<h1 id="회고"><a href="#회고" class="headerlink" title="회고"></a>회고</h1><h2 id="숫자로-보는-이틀"><a href="#숫자로-보는-이틀" class="headerlink" title="숫자로 보는 이틀"></a>숫자로 보는 이틀</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>기간</td>
+<td>09-04 16:00 주제 발표 ~ 09-06 08:00 제출 (약 40시간)</td>
+</tr>
+<tr>
+<td>첫 커밋</td>
+<td>09-04 21:57</td>
+</tr>
+<tr>
+<td>역할</td>
+<td>나: 게임 로직 · LLM 서버 · 배포 &#x2F; 동료: 3D 에셋 · 애니메이션 · 컷씬</td>
+</tr>
+<tr>
+<td>커밋</td>
+<td>320개 (나 243 · 동료 77)</td>
+</tr>
+<tr>
+<td>테스트</td>
+<td>게임 GUT 526개 · 서버 vitest 175개</td>
+</tr>
+<tr>
+<td>씬</td>
+<td>9개 · 감정 미니게임 5종</td>
+</tr>
+<tr>
+<td>코드</td>
+<td>서버 TS 약 2,800줄 · 게임 GDScript 약 28,700줄 (테스트·도구 포함)</td>
+</tr>
+</tbody></table>
+<h2 id="AI-활용"><a href="#AI-활용" class="headerlink" title="AI 활용"></a>AI 활용</h2><h3 id="하네스-엔지니어링"><a href="#하네스-엔지니어링" class="headerlink" title="하네스 엔지니어링"></a>하네스 엔지니어링</h3><p>가장 익숙한 하네스 엔지니어링 방식을 그대로 썼다.</p>
+<p>웹 개발 현직에서 하네스를 짤 때는 agents·skills·rules 세 층을 나누고, 그 위에 hooks를 얹는다. Claude Code 기준으로는 각각 <code>.claude/agents/</code>, <code>.claude/skills/</code>, <code>.claude/rules/</code>에 들어가는 파일들이고, hooks는 <code>settings.json</code>에 건다. 사냥꾼으로 비유하면 이렇다.</p>
+<p><strong>agent는 누구인가다.</strong> 사냥꾼이라는 agent라면 사냥감을 잡아 오는 것까지가 일이고, 손질은 요리사의 몫이다. 코드로 치면 “이 에이전트는 API 레이어만 만진다, 화면 컴포넌트는 손대지 않는다” 같은 경계다.</p>
+<p><strong>skill은 무엇으로 하는가다.</strong> 칼 skill에는 칼의 제원과 쥐는 법, 젖은 나무에 쓰지 말라는 주의점, 손질법이 들어간다. SKILL.md 한 장에 절차와 주의점, 예시 코드 템플릿까지 둔다. 놓치기 쉬운 것이 하나 있다. <strong>언제 꺼낼지도 skill 안에 있어야 한다.</strong> 세션은 skill의 설명 한 줄만 들고 있다가 작업이 맞을 때 본문을 열기 때문에, 설명에 “언제”가 없으면 그 칼은 쓰이지 않는다.</p>
+<p><strong>rule은 어떤 skill을 꺼냈든 지켜야 할 선이다.</strong> 해가 지면 사냥을 멈춘다, 새끼 딸린 짐승은 잡지 않는다. 칼 skill이 없어도 성립하는 문장들이다. 코드로 치면 “API 호출은 <code>services/</code> 밖에서 하지 않는다”, “컴포넌트 파일은 200줄을 넘기지 않는다” 같은 것이다.</p>
+<p><strong>hook은 읽지 않아도 걸리는 것이다.</strong> rule은 세션이 읽고 따르기를 기대하는 것이라 반드시 새는 순간이 있다. hook은 파일을 쓴 뒤나 커밋 직전 같은 사건에 자동으로 도는 스크립트로 그 자리를 막는다. 칼집에 달린 걸쇠다. rule이 “하지 마라”라면 hook은 “할 수 없다”다.</p>
+<p>이렇게 나누는 이유는 하나다. 층이 섞이면 어디를 고쳐야 할지 모르게 된다. 칼이 안 들면 skill을, 칼로 통나무를 치면 rule을, 사냥꾼이 요리까지 하면 agent를 고치고, 규칙이 있는데도 자꾸 새면 hook을 단다. 각 층이 한 가지 이유로만 바뀌게 두는 것이 하네스를 오래 쓰는 방법이라고 생각한다.</p>
+<h3 id="이번에는-어떤-하네스를"><a href="#이번에는-어떤-하네스를" class="headerlink" title="이번에는 어떤 하네스를?"></a>이번에는 어떤 하네스를?</h3><p>이번에는 <a href="https://buymeacoffee.com/y1uda/e/512940">Godot MCP Pro</a>를 썼다. AI 세션을 Godot 에디터에 직접 붙이는 MCP 서버다. Node 서버가 WebSocket으로 에디터 플러그인과 붙고, 세션은 그 사이로 170개 남짓한 도구를 부른다. 씬 트리를 읽고 노드를 넣고, 스크립트를 만들고 검증하고, 게임을 실행해 스크린샷을 찍고, 키 입력을 흉내 내고, 에디터 에러 로그를 가져온다.</p>
+<p>사냥꾼 비유로 돌아가면 칼을 사서 온 것이다. 따라서 이번에는 skill은 내가 쓸 필요가 없다고 생각했다.</p>
+<p>하지만 프로젝트 전체에 대한 rules는 유지했다. 다만 이틀짜리 프로젝트이기에 별도 폴더로 나누지 않고 <strong>CLAUDE.md와 settings.json, 훅에 몰아 넣었다.</strong></p>
+<h3 id="어떻게-일했나"><a href="#어떻게-일했나" class="headerlink" title="어떻게 일했나"></a>어떻게 일했나</h3><p>하네스가 정해졌으니 남은 것은 흐름이다. 기획 → 초안 → 깎아 나가기 세 단계였다.</p>
+<p>Godot MCP Pro와 Claude Code가 있으니, 구현은 맡길 수 있다고 판단했다. 그렇다면 기획만 잘 나오면 된다고 생각했고, 그 기반이 되는 GDD를 팀원과 함께 단단하게 만드는 데 많은 시간을 썼다.</p>
+<p>그 뒤에는 GDD를 기반으로 초안을 만들어 달라고 했다. 이때 ultracode를 처음 써봤다. 간단하게 말하면 여러 서브에이전트가 병렬로 붙는 Claude Code의 멀티 에이전트 워크플로우다. 대규모 작업에서는 확실한 장점이 보였지만, 토큰이 정말 살살 녹았다…</p>
+<p>초안이 나온 뒤에는 직접 플레이하면서 문제가 되는 부분을 리스트업하고, Fable 모델에게 분석을 맡겨 md 파일로 정리해 저장하게 했다.</p>
+<p>해당 문서를 들고 Opus나 Sonnet 같은 모델로 진행해 토큰을 아꼈다. 분석은 비싼 모델이, 구현은 싼 모델이 맡는 구조다.</p>
+<p>즉, 이번에는 구체적인 하네스를 구축하기보다 기획에 시간을 쏟았고, 그 결과물로 초안을 만든 뒤 깎아 나가는 방식으로 게임을 구현했다.</p>
+<h2 id="만들면서-배운-것"><a href="#만들면서-배운-것" class="headerlink" title="만들면서 배운 것"></a>만들면서 배운 것</h2><p>해커톤 당시에는 내가 내린 판단들이 좋은 판단이었다고 고민할 겨를도 없었다. 그냥 눈 앞에 보이는 일들을 쳐내는 데 급급했던 것 같다. 돌아보니 “오? 내가 이런 판단을?” 할 정도로 나쁘지 않은 판단들도 있었고, “역시나 엉망이구나” 싶은 판단들도 있었다.</p>
+<h3 id="잘한-점"><a href="#잘한-점" class="headerlink" title="잘한 점"></a>잘한 점</h3><h4 id="핵심은-기획"><a href="#핵심은-기획" class="headerlink" title="핵심은 기획"></a>핵심은 기획</h4><p>해커톤 소개에 이 대회는 개발자가 아니라 <strong>디렉터</strong>를 뽑는 자리라고 적혀 있었다. 구현도 당연히 평가 항목이었지만, 기획과 아이디어를 더 무겁게 보겠다는 뜻으로 읽었다. 그래서 우리 팀은 GDD를 만드는 데 시간을 아끼지 않았다.</p>
+<p>오후 4시에 주제가 발표됐고 첫 코드는 밤 9시에 짰다. 그 사이 다섯 시간을 아이디어 회의에 썼고, 커밋을 시작한 뒤에도 회의는 끝나지 않았다. 큰 틀은 잡혔지만 세부 사항은 구현하면서 계속 논의했고, 그때마다 GDD를 고쳤다.</p>
+<p>사실 다른 팀의 발표를 보면서 우리는 상을 못 타겠다는 생각이 바로 들었다. 누가 봐도 멋진 결과물이 수두룩했다. 개발 역량이나 에셋 완성도는 솔직히 우리가 상대가 안 될 만큼 뛰어난 팀이 많았다.</p>
+<p>다만 지금 돌아보면, 키워드에 대한 고민의 깊이가 달랐다고 생각한다. 우리는 2026년이라는 키워드를 왜 감각이 화폐가 되는 해인지까지 파고들었고, 세 키워드가 억지 없이 한 줄로 이어지게 만드는 데 공을 들였다. 그 점이 심사위원의 공감을 샀다고 생각한다.</p>
+<h4 id="알맞은-배포-방법"><a href="#알맞은-배포-방법" class="headerlink" title="알맞은 배포 방법"></a>알맞은 배포 방법</h4><p>서버는 Railway에 붙여 <code>main</code>에 push하면 자동으로 재배포되게 했다. 모노레포라 Root Directory를 <code>llm-server</code>로 잡는 것 말고는 손댈 게 없었다.</p>
+<p>Godot 빌드는 공유 폴더로 해결했다. 스크립트 하나가 Windows zip과 macOS dmg를 export한 뒤, 내 맥의 특정 폴더에 날짜·시간 이름으로 복사한다. 그 폴더를 macOS 파일 공유로 열어 두면 팀원은 Windows 탐색기 주소창에 내 맥의 IP를 치는 것으로 끝이다.</p>
+<p>FTP 서버까지도 고민했지만, 이번 해커톤이 외부 배포까지 목표로 하는 것도 아닐 뿐더러 어차피 같은 네트워크 안에서 공유하면 되기 때문에 이 정도로 전략을 짰다. 오버 엔지니어링이 일어나지 않았다는 점에서 잘한 결정이었다고 생각하고, 팀원과 결과물을 쉽게 공유하고 피드백을 받을 수 있어 좋았다.</p>
+<h4 id="경제는-게임이-말은-서버가"><a href="#경제는-게임이-말은-서버가" class="headerlink" title="경제는 게임이, 말은 서버가"></a>경제는 게임이, 말은 서버가</h4><p>LLM을 쓰는 게임에서 가장 쉬운 실패는 <strong>모델에게 다 맡기는 것</strong>이다. 가격·마지노선·거짓말 판정을 프롬프트 안에 넣으면 같은 입력에 다른 답이 나오고, 그 순간 밸런스를 측정할 수 없게 된다.</p>
+<p>그래서 첫 커밋의 설계 문서에 경계선을 한 줄로 박고 시작했다.</p>
+<table>
+<thead>
+<tr>
+<th>게임이 정한다</th>
+<th>서버(LLM)가 정한다</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>가격 공식 · 예산 · 마지노선</td>
+<td>이번 턴에 무슨 말을 하는가</td>
+</tr>
+<tr>
+<td>거짓말이 들킬지 (주사위)</td>
+<td>수락 · 역제안 · 퇴장 · 거짓말 폭로 중 무엇을 고르는가</td>
+</tr>
+<tr>
+<td>손님이 누구인지 (시드 고정)</td>
+<td>기분과 우호도 변화</td>
+</tr>
+<tr>
+<td>평판 · 세금 · 재고 규칙</td>
+<td>페르소나의 살 (이름 · 직업 · 사연)</td>
+</tr>
+</tbody></table>
+<p>한 줄로 하면 <strong>숫자는 게임이, 말은 서버가</strong> 정한다. 서버는 게임이 넘긴 숫자를 받기만 하고, 그 안에서 대사와 결정을 낸다.</p>
+<p>이 한 줄이 이틀 내내 “이건 어디에 넣지?”라는 질문을 대신 답해줬다.</p>
+<h3 id="아쉬운-점"><a href="#아쉬운-점" class="headerlink" title="아쉬운 점"></a>아쉬운 점</h3><p>아쉬운 점은 여러 가지가 있겠지만, 한 줄로 정리하면 <strong>본질을 파고들지 못했다</strong>는 것이다.</p>
+<p>발표 후 평가 시에 심사위원 분들이 이 게임의 핵심인 협상 시스템에 대해 질문을 주셨다. 그런데 그 부분은 LLM에 맡긴 영역이라 설명할 것이 별로 없었다. LLM을 잘 활용했다고 볼 수도 있지만, 뒤집어 보면 가장 중요한 시스템을 가장 적게 고민한 것이다. LLM이 알아서 정리해 주겠지, 하고 넘긴 셈이다.</p>
+<p>정확히 말하면 협상의 <strong>구조</strong>는 고민했다. 숫자는 게임이 쥐고 말만 서버가 하게 한 경계선이 그것이다. 다만 고민하지 않은 것은 협상의 <strong>재미</strong>다. 플레이어가 한 턴에 무엇을 느끼고, 몇 번 주고받아야 손맛이 나는지는 설계하지 않았다. 짧고 별것 아닌 것처럼 보이지만, 가장 큰 부분을 놓쳤다는 얘기다.</p>
+<p>그러면서 든 생각이 있다. <strong>AI가 반드시 들어가야 하는 걸까?</strong></p>
+<p>최근 3년 동안 주요 시상식의 올해의 게임 수상작을 보면 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>GJA</th>
+<th>D.I.C.E.</th>
+<th>GDC</th>
+<th>TGA</th>
+<th>BAFTA</th>
+<th>생성형 AI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025</td>
+<td>클레르 옵스퀴르: 33 원정대</td>
+<td>클레르 옵스퀴르: 33 원정대</td>
+<td>클레르 옵스퀴르: 33 원정대</td>
+<td>클레르 옵스퀴르: 33 원정대</td>
+<td>클레르 옵스퀴르: 33 원정대</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>검은 신화: 오공</td>
+<td>아스트로봇</td>
+<td>Balatro</td>
+<td>아스트로봇</td>
+<td>아스트로봇</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>발더스 게이트 3</td>
+<td>발더스 게이트 3</td>
+<td>발더스 게이트 3</td>
+<td>발더스 게이트 3</td>
+<td>발더스 게이트 3</td>
+<td>없음</td>
+</tr>
+</tbody></table>
+<p>어느 작품도 생성형 AI를 게임 안의 플레이 요소로 넣지 않았다. 특히나 발더스 게이트 3은 오히려 방대한 대사를 전부 작가가 쓰고 성우가 녹음한 것이 평가 포인트였다고 한다.</p>
+<p>상점 시뮬레이션의 핵심은 빠른 성장에서 오는 도파민이라고 생각한다. 빠르게 팔고, 돈을 모으고, 더 비싼 것을 사서 더 비싸게 파는 순환이 게임의 뼈대다. 협상은 그 순환의 한가운데에 있다. 우리는 그것을 LLM과의 대화로 풀었는데, 대화 한 번이 꽤 길어서 협상 자체가 루즈해지는 느낌이 있었다. 상호작용 버튼 몇 개로 빠르게 넘어가게 했어도 충분히 재밌었을 것이다.</p>
+<p>AI 해커톤인 것은 맞다. 다만 AI를 게임 속에서 활용하고자 했다면 시스템적으로 정말 깊은 고민을 해서 이게 AI가 아니면 안 되는 이유를 찾았어야만 했다고 생각한다. 돌아보면 결과물이 부족할까 걱정이 앞서서, 가장 어려운 부분을 LLM에 맡기는 것으로 마무리를 지었던 것 같다.</p>
+<h1 id="마무리"><a href="#마무리" class="headerlink" title="마무리"></a>마무리</h1><p>어렸을 때부터 게임을 정말 좋아했고, 언젠가는 게임을 만들겠다는 꿈도 있었다. 여러 현실적인 이유로 게임 쪽 진로를 택하지는 못하고 웹 개발자의 길을 걷고 있지만, 이번에 좋은 기회를 만나 좋은 결과까지 냈다는 것이 너무나 행복하다.</p>
+<p>AI가 게임에 들어가는 시대라 해도, 사람들은 아직 제작자의 노력이 물씬 느껴지는 땀내 나는 게임을 더 좋아하지 않을까 생각한다. 다음에 게임을 만들 기회가 온다면, 누구나 빠져들 만한 게임을 다시 한 번 만들어 보고 싶다.</p>
+<p>마지막으로, 에셋을 장인처럼 깎아내어 우리 게임의 멋진 분위기를 만들어 주고, 체력적으로 지쳤을 텐데도 끝까지 힘내 준 직장 동료에게 감사를 전한다.</p>
+<p>동료의 회고는 <a href="https://velog.io/@tnghgks/NAN2026-%ED%95%B4%EC%BB%A4%ED%86%A4-%ED%9A%8C%EA%B3%A0">여기</a>에서 볼 수 있다.</p>
+]]></content>
+      <categories>
+        <category>Retrospective</category>
+      </categories>
+      <tags>
+        <tag>Hackathon</tag>
+        <tag>Godot</tag>
+        <tag>LLM</tag>
+        <tag>Retrospective</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Outis 제작기</title>
+    <url>/2026/09/28/Outis-Devlog/</url>
+    <content><![CDATA[<h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p><a href="https://dudwns0921.itch.io/outis">https://dudwns0921.itch.io/outis</a></p>
+<p><a href="/2026/09/08/NAN-2026-Retrospective/">NAN 2026 해커톤</a>이 끝나고 한동안은 지쳐 있었지만, 얼마 지나지 않아 또 게임을 만들고 싶어졌다. 마침 영화 《오디세이》를 보고 깊은 감명을 받은 터라, 이번에는 오디세우스의 이야기로 게임을 만들어 보기로 했다. 그 결과물이 <strong>Outis</strong>(우티스)다.</p>
+<p><img src="/2026/09/28/Outis-Devlog/main-menu.png" alt="메인 화면"></p>
+<h1 id="게임-소개"><a href="#게임-소개" class="headerlink" title="게임 소개"></a>게임 소개</h1><p>Outis는 영화 《오디세이》와 그 원작인 호메로스의 『오디세이아』 중 외눈 거인 폴리페모스 에피소드를 바탕으로 만든 3인칭 어드벤처 게임이다. 제목은 오디세우스가 폴리페모스에게 댄 가짜 이름으로, “아무도 아니다”라는 뜻을 가지고 있다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>장르</td>
+<td>3인칭 어드벤처</td>
+</tr>
+<tr>
+<td>엔진</td>
+<td>Godot 4.7</td>
+</tr>
+<tr>
+<td>사용 도구</td>
+<td>Claude Code, Godot MCP Pro, Meshy AI, ElevenLabs, ChatGPT</td>
+</tr>
+<tr>
+<td>배포</td>
+<td>itch.io (Windows, macOS &#x2F; 한국어, English)</td>
+</tr>
+</tbody></table>
+<p>치즈를 훔쳐 먹다 들킨 오디세우스와 선원 열두 명이 거인의 동굴에 갇히고, 거인은 저녁마다 선원을 둘씩 잡아먹는다. 플레이어는 선원이 다 먹히기 전에 잠든 거인 곁을 몰래 오가며 무기를 만들어 탈출해야 한다.</p>
+<p>진행 순서는 영화와 원작을 조금씩 섞어서 짰다.</p>
+<figure class="highlight"><table><tr><td class="code"><pre><code class="hljs">몽둥이 잘라내기 → 다듬기 → 선원 풀기 → 불 살리기 → 달구기 → 눈 찌르기 → 탈출<br></code></pre></td></tr></table></figure>
+
+<p>탈출한 뒤에는 배 위에서 거인에게 진짜 이름을 외칠지 말지를 고르게 되고, 이 선택에 따라 엔딩이 갈린다.</p>
+<h2 id="플레이-영상"><a href="#플레이-영상" class="headerlink" title="플레이 영상"></a>플레이 영상</h2><div style="position:relative;padding-bottom:56.25%;height:0;">
+  <iframe src="https://www.youtube.com/embed/5TGHxiWfELE" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h1 id="어떻게-만들었나"><a href="#어떻게-만들었나" class="headerlink" title="어떻게 만들었나"></a>어떻게 만들었나</h1><h2 id="역할-분담"><a href="#역할-분담" class="headerlink" title="역할 분담"></a>역할 분담</h2><p>구현은 AI가, 기획과 에셋은 내가 맡았다. 도구는 해커톤 때와 마찬가지로 Claude Code와 Godot MCP Pro를 사용했다.</p>
+<p>숫자로 정리하면 아래와 같다. 기간은 18일이지만 해커톤처럼 몰아서 한 게 아니라 시간 날 때 틈틈이 만들었기 때문에, 실제 작업 시간은 3~4일 정도로 보는 게 맞을 것 같다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>기간</td>
+<td>09-10 첫 커밋 ~ 09-28 0.1.1 배포</td>
+</tr>
+<tr>
+<td>커밋</td>
+<td>130개</td>
+</tr>
+<tr>
+<td>코드</td>
+<td>GDScript 약 11,600줄, 테스트 약 3,800줄</td>
+</tr>
+<tr>
+<td>기획서</td>
+<td>GDD 804줄</td>
+</tr>
+</tbody></table>
+<h2 id="GDD와-코드-동기화"><a href="#GDD와-코드-동기화" class="headerlink" title="GDD와 코드 동기화"></a>GDD와 코드 동기화</h2><p>이번에도 해커톤 때와 마찬가지로 GDD를 게임의 기반으로 삼았다. 그때도 GDD에 가장 신경을 쓰긴 했지만, 이번에는 좀 더 체계를 갖춰서 진행해 보고 싶었다.</p>
+<p>그래서 첫날에 <code>gdd-sync</code>라는 스킬부터 만들었다. GDD와 코드가 서로 어긋나지 않게 맞춰주는 스킬인데, 원리는 간단하다. GDD와 코드 양쪽에 같은 ID를 붙여두는 것이다.</p>
+<p>GDD 맨 뒤에 아래와 같은 표를 두고,</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown">| ID | 값 | 출처 | 코드 위치 | 상태 |<br>|---|---|---|---|---|<br>| BAL.CREW.START | 12 | 4.3 | game/config/balance.gd:CREW<span class="hljs-emphasis">_START | 동기 |</span><br><span class="hljs-emphasis">| BAL.CREW.FREE_</span>SEC | 4 | 4.5 | game/config/balance.gd:CREW<span class="hljs-emphasis">_FREE_</span>SEC | 동기 |<br></code></pre></td></tr></table></figure>
+
+<p>코드에서는 해당 값을 정의하는 줄에 주석으로 ID를 적어둔다.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs gdscript">static var CREW_START := 12  # GDD: BAL.CREW.START<br>static var CREW_FREE_SEC := 4.0  # GDD: BAL.CREW.FREE_SEC<br></code></pre></td></tr></table></figure>
+
+<p>스킬을 실행하면 파이썬 스크립트가 표와 주석을 대조해서 값이 다른 항목, 아직 구현되지 않은 항목, 표에는 없는데 코드에만 있는 항목을 찾아준다. 여기에 방향을 지정해서 <code>/gdd-sync to-code</code>를 실행하면 GDD를 기준으로 코드를 고치고, <code>/gdd-sync to-gdd</code>를 실행하면 반대로 코드를 기준으로 GDD를 고친다.</p>
+<p>최종적으로 이 표에는 253개 항목이 들어갔다. 만드는 동안 순서가 바뀌기도 하고 아이템이 통째로 빠지기도 했는데, 그때마다 문서와 코드가 같이 바뀌어서 기획서를 끝까지 믿고 볼 수 있었다.</p>
+<h2 id="밸런스-조정"><a href="#밸런스-조정" class="headerlink" title="밸런스 조정"></a>밸런스 조정</h2><p>게임을 만들면서 가장 시간이 많이 든 건 밸런스였다. 값을 바꾸고, 플레이해 보고, 다시 바꾸는 과정을 계속 반복해야 했기 때문이다. 그때마다 Claude에게 “달리기 소음을 낮춰줘”라고 요청하는 것도 번거로웠고, 수치가 코드 곳곳에 흩어져 있어서 전체 밸런스가 어떤 상태인지 한눈에 파악하기도 어려웠다.</p>
+<p>고민 끝에 밸런스 수치 111개를 엑셀 파일 하나로 빼기로 했다. 엑셀에서 값을 고치고 저장하면 실행 중인 게임이 0.5초 안에 파일을 다시 읽어서 바로 반영한다. 덕분에 게임을 켜둔 채로 값을 바꿔가며 테스트할 수 있게 되었고, 모든 수치를 표 하나에서 볼 수 있게 되었다.</p>
+<p><img src="/2026/09/28/Outis-Devlog/balance-xlsx.png" alt="밸런스 표"></p>
+<p>값이 확정되면 엑셀의 값을 코드에 반영하고, 앞서 만든 <code>gdd-sync</code>로 GDD까지 맞춘다.</p>
+<h2 id="HUD-대신-몰입감"><a href="#HUD-대신-몰입감" class="headerlink" title="HUD 대신 몰입감"></a>HUD 대신 몰입감</h2><p>맨 처음에는 HUD에 많은 정보를 띄우려고 했다. 폴리페모스의 민감도나 모닥불 연료처럼 게임에 필요한 수치들을 화면에 잔뜩 올려놨었다. 그러다 게임 안에서 무엇이 더 자연스러울지 고민해 봤고, 수치를 보여주기보다 위험도를 감각으로 전달하는 편이 내가 오디세우스가 된 듯한 몰입감을 줄 수 있겠다고 생각했다.</p>
+<p>그래서 비네팅 효과와 심장 소리를 넣어, 위험이 커지고 있다는 걸 시각과 청각으로 느낄 수 있게 했다. 최종적으로는 아래와 같은 형태가 되었고, 오디세우스의 상태를 나타내는 표시는 HUD에서 전부 제거했다.</p>
+<p><img src="/2026/09/28/Outis-Devlog/danger.png" alt="깨어나기 직전"></p>
+<h2 id="에셋"><a href="#에셋" class="headerlink" title="에셋"></a>에셋</h2><h3 id="캐릭터"><a href="#캐릭터" class="headerlink" title="캐릭터"></a>캐릭터</h3><p>캐릭터는 해커톤 때 동료에게 배운 파이프라인을 그대로 활용했다. Claude로 내가 원하는 캐릭터의 프롬프트를 뽑고, ChatGPT의 이미지 생성으로 컨셉 이미지를 만든 뒤, 그 이미지를 Meshy AI에 넘겨 3D 모델을 생성하는 방식이다.</p>
+<p><img src="/2026/09/28/Outis-Devlog/concept-polyphemus.png" alt="폴리페모스 컨셉"></p>
+<p>다만 에셋에 너무 많은 시간을 쓰지는 않았고, 어느 정도 나왔다 싶으면 거기서 멈췄다. 지난 해커톤 때 에셋에 몰입하다가 정작 중요한 부분을 놓쳤던 경험이 있었기 때문이다.</p>
+<h3 id="컷신"><a href="#컷신" class="headerlink" title="컷신"></a>컷신</h3><p>컷신은 고대 그리스 도자기 그림 스타일로 만들었다. 이 이야기를 호메로스가 노래로 전한다는 설정이라, 후대에 도자기에 그려진 장면처럼 보이면 어울리겠다고 생각했다.</p>
+<p><img src="/2026/09/28/Outis-Devlog/cutscene-intro.png" alt="오프닝 컷신"><br><img src="/2026/09/28/Outis-Devlog/cutscene-stab.png" alt="찌르기 컷신"></p>
+<h1 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h1><p>해커톤 때는 40시간이라는 제한이 있어서 어떻게든 끝을 낼 수 있었다. 이번에는 끝을 내가 정해야 했는데, 고치고 싶은 부분이 계속 눈에 들어와서 오히려 그게 더 어려웠다. 결국 0.1이라는 버전을 붙여 일단 올리고 나서야 한숨 돌릴 수 있었다.</p>
+<p>그래도 만드는 내내 진심으로 재밌었다. 머릿속으로 상상하던 세계가 조금씩 구체화되는 과정은, 이유는 잘 모르겠지만 나에게 즐거움과 충만함을 주는 것 같다.</p>
+<p>게임은 아래 링크에서 무료로 받을 수 있다. 부족한 점이 많지만 재미있게 플레이했으면 하는 바람이다.</p>
+<p><a href="https://dudwns0921.itch.io/outis">https://dudwns0921.itch.io/outis</a></p>
+]]></content>
+      <categories>
+        <category>Retrospective</category>
+      </categories>
+      <tags>
+        <tag>Godot</tag>
+        <tag>Retrospective</tag>
+        <tag>Game</tag>
+        <tag>Claude Code</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Database] IndexedDB 기초</title>
     <url>/2022/10/26/Using-IndexedDB/</url>
     <content><![CDATA[<p>최근 프로젝트를 진행하며 꽤 많은 데이터를 브라우저상에서 저장해야 했는데, localstroage사용만으로는 구현이 어려워서 <strong>IndexedDB</strong>를 사용했다.</p>
@@ -1180,6 +1441,45 @@
         <tag>Database</tag>
         <tag>indexedDB</tag>
         <tag>Basic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The-Pragmatic-Programmer</title>
+    <url>/2025/01/05/The-Pragmatic-Programmer/</url>
+    <content><![CDATA[<h1 id="서론"><a href="#서론" class="headerlink" title="서론"></a>서론</h1><p>새해는 사람한테 참 좋은 원동력인 것 같다. 그동안 ‘다음에 해야지…’ 라고 생각하면서 미뤄왔던 일들을 한 번에 처리할 수 있는 힘을 얻을 수 있으니 말이다. 나같은 경우에는 개발 관련 서적을 읽는 것이 미뤄왔던 일들 중 하나였다. 개발자가 된 이후 내 개발 지식은 모두 유튜브, 인터넷 강의, 개발 문서에 그 뿌리를 두고 있었다. 이 셋 모두 빠르고 쉽게 정보를 얻을 수 있다는 점에서 좋지만, 책만큼 정제된 지식을 얻기는 어렵다고 생각한다. 정제된 지식은 많은 고민과 생각이 필요하기에 앞의 세 가지에 의지를 많이 했던 것 같다.</p>
+<p>하지만 새해가 된 김에 무작정 책 한 권을 읽겠다고 마음을 먹었고, 그 책이 바로 ‘실용주의 프로그래머’였다. 워낙 유명한 책이기도 하고, 개발 이론과 관련된 책보다는 인사이트에 관련된 책을 읽고 싶었다.</p>
+<p>결론부터 말하자면, 400페이지에 가까운 책을 3~4일에 다 읽을 만큼 너무나 재밌는 책이었다. 회사에서 중간 관리자로서 고민하고 있던 나에게 절실하게 필요한 이야기들이 많다는 생각이 들었고, 마지막에 가서는 괜시리 그냥 일반 직장인인 개발자인 내가 세계의 사명을 짊어진 영웅처럼 느껴지기도 했다. 내 마음에 와닿았던 몇 가지 Topic들을 이야기해보려고 한다.</p>
+<h1 id="내용-정리"><a href="#내용-정리" class="headerlink" title="내용 정리"></a>내용 정리</h1><h2 id="Topic-7-소통하라"><a href="#Topic-7-소통하라" class="headerlink" title="Topic 7 소통하라!"></a>Topic 7 소통하라!</h2><p>취준생 시절, 자소서에는 소통이라는 단어가 빠질 수가 없었다. 회사는 혼자서 할 수 없는 일을 위한 곳이고, 이를 위해서는 소통이 필수적이기 때문이다. 그렇다고 내가 소통을 잘하는 사람이었나 돌이켜 보면 ‘전혀 아니었다’라고 말할 수 있겠다. 가령 동료들과 말을 하다가도 ‘음… 뭐였지?’ 이런 버퍼링이 걸릴 때가 꽤 많았다.</p>
+<p>책에서는 여러 가지 방법들을 제시해주는데, 대부분은 소통하기 전에 생각을 먼저 해보라는 이야기였다. 지금이 이 이야기를 하기 좋은 때인지, 이렇게 전달하는 것이 과연 효과적인 것인지 등…</p>
+<p>팀원들과 소통하기 전에 5분 정도 생각하고, 내 생각을 글로 옮긴 후에 소통을 시작해봤는데, 만족스러운 결과를 얻을 수 있었다. 물론 초심자의 행운일 수도 있겠지만 일들이 내가 원하는 대로 풀리는 느낌이었다. 내가 의도한 바를 상대방에게 명확하게 전달했다는 생각이 들었고, 결과 또한 너무 만족스러웠다.</p>
+<h2 id="Topic-10-직교성"><a href="#Topic-10-직교성" class="headerlink" title="Topic 10 직교성"></a>Topic 10 직교성</h2><p>직교성이란 기하학에서 빌려 온 용어로, 두 직선의 관계를 이야기할 때 사용한다. 두 직선이 직교한다는 건 두 직선이 독립적이라는 걸 의미하는데, 이와 유사하게 컴퓨터 과학에서 이 용어는 하나가 바뀌어도 나머지에 어떤 영향도 주지 않음을 의미한다.</p>
+<p>회사에서 직교성의 중요성을 뼈저리게 느낀 순간이 있었다. 내가 진행하던 프로젝트중 Vue.js 기반의 프로젝트가 있었는데, 비즈니스 로직과 UI 쪽 로직이 무분별하게 섞여있었다. 서버 통신 쪽 로직만을 테스트하려고 했는데, 이를 위해서는 어쩔 수 없이 Vue 컴포넌트를 렌더링해야만 했었다. 비즈니스 로직과 UI 쪽 로직이 잘 구분되어 있었다면 간단했을 일이 직교성을 무시한 채 뒤엉켜있어 엄청난 시간이 드는 일이 되어버리고 말았다.</p>
+<p>직교성이라는 개념을 알고, 이에 따라 빠르게 리팩토링을 했다면 내가 바보라는 생각은 하지 않았을 것 같다.</p>
+<h2 id="Topic-20-디버깅"><a href="#Topic-20-디버깅" class="headerlink" title="Topic 20 디버깅"></a>Topic 20 디버깅</h2><blockquote>
+<p>참으로 고통스러운 일입니다.<br>자신이 겪는 어려움을 보고는 알게 되죠.<br>다른 누구도 아닌 바로 자신이 문제를 만들었다는 걸.</p>
+<p>-소포클레스</p>
+</blockquote>
+<p>스포클레스가 남긴 말로 디버깅 챕터 시작 부분에 인용되어있다. 디버깅을 한다는 건 문제가 발생했다는 것이고, 그 문제를 내가 만들었을지도 모른다는 것이다.나의 부족함을 마주하는 작업이기 때문에 디버깅은 고통스러운 작업일 수밖에 없다.</p>
+<p>너무나 당연한 이야기지만 개발자는 완벽한 존재가 아니다. 그런 사람이 만드는 소프트웨어 또한 불완전할 수 밖에 없다. 그런데 나를 포함한 개발자들은 디버깅의 고통을 느끼기 싫어 ‘그럴리가 없는데?’ 라는 생각을 자주 하곤 한다. 이러한 생각 때문에 디버깅은 책임 떠넘기기와 비슷한 작업이 되어버리는 경우가 많다.</p>
+<p>그래서 ‘디버깅은 단지 문제 풀이일 뿐이라는 사실을 받아들이고, 그런 마음으로 공략하라’는 책의 내용이 날 뜨끔하게 만들었던 것 같다.</p>
+<h2 id="Topic-53-오만과-편견"><a href="#Topic-53-오만과-편견" class="headerlink" title="Topic 53 오만과 편견"></a>Topic 53 오만과 편견</h2><blockquote>
+<p>옛 장인들은 자신의 작품에 서명하는 것을 자랑스러워했다. 여러분도 그래야 한다.</p>
+</blockquote>
+<p>사실상 이 책에서 내게 가장 와닿았던 내용이다. 프로젝트가 끝났을 때 그 결과물에 애정이나 긍지를 가지는 개발자는 거의 없었던 것 같다. 대부분 고객사나 일정 등을 문제 삼으며 결과물에 대한 비판을 많이 하곤 했다. 하지만 어떤 일이 있었건 그 결과물을 본인들이 만든 것에는 변함이 없다.</p>
+<p>옛 장인들처럼 자신의 작품에 자랑스럽게 서명하기 위해서는 코딩을 하는 순간순간 최선을 다해야겠다는 생각을 했다. 사람인지라 매순간 최선을 다한다는 건 쉽지 않은 일이겠지만, 적어도 나에게만큼은 부끄럽지 않은 작품을 만들 수 있는 개발자가 되어야겠다.</p>
+<h1 id="정리하며…"><a href="#정리하며…" class="headerlink" title="정리하며…"></a>정리하며…</h1><p>이번 글에서는 4개 정도의 토픽 정도만을 다뤘지만 사실 책에는 훨씬 더 많은 내용들이 있다. 특히 개발 이론적으로도 유용한 내용들이 많아 널리널리 알리고 싶은 책이다.</p>
+<p>그리고 책 중간중간 코딩 예시나 연습 문제 등이 있는데, 이것도 꽤나 재밌으니 다는 아니더라도 관심이 가는 토픽이라면 직접 코딩도 해보는 걸 추천한다. 나같은 경우는 Topic 35의 액터와 프로세스 부분을 따라해보는 게 특히 재밌게 느껴졌다.</p>
+<p>start_actor 함수가 정의되어있지 않아 직접 구현해야했는데, 별 거 아니었지만 구현하고 동작하는 걸 보니 코딩을 처음 배웠을 때의 뿌듯함과 즐거움을 느낄 수 있었던 것 같다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// Topic 35 액터와 프로세스</span><br><br><span class="hljs-keyword">const</span> &#123; dispatch, start, spawn &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;nact&quot;</span>);<br><br><span class="hljs-keyword">const</span> customerActor = &#123;<br>  <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">dispatch</span>(state.<span class="hljs-property">waiter</span>, &#123;<br>      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;주문&quot;</span>,<br>      <span class="hljs-attr">customer</span>: ctx.<span class="hljs-property">self</span>,<br>      <span class="hljs-attr">wants</span>: <span class="hljs-string">&quot;파이&quot;</span>,<br>    &#125;);<br>  &#125;,<br>  <span class="hljs-string">&quot;테이블에 놓다&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;ctx.self.name&#125;</span>이 테이블에 나타난 <span class="hljs-subst">$&#123;msg.food&#125;</span>를 보다.`</span>);<br>  &#125;,<br>  <span class="hljs-string">&quot;남은 파이 없음&quot;</span>: <span class="hljs-function">(<span class="hljs-params">_msg, ctx, _state</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;ctx.self.name&#125;</span>이 파이가 없다고 불평한다.`</span>);<br>  &#125;,<br>&#125;;<br><br><span class="hljs-keyword">const</span> waiterActor = &#123;<br>  주문: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (msg.<span class="hljs-property">wants</span> === <span class="hljs-string">&quot;파이&quot;</span>) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-title function_">dispatch</span>(state.<span class="hljs-property">pieCase</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;한 조각 꺼내기&quot;</span>,<br>        <span class="hljs-attr">customer</span>: msg.<span class="hljs-property">customer</span>,<br>        <span class="hljs-attr">waiter</span>: ctx.<span class="hljs-property">self</span>,<br>      &#125;);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;주문할 수 없는 음식입니다.&quot;</span>);<br>    &#125;<br>  &#125;,<br>  <span class="hljs-string">&quot;주문서에 추가&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<br>      <span class="hljs-string">`종업원이 <span class="hljs-subst">$&#123;msg.food&#125;</span>을 <span class="hljs-subst">$&#123;msg.customer.name&#125;</span>의 주문서에 추가한다.`</span><br>    );<br>  &#125;,<br>  오류: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">customer</span>, &#123;<br>      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;남은 파이 없음&quot;</span>,<br>      <span class="hljs-attr">msg</span>: msg.<span class="hljs-property">msg</span>,<br>    &#125;);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(msg.<span class="hljs-property">msg</span>);<br>  &#125;,<br>&#125;;<br><br><span class="hljs-keyword">const</span> pieCaseActor = &#123;<br>  <span class="hljs-string">&quot;한 조각 꺼내기&quot;</span>: <span class="hljs-function">(<span class="hljs-params">msg, ctx, state</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (state.<span class="hljs-property">slices</span>.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) &#123;<br>      <span class="hljs-keyword">let</span> slice = state.<span class="hljs-property">slices</span>.<span class="hljs-title function_">shift</span>();<br>      <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">waiter</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;주문서에 추가&quot;</span>,<br>        <span class="hljs-attr">food</span>: slice,<br>        <span class="hljs-attr">customer</span>: msg.<span class="hljs-property">customer</span>,<br>      &#125;);<br>      <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">customer</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;테이블에 놓다&quot;</span>,<br>        <span class="hljs-attr">food</span>: slice,<br>      &#125;);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-title function_">dispatch</span>(msg.<span class="hljs-property">waiter</span>, &#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;오류&quot;</span>,<br>        <span class="hljs-attr">msg</span>: <span class="hljs-string">&quot;파이가 없습니다.&quot;</span>,<br>        <span class="hljs-attr">customer</span>: msg.<span class="hljs-property">customer</span>,<br>      &#125;);<br>    &#125;<br>  &#125;,<br>&#125;;<br><br><span class="hljs-keyword">const</span> actorSystem = <span class="hljs-title function_">start</span>();<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">start_actor</span> = (<span class="hljs-params">actorSystem, name, actor, initialState</span>) =&gt; &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_">spawn</span>(<br>    actorSystem,<br>    <span class="hljs-function">(<span class="hljs-params">state = initialState, msg, ctx</span>) =&gt;</span> &#123;<br>      <span class="hljs-keyword">if</span> (actor[msg.<span class="hljs-property">type</span>]) &#123;<br>        <span class="hljs-keyword">return</span> actor[msg.<span class="hljs-property">type</span>](msg, ctx, state);<br>      &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`액터가 <span class="hljs-subst">$&#123;msg.type&#125;</span>을 처리할 수 없습니다.`</span>);<br>      &#125;<br>    &#125;,<br>    name<br>  );<br>&#125;;<br><br><span class="hljs-keyword">let</span> pieCase = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;pie-case&quot;</span>, pieCaseActor, &#123;<br>  <span class="hljs-attr">slices</span>: [<span class="hljs-string">&quot;사과 파이&quot;</span>, <span class="hljs-string">&quot;딸기 파이&quot;</span>, <span class="hljs-string">&quot;블루베리 파이&quot;</span>],<br>&#125;);<br><span class="hljs-keyword">let</span> waiter = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;waiter&quot;</span>, waiterActor, &#123;<br>  pieCase,<br>&#125;);<br><span class="hljs-keyword">let</span> customer1 = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;customer1&quot;</span>, customerActor, &#123;<br>  waiter,<br>&#125;);<br><span class="hljs-keyword">let</span> customer2 = <span class="hljs-title function_">start_actor</span>(actorSystem, <span class="hljs-string">&quot;customer2&quot;</span>, customerActor, &#123;<br>  waiter,<br>&#125;);<br><br><span class="hljs-title function_">dispatch</span>(customer1, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br><span class="hljs-title function_">dispatch</span>(customer2, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br><span class="hljs-title function_">dispatch</span>(customer1, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br><span class="hljs-title function_">dispatch</span>(customer2, &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;파이가 먹고 싶다&quot;</span> &#125;);<br></code></pre></td></tr></table></figure>
+
+<p>책을 다 읽긴 했지만, 한 번 읽었다는 이유로 책장에 계속 넣어두기는 아까운 책이다. 개발자인 내가 어려움을 맞닥뜨렸을 때 조언을 해줄 수 있는 선생님이자 지침서로 늘 가까이 두고 펼쳐봐야겠다.</p>
+]]></content>
+      <categories>
+        <category>Book</category>
+      </categories>
+      <tags>
+        <tag>Book</tag>
+        <tag>Insight</tag>
       </tags>
   </entry>
 </search>
