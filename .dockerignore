@@ -1,8 +1,0 @@
-node_modules
-dist
-.git
-.vscode
-DockerFile.prod
-docker-compose.yml
-npm-debug.log
-pnpm-debug.log

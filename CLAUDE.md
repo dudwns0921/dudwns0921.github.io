@@ -10,8 +10,13 @@
 
 ## PDF
 
-- 운영에서는 빌드할 때 만든 `public/resume.pdf`를 내려준다. 로컬에서 운영과 같은 PDF를 만들려면 `pnpm build && pnpm pdf`.
-- `pnpm dev`에서는 `/api/pdf`가 그때그때 PDF를 만든다 (운영에서는 404).
+- 운영은 정적 사이트다. `pnpm build`가 `out/`으로 내보내고, `pnpm pdf`가 그 결과물을 띄워 `out/resume.pdf`를 만든다. 로컬에서 운영과 같은 결과물을 보려면 `pnpm build && pnpm pdf`.
+- `pnpm dev`에서는 `/api/pdf`(`src/app/api/pdf/route.dev.ts`)가 그때그때 PDF를 만든다. `.dev.ts`는 개발 서버에서만 라우트로 잡히고 운영 빌드에는 들어가지 않는다 (정적 내보내기에는 API를 둘 수 없다).
+
+## 배포
+
+- `master`에 푸시하면 GitHub Actions(`.github/workflows/deploy.yml`)가 정적 빌드와 PDF를 만들어 GitHub Pages에 올린다. 서버는 없다.
+- GitHub Pages가 이 저장소를 `/my-resume` 아래로 서빙한다. 블로그 저장소(`dudwns0921.github.io`)에 연결한 도메인을 따라 `https://elioground.com/my-resume`로 열린다.
 - 링크 이름 등에 이모지를 쓰지 않는다. PDF를 만드는 환경에 이모지 폰트가 없어 깨진다.
 
 ## 공통 작성 규칙

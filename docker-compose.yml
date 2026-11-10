@@ -1,8 +1,0 @@
-services:
-  my-resume:
-    build: 
-      context: .
-      dockerfile: DockerFile.prod
-    ports:
-      - "8085:3000"
-    restart: unless-stopped
