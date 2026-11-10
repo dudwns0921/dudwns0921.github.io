@@ -10,7 +10,7 @@ export const launchOptions = {
 /**
  * @param {import('puppeteer').Browser} browser
  * @param {{ origin: string, assetPrefix?: string }} options
- *   assetPrefix: 운영 빌드의 assetPrefix('/my-resume/'). 로컬 서버는 prefix 없이 서빙하므로 요청 경로를 되돌린다.
+ *   assetPrefix: 빌드에 assetPrefix를 쓸 때만 넘긴다. 로컬 서버는 prefix 없이 서빙하므로 요청 경로를 되돌린다.
  */
 export async function renderPdf(browser, { origin, assetPrefix }) {
   const page = await browser.newPage();

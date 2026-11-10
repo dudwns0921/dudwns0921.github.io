@@ -57,7 +57,7 @@ await new Promise((resolve) => server.listen(port, '127.0.0.1', resolve));
 let browser;
 try {
   browser = await puppeteer.launch(launchOptions);
-  const pdf = await renderPdf(browser, { origin, assetPrefix: '/my-resume/' });
+  const pdf = await renderPdf(browser, { origin });
   writeFileSync(output, pdf);
   console.log(`PDF 생성 완료: ${path.relative(root, output)} (${pdf.length} bytes)`);
 } finally {

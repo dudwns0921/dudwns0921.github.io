@@ -3,7 +3,7 @@ export const activities = [
     title: 'NAN 2026 Game X AI 해커톤 — 「23」',
     period: '2026.09',
     role: '공동 기획 · 개발(게임 로직·LLM 서버·배포) · 문서·발표',
-    links: [{ label: '회고 보기', href: 'https://dudwns0921.github.io/2026/09/08/NAN-2026-Retrospective/' }],
+    links: [{ label: '회고 보기', href: 'https://elioground.com/blog/2026/09/08/NAN-2026-Retrospective/' }],
     description:
       '감각이 화폐가 된 2026년, LLM 손님과 흥정하며 감각을 사고팔아 내 몸의 빈 칸을 채우는 1인칭 3D 상점 운영 시뮬레이션. NHN 주최 NAN 2026 Game X AI 해커톤 본선(지원 588팀 중 10팀 선발)에 2인 팀으로 참가해 약 40시간 만에 완성하고, 3위(우수상)를 수상.',
     techStack: ['Godot 4.7.2', 'GDScript', 'TypeScript', 'Railway', 'Claude Code', 'Godot MCP Pro'],

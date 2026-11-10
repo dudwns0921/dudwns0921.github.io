@@ -1,7 +1,7 @@
 name: resume deployment
 
 # master에 푸시하면 정적 사이트와 PDF를 만들어 GitHub Pages에 올린다.
-# 블로그(dudwns0921.github.io)에 커스텀 도메인이 연결돼 있으면 https://elioground.com/my-resume 로 열린다.
+# 이 저장소(dudwns0921.github.io)에 연결한 도메인 루트 https://elioground.com 으로 열린다.
 on:
   push:
     branches: [master]

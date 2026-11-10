@@ -1,5 +1,5 @@
-// 운영에서는 GitHub Pages가 /my-resume 아래로 서빙하므로 public 파일과 내부 경로에 같은 접두사를 붙인다.
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/my-resume' : '';
+// 이력서는 도메인 루트(elioground.com)에서 서빙한다. 다시 하위 경로로 옮기면 여기만 바꾼다.
+const BASE_PATH = '';
 
 export const withBasePath = (path: string) => `${BASE_PATH}${path}`;
 
