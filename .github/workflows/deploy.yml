@@ -38,6 +38,10 @@ jobs:
       - name: Build static site
         run: pnpm build
 
+      # 패키지 설치가 캐시에서 복원되면 puppeteer의 Chrome 내려받기가 건너뛰어지므로 따로 설치한다.
+      - name: Install Chrome for PDF
+        run: pnpm exec puppeteer browsers install chrome
+
       - name: Generate resume PDF
         run: pnpm pdf
 
