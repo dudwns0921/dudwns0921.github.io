@@ -4,7 +4,7 @@ import TitleComponent from '../common/TitleComponent';
 
 const Patent = ({ items }: { items: InfoItemData[] }) => (
   <section className="w-full">
-    <TitleComponent title="Patent" size="5xl" />
+    <TitleComponent title="Patent" size="4xl" />
     <div className="w-full flex flex-col gap-4">
       {items.map((exp) => (
         <InfoItem key={exp.title} {...exp} />

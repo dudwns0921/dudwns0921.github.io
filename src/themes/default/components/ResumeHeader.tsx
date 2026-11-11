@@ -9,10 +9,10 @@ const ResumeHeader = ({ profile }: { profile: Profile }) => {
   const [first, second, third] = profile.greeting;
   return (
     <section>
-      <h1 className="text-5xl md:text-6xl font-bold mb-4 break-keep">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 break-keep">
         {first}
         <br />
-        <span className="text-3xl font-semibold my-2 block md:inline md:text-5xl md:font-bold md:my-0">{second}</span>
+        <span className="text-2xl font-semibold my-2 block md:inline md:text-4xl md:font-bold md:my-0">{second}</span>
         <span className="hidden md:inline"> </span>
         <span className="block md:inline">
           {third}

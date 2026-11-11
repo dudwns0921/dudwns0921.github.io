@@ -14,7 +14,7 @@ const label = { tag: '태그', category: '카테고리', archive: '아카이브'
 
 <BlogLayout site={site} title={`${title} | ${site.blog.title}`} description={`${site.blog.title}의 ${label ? `${label} ${title}` : title}`}>
   {label && <p class="text-sm text-gray-500">{label}</p>}
-  <TitleComponent title={title} size="3xl" />
+  <TitleComponent title={title} size="4xl" />
   {kind === 'tags' && <TagCloud tags={tags} />}
   {(kind === 'categories' || (kind === 'category' && categories.length > 0)) && (
     <div class="mb-6">

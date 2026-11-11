@@ -2,7 +2,8 @@ import { useState } from 'react';
 import Spinner from './common/Spinner';
 
 // 운영에서는 빌드 때 만든 정적 PDF를, 개발에서는 /api/pdf가 그때그때 만든 PDF를 받는다 (주소는 라우트가 준다).
-const DownloadPDFButton = ({ pdfUrl }: { pdfUrl: string }) => {
+// size="sm": 머리 가로 메뉴 안의 작은 단추. block: 사이드 메뉴에서 폭을 꽉 채운다.
+const DownloadPDFButton = ({ pdfUrl, size = 'md', block = false }: { pdfUrl: string; size?: 'sm' | 'md'; block?: boolean }) => {
   const [loading, setLoading] = useState(false);
 
   const handleDownloadPDF = async () => {
@@ -29,7 +30,7 @@ const DownloadPDFButton = ({ pdfUrl }: { pdfUrl: string }) => {
   return (
     <button
       onClick={handleDownloadPDF}
-      className={`text-white bg-blue-500 px-4 py-2 rounded flex items-center justify-center min-w-[120px] transition
+      className={`text-white bg-blue-500 rounded flex items-center justify-center transition ${size === 'sm' ? 'px-3 py-1.5 text-sm' : 'px-4 py-2 min-w-[120px]'} ${block ? 'w-full' : ''}
         ${loading
           ? 'cursor-not-allowed opacity-70'
           : 'hover:bg-blue-600'

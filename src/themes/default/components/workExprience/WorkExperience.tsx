@@ -4,7 +4,7 @@ import WorkExperienceItem from './WorkExperienceItem';
 
 const WorkExperience = ({ items }: { items: WorkExperienceData[] }) => (
   <section>
-    <TitleComponent title="Work Experience" size="5xl" />
+    <TitleComponent title="Work Experience" size="4xl" />
     <div className="w-full flex flex-col gap-4">
       {items.map((exp, idx) => (
         <div key={exp.title}>
