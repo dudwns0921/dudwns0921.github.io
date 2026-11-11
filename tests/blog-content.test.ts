@@ -17,7 +17,10 @@ const read = (kind: 'posts' | 'drafts') =>
     return { slug, data: postFrontmatter.parse(parseYaml(fm)), body: raw.subarray(Buffer.byteLength(head)) };
   });
 
-const posts = read('posts');
+const allPosts = read('posts');
+// Hexo에서 옮긴 뒤 이 저장소에서 새로 낸 글. 옛 주소 목록 · 본문 고정값과 상관없으므로 아래 이전 검사에서 뺀다.
+const NEW_POSTS = ['Using-AI-Well'];
+const posts = allPosts.filter((p) => !NEW_POSTS.includes(p.slug));
 const drafts = read('drafts');
 const fixture = (name: string) =>
   readFileSync(path.join('tests/fixtures', name), 'utf8').split('\n').filter(Boolean);
@@ -27,6 +30,7 @@ const TRACKED_DRAFTS = ['IndexedDB-Transaction'];
 
 test('41 posts and tracked drafts', () => {
   expect(posts).toHaveLength(41);
+  for (const slug of NEW_POSTS) expect(allPosts.map((p) => p.slug)).toContain(slug);
   const slugs = drafts.map((d) => d.slug);
   expect(slugs.length).toBeGreaterThanOrEqual(TRACKED_DRAFTS.length);
   for (const slug of TRACKED_DRAFTS) expect(slugs).toContain(slug);
@@ -51,7 +55,6 @@ test('bodies unchanged', () => {
 });
 
 test('covers exist', () => {
-  const withCover = posts.filter((p) => p.data.cover);
-  expect(withCover).toHaveLength(34);
-  for (const p of withCover) expect(existsSync(path.join(BLOG, 'images', p.data.cover!)), p.slug).toBe(true);
+  expect(posts.filter((p) => p.data.cover)).toHaveLength(34);
+  for (const p of allPosts.filter((p) => p.data.cover)) expect(existsSync(path.join(BLOG, 'images', p.data.cover!)), p.slug).toBe(true);
 });

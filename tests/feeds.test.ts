@@ -9,10 +9,15 @@ const built = existsSync('out/index.html');
 const DRAFTS = 'content/blog/drafts';
 const draftSlugs = existsSync(DRAFTS) ? readdirSync(DRAFTS).filter((n) => statSync(path.join(DRAFTS, n)).isDirectory()) : [];
 
-test.runIf(built)('search index has 41 entries and no drafts', () => {
+// 운영 글 수 (Hexo에서 옮긴 41편 + 그 뒤에 낸 글). 글을 낼 때마다 고치지 않도록 폴더를 센다.
+const POSTS = 'content/blog/posts';
+const postCount = readdirSync(POSTS).filter((n) => statSync(path.join(POSTS, n)).isDirectory()).length;
+
+test.runIf(built)('search index has every post and no drafts', () => {
+  expect(postCount).toBeGreaterThanOrEqual(41);
   const raw = readFileSync('out/blog/search.json', 'utf8');
   const index = JSON.parse(raw) as { title: string; url: string; date: string; tags: string[]; categories: string[]; excerpt: string }[];
-  expect(index).toHaveLength(41);
+  expect(index).toHaveLength(postCount);
   expect(index[0]).toEqual(
     expect.objectContaining({ url: expect.stringMatching(/^\/blog\/\d{4}\/\d{2}\/\d{2}\/[A-Za-z0-9-]+\/$/), date: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/) }),
   );
