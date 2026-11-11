@@ -1,32 +1,48 @@
 ---
-import PostMeta from './PostMeta.astro';
+import PostTags from './PostTags.astro';
 import type { PostSummary } from '../../../../content/types';
+import { formatDate } from './format';
 
 interface Props {
   posts: PostSummary[];
 }
 
 const { posts } = Astro.props;
+// 검색 · 태그 거르기(BlogFilter)가 읽는 값. 검색어는 소문자로 비교한다.
+const searchText = (post: PostSummary) =>
+  [post.title, post.excerpt, ...post.tags.map((t) => t.name), ...post.categories].join(' ').toLowerCase();
+const tagKey = (post: PostSummary) => '|' + post.tags.map((t) => t.name).join('|') + '|';
 ---
 
-<!-- data-post-url은 검색 상자(SearchBox)가 결과에 없는 글을 숨길 때 쓴다. -->
-<ul class="flex flex-col divide-y divide-gray-200">
+<!-- velog처럼 글 하나를 한 덩어리로: 제목 · 요약 · 태그 · 날짜, 대표 이미지는 오른쪽 작은 그림. -->
+<ul class="flex flex-col divide-y divide-gray-100">
   {
     posts.map((post) => (
-      <li data-post-url={post.url} class="flex gap-4 py-5">
-        {post.cover && (
-          <a href={post.url} class="hidden shrink-0 sm:block" tabindex="-1" aria-hidden="true">
-            <img src={post.cover} alt="" loading="lazy" width="96" height="72" class="h-[72px] w-24 rounded object-cover" />
-          </a>
-        )}
-        <div class="flex min-w-0 flex-col gap-1.5">
-          <a href={post.url} class="text-xl font-semibold break-keep hover:underline">
-            {post.isDraft && <span class="mr-2 rounded bg-yellow-200 px-1.5 py-0.5 text-sm">초안</span>}
-            {post.title}
-          </a>
-          <PostMeta post={post} />
-          {post.excerpt && <p class="line-clamp-2 text-gray-700">{post.excerpt}</p>}
-        </div>
+      <li data-post-url={post.url} data-search={searchText(post)} data-tags={tagKey(post)} class="py-7 first:pt-2">
+        <article class="flex gap-5">
+          <div class="flex min-w-0 flex-1 flex-col gap-2">
+            <a href={post.url} class="text-xl font-bold break-keep hover:text-gray-600 sm:text-2xl">
+              {post.isDraft && <span class="mr-2 rounded bg-yellow-200 px-1.5 py-0.5 align-middle text-sm">초안</span>}
+              {post.title}
+            </a>
+            {post.excerpt && <p class="line-clamp-2 text-gray-600">{post.excerpt}</p>}
+            <PostTags tags={post.tags} />
+            <p class="text-sm text-gray-500">
+              <time datetime={formatDate(post.date)}>{formatDate(post.date)}</time>
+              {post.category && (
+                <>
+                  <span class="mx-1.5">·</span>
+                  <a href={post.category.url} class="hover:underline">{post.category.path.join(' / ')}</a>
+                </>
+              )}
+            </p>
+          </div>
+          {post.cover && (
+            <a href={post.url} class="shrink-0 self-start" tabindex="-1" aria-hidden="true">
+              <img src={post.cover} alt="" loading="lazy" width="160" height="100" class="aspect-[8/5] w-24 rounded-md object-cover sm:w-40" />
+            </a>
+          )}
+        </article>
       </li>
     ))
   }

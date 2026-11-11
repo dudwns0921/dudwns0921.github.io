@@ -1,0 +1,96 @@
+---
+// 글 목록 위의 검색 상자와 태그 고르기. 데이터는 목록의 data-search · data-tags에 이미 있으므로
+// 따로 내려받지 않고 바로 거른다. 주소의 ?q= · ?tag=도 읽어서, 거른 상태를 링크로 나눌 수 있다.
+import type { TagCount } from '../../../../content/types';
+
+interface Props {
+  tags: TagCount[];
+  total: number;
+}
+
+const { tags, total } = Astro.props;
+const sorted = [...tags].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+const chip = 'blog-tag shrink-0 rounded-full border px-3 py-1 text-sm whitespace-nowrap transition';
+---
+
+<div class="flex flex-col gap-4" id="blog-filter">
+  <label class="relative block">
+    <span class="sr-only">글 검색</span>
+    <svg class="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-gray-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
+    </svg>
+    <input
+      type="search"
+      id="blog-search"
+      placeholder="검색어를 입력하세요"
+      autocomplete="off"
+      class="w-full rounded-lg border border-gray-300 py-2.5 pr-3 pl-10 outline-none focus:border-gray-900"
+    />
+  </label>
+  <div class="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0" role="group" aria-label="태그로 거르기">
+    <button type="button" class={chip} data-tag="" aria-pressed="true">전체 <span class="text-gray-400">{total}</span></button>
+    {sorted.map((t) => (
+      <button type="button" class={chip} data-tag={t.name} aria-pressed="false">
+        {t.name} <span class="text-gray-400">{t.count}</span>
+      </button>
+    ))}
+  </div>
+  <p id="blog-filter-status" class="text-sm text-gray-500" hidden></p>
+</div>
+
+<style>
+  .blog-tag {
+    border-color: #e5e7eb;
+    color: #374151;
+  }
+  .blog-tag:hover {
+    border-color: #9ca3af;
+  }
+  .blog-tag[aria-pressed='true'] {
+    border-color: #111827;
+    background: #111827;
+    color: #fff;
+  }
+  .blog-tag[aria-pressed='true'] span {
+    color: #d1d5db;
+  }
+</style>
+
+<script>
+  const input = document.getElementById('blog-search') as HTMLInputElement | null;
+  const status = document.getElementById('blog-filter-status');
+  const chips = [...document.querySelectorAll<HTMLButtonElement>('#blog-filter .blog-tag')];
+  const items = [...document.querySelectorAll<HTMLElement>('[data-post-url][data-search]')];
+  const params = new URLSearchParams(location.search);
+  let tag = params.get('tag') ?? '';
+  if (input) input.value = params.get('q') ?? '';
+
+  const apply = () => {
+    const q = (input?.value ?? '').trim().toLowerCase();
+    let shown = 0;
+    for (const el of items) {
+      const hit = (!q || (el.dataset.search ?? '').includes(q)) && (!tag || (el.dataset.tags ?? '').includes('|' + tag + '|'));
+      el.hidden = !hit;
+      if (hit) shown++;
+    }
+    for (const c of chips) c.setAttribute('aria-pressed', String((c.dataset.tag ?? '') === tag));
+    if (status) {
+      status.hidden = !q && !tag;
+      status.textContent = shown ? shown + '개의 글' : '조건에 맞는 글이 없습니다.';
+    }
+    const next = new URLSearchParams();
+    if (q) next.set('q', q);
+    if (tag) next.set('tag', tag);
+    const qs = next.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  };
+
+  input?.addEventListener('input', apply);
+  for (const c of chips) {
+    c.addEventListener('click', () => {
+      tag = tag === (c.dataset.tag ?? '') ? '' : (c.dataset.tag ?? '');
+      apply();
+    });
+  }
+  apply();
+</script>

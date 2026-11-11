@@ -1,20 +1,19 @@
 ---
 import BlogLayout from '../components/blog/BlogLayout.astro';
 import PostList from '../components/blog/PostList.astro';
-import CategoryTree from '../components/blog/CategoryTree.astro';
-import TagCloud from '../components/blog/TagCloud.astro';
-import SearchBox from '../components/blog/SearchBox';
+import BlogFilter from '../components/blog/BlogFilter.astro';
 import TitleComponent from '../components/common/TitleComponent';
 import type { BlogIndexPageProps } from '../../contract';
 
 type Props = BlogIndexPageProps;
 
-const { site, posts, drafts, tags, categories, searchIndexUrl } = Astro.props;
+// categories · searchIndexUrl은 계약에 있지만 이 테마의 첫 화면에서는 쓰지 않는다
+// (검색은 목록에 들어 있는 값으로 바로 하고, 카테고리는 글마다 링크로 둔다).
+const { site, posts, drafts, tags } = Astro.props;
 ---
 
 <BlogLayout site={site} title={site.blog.title} description={site.blog.description}>
   <div class="flex flex-col gap-8">
-    <SearchBox client:idle indexUrl={searchIndexUrl} />
     {
       drafts.length > 0 && (
         <section>
@@ -24,19 +23,10 @@ const { site, posts, drafts, tags, categories, searchIndexUrl } = Astro.props;
         </section>
       )
     }
-    <section>
+    <section class="flex flex-col gap-6">
       <TitleComponent title="글" size="4xl" />
+      <BlogFilter tags={tags} total={posts.length} />
       <PostList posts={posts} />
-    </section>
-    <section class="grid gap-8 sm:grid-cols-2">
-      <div>
-        <TitleComponent title="카테고리" size="2xl" />
-        <CategoryTree categories={categories} />
-      </div>
-      <div>
-        <TitleComponent title="태그" size="2xl" />
-        <TagCloud tags={tags} />
-      </div>
     </section>
   </div>
 </BlogLayout>

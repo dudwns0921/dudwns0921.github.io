@@ -31,8 +31,15 @@
 - **`src/pages/`** — 주소 · 리다이렉트만 정하고, `src/content` API로 읽은 데이터를 `@theme`의 페이지 컴포넌트에 props로 넘긴다.
 - **`src/themes/<이름>/`** — 화면. `src/themes/contract.ts`의 계약(`ResumePage` · `GamesPage` · `BlogIndexPage` · `BlogListPage` · `BlogPostPage` · `NotFoundPage`)을 `index.ts`에서 `satisfies Theme`으로 맞춘다. 테마는 `src/content/types` · `inline` · `urls`만 import하고, 파일 읽기 · `astro:content` · `content/` import는 하지 않는다 (`tests/theme-boundary.test.ts`가 막는다).
 - **테마 바꾸기**: `src/themes/<새이름>/`을 만들고, `src/theme.config.ts`의 `THEME`과 `tsconfig.json`의 `paths["@theme"]`를 새 이름으로 바꾼 뒤 `pnpm build`. `content/`는 손대지 않는다. 주소 · 리다이렉트 · PDF · RSS · 검색 색인 · OG 값은 테마 밖에 있다.
-- **머리 · 틀은 이력서와 블로그가 같이 쓴다** (본인 요청, 2026-11-11): `src/themes/default/components/layout/SiteShell.astro`(폭 · 여백 · 꼬리)와 `SiteHeader.astro`(메뉴). 넓은 화면은 가로 메뉴(이력서 · 블로그 · 게임, 블로그에서는 구분선 뒤에 태그 · 카테고리 · 아카이브, 이력서에서는 작은 PDF 다운로드 단추), 좁은 화면(sm 미만)은 메뉴 단추를 누르면 오른쪽에서 사이드 메뉴가 열린다. 로고는 사이트 전체에 하나로 `elioground.`(운영 주소 `site.origin`의 도메인 이름에서 만든다)이고 이력서(`/`)로 간다. 사람 이름은 이력서 인사말과 겹쳐서 로고로 쓰지 않는다 (본인 결정, 2026-11-11). 블로그라는 것은 페이지 제목(`글.`)으로 보여 준다. 게임 페이지(`/games`)는 이 틀을 쓰지 않는다.
+- **머리 · 틀은 이력서와 블로그가 같이 쓴다** (본인 요청, 2026-11-11): `src/themes/default/components/layout/SiteShell.astro`(폭 · 여백 · 꼬리)와 `SiteHeader.astro`(메뉴). 넓은 화면은 가로 메뉴(이력서 · 블로그 · 게임, 이력서에서는 작은 PDF 다운로드 단추. 태그 · 카테고리 · 아카이브는 머리에 두지 않는다 — 본인 요청, 2026-11-11), 좁은 화면(sm 미만)은 메뉴 단추를 누르면 오른쪽에서 사이드 메뉴가 열린다. 로고는 사이트 전체에 하나로 `elioground.`(운영 주소 `site.origin`의 도메인 이름에서 만든다)이고 이력서(`/`)로 간다. 사람 이름은 이력서 인사말과 겹쳐서 로고로 쓰지 않는다 (본인 결정, 2026-11-11). 블로그라는 것은 페이지 제목(`글.`)으로 보여 준다. 게임 페이지(`/games`)는 이 틀을 쓰지 않는다.
 - `public/blog/` · `public/activities/`는 `src/integrations/content-assets.ts`가 `content/`에서 복사해 채우는 생성물이다 (gitignore). 직접 고치지 않는다.
+
+### 블로그 첫 화면 (velog 모양, 본인 요청 2026-11-11)
+
+- 제목(`글.`) 아래에 검색 상자와 태그 알약(`전체` + 태그마다 글 수, 많은 순)을 두고, 그 아래 글 목록을 둔다. 첫 화면 밑의 카테고리 · 태그 칸은 없앴다.
+- 글 한 칸: 제목 · 요약 두 줄 · 태그 알약 · 날짜와 카테고리, 대표 이미지는 오른쪽 작은 그림. 태그 알약은 회색 바탕 · 청록 글자로 통일한다 (글 페이지도 같다).
+- 검색 · 태그 거르기는 목록 HTML의 `data-search` · `data-tags`로 바로 한다 (search.json을 내려받지 않는다). 주소의 `?q=` · `?tag=`를 읽고 쓴다.
+- 태그 · 카테고리 · 아카이브 페이지는 옛 주소를 지키려고 남겨 두되 머리 메뉴에는 두지 않는다. 태그 알약 · 카테고리 링크로만 들어간다.
 
 ### 블로그 글 쓰는 법
 

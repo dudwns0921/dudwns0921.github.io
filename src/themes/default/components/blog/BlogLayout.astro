@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteShell from '../layout/SiteShell.astro';
 import type { SiteMeta } from '../../../../content/types';
-import { archiveUrl, categoriesIndexUrl, tagsIndexUrl } from '../../../../content/urls';
 import '../../styles/prose.css';
 
 interface Props {
@@ -15,16 +14,11 @@ interface Props {
 }
 
 const { site, title, description, ogType, ogImage, noindex } = Astro.props;
-const subItems = [
-  { label: '태그', href: tagsIndexUrl() },
-  { label: '카테고리', href: categoriesIndexUrl() },
-  { label: '아카이브', href: archiveUrl() },
-];
 ---
 
 <BaseLayout site={site} title={title} description={description} ogType={ogType} ogImage={ogImage} noindex={noindex}>
   <slot name="head" slot="head" />
-  <SiteShell site={site} current="blog" subItems={subItems}>
+  <SiteShell site={site} current="blog">
     <slot />
   </SiteShell>
 </BaseLayout>

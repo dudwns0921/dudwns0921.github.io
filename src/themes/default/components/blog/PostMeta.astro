@@ -1,5 +1,5 @@
 ---
-import Badge from '../common/Badge';
+import PostTags from './PostTags.astro';
 import type { PostSummary } from '../../../../content/types';
 import { formatDate } from './format';
 
@@ -10,18 +10,15 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-gray-600">
-  <time datetime={formatDate(post.date)}>{formatDate(post.date)}</time>
-  {post.category && <a href={post.category.url} class="hover:underline">{post.category.path.join(' / ')}</a>}
-  {
-    post.tags.length > 0 && (
-      <span class="flex flex-wrap gap-1.5">
-        {post.tags.map((tag) => (
-          <a href={tag.url}>
-            <Badge text={tag.name} />
-          </a>
-        ))}
-      </span>
-    )
-  }
+<div class="flex flex-col gap-3">
+  <p class="text-sm text-gray-600">
+    <time datetime={formatDate(post.date)}>{formatDate(post.date)}</time>
+    {post.category && (
+      <>
+        <span class="mx-1.5">·</span>
+        <a href={post.category.url} class="hover:underline">{post.category.path.join(' / ')}</a>
+      </>
+    )}
+  </p>
+  <PostTags tags={post.tags} />
 </div>
