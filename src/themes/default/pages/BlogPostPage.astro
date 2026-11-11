@@ -4,6 +4,7 @@ import PostMeta from '../components/blog/PostMeta.astro';
 import Toc from '../components/blog/Toc.astro';
 import CopyCode from '../components/blog/CopyCode.astro';
 import Mermaid from '../components/blog/Mermaid.astro';
+import Zoom from '../components/blog/Zoom.astro';
 import DotComponent from '../components/common/DotComponent';
 import type { BlogPostPageProps } from '../../contract';
 
@@ -58,4 +59,5 @@ const { site, post, Content, headings, prev, next, isDraft, hasMermaid } = Astro
   </article>
   <CopyCode />
   {hasMermaid && <Mermaid />}
+  <Zoom />
 </BlogLayout>
