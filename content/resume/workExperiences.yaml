@@ -15,9 +15,9 @@
           description: 르노·볼보·폴스타·현대 차량에 출시된 오디오 큐레이션 서비스 「Pickle」의 Android Automotive OS(AAOS) 앱 개발.
           techStack: [ Kotlin, Android Automotive OS, Media3, Coroutines, Retrofit, Claude Code ]
           achievements:
-            - description: "**프로젝트 지식을 하나의 형태로 쌓는 Claude Code 지식 플러그인 설계·배포** — 같은 팀이라면 어떤 프로젝트든 지식을 동일한 형태로 확인해, 읽기 쉽고 바로 작업에 들어갈 수 있음"
+            - description: "**프로젝트 지식을 하나의 형태로 쌓는 Claude Code 지식 플러그인 설계 및 팀 배포** — 같은 팀이라면 어떤 프로젝트든 지식을 동일한 형태로 확인해, 읽기 쉽고 바로 작업에 들어갈 수 있음"
               strong: false
-            - description: "**지식 플러그인에서 작업 방식은 제외해 각자의 방식대로 작업하도록 구현** — 개인 워크플로우 플러그인은 CEO 에이전트가 여러 작업을 서브에이전트에 나눠 맡기고, 중요한 결정만 사람이 선택"
+            - description: "**팀 플러그인에서 작업 방식은 제외해 각자의 방식대로 작업하도록 구현** — 개인 워크플로우 플러그인은 CEO 에이전트가 여러 작업을 서브에이전트에 나눠 맡기고, 중요한 결정만 사람이 선택"
               strong: false
             - description: 합류 2주 만에 이슈 수정·기능 추가부터 릴리즈 2회까지 단독으로 문제없이 진행
               strong: false
