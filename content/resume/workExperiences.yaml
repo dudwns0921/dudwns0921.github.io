@@ -39,7 +39,7 @@
         - title: 근무일지 작성 자동화 솔루션
           period: 2025.10 (1주)
           role: Full-stack Developer
-          description: JIRA 워크로그로 근무일지를 자동으로 쓰는 솔루션. 워크로그가 꼼꼼하지 않은 날도 있어 생성된 일지를 직접 고칠 수 있게 설계.
+          description: JIRA 워크로그로 근무일지를 자동으로 쓰는 솔루션.
           techStack: [ Next.js, TypeScript, OpenAI API, JIRA API ]
           achievements:
             - description: 사내 AI 챌린지 1위 및 전사 도입
