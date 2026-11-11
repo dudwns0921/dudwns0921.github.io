@@ -66,6 +66,8 @@ export interface BlogPostPageProps {
   prev?: PostSummary;
   next?: PostSummary;
   isDraft: boolean;
+  // 본문에 ```mermaid 블록(<pre class="mermaid">)이 있으면 true. 테마는 이때만 mermaid 스크립트를 붙인다.
+  hasMermaid: boolean;
 }
 
 export interface NotFoundPageProps {

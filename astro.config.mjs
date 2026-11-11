@@ -10,6 +10,7 @@ import { unified } from '@astrojs/markdown-remark';
 import remarkBreaks from 'remark-breaks';
 import rehypeExternalLinks from 'rehype-external-links';
 import remarkPostAssets from './src/content/markdown/remark-post-assets.ts';
+import remarkMermaid from './src/content/markdown/remark-mermaid.ts';
 import rehypeHexoHeadingIds from './src/content/markdown/rehype-hexo-heading-ids.ts';
 
 export default defineConfig({
@@ -25,7 +26,8 @@ export default defineConfig({
     processor: unified({
       gfm: true,
       smartypants: true,
-      remarkPlugins: [remarkBreaks, remarkPostAssets],
+      // ```mermaid 블록은 Shiki 대신 remarkMermaid가 <pre class="mermaid">로 남기고, 테마가 브라우저에서 그린다.
+      remarkPlugins: [remarkBreaks, remarkPostAssets, remarkMermaid],
       rehypePlugins: [rehypeHexoHeadingIds, [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }]],
     }),
     shikiConfig: { themes: { light: 'github-light', dark: 'github-dark' } },

@@ -134,3 +134,26 @@
     background-color: var(--shiki-dark-bg) !important;
   }
 }
+
+/* mermaid 그림 칸 (테마의 mermaid 컴포넌트가 브라우저에서 SVG로 바꾼다). 그리기 전에는 원문이 보인다.
+   코드 블록처럼 시스템 다크 모드에서는 어두운 바탕에 dark 테마로 그린다. */
+.prose pre.mermaid {
+  font-family: inherit;
+  background: #fff;
+  text-align: center;
+  white-space: pre;
+}
+.prose pre.mermaid[data-processed] {
+  white-space: normal;
+}
+.prose pre.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+@media (prefers-color-scheme: dark) {
+  .prose pre.mermaid {
+    background: #24292e;
+    border-color: #24292e;
+    color: #e1e4e8;
+  }
+}

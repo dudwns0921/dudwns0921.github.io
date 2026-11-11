@@ -5,6 +5,7 @@
 //    검색 색인 · RSS의 초안 항목(주소 · 제목)이 없다
 //  - internal links resolve: HTML의 href · src 중 사이트 안 주소가 out/에 있다
 //  - core files: 이력서 · 게임 · 404 · PDF · 블로그 첫 화면
+//  - mermaid only where needed: <pre class="mermaid">가 있는 HTML만 mermaid를 부르는 스크립트를 싣는다 (없는 페이지에는 싣지 않는다)
 //  - 404 redirect: out/404.html의 <head>에 옛 주소 리다이렉트 스크립트가 있다 (테마가 head 슬롯을 빠뜨리면 조용히 사라진다)
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
@@ -148,6 +149,34 @@ check('core files', () => {
   for (const f of ['index.html', 'games/index.html', '404.html', 'resume.pdf', 'blog/index.html', 'blog/rss.xml', 'blog/search.json']) {
     if (!existsSync(path.join(outDir, f))) failures.push(`out/${f}가 없습니다`);
   }
+});
+
+// 테마 이름과 상관없이 본다: 페이지가 싣는 스크립트(인라인 · /_astro/ 파일)가 mermaid 라이브러리 본체(mermaid.core · mermaid.esm)를
+// 부르면 mermaid를 싣는 페이지다. (코드 복사 스크립트의 `pre:not(.mermaid)` 같은 선택자는 세지 않는다.)
+check('mermaid only where needed', () => {
+  const MERMAID_LIB = /mermaid\.(?:core|esm)/;
+  const scriptCache = new Map();
+  const loadsMermaid = (html) =>
+    [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].some(([, attrs, body]) => {
+      const src = attrs.match(/\ssrc="([^"]+)"/)?.[1];
+      if (!src) return MERMAID_LIB.test(body);
+      if (!src.startsWith('/')) return false;
+      if (!scriptCache.has(src)) {
+        const file = path.join(outDir, src.split(/[?#]/)[0]);
+        scriptCache.set(src, existsSync(file) && MERMAID_LIB.test(readFileSync(file, 'utf8')));
+      }
+      return scriptCache.get(src);
+    });
+  let withBlocks = 0;
+  for (const file of files.filter((f) => f.endsWith('.html'))) {
+    const html = readFileSync(file, 'utf8');
+    const hasBlock = /<pre class="mermaid">/.test(html);
+    const loads = loadsMermaid(html);
+    if (hasBlock) withBlocks += 1;
+    if (hasBlock && !loads) failures.push(`mermaid 블록이 있는데 그릴 스크립트가 없습니다: ${rel(file)}`);
+    if (!hasBlock && loads) failures.push(`mermaid 블록이 없는데 mermaid 스크립트를 싣습니다: ${rel(file)}`);
+  }
+  if (withBlocks === 0) failures.push('mermaid 블록이 있는 페이지가 하나도 없습니다 (Using-AI-Well 글에 있어야 한다)');
 });
 
 check('404 redirect', () => {

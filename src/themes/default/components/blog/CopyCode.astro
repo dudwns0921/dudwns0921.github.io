@@ -1,6 +1,6 @@
-<!-- 글 본문의 코드 블록마다 복사 단추를 붙인다. -->
+<!-- 글 본문의 코드 블록마다 복사 단추를 붙인다 (mermaid 그림 칸은 뺀다). -->
 <script>
-  document.querySelectorAll<HTMLPreElement>('.prose pre').forEach((pre) => {
+  document.querySelectorAll<HTMLPreElement>('.prose pre:not(.mermaid)').forEach((pre) => {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'copy-code';

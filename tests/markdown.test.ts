@@ -9,6 +9,7 @@ import { unified } from 'unified';
 import { VFile } from 'vfile';
 import { afterEach, expect, test, vi } from 'vitest';
 import rehypeHexoHeadingIds from '../src/content/markdown/rehype-hexo-heading-ids';
+import remarkMermaid from '../src/content/markdown/remark-mermaid';
 import remarkPostAssets from '../src/content/markdown/remark-post-assets';
 import { parseYamlDate } from './helpers';
 
@@ -107,4 +108,33 @@ test('hexo heading ids', () => {
   expect(html).toContain('<h2 id="AI-활용-1">');
   expect(html).toContain('<h2 id="config-yml">');
   expect(html).toContain('<h3 id="Lv-1-문제">');
+});
+
+// ```mermaid 블록은 Shiki가 칠하지 않게 <pre class="mermaid">원문</pre>으로 남기고, 그 글에만 hasMermaid를 표시한다.
+const renderMermaid = (markdown: string) => {
+  const file = new VFile({ value: markdown });
+  file.data = { astro: { frontmatter: {} } };
+  const html = String(
+    unified()
+      .use(remarkParse)
+      .use(remarkMermaid)
+      .use(remarkRehype, { allowDangerousHtml: true })
+      .use(rehypeStringify, { allowDangerousHtml: true })
+      .processSync(file),
+  );
+  return { html, frontmatter: (file.data as { astro: { frontmatter: Record<string, unknown> } }).astro.frontmatter };
+};
+
+test('mermaid code block becomes <pre class="mermaid"> and flags the post', () => {
+  const { html, frontmatter } = renderMermaid('```mermaid\nflowchart TB\n  a["A<br/>b"] --> c\n```\n\n```js\nconst x = 1;\n```');
+  expect(html).toContain('<pre class="mermaid">flowchart TB\n  a["A&#x3C;br/>b"] --> c</pre>');
+  expect(html).not.toContain('language-mermaid');
+  expect(html).toContain('<code class="language-js">');
+  expect(frontmatter.hasMermaid).toBe(true);
+});
+
+test('posts without mermaid are not flagged', () => {
+  const { html, frontmatter } = renderMermaid('```js\nconst x = 1;\n```');
+  expect(html).not.toContain('mermaid');
+  expect(frontmatter.hasMermaid).toBeUndefined();
 });

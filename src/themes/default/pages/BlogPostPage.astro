@@ -3,12 +3,13 @@ import BlogLayout from '../components/blog/BlogLayout.astro';
 import PostMeta from '../components/blog/PostMeta.astro';
 import Toc from '../components/blog/Toc.astro';
 import CopyCode from '../components/blog/CopyCode.astro';
+import Mermaid from '../components/blog/Mermaid.astro';
 import DotComponent from '../components/common/DotComponent';
 import type { BlogPostPageProps } from '../../contract';
 
 type Props = BlogPostPageProps;
 
-const { site, post, Content, headings, prev, next, isDraft } = Astro.props;
+const { site, post, Content, headings, prev, next, isDraft, hasMermaid } = Astro.props;
 ---
 
 <BlogLayout
@@ -56,4 +57,5 @@ const { site, post, Content, headings, prev, next, isDraft } = Astro.props;
     }
   </article>
   <CopyCode />
+  {hasMermaid && <Mermaid />}
 </BlogLayout>

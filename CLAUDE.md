@@ -47,6 +47,7 @@
 - `<slug>`(폴더 이름)는 영문 · 숫자 · `-`만 쓴다 (`^[A-Za-z0-9][A-Za-z0-9-]*$`). 글과 초안을 통틀어 하나뿐이어야 한다. 주소는 `/blog/YYYY/MM/DD/<slug>/`다 (Hexo 때와 같다).
 - frontmatter 필드: `title`(필수), `date`(필수), `categories`(최대 2단계, `[큰 분류, 작은 분류]`), `tags`, `cover`(대표 이미지, `content/blog/images/`의 파일 이름), `description`(목록 요약, 없으면 본문 앞부분). 그 밖의 키가 있으면 빌드가 멈춘다.
 - `date`는 시간대 없이 `YYYY-MM-DD HH:mm:ss`로 초까지 쓴다 (`08:00`처럼 초를 빼면 빌드가 멈춘다). 주소의 날짜는 적힌 날짜 그대로다. `2026-11-11T08:00:00+09:00`처럼 시간대를 붙이면 빌드가 멈춘다 (날짜가 하루 밀릴 수 있다).
+- 그림은 ` ```mermaid ` 코드 블록으로 쓸 수 있다. 빌드 때 `src/content/markdown/remark-mermaid.ts`가 `<pre class="mermaid">`로 남기고, 그런 블록이 있는 글에서만 테마(`components/blog/Mermaid.astro`)가 mermaid 라이브러리를 불러 브라우저에서 그린다 (색은 코드 블록처럼 시스템 다크 모드를 따른다). 문법이 틀려도 빌드는 멈추지 않으므로 `pnpm dev`로 그림이 나오는지 확인한다.
 - 초안은 `content/blog/drafts/<slug>/index.md`에 둔다. `pnpm dev`에서만 `/blog/drafts/<slug>/`와 블로그 첫 화면 위쪽에 보이고, 운영 출력(`out/`)에는 HTML · 이미지 · 검색 색인 · RSS 어디에도 남지 않는다. 내보낼 때는 폴더를 `posts/`로 옮긴다.
 
 ## 공통 작성 규칙

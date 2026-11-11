@@ -13,7 +13,7 @@ export const getStaticPaths = (async () => {
 const { BlogPostPage } = theme;
 const { slug } = Astro.params;
 const [site, { summary, entry }] = await Promise.all([getSite(), getPostEntry(slug!, true)]);
-const { Content, headings } = await renderPost(entry);
+const { Content, headings, remarkPluginFrontmatter } = await renderPost(entry);
 ---
 
-<BlogPostPage site={site} post={summary} Content={Content} headings={headings} isDraft={true} />
+<BlogPostPage site={site} post={summary} Content={Content} headings={headings} isDraft={true} hasMermaid={remarkPluginFrontmatter.hasMermaid === true} />
