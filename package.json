@@ -23,6 +23,7 @@
     "hast-util-to-string": "^3.0.1",
     "hexo-util": "^4.0.0",
     "mermaid": "^12.3.0",
+    "photoswipe": "5.4.4",
     "puppeteer": "^25.11.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",

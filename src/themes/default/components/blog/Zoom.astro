@@ -1,9 +1,24 @@
 ---
-// 글 본문의 이미지와 mermaid 그림을 누르면 화면 가득 크게 보여 준다 (휴대폰에서 작은 그림을 두 손가락으로 키워 보도록).
-// 여기 스크립트는 누를 수 있는 것에 표시만 하는 작은 것이고, 확대 화면(zoom-viewer.ts)은 처음 누를 때 불러온다.
+// 글 본문의 이미지와 mermaid 그림을 누르면 PhotoSwipe(https://photoswipe.com)로 화면 가득 크게 보여 준다.
+// 두 손가락 확대 · 두 번 눌러 확대 · 끌기 · 휠 확대 · 쓸어내려 닫기 · Esc는 라이브러리가 한다.
+// 여기 스크립트는 누를 수 있는 것에 표시만 하는 작은 것이고, PhotoSwipe(스크립트 · CSS)는 처음 누를 때 불러온다.
 // 링크로 감싼 이미지(<a><img></a>)는 링크가 먼저라 빼고, mermaid는 SVG로 그려진 뒤에만 연다.
 ---
 <script>
+  // CSS는 주소만 받아 두고 처음 열 때 <link>로 붙인다. import('….css')로 부르면 Astro가 모든 페이지 머리에 넣어 버린다.
+  import styleUrl from 'photoswipe/style.css?url';
+
+  const loadStyle = () =>
+    new Promise<void>((resolve) => {
+      if (document.querySelector('link[data-photoswipe]')) return resolve();
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = styleUrl;
+      link.dataset.photoswipe = '';
+      link.onload = link.onerror = () => resolve();
+      document.head.append(link);
+    });
+
   const mark = (el: HTMLElement, label: string) => {
     el.dataset.zoom = '';
     el.tabIndex = 0;
@@ -21,11 +36,67 @@
     count++;
   });
 
+  interface Slide {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+  }
+
+  // 사진은 원래 크기(naturalWidth/Height)를 넘긴다. PhotoSwipe는 원래 크기보다 키워 맞추지 않는다.
+  const photoSlide = async (img: HTMLImageElement): Promise<Slide | null> => {
+    if (!img.complete || !img.naturalWidth) await img.decode().catch(() => undefined);
+    if (!img.naturalWidth || !img.naturalHeight) return null;
+    return { src: img.currentSrc || img.src, width: img.naturalWidth, height: img.naturalHeight, alt: img.alt };
+  };
+
+  // mermaid 그림은 누른 시점의 SVG(다크 모드가 바뀌면 다시 그려진다)를 이미지(data URL)로 만든다.
+  // 벡터라 크게 넘겨도 선명하므로, 긴 변이 2400px 이상이 되게 키운 크기를 넘겨 그만큼 확대할 수 있게 한다.
+  // 이미지 안에서는 페이지의 CSS · 웹 폰트를 못 쓰므로 배경색과 글꼴을 SVG에 직접 넣는다.
+  const diagramSlide = (pre: HTMLElement): Slide | null => {
+    const svg = pre.querySelector('svg');
+    if (!svg) return null;
+    const viewBox = svg.viewBox.baseVal;
+    const box = viewBox && viewBox.width && viewBox.height ? viewBox : svg.getBBox();
+    if (!box.width || !box.height) return null;
+    const scale = Math.max(3, 2400 / Math.max(box.width, box.height));
+    const width = Math.round(box.width * scale);
+    const height = Math.round(box.height * scale);
+    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const clone = svg.cloneNode(true) as SVGSVGElement;
+    clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    clone.setAttribute('viewBox', `${box.x} ${box.y} ${box.width} ${box.height}`);
+    clone.setAttribute('width', String(width));
+    clone.setAttribute('height', String(height));
+    clone.removeAttribute('style');
+    clone.style.fontFamily = getComputedStyle(pre).fontFamily;
+    const background = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    for (const [name, value] of Object.entries({ x: box.x, y: box.y, width: box.width, height: box.height })) {
+      background.setAttribute(name, String(value));
+    }
+    background.style.fill = dark ? '#24292e' : '#ffffff';
+    clone.insertBefore(background, clone.firstChild);
+    const src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(clone))}`;
+    return { src, width, height, alt: '' };
+  };
+
   if (count > 0) {
     const open = async (el: HTMLElement) => {
-      if (el.matches('pre.mermaid') && !el.querySelector('svg')) return;
-      const { openZoom } = await import('./zoom-viewer');
-      openZoom(el);
+      const slide = el instanceof HTMLImageElement ? await photoSlide(el) : diagramSlide(el);
+      if (!slide) return;
+      const [{ default: PhotoSwipe }] = await Promise.all([import('photoswipe'), loadStyle()]);
+      const isPhoto = el instanceof HTMLImageElement;
+      new PhotoSwipe({
+        dataSource: [{ ...slide, element: el, msrc: isPhoto ? slide.src : undefined }],
+        // 사진은 글 속 자리에서 커지며 열리고, 그림은 비율이 같지 않을 수 있어 흐려지며 연다.
+        showHideAnimationType: isPhoto ? 'zoom' : 'fade',
+        wheelToZoom: true,
+        bgOpacity: 0.92,
+        closeTitle: '닫기',
+        zoomTitle: '확대 · 축소',
+        errorMsg: '이미지를 불러오지 못했습니다',
+      }).init();
     };
     const target = (event: Event) => (event.target as Element | null)?.closest<HTMLElement>('.prose [data-zoom]');
     document.addEventListener('click', (event) => {
