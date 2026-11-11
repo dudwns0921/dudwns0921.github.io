@@ -7,6 +7,8 @@
   links:
     - label: 회고 보기
       href: https://elioground.com/blog/2026/09/08/NAN-2026-Retrospective/
+    - label: 수상 기사
+      href: https://www.gamemeca.com/view.php?gid=1780173
   description: LLM 손님과 흥정하며 감각을 사고파는 1인칭 3D 상점 운영 시뮬레이션. NHN 주최 해커톤 본선(지원 588팀 중 10팀)에 2인 팀으로 참가해 약 40시간 만에 완성하고 3위(우수상) 수상.
   techStack: [ Godot 4.7.2, GDScript, TypeScript, Railway, Claude Code, Godot MCP Pro ]
   achievements:
