@@ -1,0 +1,25 @@
+---
+import theme from '@theme';
+import { getSite } from '../content/site';
+
+const { NotFoundPage } = theme;
+const site = await getSite();
+---
+
+<!-- GitHub Pages가 없는 경로마다 이 파일을 내려준다. 예전 주소면 새 주소로 보내고, 아니면 404 화면을 보인다. -->
+<NotFoundPage site={site}>
+  <Fragment slot="head">
+    <style is:inline>html:not(.nf-ready) body { visibility: hidden; }</style>
+    <script>
+      import { redirectTarget } from '../lib/redirects';
+
+      const { pathname, search, hash } = window.location;
+      const target = redirectTarget(pathname);
+      if (target) {
+        window.location.replace(`${target}${search}${hash}`);
+      } else {
+        document.documentElement.classList.add('nf-ready');
+      }
+    </script>
+  </Fragment>
+</NotFoundPage>

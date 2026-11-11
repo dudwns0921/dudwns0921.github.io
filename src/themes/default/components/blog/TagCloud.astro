@@ -1,0 +1,22 @@
+---
+import type { TagCount } from '../../../../content/types';
+
+interface Props {
+  tags: TagCount[];
+}
+
+const { tags } = Astro.props;
+---
+
+<ul class="flex flex-wrap gap-2">
+  {
+    tags.map((tag) => (
+      <li>
+        <a href={tag.url} class="inline-flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1 text-sm hover:bg-gray-200">
+          {tag.name}
+          <span class="text-gray-500">{tag.count}</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>

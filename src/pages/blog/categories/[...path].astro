@@ -1,0 +1,25 @@
+---
+import type { GetStaticPaths } from 'astro';
+import theme from '@theme';
+import { flattenCategories, getCategoryTree, getPosts, postsInCategory } from '../../../content/blog';
+import { getSite } from '../../../content/site';
+import { slugize } from '../../../content/slug';
+
+// /blog/categories/<큰 분류>/[<작은 분류>/]
+export const getStaticPaths = (async () => {
+  const nodes = flattenCategories(await getCategoryTree());
+  return nodes.map((node) => ({ params: { path: node.path.map(slugize).join('/') }, props: { node } }));
+}) satisfies GetStaticPaths;
+
+const { BlogListPage } = theme;
+const { node } = Astro.props;
+const [site, posts] = await Promise.all([getSite(), getPosts()]);
+---
+
+<BlogListPage
+  site={site}
+  kind="category"
+  title={node.path.join(' / ')}
+  posts={postsInCategory(posts, node.path)}
+  categories={node.children}
+/>

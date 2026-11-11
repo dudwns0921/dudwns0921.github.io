@@ -1,0 +1,33 @@
+---
+import PostMeta from './PostMeta.astro';
+import type { PostSummary } from '../../../../content/types';
+
+interface Props {
+  posts: PostSummary[];
+}
+
+const { posts } = Astro.props;
+---
+
+<!-- data-post-url은 검색 상자(SearchBox)가 결과에 없는 글을 숨길 때 쓴다. -->
+<ul class="flex flex-col divide-y divide-gray-200">
+  {
+    posts.map((post) => (
+      <li data-post-url={post.url} class="flex gap-4 py-5">
+        {post.cover && (
+          <a href={post.url} class="hidden shrink-0 sm:block" tabindex="-1" aria-hidden="true">
+            <img src={post.cover} alt="" loading="lazy" width="96" height="72" class="h-[72px] w-24 rounded object-cover" />
+          </a>
+        )}
+        <div class="flex min-w-0 flex-col gap-1.5">
+          <a href={post.url} class="text-xl font-semibold break-keep hover:underline">
+            {post.isDraft && <span class="mr-2 rounded bg-yellow-200 px-1.5 py-0.5 text-sm">초안</span>}
+            {post.title}
+          </a>
+          <PostMeta post={post} />
+          {post.excerpt && <p class="line-clamp-2 text-gray-700">{post.excerpt}</p>}
+        </div>
+      </li>
+    ))
+  }
+</ul>

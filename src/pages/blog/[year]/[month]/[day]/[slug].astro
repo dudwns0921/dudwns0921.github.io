@@ -1,0 +1,23 @@
+---
+import type { GetStaticPaths } from 'astro';
+import theme from '@theme';
+import { getNeighbors, getPostEntry, getPosts, renderPost } from '../../../../../content/blog';
+import { getSite } from '../../../../../content/site';
+
+// 글 주소는 Hexo와 같다: /blog/YYYY/MM/DD/<slug>/ (urls.ts의 permalink).
+export const getStaticPaths = (async () => {
+  const posts = await getPosts();
+  return posts.map((post) => {
+    const [, , year, month, day, slug] = post.url.split('/');
+    return { params: { year, month, day, slug } };
+  });
+}) satisfies GetStaticPaths;
+
+const { BlogPostPage } = theme;
+const { slug } = Astro.params;
+const [site, posts, { summary, entry }] = await Promise.all([getSite(), getPosts(), getPostEntry(slug!)]);
+const { Content, headings } = await renderPost(entry);
+const { prev, next } = getNeighbors(posts, summary.slug);
+---
+
+<BlogPostPage site={site} post={summary} Content={Content} headings={headings} prev={prev} next={next} isDraft={false} />

@@ -1,7 +1,8 @@
 name: resume deployment
 
-# master에 푸시하면 정적 사이트와 PDF를 만들어 GitHub Pages에 올린다.
+# master에 푸시하면 정적 사이트(이력서 · /games · /blog)와 PDF를 만들어 GitHub Pages에 올린다.
 # 이 저장소(dudwns0921.github.io)에 연결한 도메인 루트 https://elioground.com 으로 열린다.
+# 순서: 설치 → 타입 검사 → 테스트 → 빌드 → Chrome 설치 → PDF → 빌드 결과 검사 → 업로드
 on:
   push:
     branches: [master]
@@ -29,11 +30,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      # content/의 스키마 오류는 빌드에서도 멈추지만, 타입과 테스트를 먼저 본다.
+      - name: Type check
+        run: pnpm check
+
+      - name: Test
+        run: pnpm test
 
       - name: Build static site
         run: pnpm build
@@ -44,6 +52,10 @@ jobs:
 
       - name: Generate resume PDF
         run: pnpm pdf
+
+      # 옛 블로그 주소 107개 · 초안 흔적 · 내부 링크 · 핵심 파일 (resume.pdf가 있어야 하므로 PDF 다음)
+      - name: Check built site
+        run: pnpm check:site
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

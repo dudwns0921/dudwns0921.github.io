@@ -1,0 +1,40 @@
+---
+import '../styles/globals.css';
+import type { SiteMeta } from '../../../content/types';
+import { RSS_URL } from '../../../content/urls';
+
+interface Props {
+  site: SiteMeta;
+  title: string;
+  description: string;
+  // Open Graph 종류. 블로그 글은 'article'.
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const { site, title, description, ogType = 'website', ogImage, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.origin).href;
+---
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={site.title} />
+    <meta property="og:locale" content="ko_KR" />
+    {ogImage && <meta property="og:image" content={new URL(ogImage, site.origin).href} />}
+    <link rel="alternate" type="application/rss+xml" title={site.blog.title} href={RSS_URL} />
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

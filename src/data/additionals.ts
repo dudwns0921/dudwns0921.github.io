@@ -1,8 +1,0 @@
-export const additionals = [
-  { href: 'https://elioground.com/blog/', label: '블로그' },
-  { href: 'https://github.com/dudwns0921', label: '깃허브' },
-  {
-    href: 'https://elioground.com',
-    label: '웹 이력서',
-  },
-];

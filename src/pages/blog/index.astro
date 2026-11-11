@@ -1,0 +1,12 @@
+---
+import theme from '@theme';
+import { getCategoryTree, getDrafts, getPosts, getTags } from '../../content/blog';
+import { getSite } from '../../content/site';
+import { SEARCH_INDEX_URL } from '../../content/urls';
+
+const { BlogIndexPage } = theme;
+const [site, posts, drafts] = await Promise.all([getSite(), getPosts(), getDrafts()]);
+const [tags, categories] = await Promise.all([getTags(posts), getCategoryTree(posts)]);
+---
+
+<BlogIndexPage site={site} posts={posts} drafts={drafts} tags={tags} categories={categories} searchIndexUrl={SEARCH_INDEX_URL} />

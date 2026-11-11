@@ -1,0 +1,112 @@
+# 경력. 회사 → (팀 →) 프로젝트. 프로젝트는 최신순이다. 작성 규칙은 CLAUDE.md '경력' 절.
+# 성과의 '**구절**'은 노란 강조, strong: true는 문장 전체 강조다.
+- title: 오비고
+  subInfo: 2022.03 - 현재
+  subInfo2: Frontend · Android Developer
+  description: 차량용 인포테인먼트 플랫폼과 서비스를 만드는 모빌리티 소프트웨어 기업. 차량 AVN 웹앱, 차량 연동 모바일 앱, 생성형 AI 서비스를 개발합니다.
+  # 2026.10 Mobility Service 2팀(Web Frontend)에서 1팀(Android)으로 옮겼다. 팀마다 묶어 소제목(팀 · 기간) 아래에 프로젝트를 둔다.
+  teams:
+    - name: Mobility Service 1팀 (Android)
+      period: 2026.10 - 현재
+      projects:
+        - title: Pickle - 차량용 오디오 큐레이션 서비스
+          period: 2026.10 - 진행 중
+          role: Android Developer
+          description: 르노·볼보·폴스타·현대 차량에 출시된 오디오 큐레이션 서비스 「Pickle」의 Android Automotive OS(AAOS) 앱 개발. 라디오·팟캐스트·오디오 뉴스·음악 콘텐츠를 골라 들려주는 서비스.
+          techStack: [ Kotlin, Android Automotive OS, Media3, Coroutines, Retrofit, Claude Code ]
+          achievements:
+            - description: "**도메인 문서를 쌓고 읽으며 일하는 Claude Code 플러그인(obigo-dev-kit) 설계** — 플랜·승인·구현·확인 순서는 플러그인에, 팀 컨벤션과 프로젝트별 도메인 지식은 따로 두어 다른 프로젝트에도 그대로 쓰는 구조"
+              strong: false
+    - name: Mobility Service 2팀 (Web Frontend)
+      period: 2022.03 - 2026.10
+      projects:
+        - title: KGM Music - 차량용 뮤직 스트리밍 서비스
+          period: 2025.12 - 2026.10
+          role: Frontend Developer
+          description: KGM 차량 AVN에 탑재되는 뮤직 스트리밍 클라이언트 개발. 개발 전 과정에 Claude Code를 통합해 운영.
+          techStack: [ React 19, TypeScript, TanStack Query, Tailwind CSS v4, Vite, React Router v7 ]
+          achievements:
+            - description: "**백엔드 API·네이티브 브릿지·음성발화·차량 제어 규격을 Claude Code 스킬화** — AI가 도메인 맥락을 바로 이해해 규격 설명 없이 구현"
+              strong: false
+            - description: JIRA 커맨드로 티켓 조회부터 수정·검증·커밋까지 원커맨드 자동화
+              strong: false
+            - description: WebView ↔ 네이티브(AAOS) 브릿지 인터페이스 설계 및 구현
+              strong: false
+            - description: 서비스 아키텍처 설계 주도 (상태 관리·에러 핸들링·로딩·테마)
+              strong: false
+        - title: 근무일지 작성 자동화 솔루션
+          period: 2025.10 (1주)
+          role: Full-stack Developer
+          description: JIRA 워크로그를 분석해 근무일지를 자동으로 쓰는 솔루션. 워크로그가 매일 꼼꼼히 기록되지는 않는 현실을 고려해, 생성된 일지를 직접 검토·수정할 수 있도록 설계.
+          techStack: [ Next.js, TypeScript, OpenAI API, JIRA API ]
+          achievements:
+            - description: 사내 AI 챌린지 1위 및 전사 도입
+              strong: true
+            - description: JIRA 워크로그 분석 기반 일지 자동 생성으로 작성 시간 90% 단축
+              strong: false
+            - description: Next.js App Router·Server Actions 기반 서버 사이드 API 통합 및 별도 서버 배포
+              strong: false
+        - title: Toyota 차량관리용 모바일 앱
+          period: 2024.11 - 2026.10
+          role: Frontend Developer
+          links:
+            - label: Google Play
+              href: https://play.google.com/store/apps/details?id=com.lguplus.tmctccssapp&hl=ko
+            - label: App Store
+              href: https://apps.apple.com/kr/app/%ED%86%A0%EC%9A%94%ED%83%80-%EC%BB%A4%EB%84%A5%ED%8A%B8/id1594323775
+          description: Toyota 차량 관리용 하이브리드 모바일 앱 개발.
+          techStack: [ Vue.js, TypeScript, Vite, Jenkins ]
+          achievements:
+            - description: 프로젝트 기본 뼈대 코드부터 폴더 구조·UI 컴포넌트 구조까지 초기 설계 주도
+              strong: true
+            - description: Vitest 기반 유닛·통합 테스트 환경 구축
+              strong: false
+            - description: 중앙집중형 에러 핸들링 구조 설계
+              strong: false
+            - description: WebView ↔ 네이티브 브릿지 인터페이스 설계
+              strong: false
+            - description: Jenkins 기반 빌드·배포·테스트 자동화
+              strong: false
+        - title: 현대모비스 GENESIS 차량용 AI 서비스
+          period: 2024.05 - 2025.01
+          role: Full-stack & AI Integration Developer
+          description: 음성 인식·개인화 기능을 제공하는 AI 기반 차량용 웹앱 개발.
+          techStack: [ Vue.js, TypeScript, Vite, Node.js, LangChain, Jenkins ]
+          achievements:
+            - description: 현대제네시스 전무 대상 데모 주도 및 성공적 시연
+              strong: true
+            - description: Node.js + LangChain 백엔드부터 Vue.js 프론트엔드까지 풀스택 개발
+              strong: false
+            - description: LangChain·RAG 기반 AI 응답 시스템 설계 및 구현
+              strong: false
+        - title: Toyota 차량용 인포테인먼트 서비스
+          period: 2023.06 - 2026.10
+          role: Frontend Developer
+          links:
+            - label: 서비스 소개
+              href: https://www.toyota.co.kr/toyota-connect/infotainment/drive-home/
+          description: 편의·엔터테인먼트 기능을 제공하는 차량용 하이브리드 인포테인먼트 서비스 개발.
+          techStack: [ Vue.js, JavaScript, Flow, Webpack, Jenkins ]
+          achievements:
+            - description: 유닛·통합 테스트 환경 구축 및 가이드 문서 작성
+              strong: true
+            - description: devTools 컴포넌트 개발로 퍼블리싱 속도 30% 개선
+              strong: false
+            - description: ESLint·Prettier·Stylelint 도입 및 빌드·앱 설치 자동화
+              strong: false
+        - title: KGM 차량용 인포테인먼트 서비스
+          period: 2023.06 - 2026.10
+          role: Frontend Developer
+          links:
+            - label: 서비스 소개 (홈 IoT 항목부터)
+              href: https://kgmlink.kg-mobility.com/service-static/service-convenience.do#convenience5
+          description: KGM(쌍용) 차량용 하이브리드 인포테인먼트 서비스 개발.
+          techStack: [ Vue.js, TypeScript, Webpack ]
+          achievements:
+            - description: Confluence 기반 협업 체계로 이슈 해결 시간 50% 단축
+              strong: true
+- title: 롯데쇼핑(주) 롯데마트사업본부
+  subInfo: 2020.09 - 2021.09
+  subInfo2: 경영지원팀 총무
+  description: ""
+  projects: []

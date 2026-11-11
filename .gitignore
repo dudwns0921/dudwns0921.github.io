@@ -13,8 +13,6 @@
 # testing
 /coverage
 
-# next.js
-/.next/
 /out/
 
 # production
@@ -41,4 +39,9 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+
+# astro
+/.astro/
+# content-assets 통합이 content/에서 복사해 채우는 폴더 (생성물)
+/public/blog/
+/public/activities/

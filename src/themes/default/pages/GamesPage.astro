@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GamesView from '../components/games/GamesView';
+import type { GamesPageProps } from '../../contract';
+
+type Props = GamesPageProps;
+
+const { site, games } = Astro.props;
+---
+
+<!-- 이력서와 따로 둔 개인 게임 페이지. 웹에서만 보이고 PDF에는 들어가지 않는다. -->
+<!-- client:*는 .astro에서만 붙일 수 있어 Tilt · Reveal이 들어 있는 GamesView를 통째로 섬으로 만든다. -->
+<BaseLayout site={site} title={site.games.title} description={site.games.description}>
+  <GamesView client:load {...games} />
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+import type { MarkdownHeading } from '../../../../content/types';
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+// 제목 세 단계까지. 가장 얕은 제목을 기준으로 들여 쓴다.
+const { headings } = Astro.props;
+const items = headings.filter((h) => h.depth <= 3);
+const top = Math.min(...items.map((h) => h.depth));
+---
+
+{
+  items.length > 1 && (
+    <details open class="no-pdf rounded border border-gray-200 bg-gray-50 px-4 py-3 text-sm">
+      <summary class="cursor-pointer font-semibold">목차</summary>
+      <ol class="mt-2 flex flex-col gap-1">
+        {items.map((h) => (
+          <li style={`padding-left: ${(h.depth - top) * 1}rem`}>
+            <a href={`#${h.slug}`} class="text-gray-700 hover:underline">
+              {h.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </details>
+  )
+}

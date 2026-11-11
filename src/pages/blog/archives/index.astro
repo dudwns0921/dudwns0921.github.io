@@ -1,0 +1,10 @@
+---
+import theme from '@theme';
+import { getPosts } from '../../../content/blog';
+import { getSite } from '../../../content/site';
+
+const { BlogListPage } = theme;
+const [site, posts] = await Promise.all([getSite(), getPosts()]);
+---
+
+<BlogListPage site={site} kind="archive" title="아카이브" posts={posts} />

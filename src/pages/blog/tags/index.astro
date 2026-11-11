@@ -1,0 +1,11 @@
+---
+import theme from '@theme';
+import { getPosts, getTags } from '../../../content/blog';
+import { getSite } from '../../../content/site';
+
+const { BlogListPage } = theme;
+const [site, posts] = await Promise.all([getSite(), getPosts()]);
+const tags = await getTags(posts);
+---
+
+<BlogListPage site={site} kind="tags" title="태그" posts={[]} tags={tags} />

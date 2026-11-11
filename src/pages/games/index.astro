@@ -1,0 +1,10 @@
+---
+import theme from '@theme';
+import { getGames } from '../../content/games';
+import { getSite } from '../../content/site';
+
+const { GamesPage } = theme;
+const [site, games] = await Promise.all([getSite(), getGames()]);
+---
+
+<GamesPage site={site} games={games} />

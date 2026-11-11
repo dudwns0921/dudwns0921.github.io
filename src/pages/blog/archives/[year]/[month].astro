@@ -1,0 +1,22 @@
+---
+import type { GetStaticPaths } from 'astro';
+import theme from '@theme';
+import { getArchives } from '../../../../content/blog';
+import { getSite } from '../../../../content/site';
+
+export const getStaticPaths = (async () => {
+  const archives = await getArchives();
+  return archives.flatMap((y) =>
+    y.months.map((m) => ({
+      params: { year: String(y.year), month: String(m.month).padStart(2, '0') },
+      props: { title: `${y.year}년 ${m.month}월`, posts: m.posts },
+    })),
+  );
+}) satisfies GetStaticPaths;
+
+const { BlogListPage } = theme;
+const { title, posts } = Astro.props;
+const site = await getSite();
+---
+
+<BlogListPage site={site} kind="archive" title={title} posts={posts} />

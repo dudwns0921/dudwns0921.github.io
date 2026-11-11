@@ -1,0 +1,136 @@
+/* 블로그 글 본문. Tailwind preflight가 지운 기본 모양을 글 안에서만 되살린다. */
+.prose {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #1f2937;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.prose > * + * {
+  margin-top: 1em;
+}
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-weight: 700;
+  line-height: 1.35;
+  margin-top: 2em;
+  scroll-margin-top: 1.5rem;
+}
+.prose h1 {
+  font-size: 1.875rem;
+}
+.prose h2 {
+  font-size: 1.5rem;
+}
+.prose h3 {
+  font-size: 1.25rem;
+}
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-size: 1.0625rem;
+}
+.prose a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose ul {
+  list-style: disc;
+  padding-left: 1.5em;
+}
+.prose ol {
+  list-style: decimal;
+  padding-left: 1.5em;
+}
+.prose li + li,
+.prose li > ul,
+.prose li > ol {
+  margin-top: 0.25em;
+}
+.prose blockquote {
+  border-left: 4px solid #3b82f6;
+  padding: 0.25em 1em;
+  color: #4b5563;
+  background: #f9fafb;
+}
+.prose hr {
+  border-top: 1px solid #d1d5db;
+  margin: 2em 0;
+}
+.prose img,
+.prose video,
+.prose iframe {
+  max-width: 100%;
+}
+.prose img {
+  height: auto;
+}
+.prose strong {
+  font-weight: 700;
+}
+.prose em {
+  font-style: italic;
+}
+.prose :not(pre) > code {
+  background: #f3f4f6;
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+.prose pre {
+  position: relative;
+  border-radius: 8px;
+  padding: 1em 1.1em;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  border: 1px solid #e5e7eb;
+}
+/* 표 테두리는 Hexo 때 custom.css 값을 그대로 쓴다. */
+.prose table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+.prose th,
+.prose td {
+  border: 1px solid #d0d0d0;
+  padding: 8px;
+}
+.prose th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+/* 코드 복사 단추 (CopyCode.astro가 붙인다). */
+.prose pre .copy-code {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  font-size: 0.75rem;
+  padding: 0.15em 0.6em;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #374151;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.prose pre:hover .copy-code,
+.prose pre .copy-code:focus-visible {
+  opacity: 1;
+}
+
+/* 코드 색만 시스템 다크 모드를 따른다 (Shiki 두 테마). 페이지 바탕은 이력서처럼 밝게 둔다. */
+@media (prefers-color-scheme: dark) {
+  .prose .astro-code,
+  .prose .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+  }
+}

@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DotComponent from '../common/DotComponent';
+import type { SiteMeta } from '../../../../content/types';
+import { archiveUrl, BLOG_URL, categoriesIndexUrl, GAMES_URL, RESUME_URL, tagsIndexUrl } from '../../../../content/urls';
+import '../../styles/prose.css';
+
+interface Props {
+  site: SiteMeta;
+  title: string;
+  description: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const { site, title, description, ogType, ogImage, noindex } = Astro.props;
+const nav = [
+  { label: '이력서', href: RESUME_URL },
+  { label: '태그', href: tagsIndexUrl() },
+  { label: '카테고리', href: categoriesIndexUrl() },
+  { label: '아카이브', href: archiveUrl() },
+  { label: '게임', href: GAMES_URL },
+];
+---
+
+<BaseLayout site={site} title={title} description={description} ogType={ogType} ogImage={ogImage} noindex={noindex}>
+  <slot name="head" slot="head" />
+  <div class="mx-auto flex min-h-dvh max-w-[50rem] flex-col px-4 sm:px-8">
+    <header class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 py-6">
+      <a href={BLOG_URL} class="text-2xl font-bold">{site.blog.title}<DotComponent /></a>
+      <nav class="flex flex-wrap gap-x-4 gap-y-1 text-gray-600">
+        {nav.map((item) => <a href={item.href} class="hover:text-gray-900 hover:underline">{item.label}</a>)}
+      </nav>
+    </header>
+    <main class="min-w-0 flex-1">
+      <slot />
+    </main>
+    <footer class="py-8 text-center text-sm text-gray-500">&copy; {new Date().getFullYear()} {site.author}. All rights reserved.</footer>
+  </div>
+</BaseLayout>

@@ -1,0 +1,38 @@
+# Activities. 공식 대회 · 행사만 둔다. 개인 게임과 gamedev-kit은 게임 페이지(content/games/games.yaml)에 있다.
+# 운영 PDF 환경에는 이모지 폰트가 없으므로 링크 label에 이모지를 쓰지 않는다.
+# 링크 href가 '/'로 시작하면 이 사이트 안의 주소다. webOnly: true인 링크는 PDF에 넣지 않는다.
+- title: NAN 2026 Game X AI 해커톤 — 「23」
+  period: "2026.09"
+  role: 공동 기획 · 개발(게임 로직·LLM 서버·배포) · 문서·발표
+  links:
+    - label: 회고 보기
+      href: https://elioground.com/blog/2026/09/08/NAN-2026-Retrospective/
+  description: 감각이 화폐가 된 2026년, LLM 손님과 흥정하며 감각을 사고팔아 내 몸의 빈 칸을 채우는 1인칭 3D 상점 운영 시뮬레이션. NHN 주최 NAN 2026 Game X AI 해커톤 본선(지원 588팀 중 10팀 선발)에 2인 팀으로 참가해 약 40시간 만에 완성하고, 3위(우수상)를 수상.
+  techStack: [ Godot 4.7.2, GDScript, TypeScript, Railway, Claude Code, Godot MCP Pro ]
+  achievements:
+    - description: "**공통 소재 '2026년'을 자산 광풍으로 화폐가 무너진 해로 해석하는 아이디어 제안** — 세 소재(2026년·감각·수집)를 한 줄로 잇는 세계관의 출발점"
+      strong: false
+    - description: "**'숫자는 게임이, 말은 서버가' 경계 설계** — 가격·거짓말 판정·평판은 게임이, 대사·흥정 판단·기분 변화는 LLM이 맡게 해 밸런스를 측정할 수 있는 구조 확보"
+      strong: false
+    - description: GDD 기반 초기 코드를 Claude Code 멀티 에이전트 워크플로우로 한 번에 생성한 뒤, 플레이하며 정리한 이슈는 고성능 모델(Fable)이 세부 계획을 짜고 저비용 모델(Opus·Sonnet)이 수정하는 방식으로 개발
+      strong: false
+- title: CODEGATE 2026 AI 스타트업 해커톤
+  period: "2026.07"
+  role: 개인 참가 · 기획
+  description: AI 에이전트가 수행한 행동 이력을 위변조 없이 기록하고 제3자가 독립적으로 검증할 수 있게 하는 서비스 아이디어로 서류 심사를 통과해 본선 진출.
+  techStack: []
+  achievements:
+    - description: 본선 진출 아이디어를 발전시켜 **사내 직무발명으로 특허 출원** 진행 중
+      strong: false
+- title: ObiVision · Push to Prod SEOUL 해커톤
+  period: "2026.06"
+  role: 팀장 · 기획 · Frontend Developer
+  description: 사진으로 차량 손상을 판정하는 오비고의 AI 검수 솔루션을 확장해, AI 기반 수리비 견적서의 표준을 제시하는 솔루션. Push to Prod SEOUL(Anthropic × Replit × 한국투자액셀러레이터) 본선에 오비고 3인 팀 팀장으로 참가해 약 2시간 빌드 타임 안에 구현.
+  techStack: [ Claude Vision, Claude Code, Replit ]
+  achievements:
+    - description: "**기획 방향 전환 주도** — 구현 부담에 비해 효과가 낮은 3D 파손 시각화 대신, 렌터카사·보험사가 실제로 필요로 하는 수리비 견적서로 목표 재정의"
+      strong: false
+    - description: "'AI가 멋대로 산정한 것 아니냐'는 분쟁을 막기 위해, 견적 항목마다 신뢰도·근거 사진·고객 코멘트와의 일치 여부를 함께 싣는 **견적서 표준 설계**"
+      strong: false
+    - description: "**차량 반납 검수를 '빌려준 자산을 돌려받을 때 상태를 검증하는 일'로 일반화**해, 건설 장비·가전 렌탈·킥보드·임대차까지 확장할 수 있는 반납 검수 인프라로 사업 방향 정의"
+      strong: false

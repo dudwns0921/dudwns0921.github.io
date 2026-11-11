@@ -1,42 +1,65 @@
 {
-  "name": "my-resume-next",
+  "name": "elioground",
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@10.34.5",
+  "engines": {
+    "node": ">=22.23.4"
+  },
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest run",
     "pdf": "node scripts/generate-pdf.mjs",
-    "start": "next start",
-    "lint": "eslint"
+    "check:site": "node scripts/check-site.mjs"
   },
   "dependencies": {
-    "next": "15.5.26",
+    "@astrojs/markdown-remark": "^7.3.7",
+    "@astrojs/react": "^7.1.7",
+    "@astrojs/rss": "^4.0.19",
+    "astro": "^7.4.10",
+    "hast-util-to-string": "^3.0.1",
+    "hexo-util": "^4.0.0",
     "puppeteer": "^25.11.0",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "rehype-external-links": "^3.0.0",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "unist-util-visit": "^5.2.0",
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^20.19.43",
+    "@astrojs/check": "^0.9.12",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/hast": "^3.0.5",
+    "@types/mdast": "^4.0.4",
+    "@types/node": "^22.20.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "eslint": "^9.39.5",
-    "eslint-config-next": "15.5.26",
+    "rehype-stringify": "^10.0.1",
+    "remark-rehype": "^11.1.2",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "unified": "^11.0.5",
+    "vfile": "^6.0.3",
+    "vitest": "^5.1.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",
       "puppeteer",
-      "sharp",
-      "unrs-resolver"
+      "sharp"
     ],
     "overrides": {
-      "postcss": "^8.5.23",
-      "@rushstack/eslint-patch": "1.12.0"
-    }
-  }
+      "postcss": "^8.5.23"
+    },
+    "ignoredBuiltDependencies": [
+      "hexo-util"
+    ]
+  },
+  "type": "module"
 }

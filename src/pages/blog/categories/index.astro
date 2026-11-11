@@ -1,0 +1,11 @@
+---
+import theme from '@theme';
+import { getCategoryTree, getPosts } from '../../../content/blog';
+import { getSite } from '../../../content/site';
+
+const { BlogListPage } = theme;
+const [site, posts] = await Promise.all([getSite(), getPosts()]);
+const categories = await getCategoryTree(posts);
+---
+
+<BlogListPage site={site} kind="categories" title="카테고리" posts={[]} categories={categories} />

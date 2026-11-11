@@ -1,0 +1,20 @@
+<!-- 글 본문의 코드 블록마다 복사 단추를 붙인다. -->
+<script>
+  document.querySelectorAll<HTMLPreElement>('.prose pre').forEach((pre) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'copy-code';
+    button.textContent = '복사';
+    button.addEventListener('click', async () => {
+      const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+      try {
+        await navigator.clipboard.writeText(code);
+        button.textContent = '복사됨';
+      } catch {
+        button.textContent = '실패';
+      }
+      setTimeout(() => (button.textContent = '복사'), 1500);
+    });
+    pre.appendChild(button);
+  });
+</script>

@@ -1,5 +1,5 @@
 // 이력서 페이지를 PDF로 렌더링한다.
-// 빌드 스크립트(scripts/generate-pdf.mjs)와 개발용 API(src/app/api/pdf/route.ts)가 함께 쓴다.
+// 빌드 스크립트(scripts/generate-pdf.mjs)와 개발용 API(src/pages-dev/api/pdf.ts)가 함께 쓴다.
 
 export const launchOptions = {
   headless: true,

@@ -1,0 +1,30 @@
+---
+import BlogLayout from '../components/blog/BlogLayout.astro';
+import PostList from '../components/blog/PostList.astro';
+import CategoryTree from '../components/blog/CategoryTree.astro';
+import TagCloud from '../components/blog/TagCloud.astro';
+import TitleComponent from '../components/common/TitleComponent';
+import type { BlogListPageProps } from '../../contract';
+
+type Props = BlogListPageProps;
+
+const { site, kind, title, posts, tags = [], categories = [] } = Astro.props;
+const label = { tag: '태그', category: '카테고리', archive: '아카이브', tags: '', categories: '' }[kind];
+---
+
+<BlogLayout site={site} title={`${title} | ${site.blog.title}`} description={`${site.blog.title}의 ${label ? `${label} ${title}` : title}`}>
+  {label && <p class="text-sm text-gray-500">{label}</p>}
+  <TitleComponent title={title} size="3xl" />
+  {kind === 'tags' && <TagCloud tags={tags} />}
+  {(kind === 'categories' || (kind === 'category' && categories.length > 0)) && (
+    <div class="mb-6">
+      <CategoryTree categories={categories} />
+    </div>
+  )}
+  {posts.length > 0 && (
+    <>
+      <p class="text-sm text-gray-500">글 {posts.length}개</p>
+      <PostList posts={posts} />
+    </>
+  )}
+</BlogLayout>

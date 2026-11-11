@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-정영준의 웹 이력서 (Next.js). 이력서 내용은 `src/data/*.ts`, 소개글은 `src/app/components/ResumeHeader.tsx`에 있다.
+정영준의 웹 이력서 · 게임 페이지 · 블로그 (Astro 정적 사이트). 이력서 내용은 `content/resume/*.yaml`, 소개글은 `content/resume/profile.yaml`, 블로그 글은 `content/blog/`에 있다. 데이터와 테마의 경계는 아래 '콘텐츠와 테마' 절.
 
 ## 작업 규칙
 
@@ -11,14 +11,35 @@
 ## PDF
 
 - 운영은 정적 사이트다. `pnpm build`가 `out/`으로 내보내고, `pnpm pdf`가 그 결과물을 띄워 `out/resume.pdf`를 만든다. 로컬에서 운영과 같은 결과물을 보려면 `pnpm build && pnpm pdf`.
-- `pnpm dev`에서는 `/api/pdf`(`src/app/api/pdf/route.dev.ts`)가 그때그때 PDF를 만든다. `.dev.ts`는 개발 서버에서만 라우트로 잡히고 운영 빌드에는 들어가지 않는다 (정적 내보내기에는 API를 둘 수 없다).
+- `pnpm dev`에서는 `/api/pdf`(`src/pages-dev/api/pdf.ts`)가 그때그때 PDF를 만든다. 이 라우트는 `src/integrations/dev-pdf.ts`가 개발 서버에서만 붙이고 운영 빌드에는 들어가지 않는다 (정적 사이트에는 API를 둘 수 없다).
 - 링크 이름 등에 이모지를 쓰지 않는다. PDF를 만드는 환경에 이모지 폰트가 없어 깨진다.
 
 ## 배포
 
-- `master`에 푸시하면 GitHub Actions(`.github/workflows/deploy.yml`)가 정적 빌드와 PDF를 만들어 GitHub Pages에 올린다. 서버는 없다.
-- 이 저장소의 이름이 `dudwns0921.github.io`라 도메인 루트 `https://elioground.com`에서 열린다. 게임 페이지는 `/games`, 블로그(저장소 `blog`)는 `/blog`다.
-- 예전 주소(`/my-resume/...`, 블로그가 루트에 있던 때의 `/2026/...` 같은 글 주소)는 `src/app/not-found.tsx`가 새 주소로 보낸다.
+- `master`에 푸시하면 GitHub Actions(`.github/workflows/deploy.yml`)가 `pnpm check` → `pnpm test` → `pnpm build` → `pnpm pdf` → `pnpm check:site` 순서로 정적 사이트와 PDF를 만들어 GitHub Pages에 올린다. 서버는 없다.
+- 이 저장소의 이름이 `dudwns0921.github.io`라 도메인 루트 `https://elioground.com`에서 열린다. 게임 페이지는 `/games`, 블로그는 `/blog`다. 블로그는 Hexo 저장소 `blog`에 있던 것을 이 저장소의 `content/blog/`로 옮겼다 (2026-11-11, 주소는 그대로). 저장소 `blog`는 전환 뒤 보관한다.
+- 예전 주소(`/my-resume/...`, 블로그가 루트에 있던 때의 `/2026/...` 같은 글 주소, Hexo의 목록 페이지 `/blog/.../page/N/`, `/blog/links/`)는 `404.html`(`src/pages/404.astro` + `src/lib/redirects.ts`)이 새 주소로 보낸다.
+- `pnpm check:site`(`scripts/check-site.mjs`)는 빌드 결과에 옛 블로그 주소 107개(`tests/fixtures/hexo-urls.txt`)가 모두 있는지, 초안 흔적이 없는지, 내부 링크가 살아 있는지, `404.html`에 리다이렉트 스크립트가 있는지 본다. `pnpm build && pnpm pdf` 다음에 돌린다.
+
+## 콘텐츠와 테마
+
+데이터와 화면을 나눠 둔다. 테마는 폴더 하나와 설정 한 줄로 바꿀 수 있다.
+
+- **`content/`** — 데이터만 둔다 (YAML · Markdown · 이미지, 코드 없음). 사람과 (나중에) 봇이 고치는 곳이다.
+  - `site.yaml`(사이트 이름 · 설명 · 운영 주소), `resume/*.yaml`(이력서, 배열 순서가 곧 화면 순서), `games/games.yaml` + `games/<slug>/banner.jpg`, `blog/posts/<slug>/`(글) · `blog/drafts/<slug>/`(초안) · `blog/images/`(대표 이미지).
+- **`src/content/`** — 콘텐츠 계층. `content/`와 `astro:content`를 읽는 곳은 여기뿐이다. 스키마(`schemas.ts`, zod)가 틀리면 `pnpm build`가 멈춘다. 주소 규칙은 `urls.ts`, 문장 마크업(`**강조**` · `[글자](주소)`) 해석은 `inline.ts`.
+- **`src/pages/`** — 주소 · 리다이렉트만 정하고, `src/content` API로 읽은 데이터를 `@theme`의 페이지 컴포넌트에 props로 넘긴다.
+- **`src/themes/<이름>/`** — 화면. `src/themes/contract.ts`의 계약(`ResumePage` · `GamesPage` · `BlogIndexPage` · `BlogListPage` · `BlogPostPage` · `NotFoundPage`)을 `index.ts`에서 `satisfies Theme`으로 맞춘다. 테마는 `src/content/types` · `inline` · `urls`만 import하고, 파일 읽기 · `astro:content` · `content/` import는 하지 않는다 (`tests/theme-boundary.test.ts`가 막는다).
+- **테마 바꾸기**: `src/themes/<새이름>/`을 만들고, `src/theme.config.ts`의 `THEME`과 `tsconfig.json`의 `paths["@theme"]`를 새 이름으로 바꾼 뒤 `pnpm build`. `content/`는 손대지 않는다. 주소 · 리다이렉트 · PDF · RSS · 검색 색인 · OG 값은 테마 밖에 있다.
+- `public/blog/` · `public/activities/`는 `src/integrations/content-assets.ts`가 `content/`에서 복사해 채우는 생성물이다 (gitignore). 직접 고치지 않는다.
+
+### 블로그 글 쓰는 법
+
+- 글 하나 = 폴더 하나: `content/blog/posts/<slug>/index.md`, 그 글의 이미지는 같은 폴더에 두고 본문에서 `![설명](파일이름.png)`처럼 상대 경로로 쓴다 (참조형 `![설명][ref]` + `[ref]: 파일이름.png`도 된다). 파일 이름 대소문자까지 맞아야 하고, 하위 폴더(`img/a.png`) · 다른 글 폴더(`../다른글/a.png`)는 쓸 수 없다 (틀리면 빌드가 멈춘다).
+- `<slug>`(폴더 이름)는 영문 · 숫자 · `-`만 쓴다 (`^[A-Za-z0-9][A-Za-z0-9-]*$`). 글과 초안을 통틀어 하나뿐이어야 한다. 주소는 `/blog/YYYY/MM/DD/<slug>/`다 (Hexo 때와 같다).
+- frontmatter 필드: `title`(필수), `date`(필수), `categories`(최대 2단계, `[큰 분류, 작은 분류]`), `tags`, `cover`(대표 이미지, `content/blog/images/`의 파일 이름), `description`(목록 요약, 없으면 본문 앞부분). 그 밖의 키가 있으면 빌드가 멈춘다.
+- `date`는 시간대 없이 `YYYY-MM-DD HH:mm:ss`로 초까지 쓴다 (`08:00`처럼 초를 빼면 빌드가 멈춘다). 주소의 날짜는 적힌 날짜 그대로다. `2026-11-11T08:00:00+09:00`처럼 시간대를 붙이면 빌드가 멈춘다 (날짜가 하루 밀릴 수 있다).
+- 초안은 `content/blog/drafts/<slug>/index.md`에 둔다. `pnpm dev`에서만 `/blog/drafts/<slug>/`와 블로그 첫 화면 위쪽에 보이고, 운영 출력(`out/`)에는 HTML · 이미지 · 검색 색인 · RSS 어디에도 남지 않는다. 내보낼 때는 폴더를 `posts/`로 옮긴다.
 
 ## 공통 작성 규칙
 
@@ -45,7 +66,7 @@
 | NAN 해커톤 | `NAN 2026 Game X AI 해커톤` (공식 명칭) |
 | 역할명 | 영문 직함 그대로 (`Frontend Developer`, `Full-stack Developer`) |
 
-## 소개글 (ResumeHeader)
+## 소개글 (content/resume/profile.yaml)
 
 **회사 일과 해커톤 · 게임 제작은 문단을 아예 나눈다** (본인 요청, 2026-10-11). 한 문단에 섞으면 해커톤과 게임 쪽이 잘 보이지 않는다. 해커톤은 "AI 역량을 쌓는다", 게임 제작은 "AI 역량을 심화한다"가 주제다 (본인이 준 문장). 즐기며 한다는 것도 같이 드러낸다. 문단마다 역할이 하나씩 있다.
 
@@ -56,7 +77,7 @@
 
 강조는 본인이 정했다 (2026-10-11). 첫 문단은 인사평가 결과(`4년 연속 전사 상위 2% 인사평가 최고 등급`) 하나, 둘째 문단은 주제 구절(`일하는 모든 과정에 AI를 깊이 녹여 냅니다` — `코드를 짜는 일을 넘어,`는 강조 밖) 하나, 셋째 문단은 **첫 문장 전체**와 수상(`3위로 우수상`), 넷째 문단은 **첫 문장 전체**다. 기획 출발점(`장면의 행동 하나에서 출발`)의 강조는 본인이 뺐다.
 
-## 경력 (workExperiences.ts)
+## 경력 (content/resume/workExperiences.yaml)
 
 - **팀 이동은 팀별 묶음으로 보여 준다** (본인 결정, 2026-10-16): 오비고 안의 프로젝트는 `teams`로 나눠 소제목(`Mobility Service 1팀 (Android) · 2026.10 - 현재` / `Mobility Service 2팀 (Web Frontend) · 2022.03 - 2026.10` — 공식 팀명을 쓴다, 본인 요청 2026-10-26) 아래에 둔다. 끝난 프로젝트에 따로 `종료` 표시를 붙이지 않는다.
 
@@ -71,7 +92,7 @@
 - **기간 표기**: `YYYY.MM - YYYY.MM` 또는 `YYYY.MM - 진행 중`으로 쓴다. 짧은 프로젝트는 `YYYY.MM (1주)`로 쓴다. 유지보수 단계에 들어갔어도 개발 중인 프로젝트는 `진행 중`으로 둔다. 단, 2026.10 안드로이드 팀으로 옮기며 손을 뗀 프로젝트(KGM Music · Toyota 차량관리 앱 · Toyota · KGM 인포테인먼트)는 `- 2026.10`으로 끝낸다 (본인 결정, 2026-10-16).
 - **순서**: 프로젝트는 최신순으로 둔다.
 
-## Activities (activities.ts)
+## Activities (content/resume/activities.yaml)
 
 - 경력과 같은 작성 규칙을 따른다.
 - 이번 지원(게임 기획자)에 맞춰 **기획 기여를 먼저** 쓰고, 구현 이야기는 뒤에 짧게 둔다.
@@ -80,10 +101,10 @@
 - ObiVision은 기획 기여가 핵심이라 예외로 성과 3개를 모두 강조한다.
 - **개인 게임 셋은 `오디세이 3부작` 한 항목으로 묶는다** (본인 요청, 2026-10-20 — 세 항목이 이어지는 것이 보기 좋지 않았다). 시리즈 머리(제목 · 기간 · 역할 · 설명 · 기술 스택)에 공통인 것을 두고, 그 아래에 게임마다 다른 Activities 항목과 같은 모양의 칸(제목 · 기간 · 설명 1~2문장 · 링크 · 성과 1개, 제목만 한 단계 작은 `text-xl`)을 최신순으로 두고, 시리즈 아래로 들여 쓰기만 한다(`pl-6`). 제목 앞의 `-` · 구분선 · 파란 세로줄 · 3열 카드 · 순번(I · II · III)은 본인이 이상하다고 해서 뺐다 (2026-10-20). 2026-10-21부터 이 묶음은 게임 페이지(아래 절)로 옮겼다. 내용 규칙은 그대로다. 게임 칸의 성과는 묶기 전과 같다 (본인 요청, 2026-10-20 — 하나씩 줄였다가 되돌렸다). 다만 gamedev-kit으로 만든 것은 성과가 아니라 기간 아래 한 줄(역할 자리)로 쓴다 (본인 결정, 2026-10-20): Nostos `gamedev-kit으로 제작 · 개발 사이클 18회`, Keros `… 8회`. Outis는 플러그인으로 만든 게임이 아니라 이 줄을 두지 않는다. 그래서 Keros의 '플러그인 사이클 8회로 제작' 성과(과 '결정은 직접 · 나머지는 위임' 설명)는 이력서에서 뺐다. 성과는 Nostos 1 · Keros 1 · Outis 3이다.
 
-## 게임 페이지 (/games, games.ts)
+## 게임 페이지 (/games, content/games/games.yaml)
 
 - 오디세이 3부작과 gamedev-kit은 Activities에서 빼서 별도 페이지 `/games`에 둔다 (본인 요청, 2026-10-21 — 공식 대회가 아닌 개인 활동은 따로 둔다). Activities에는 공식 대회 · 행사만 남긴다.
-- 내용은 `src/data/games.ts`(`hero` · `trilogy` · `games` · `gamedevKit`), 화면은 `src/app/components/games/`(`GamesView.tsx` · `games.css`)에 있다. 이력서와 전혀 다른 게임 타이틀 화면처럼, gamedev-kit 배너 · 현황판의 모양(민트 · 라임 · 노랑 · 핑크 그라데이션, 알약, 별)으로 화려하게 꾸민다 (본인 요청). 구성은 타이틀 화면 → gamedev-kit(`MAIN QUEST`, 사이클 고리 · 단계 목록) → 오디세이 3부작(게임마다 배너 카드, 최신순) 순서다. **gamedev-kit을 가장 강조한다** (본인 요청, 2026-10-21): 맨 앞에 두고, 게임 카드보다 크고 테두리가 두껍다. 첫 화면 문구도 오디세이가 아니라 gamedev-kit과 AI로 게임을 만든다는 내용으로 쓴다 (본인 요청, 2026-10-21 — 머리말 `GAMEDEV-KIT × AI`, 3부작 설명은 3부작 절 머리로 옮겼다). gamedev-kit으로 만든 게임(Nostos · Keros)은 배너에 `MADE WITH gamedev-kit` 꼬리표, 제목 아래에 `gamedev-kit으로 제작 · 개발 사이클 N회` 띠를 크게 둔다 (데이터는 `kitCycles`). 플러그인 칸도 게임 카드처럼 마우스를 따라 기운다.
+- 내용은 `content/games/games.yaml`(`hero` · `gamedevKit` · `trilogy` · `games`), 화면은 `src/themes/default/components/games/`(`GamesView.tsx` · `games.css`)에 있다. 이력서와 전혀 다른 게임 타이틀 화면처럼, gamedev-kit 배너 · 현황판의 모양(민트 · 라임 · 노랑 · 핑크 그라데이션, 알약, 별)으로 화려하게 꾸민다 (본인 요청). 구성은 타이틀 화면 → gamedev-kit(`MAIN QUEST`, 사이클 고리 · 단계 목록) → 오디세이 3부작(게임마다 배너 카드, 최신순) 순서다. **gamedev-kit을 가장 강조한다** (본인 요청, 2026-10-21): 맨 앞에 두고, 게임 카드보다 크고 테두리가 두껍다. 첫 화면 문구도 오디세이가 아니라 gamedev-kit과 AI로 게임을 만든다는 내용으로 쓴다 (본인 요청, 2026-10-21 — 머리말 `GAMEDEV-KIT × AI`, 3부작 설명은 3부작 절 머리로 옮겼다). gamedev-kit으로 만든 게임(Nostos · Keros)은 배너에 `MADE WITH gamedev-kit` 꼬리표, 제목 아래에 `gamedev-kit으로 제작 · 개발 사이클 N회` 띠를 크게 둔다 (데이터는 `kitCycles`). 플러그인 칸도 게임 카드처럼 마우스를 따라 기운다.
 - **게임 페이지 내용은 PDF에 넣지 않는다** (본인 결정, 2026-10-21). 이력서에서는 두 곳으로 이어진다 — 머리의 `만든 게임 보러 가기 →` 버튼(PDF 다운로드와 같은 크기의 검은 버튼, 웹에서만)과 소개글 넷째 문단 끝의 같은 이름 텍스트 링크. 이력서 쪽은 심플하게 두고 화려함은 게임 페이지에 들어간 뒤에만 보인다 (본인 방향: 공식 경력은 간결하게, 개인 활동은 화려하게). 버튼 이름은 `게임 페이지`가 와닿지 않아 본인이 `만든 게임 보러 가기`로 바꿨다.
 - 소개글 링크는 **PDF에도 남긴다** (본인 요청 — 어차피 웹 문서로 전달된다). PDF는 빌드 때 로컬 서버에서 찍으므로 `withSiteUrl`로 운영 주소 전체(`https://elioground.com/games`, 2026-11-11 루트로 옮김)를 건다.
 - 첫 화면에는 숫자 칸을 두지 않는다 (본인 판단, 2026-10-21 — 출시한 게임 3 말고는 내세울 수치가 없다). 게임 썸네일 줄도 넣어 봤다가 본인이 빼고 심플하게 가기로 했다 — 제목 · 설명 · 시작 단추만 둔다. 첫 화면 설명은 `AI를 활용해,` 뒤에서 줄을 바꾼다.
@@ -95,7 +116,7 @@
 
 ## 게임 제작 과정 페이지 (없앰)
 
-- 게임마다 있던 `제작 과정 보기` 링크와 상세 페이지(`/activities/<slug>`, `activityDetails.ts`)는 본인 요청으로 뺐다 (2026-10-25 — 굳이 들어가야 하나 싶다). 다시 만들지 않는다. 게임 카드의 링크는 `itch.io에서 플레이` 하나다. 배너 이미지는 `public/activities/<slug>/banner.jpg`에 그대로 있다.
+- 게임마다 있던 `제작 과정 보기` 링크와 상세 페이지(`/activities/<slug>`, `activityDetails.ts`)는 본인 요청으로 뺐다 (2026-10-25 — 굳이 들어가야 하나 싶다). 다시 만들지 않는다. 게임 카드의 링크는 `itch.io에서 플레이` 하나다. 배너 이미지는 `content/games/<slug>/banner.jpg`에 있고, 빌드 때 같은 주소(`/activities/<slug>/banner.jpg`)로 복사된다.
 - 아래 '확인된 사실'에 상세 페이지 이야기가 남아 있는 것은 기록일 뿐이다.
 
 ## 확인된 사실 (다시 묻지 않아도 되는 것)

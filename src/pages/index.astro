@@ -1,0 +1,11 @@
+---
+import theme from '@theme';
+import { getResume } from '../content/resume';
+import { getSite } from '../content/site';
+import { BLOG_URL, GAMES_URL, pdfUrl } from '../content/urls';
+
+const { ResumePage } = theme;
+const [site, resume] = await Promise.all([getSite(), getResume()]);
+---
+
+<ResumePage site={site} resume={resume} pdfUrl={pdfUrl()} gamesUrl={GAMES_URL} blogUrl={BLOG_URL} />
