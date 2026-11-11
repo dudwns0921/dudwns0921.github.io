@@ -1,6 +1,6 @@
 # 사이트 전체에 쓰는 값. 페이지 제목 · 설명 · Open Graph · RSS가 여기서 온다.
-title: 정영준 | 프론트엔드 개발자 이력서
-description: AI를 업무 전반에 녹여 내는 5년차 웹 프론트엔드 개발자 정영준의 이력서입니다.
+title: 정영준 | AI 네이티브 개발자 이력서
+description: 차량용 웹 · 앱을 만들어 온 5년차 개발자 정영준의 이력서입니다. 일하는 모든 과정에 AI를 녹여 냅니다.
 # 운영 주소. PDF 안의 내부 링크와 RSS의 글 주소가 이 값으로 시작한다.
 origin: https://elioground.com
 author: Jung Young Joon

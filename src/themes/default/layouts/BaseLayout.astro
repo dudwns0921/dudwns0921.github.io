@@ -22,6 +22,9 @@ const canonical = new URL(Astro.url.pathname, site.origin).href;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    {/* 파비콘: 돼지 코 (본인 돼지띠, 2026-11-11). 파일은 public/favicon.svg · public/apple-touch-icon.png */}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
     <meta property="og:type" content={ogType} />
