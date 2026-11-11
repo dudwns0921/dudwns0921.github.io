@@ -1,7 +1,6 @@
-# 맨 아래 링크 목록.
-- href: https://elioground.com/blog/
-  label: 블로그
-- href: https://github.com/dudwns0921
-  label: 깃허브
+# 맨 아래 링크 목록. 블로그 · 게임은 웹 이력서 머리 메뉴로 가므로 두지 않는다 (본인 결정, 2026-11-11).
+# 주소는 테마가 label 아래에 그대로 보여 준다. label은 무엇이 있는 곳인지만 쓴다.
 - href: https://elioground.com
-  label: 웹 이력서
+  label: 웹 이력서 · 블로그 · 게임
+- href: https://github.com/dudwns0921
+  label: GitHub
