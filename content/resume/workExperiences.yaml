@@ -23,7 +23,7 @@
         - title: Pickle - 차량용 오디오 큐레이션 서비스
           period: 2026.10 - 진행 중
           role: Android Developer
-          description: 르노·볼보·폴스타·현대 차량에 출시된 오디오 큐레이션 서비스 「Pickle」의 Android Automotive OS(AAOS) 앱 개발.
+          description: 르노·볼보·폴스타·현대 차량에 출시된 오비고 자체 오디오 큐레이션 서비스 「Pickle」의 Android Automotive OS(AAOS) 앱 개발.
           techStack: [ Kotlin, Android Automotive OS, Media3, Coroutines, Retrofit, Claude Code ]
           achievements:
             - description: "**프로젝트 지식을 하나의 형태로 쌓는 Claude Code 지식 플러그인 설계 및 팀 배포** — 같은 팀이라면 어떤 프로젝트든 지식을 동일한 형태로 확인해, 읽기 쉽고 바로 작업에 들어갈 수 있음"
