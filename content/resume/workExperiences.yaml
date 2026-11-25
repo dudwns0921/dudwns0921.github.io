@@ -6,9 +6,20 @@
   description: 차량용 인포테인먼트 플랫폼과 서비스를 만드는 모빌리티 소프트웨어 기업.
   # 2026.10 Mobility Service 2팀(Web Frontend)에서 1팀(Android)으로 옮겼다. 팀마다 묶어 소제목(팀 · 기간) 아래에 프로젝트를 둔다.
   teams:
-    - name: Mobility Service 1팀 (Android)
+    - name: Mobility Service 1팀 (Native)
       period: 2026.10 - 현재
       projects:
+        # 고객사 · 서비스 이름은 아직 공개 전이라 가린다 (본인 결정, 2026-11-25).
+        - title: 법인·상용차 정비 관리 서비스 - 정비소 엔지니어용 앱
+          period: 2026.11 - 진행 중
+          role: Android Developer
+          description: 법인·상용차 예방 정비 서비스에서 정비소 엔지니어가 쓰는 Android 하이브리드 앱 단독 개발. Kotlin 네이티브 앱 안의 WebView에 웹을 띄움.
+          techStack: [ Kotlin, Jetpack Compose, WebView, Hilt, Coroutines, Firebase Cloud Messaging ]
+          achievements:
+            - description: "**1주 만에 브릿지 규격 · 릴리즈 절차 · 프로젝트 환경을 갖춰 내부 테스트용 APK 배포** — 시작부터 내부 테스트가 가능한 상태까지 단독으로 진행"
+              strong: false
+            - description: FCM 푸시 기능 구현
+              strong: false
         - title: Pickle - 차량용 오디오 큐레이션 서비스
           period: 2026.10 - 진행 중
           role: Android Developer
