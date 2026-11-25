@@ -24,7 +24,7 @@
   description: AI 에이전트가 수행한 행동 이력을 위변조 없이 기록하고 제3자가 독립적으로 검증할 수 있게 하는 서비스 아이디어로 서류 심사를 통과해 본선 진출.
   techStack: []
   achievements:
-    - description: 본선 진출 아이디어를 발전시켜 **사내 직무발명으로 특허 출원** 진행 중
+    - description: 본선 진출 아이디어를 발전시켜 **사내 직무발명으로 특허 출원**
       strong: false
 - title: ObiVision · Push to Prod SEOUL 해커톤
   period: "2026.06"
