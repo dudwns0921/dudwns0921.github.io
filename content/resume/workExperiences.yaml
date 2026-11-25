@@ -13,7 +13,7 @@
         - title: 법인·상용차 정비 관리 서비스 - 정비소 엔지니어용 앱
           period: 2026.11 - 진행 중
           role: Android Developer
-          description: 법인·상용차 예방 정비 서비스에서 정비소 엔지니어가 쓰는 Android 하이브리드 앱 단독 개발. Kotlin 네이티브 앱 안의 WebView에 웹을 띄움.
+          description: 법인·상용차 예방 정비 서비스에서 정비소 엔지니어가 쓰는 Android WebView 컨테이너 앱 단독 개발.
           techStack: [ Kotlin, Jetpack Compose, WebView, Hilt, Coroutines, Firebase Cloud Messaging ]
           achievements:
             - description: "**1주 만에 브릿지 규격 · 릴리즈 절차 · 프로젝트 환경을 갖춰 내부 테스트용 APK 배포** — 시작부터 내부 테스트가 가능한 상태까지 단독으로 진행"
